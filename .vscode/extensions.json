@@ -1,0 +1,12 @@
+{
+  "recommendations": [
+    "DavidAnson.vscode-markdownlint",
+    "robertohuertasm.vscode-icons",
+    "vscodevim.vim",
+    "HookyQR.beautify",
+    "geddski.macros",
+    "formulahendry.code-runner",
+    "donjayamanne.githistory",
+    "vscjava.vscode-java-pack"
+  ]
+}
