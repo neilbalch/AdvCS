@@ -142,7 +142,7 @@ public class Screen extends JPanel implements ActionListener {
                 for (int i = 0; i < accounts.length; i++) {
                     if(accounts[i].getName().equals(name)) {
                         accountFound = true;
-                        accounts[i].setAccess(pin);
+                        accounts[i].unlockWithPIN(pin);
                         if(accounts[i].getAccess()) {
                             state = State.LOGGED_IN;
                             loggedInUser = i;

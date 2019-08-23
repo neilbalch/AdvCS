@@ -20,7 +20,7 @@ public class Account {
     }
     public boolean getAccess() { return access; }
 
-    public void setAccess(int pin) {
+    public void unlockWithPIN(int pin) {
         if(pin == this.pin)
             access = true;
     }
