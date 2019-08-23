@@ -2,7 +2,9 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/Q1/08222019/08222019.iml" filepath="$PROJECT_DIR$/Q1/08222019/08222019.iml" />
       <module fileurl="file://$PROJECT_DIR$/AdvCS.iml" filepath="$PROJECT_DIR$/AdvCS.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Labs/Bank Lab/Bank Lab.iml" filepath="$PROJECT_DIR$/Labs/Bank Lab/Bank Lab.iml" />
     </modules>
   </component>
 </project>
