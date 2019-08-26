@@ -2,9 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="36939a02-4d05-4550-9e2f-c504bf2e9922" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/BalchNeil.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Labs/Bank Lab/Bank Lab1.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Q1/08262019/08262019.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Q1/08262019/ArrayTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Labs/Bank Lab/Account.java" beforeDir="false" afterPath="$PROJECT_DIR$/Labs/Bank Lab/Account.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Labs/Bank Lab/Screen.java" beforeDir="false" afterPath="$PROJECT_DIR$/Labs/Bank Lab/Screen.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -28,7 +31,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/Labs/Bank Lab" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/Q1/08262019" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -54,7 +57,14 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.Runner (1)">
+  <component name="RunManager" selected="Application.ArrayTest">
+    <configuration name="ArrayTest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="ArrayTest" />
+      <module name="08262019" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="Runner (1)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Runner" />
       <module name="Bank Lab" />
@@ -71,6 +81,7 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.ArrayTest" />
         <item itemvalue="Application.Runner (1)" />
         <item itemvalue="Application.Runner" />
       </list>
@@ -88,7 +99,8 @@
       <updated>1564075805228</updated>
       <workItem from="1564075810406" duration="122000" />
       <workItem from="1566486768029" duration="10964000" />
-      <workItem from="1566521674406" duration="3125000" />
+      <workItem from="1566521674406" duration="3934000" />
+      <workItem from="1566832099385" duration="1035000" />
     </task>
     <task id="LOCAL-00001" summary="Classwork from August 22, 2019">
       <created>1566521518017</created>
@@ -104,7 +116,14 @@
       <option name="project" value="LOCAL" />
       <updated>1566521545441</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Final Bank Lab stuff">
+      <created>1566588815886</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1566588815886</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -126,7 +145,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Classwork from August 22, 2019" />
     <MESSAGE value="All? from Bank lab." />
-    <option name="LAST_COMMIT_MESSAGE" value="All? from Bank lab." />
+    <MESSAGE value="Final Bank Lab stuff" />
+    <option name="LAST_COMMIT_MESSAGE" value="Final Bank Lab stuff" />
   </component>
   <component name="masterDetails">
     <states>
