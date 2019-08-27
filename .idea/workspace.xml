@@ -2,10 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="36939a02-4d05-4550-9e2f-c504bf2e9922" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/BalchNeil.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Labs/Bank Lab/Bank Lab1.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Q1/08262019/08262019.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Q1/08262019/ArrayTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Q1/08272019/08272019.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Q1/08272019/ArrayListTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
@@ -31,7 +29,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/Q1/08262019" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/Q1/08272019" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -57,7 +55,14 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.ArrayTest">
+  <component name="RunManager" selected="Application.ArrayListTest">
+    <configuration name="ArrayListTest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="ArrayListTest" />
+      <module name="08272019" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="ArrayTest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="ArrayTest" />
       <module name="08262019" />
@@ -81,6 +86,7 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.ArrayListTest" />
         <item itemvalue="Application.ArrayTest" />
         <item itemvalue="Application.Runner (1)" />
         <item itemvalue="Application.Runner" />
@@ -100,7 +106,8 @@
       <workItem from="1564075810406" duration="122000" />
       <workItem from="1566486768029" duration="10964000" />
       <workItem from="1566521674406" duration="3934000" />
-      <workItem from="1566832099385" duration="1035000" />
+      <workItem from="1566832099385" duration="1309000" />
+      <workItem from="1566918453097" duration="585000" />
     </task>
     <task id="LOCAL-00001" summary="Classwork from August 22, 2019">
       <created>1566521518017</created>
@@ -123,7 +130,28 @@
       <option name="project" value="LOCAL" />
       <updated>1566588815886</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Classwork from Monday, 08262019.">
+      <created>1566833503652</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1566833503652</updated>
+    </task>
+    <task id="LOCAL-00005" summary="Classwork from Monday, 08262019.">
+      <created>1566833541208</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1566833541208</updated>
+    </task>
+    <task id="LOCAL-00006" summary="Classwork from Monday, 08262019.">
+      <created>1566833584296</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1566833584296</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -146,7 +174,8 @@
     <MESSAGE value="Classwork from August 22, 2019" />
     <MESSAGE value="All? from Bank lab." />
     <MESSAGE value="Final Bank Lab stuff" />
-    <option name="LAST_COMMIT_MESSAGE" value="Final Bank Lab stuff" />
+    <MESSAGE value="Classwork from Monday, 08262019." />
+    <option name="LAST_COMMIT_MESSAGE" value="Classwork from Monday, 08262019." />
   </component>
   <component name="masterDetails">
     <states>
