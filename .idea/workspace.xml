@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="36939a02-4d05-4550-9e2f-c504bf2e9922" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Q1/08272019/08272019.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Q1/08272019/ArrayListTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Q1/08292019/08292019.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Q1/08292019/TabulatedPrint.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
@@ -29,7 +29,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/Q1/08272019" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/Q1/08292019" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -38,6 +38,7 @@
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="nodejs_package_manager_path" value="npm" />
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
@@ -55,7 +56,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.ArrayListTest">
+  <component name="RunManager" selected="Application.TabulatedPrint">
     <configuration name="ArrayListTest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="ArrayListTest" />
       <module name="08272019" />
@@ -84,8 +85,16 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="TabulatedPrint" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="TabulatedPrint" />
+      <module name="08292019" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.TabulatedPrint" />
         <item itemvalue="Application.ArrayListTest" />
         <item itemvalue="Application.ArrayTest" />
         <item itemvalue="Application.Runner (1)" />
@@ -107,7 +116,7 @@
       <workItem from="1566486768029" duration="10964000" />
       <workItem from="1566521674406" duration="3934000" />
       <workItem from="1566832099385" duration="1309000" />
-      <workItem from="1566918453097" duration="585000" />
+      <workItem from="1566918453097" duration="3729000" />
     </task>
     <task id="LOCAL-00001" summary="Classwork from August 22, 2019">
       <created>1566521518017</created>
@@ -151,7 +160,21 @@
       <option name="project" value="LOCAL" />
       <updated>1566833584296</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Classwork from Tuesday, 08272019.">
+      <created>1566919060480</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1566919060480</updated>
+    </task>
+    <task id="LOCAL-00008" summary="Oops, fix issue">
+      <created>1566919108888</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1566919108888</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -175,7 +198,10 @@
     <MESSAGE value="All? from Bank lab." />
     <MESSAGE value="Final Bank Lab stuff" />
     <MESSAGE value="Classwork from Monday, 08262019." />
-    <option name="LAST_COMMIT_MESSAGE" value="Classwork from Monday, 08262019." />
+    <MESSAGE value="Classwork from Tuesday, 08272019." />
+    <MESSAGE value="Oops, fix issue" />
+    <option name="LAST_COMMIT_MESSAGE" value="Oops, fix issue" />
+    <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="masterDetails">
     <states>
