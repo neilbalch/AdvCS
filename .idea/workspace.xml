@@ -2,16 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="36939a02-4d05-4550-9e2f-c504bf2e9922" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Q1/09052019/09052019.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Q1/09052019/Animal.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Q1/09052019/Bird.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Q1/09052019/Cat.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Q1/09052019/ClassWorkIIMain.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Q1/09052019/Dog.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Q1/09052019/Profile.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Q1/09052019/Runner.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Q1/09052019/Student.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Labs/Inheritance Lab/imgs/csensible.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Labs/Inheritance Lab/imgs/dvanian.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Labs/Inheritance Lab/imgs/jmann.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Labs/Inheritance Lab/imgs/jsmith.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Labs/Inheritance Lab/imgs/moxymoron.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Labs/Inheritance Lab/imgs/pgray.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Labs/Inheritance Lab/imgs/plinden.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Labs/Inheritance Lab/imgs/tleer.jpg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -43,7 +41,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/Q1/09052019" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/Labs/Inheritance Lab" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -75,14 +73,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.ClassWorkIIMain">
-    <configuration name="ArrayListTest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="ArrayListTest" />
-      <module name="08272019" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
+  <component name="RunManager" selected="Application.Runner">
     <configuration name="ClassWorkIIMain" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="ClassWorkIIMain" />
       <module name="09052019" />
@@ -104,6 +95,14 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="Runner" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Runner" />
+      <module name="Inheritance Lab" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_WORKING_DIR$" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="TabulatedPrint" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="TabulatedPrint" />
       <module name="08292019" />
@@ -111,13 +110,20 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <list>
+      <item itemvalue="Application.ClassWorkIIMain" />
+      <item itemvalue="Application.Runner" />
+      <item itemvalue="Application.Runner (1)" />
+      <item itemvalue="Application.Runner (2)" />
+      <item itemvalue="Application.TabulatedPrint" />
+    </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.Runner" />
         <item itemvalue="Application.ClassWorkIIMain" />
         <item itemvalue="Application.Runner (2)" />
         <item itemvalue="Application.Runner (1)" />
         <item itemvalue="Application.TabulatedPrint" />
-        <item itemvalue="Application.ArrayListTest" />
       </list>
     </recent_temporary>
   </component>
@@ -137,7 +143,7 @@
       <workItem from="1566832099385" duration="1309000" />
       <workItem from="1566918453097" duration="5964000" />
       <workItem from="1567523382840" duration="159000" />
-      <workItem from="1567696237138" duration="1104000" />
+      <workItem from="1567696237138" duration="6845000" />
     </task>
     <task id="LOCAL-00001" summary="Classwork from August 22, 2019">
       <created>1566521518017</created>
@@ -202,7 +208,21 @@
       <option name="project" value="LOCAL" />
       <updated>1567091995565</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="Classwork from Thursday, 9/5/2019">
+      <created>1567697457320</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1567697457320</updated>
+    </task>
+    <task id="LOCAL-00011" summary="Initial progress on Inheritance lab.">
+      <created>1567702249706</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1567702249707</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -222,6 +242,7 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
+    <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <MESSAGE value="Classwork from August 22, 2019" />
     <MESSAGE value="All? from Bank lab." />
     <MESSAGE value="Final Bank Lab stuff" />
@@ -229,7 +250,9 @@
     <MESSAGE value="Classwork from Tuesday, 08272019." />
     <MESSAGE value="Oops, fix issue" />
     <MESSAGE value="Classwork from Thursday, 8/29/2019." />
-    <option name="LAST_COMMIT_MESSAGE" value="Classwork from Thursday, 8/29/2019." />
+    <MESSAGE value="Classwork from Thursday, 9/5/2019" />
+    <MESSAGE value="Initial progress on Inheritance lab." />
+    <option name="LAST_COMMIT_MESSAGE" value="Initial progress on Inheritance lab." />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="masterDetails">
