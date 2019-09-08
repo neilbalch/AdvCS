@@ -2,15 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="36939a02-4d05-4550-9e2f-c504bf2e9922" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Labs/Inheritance Lab/imgs/csensible.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Labs/Inheritance Lab/imgs/dvanian.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Labs/Inheritance Lab/imgs/jmann.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Labs/Inheritance Lab/imgs/jsmith.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Labs/Inheritance Lab/imgs/moxymoron.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Labs/Inheritance Lab/imgs/pgray.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Labs/Inheritance Lab/imgs/plinden.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Labs/Inheritance Lab/imgs/tleer.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Labs/Inheritance Lab/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Labs/Inheritance Lab/Employee.java" beforeDir="false" afterPath="$PROJECT_DIR$/Labs/Inheritance Lab/Employee.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Labs/Inheritance Lab/Runner.java" beforeDir="false" afterPath="$PROJECT_DIR$/Labs/Inheritance Lab/Runner.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -38,10 +33,11 @@
     <ConfirmationsSetting value="2" id="Add" />
   </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/Labs/Inheritance Lab" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../APCS" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -143,7 +139,8 @@
       <workItem from="1566832099385" duration="1309000" />
       <workItem from="1566918453097" duration="5964000" />
       <workItem from="1567523382840" duration="159000" />
-      <workItem from="1567696237138" duration="6845000" />
+      <workItem from="1567696237138" duration="7639000" />
+      <workItem from="1567727755809" duration="5566000" />
     </task>
     <task id="LOCAL-00001" summary="Classwork from August 22, 2019">
       <created>1566521518017</created>
@@ -222,7 +219,14 @@
       <option name="project" value="LOCAL" />
       <updated>1567702249707</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="Initial progress on Inheritance lab.">
+      <created>1567725392140</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1567725392140</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
