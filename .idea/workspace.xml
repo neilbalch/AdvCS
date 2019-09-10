@@ -2,10 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="36939a02-4d05-4550-9e2f-c504bf2e9922" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Labs/Inheritance Lab/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Q1/09102019/09102019.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Q1/09102019/Warmup.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Labs/Inheritance Lab/Employee.java" beforeDir="false" afterPath="$PROJECT_DIR$/Labs/Inheritance Lab/Employee.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Labs/Inheritance Lab/Runner.java" beforeDir="false" afterPath="$PROJECT_DIR$/Labs/Inheritance Lab/Runner.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -37,7 +37,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../APCS" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/Q1/09102019" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -69,7 +69,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.Runner">
+  <component name="RunManager" selected="Application.Warmup">
     <configuration name="ClassWorkIIMain" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="ClassWorkIIMain" />
       <module name="09052019" />
@@ -99,9 +99,9 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="TabulatedPrint" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="TabulatedPrint" />
-      <module name="08292019" />
+    <configuration name="Warmup" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Warmup" />
+      <module name="09102019" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -111,15 +111,15 @@
       <item itemvalue="Application.Runner" />
       <item itemvalue="Application.Runner (1)" />
       <item itemvalue="Application.Runner (2)" />
-      <item itemvalue="Application.TabulatedPrint" />
+      <item itemvalue="Application.Warmup" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.Warmup" />
         <item itemvalue="Application.Runner" />
         <item itemvalue="Application.ClassWorkIIMain" />
         <item itemvalue="Application.Runner (2)" />
         <item itemvalue="Application.Runner (1)" />
-        <item itemvalue="Application.TabulatedPrint" />
       </list>
     </recent_temporary>
   </component>
@@ -140,7 +140,7 @@
       <workItem from="1566918453097" duration="5964000" />
       <workItem from="1567523382840" duration="159000" />
       <workItem from="1567696237138" duration="7639000" />
-      <workItem from="1567727755809" duration="5566000" />
+      <workItem from="1567727755809" duration="12222000" />
     </task>
     <task id="LOCAL-00001" summary="Classwork from August 22, 2019">
       <created>1566521518017</created>
@@ -226,7 +226,14 @@
       <option name="project" value="LOCAL" />
       <updated>1567725392140</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="Final progress on Inheritance lab.">
+      <created>1567966137486</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1567966137486</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -247,6 +254,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="Classwork from August 22, 2019" />
     <MESSAGE value="All? from Bank lab." />
     <MESSAGE value="Final Bank Lab stuff" />
@@ -256,7 +264,8 @@
     <MESSAGE value="Classwork from Thursday, 8/29/2019." />
     <MESSAGE value="Classwork from Thursday, 9/5/2019" />
     <MESSAGE value="Initial progress on Inheritance lab." />
-    <option name="LAST_COMMIT_MESSAGE" value="Initial progress on Inheritance lab." />
+    <MESSAGE value="Final progress on Inheritance lab." />
+    <option name="LAST_COMMIT_MESSAGE" value="Final progress on Inheritance lab." />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="masterDetails">
