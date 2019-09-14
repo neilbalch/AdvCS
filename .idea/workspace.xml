@@ -2,8 +2,18 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="36939a02-4d05-4550-9e2f-c504bf2e9922" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Q1/09102019/09102019.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Q1/09102019/Warmup.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Labs/Generics Lab/Generics Lab.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Labs/Generics Lab/Pair.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Labs/Generics Lab/Runner.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Labs/Generics Lab/Schedule.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Labs/Generics Lab/Screen.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Labs/Generics Lab/Student.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Labs/Generics Lab/imgs/dwallace.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Labs/Generics Lab/imgs/jdoe.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Labs/Generics Lab/imgs/jsmith.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Q1/09122019/09122019.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Q1/09122019/MyItem.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Q1/09122019/WarmUp.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
@@ -37,7 +47,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/Q1/09102019" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/Labs/Generics Lab/imgs" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -56,6 +66,10 @@
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="" />
     </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\neilb\Documents\GitHub\AdvCS\Labs\Generics Lab\imgs" />
+      <recent name="C:\Users\neilb\Documents\GitHub\AdvCS\Labs\Generics Lab" />
+    </key>
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -69,7 +83,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.Warmup">
+  <component name="RunManager" selected="Application.Runner (1)">
     <configuration name="ClassWorkIIMain" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="ClassWorkIIMain" />
       <module name="09052019" />
@@ -77,16 +91,17 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Runner (1)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Runner" />
-      <module name="Bank Lab" />
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Main" />
+      <module name="Generics Lab" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Runner (2)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+    <configuration name="Runner (1)" type="Application" factoryName="Application" temporary="true">
       <option name="MAIN_CLASS_NAME" value="Runner" />
-      <module name="09052019" />
+      <module name="Generics Lab" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_WORKING_DIR$" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -95,6 +110,21 @@
       <option name="MAIN_CLASS_NAME" value="Runner" />
       <module name="Inheritance Lab" />
       <option name="WORKING_DIRECTORY" value="$MODULE_WORKING_DIR$" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Runner" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Runner" />
+      <module name="Generics Lab" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_WORKING_DIR$" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="WarmUp" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="WarmUp" />
+      <module name="09122019" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -108,18 +138,18 @@
     </configuration>
     <list>
       <item itemvalue="Application.ClassWorkIIMain" />
-      <item itemvalue="Application.Runner" />
-      <item itemvalue="Application.Runner (1)" />
-      <item itemvalue="Application.Runner (2)" />
       <item itemvalue="Application.Warmup" />
+      <item itemvalue="Application.WarmUp" />
+      <item itemvalue="Application.Runner (1)" />
+      <item itemvalue="Application.Main" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.Warmup" />
-        <item itemvalue="Application.Runner" />
-        <item itemvalue="Application.ClassWorkIIMain" />
-        <item itemvalue="Application.Runner (2)" />
         <item itemvalue="Application.Runner (1)" />
+        <item itemvalue="Application.Main" />
+        <item itemvalue="Application.Runner" />
+        <item itemvalue="Application.WarmUp" />
+        <item itemvalue="Application.Warmup" />
       </list>
     </recent_temporary>
   </component>
@@ -140,7 +170,8 @@
       <workItem from="1566918453097" duration="5964000" />
       <workItem from="1567523382840" duration="159000" />
       <workItem from="1567696237138" duration="7639000" />
-      <workItem from="1567727755809" duration="12222000" />
+      <workItem from="1567727755809" duration="17706000" />
+      <workItem from="1568342658079" duration="4281000" />
     </task>
     <task id="LOCAL-00001" summary="Classwork from August 22, 2019">
       <created>1566521518017</created>
@@ -233,7 +264,14 @@
       <option name="project" value="LOCAL" />
       <updated>1567966137486</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="Classwork from September 10, 2019">
+      <created>1568130921945</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1568130921945</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -265,7 +303,8 @@
     <MESSAGE value="Classwork from Thursday, 9/5/2019" />
     <MESSAGE value="Initial progress on Inheritance lab." />
     <MESSAGE value="Final progress on Inheritance lab." />
-    <option name="LAST_COMMIT_MESSAGE" value="Final progress on Inheritance lab." />
+    <MESSAGE value="Classwork from September 10, 2019" />
+    <option name="LAST_COMMIT_MESSAGE" value="Classwork from September 10, 2019" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="masterDetails">
