@@ -12,13 +12,11 @@ public class Screen extends JPanel implements ActionListener {
     private JButton selectStudent;
     private int selectedStudent = -1;
     private JButton changePeriod;
-    //    private JButton onlyEngineers;
-//    private JButton onlyBankers;
     private JButton resetAll;
+    private JButton deletePeriod;
     private JTextField periodInput;
     private JTextField classNameInput;
-    //    private JButton searchByName;
-//    private JButton deleteSelectedEmployee;
+
     private int btnsX = 25 + 200 + 5;
 
 
@@ -82,21 +80,6 @@ public class Screen extends JPanel implements ActionListener {
         resetAll.addActionListener(this);
         add(resetAll);
 
-        changePeriod = new JButton("Change Period");
-        changePeriod.setBounds(btnsX, 130, 140, 30);
-        changePeriod.addActionListener(this);
-//        add(changePeriod);
-
-//        onlyBankers = new JButton("Only Bankers");
-//        onlyBankers.setBounds(btnsX, 130, 150, 30);
-//        onlyBankers.addActionListener(this);
-//        add(onlyBankers);
-//
-//        onlyEngineers = new JButton("Only Engineers");
-//        onlyEngineers.setBounds(btnsX, 170, 150, 30);
-//        onlyEngineers.addActionListener(this);
-//        add(onlyEngineers);
-//
         periodInput = new JTextField();
         periodInput.setBounds(btnsX, 180, 140, 30);
 //        add(periodInput);
@@ -104,17 +87,16 @@ public class Screen extends JPanel implements ActionListener {
         classNameInput = new JTextField();
         classNameInput.setBounds(btnsX, 230, 140, 30);
 //        add(classNameInput);
-//
-//        searchByName = new JButton("Search by Name");
-//        searchByName.setBounds(btnsX + 105, 210, 135, 30);
-//        searchByName.addActionListener(this);
-//        add(searchByName);
-//
-//        deleteSelectedEmployee = new JButton("Delete Selected Employee");
-//        deleteSelectedEmployee.setBounds(btnsX, 250, 200, 30);
-//        deleteSelectedEmployee.addActionListener(this);
-//        add(deleteSelectedEmployee);
-//
+
+        changePeriod = new JButton("Change Period");
+        changePeriod.setBounds(btnsX, 270, 140, 30);
+        changePeriod.addActionListener(this);
+//        add(changePeriod);
+
+        deletePeriod = new JButton("Delete Period");
+        deletePeriod.setBounds(btnsX, 310, 140, 30);
+        deletePeriod.addActionListener(this);
+//        add(deletePeriod);
     }
 
     //Sets the size of the panel
@@ -147,71 +129,56 @@ public class Screen extends JPanel implements ActionListener {
 
     public void actionPerformed(ActionEvent e) {
         if (e.getSource() == selectStudent) {
-            int selectedIndex = studentsListDisplay.getSelectedIndex();
-            if (selectedIndex != -1) {
-                scheduleListDisplay.setListData(studentsList.get(selectedIndex).getItem1().formatSchedule());
-                selectedStudent = selectedIndex;
+            selectedStudent = studentsListDisplay.getSelectedIndex();
+            if (selectedStudent == -1)
+                System.out.println("Selected index was -1...");
+            else {
+                scheduleListDisplay.setListData(studentsList.get(selectedStudent).getItem1().formatSchedule());
                 add(periodInput);
                 add(classNameInput);
+                add(changePeriod);
+                add(deletePeriod);
 
                 studentsListPane.setBounds(25, 25, 200, getPreferredSize().height - 50);
                 scheduleListPane.setBounds(25 + 200 + 150, 25, getPreferredSize().width - 25 - 200 - 150 - 25, getPreferredSize().height - 50);
-            } else System.out.println("Selected index was -1...");
+            }
         } else if (e.getSource() == resetAll) {
-            scheduleListDisplay = new JList(new Schedule[1]);
+            scheduleListDisplay.setListData(new String[1]);
             studentsListPane.setBounds(25, 25, 200, getPreferredSize().height - 50 - 130);
             scheduleListPane.setBounds(25 + 200 + 150, 25, getPreferredSize().width - 25 - 200 - 150 - 25, getPreferredSize().height - 50 - 130);
             selectedStudent = -1;
             remove(periodInput);
             remove(classNameInput);
+            remove(changePeriod);
+            remove(deletePeriod);
+        } else if (e.getSource() == changePeriod) {
+            int period;
+            String courseName = classNameInput.getText();
+
+            try {
+                period = Integer.parseInt(periodInput.getText());
+            } catch (NumberFormatException err) {
+                // oopsie
+                JOptionPane.showMessageDialog(null, "Period must be an integer number!");
+                return;
+            }
+
+            studentsList.get(selectedStudent).getItem1().addPeriod(period, courseName);
+            scheduleListDisplay.setListData(studentsList.get(selectedStudent).getItem1().formatSchedule());
+        } else if (e.getSource() == deletePeriod) {
+            int period;
+
+            try {
+                period = Integer.parseInt(periodInput.getText());
+            } catch (NumberFormatException err) {
+                // oopsie
+                JOptionPane.showMessageDialog(null, "Period must be an integer number!");
+                return;
+            }
+
+            studentsList.get(selectedStudent).getItem1().removePeriod(period);
+            scheduleListDisplay.setListData(studentsList.get(selectedStudent).getItem1().formatSchedule());
         }
-//        } else if (e.getSource() == onlyBankers) {
-//            selectedEmployees.clear();
-//            for (int i = 0; i < studentsList.size(); i++) {
-//                if (studentsList.get(i).getJobTitle().toLowerCase().contains("banker"))
-//                    selectedEmployees.add(studentsList.get(i));
-//            }
-//        } else if (e.getSource() == onlyCops) {
-//            selectedEmployees.clear();
-//            for (int i = 0; i < studentsList.size(); i++) {
-//                if (studentsList.get(i).getJobTitle().toLowerCase().contains("police"))
-//                    selectedEmployees.add(studentsList.get(i));
-//            }
-//        } else if (e.getSource() == onlyEngineers) {
-//            selectedEmployees.clear();
-//            for (int i = 0; i < studentsList.size(); i++) {
-//                if (studentsList.get(i).getJobTitle().toLowerCase().contains("engineer"))
-//                    selectedEmployees.add(studentsList.get(i));
-//            }
-//        } else if (e.getSource() == onlyTeachers) {
-//            selectedEmployees.clear();
-//            for (int i = 0; i < studentsList.size(); i++) {
-//                if (studentsList.get(i).getJobTitle().toLowerCase().contains("teacher"))
-//                    selectedEmployees.add(studentsList.get(i));
-//            }
-//        } else if (e.getSource() == searchByName) {
-//            String name = nameInput.getText().toLowerCase();
-//            selectedEmployees.clear();
-//            for (int i = 0; i < studentsList.size(); i++) {
-//                if (studentsList.get(i).getName().toLowerCase().contains(name))
-//                    selectedEmployees.add(studentsList.get(i));
-//            }
-//
-//            nameInput.setText("");
-//        } else if (e.getSource() == deleteSelectedEmployee) {
-//            int selectedIndex = studentsListDisplay.getSelectedIndex();
-//            if (selectedIndex != -1) {
-//                String selectedName = selectedEmployees.get(selectedIndex).getName();
-//                selectedEmployees.remove(selectedIndex);
-//
-//                for (int i = 0; i < studentsList.size(); i++) {
-//                    if (studentsList.get(i).getName().equals(selectedName)) {
-//                        studentsList.remove(i);
-//                        break;
-//                    }
-//                }
-//            }
-//        }
 
         repaint();
     }

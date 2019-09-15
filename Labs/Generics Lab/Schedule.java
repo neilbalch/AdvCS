@@ -16,6 +16,10 @@ public class Schedule {
         schedule.set(period, new Pair<Integer, String>(period, courseName, "Period: ", " Course: "));
     }
 
+    public void removePeriod(int period) {
+        schedule.set(period, null);
+    }
+
     public String[] formatSchedule() {
         ArrayList<String> list = new ArrayList<>();
 
