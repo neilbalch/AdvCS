@@ -125,7 +125,7 @@ public class Screen extends JPanel implements ActionListener {
         resumeDisplay = new JTextArea();
         resumeDisplay.setEditable(false);
         resumeScrollPane = new JScrollPane(resumeDisplay);
-        resumeScrollPane.setBounds(itemsXPos, 100, (int) (2.5 * itemsWidth), 315);
+        resumeScrollPane.setBounds(itemsXPos, 100, (int) (2.5 * itemsWidth), 400);
     }
 
     // Sets the size of the panel
