@@ -1,10 +1,7 @@
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collection;
-import java.util.Comparator;
+import java.util.*;
 
 class ResumeSection {
     public String sectionName;
@@ -23,64 +20,64 @@ class ResumeSection {
 }
 
 public class Screen extends JPanel implements ActionListener {
-    private JScrollPane resumeScrollPane;
-    private JList resumeLst;
     private ArrayList<ResumeSection> resumeList;
+    private int itemsXPos = 100;
+    private int itemsWidth = 250;
+    private int items2ndColXPos = itemsXPos + itemsWidth + 50;
     private int currentScreen = 1;
 
+    // First screen
     private JButton submitFirstPage;
-//    private int selectedStudent = -1;
-//    private JButton changePeriod;
-//    private JButton resetAll;
-//    private JButton deletePeriod;
-private JTextField nameInput;
+    private JTextField nameInput;
     private JTextField addressInput;
     private JTextField emailInput;
     private JTextField objectiveInput;
     private JTextArea skillsInput;
+    private JScrollPane skillsScrollPane;
     private JTextArea educationInput;
+    private JScrollPane educationScrollPane;
 
+    // Second screen
     private JTextArea workInput;
+    private JScrollPane workScrollPane;
     private JButton submitSecondPage;
 
-    private int itemsXPos = 100;
-    private int items2ndColXPos = 400;
-    private int itemsWidth = 250;
+    // Third screen
+    private JTextArea resumeDisplay;
+    private JScrollPane resumeScrollPane;
 
     private String[] formatResumeAsArray() {
         ArrayList<String> flattened = new ArrayList<>();
-        for (ResumeSection section : resumeList) {
-            flattened.add(section.sectionName);
+//        for (ResumeSection section : resumeList) {
+//            flattened.add(section.sectionName);
+//
+//            for (String line : section.items)
+//                flattened.add("    - " + line);
+//
+//            flattened.add("");
+//        }
 
-            for (String line : section.items) {
-                flattened.add("    - " + line);
+        Iterator<ResumeSection> iterOuter = resumeList.listIterator();
+        while (iterOuter.hasNext()) {
+            ResumeSection current = iterOuter.next();
+            flattened.add(current.sectionName);
+
+            Iterator<String> iterInner = current.items.listIterator();
+            while (iterInner.hasNext()) {
+                flattened.add("    - " + iterInner.next());
             }
 
             flattened.add("");
         }
 
-        return (String[]) flattened.toArray();
+        return flattened.toArray(new String[1]);
     }
 
     public Screen() {
         this.setLayout(null);
         this.setFocusable(true);
-
         resumeList = new ArrayList<>();
 
-//        resumeLst = new JList(new String[1]);
-//        resumeLst.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
-//        resumeLst.setLayoutOrientation(JList.VERTICAL);
-//
-//        resumeScrollPane = new JScrollPane(resumeLst);
-//        resumeScrollPane.setBounds(25, 25, 200, getPreferredSize().height - 50 - 130);
-//        add(resumeScrollPane);
-
-//        resetAll = new JButton("Reset Selection");
-//        resetAll.setBounds(btnsX, 90, 140, 30);
-//        resetAll.addActionListener(this);
-//        add(resetAll);
-//
         nameInput = new JTextField();
         nameInput.setBounds(itemsXPos, 100, itemsWidth, 30);
         add(nameInput);
@@ -98,12 +95,16 @@ private JTextField nameInput;
         add(objectiveInput);
 
         skillsInput = new JTextArea();
-        skillsInput.setBounds(itemsXPos, 330, itemsWidth, 100);
         add(skillsInput);
+        skillsScrollPane = new JScrollPane(skillsInput);
+        skillsScrollPane.setBounds(itemsXPos, 330, itemsWidth, 100);
+        add(skillsScrollPane);
 
         educationInput = new JTextArea();
-        educationInput.setBounds(items2ndColXPos, 115, itemsWidth, 315);
         add(educationInput);
+        educationScrollPane = new JScrollPane(educationInput);
+        educationScrollPane.setBounds(items2ndColXPos, 115, itemsWidth, 315);
+        add(educationScrollPane);
 
         submitFirstPage = new JButton("Continue to Prior Work Experience");
         submitFirstPage.setBounds(itemsXPos, 435, itemsWidth, 30);
@@ -111,26 +112,23 @@ private JTextField nameInput;
         add(submitFirstPage);
 
         workInput = new JTextArea();
-        workInput.setBounds(itemsXPos, 100, (int) (2.5 * itemsWidth), 315);
-//        add(workInput);
+        add(workInput);
+        workScrollPane = new JScrollPane(workInput);
+        workScrollPane.setBounds(itemsXPos, 100, (int) (2.5 * itemsWidth), 315);
+        add(workScrollPane);
+        workScrollPane.setVisible(false);
 
         submitSecondPage = new JButton("Continue to Resume View");
         submitSecondPage.setBounds(itemsXPos, 435, itemsWidth, 30);
         submitSecondPage.addActionListener(this);
-//        add(submitSecondPage);
 
-//        changePeriod = new JButton("Change Period");
-//        changePeriod.setBounds(btnsX, 270, 140, 30);
-//        changePeriod.addActionListener(this);
-////        add(changePeriod);
-//
-//        deletePeriod = new JButton("Delete Period");
-//        deletePeriod.setBounds(btnsX, 310, 140, 30);
-//        deletePeriod.addActionListener(this);
-////        add(deletePeriod);
+        resumeDisplay = new JTextArea();
+        resumeDisplay.setEditable(false);
+        resumeScrollPane = new JScrollPane(resumeDisplay);
+        resumeScrollPane.setBounds(itemsXPos, 100, (int) (2.5 * itemsWidth), 315);
     }
 
-    //Sets the size of the panel
+    // Sets the size of the panel
     public Dimension getPreferredSize() {
         return new Dimension(800, 600);
     }
@@ -150,31 +148,48 @@ private JTextField nameInput;
                 g.drawString("BRIEF DESCRIPTION: LONGER DESCRIPTION)", itemsXPos, 330 + textVerticalOffset);
 
                 g.drawString("Applicable Education: (Format: one per line!,", items2ndColXPos, 100 + textVerticalOffset);
-                // TODO(Neil): Add graduation info...
                 g.drawString("DIPLOMA from INSTITUTION: (YYYY-MM) LONGER DESCRIPTION)", items2ndColXPos, 115 + textVerticalOffset);
                 break;
             case 2: // query work experience
-                // TODO(Neil): Add date support...
                 g.drawString("Applicable Work Experience: (Format: one per line!, POSITION at COMPANY: (YYYY-MM to YYYY-MM) DESCRIPTION)", itemsXPos, 100 + textVerticalOffset);
                 break;
-            case 3: //
+            case 3: // resume display
+                g.drawString("Your Resume:", itemsXPos, 100 + textVerticalOffset);
+                String toDisplay = "";
+                String[] raw = formatResumeAsArray();
+                for (String line : raw) toDisplay += line + "\n";
+                resumeDisplay.setText(toDisplay);
                 break;
         }
     }
 
     public void actionPerformed(ActionEvent e) {
+        ListIterator<ResumeSection> iter = resumeList.listIterator();
         if (e.getSource() == submitFirstPage) {
-            resumeList.add(new ResumeSection(nameInput.getText(), null));
-            resumeList.add(new ResumeSection("Personal Info:", new String[]{
+            while (iter.hasNext()) iter.next();
+            iter.add(new ResumeSection(nameInput.getText(), null));
+//            resumeList.add(new ResumeSection(nameInput.getText(), null));
+            while (iter.hasNext()) iter.next();
+            iter.add(new ResumeSection("Personal Info:", new String[]{
                     "Street Address: " + addressInput.getText(),
                     "Email: " + emailInput.getText()
             }));
-            resumeList.add(new ResumeSection("Application Objective:", new String[]{
+//            resumeList.add(new ResumeSection("Personal Info:", new String[]{
+//                    "Street Address: " + addressInput.getText(),
+//                    "Email: " + emailInput.getText()
+//            }));
+            while (iter.hasNext()) iter.next();
+            iter.add(new ResumeSection("Application Objective:", new String[]{
                     objectiveInput.getText()
             }));
+//            resumeList.add(new ResumeSection("Application Objective:", new String[]{
+//                    objectiveInput.getText()
+//            }));
 
             String[] skills = skillsInput.getText().split("\n");
-            resumeList.add(new ResumeSection("Applicable Skills:", skills));
+            while (iter.hasNext()) iter.next();
+            iter.add(new ResumeSection("Applicable Skills:", skills));
+//            resumeList.add(new ResumeSection("Applicable Skills:", skills));
 
             // DIPLOMA from INSTITUTION: (YYYY-MM) LONGER DESCRIPTION
             String[] education = educationInput.getText().split("\n");
@@ -197,17 +212,24 @@ private JTextField nameInput;
                     }
                 }
             });
-            resumeList.add(new ResumeSection("Applicable Education:", education));
+
+            while (iter.hasNext()) iter.next();
+            iter.add(new ResumeSection("Applicable Education:", education));
+//            resumeList.add(new ResumeSection("Applicable Education:", education));
 
             remove(nameInput);
             remove(addressInput);
             remove(emailInput);
             remove(objectiveInput);
             remove(skillsInput);
+            remove(skillsScrollPane);
             remove(educationInput);
+            remove(educationScrollPane);
             remove(submitFirstPage);
             currentScreen++;
-            add(workInput);
+//            add(workInput);
+//            add(workScrollPane);
+            workScrollPane.setVisible(true);
             add(submitSecondPage);
         } else if (e.getSource() == submitSecondPage) {
             // POSITION at COMPANY: (YYYY-MM to YYYY-MM) DESCRIPTION
@@ -231,11 +253,16 @@ private JTextField nameInput;
                     }
                 }
             });
-            resumeList.add(new ResumeSection("Applicable Work Experience:", work));
+            while (iter.hasNext()) iter.next();
+            iter.add(new ResumeSection("Applicable Work Experience:", work));
+//            resumeList.add(new ResumeSection("Applicable Work Experience:", work));
 
-            remove(workInput);
+//            remove(workInput);
+//            remove(workScrollPane);
+            workScrollPane.setVisible(false);
             remove(submitSecondPage);
             currentScreen++;
+            add(resumeScrollPane);
         }
         repaint();
     }
