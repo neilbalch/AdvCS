@@ -2,6 +2,9 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collection;
+import java.util.Comparator;
 
 class ResumeSection {
     public String sectionName;
@@ -36,6 +39,9 @@ private JTextField nameInput;
     private JTextField objectiveInput;
     private JTextArea skillsInput;
     private JTextArea educationInput;
+
+    private JTextArea workInput;
+    private JButton submitSecondPage;
 
     private int itemsXPos = 100;
     private int items2ndColXPos = 400;
@@ -91,19 +97,28 @@ private JTextField nameInput;
         objectiveInput.setBounds(itemsXPos, 265, itemsWidth, 30);
         add(objectiveInput);
 
-        educationInput = new JTextArea();
-        educationInput.setBounds(itemsXPos, 330, itemsWidth, 100);
-        add(educationInput);
-
         skillsInput = new JTextArea();
-        skillsInput.setBounds(items2ndColXPos, 100, itemsWidth, 315);
+        skillsInput.setBounds(itemsXPos, 330, itemsWidth, 100);
         add(skillsInput);
+
+        educationInput = new JTextArea();
+        educationInput.setBounds(items2ndColXPos, 115, itemsWidth, 315);
+        add(educationInput);
 
         submitFirstPage = new JButton("Continue to Prior Work Experience");
         submitFirstPage.setBounds(itemsXPos, 435, itemsWidth, 30);
         submitFirstPage.addActionListener(this);
         add(submitFirstPage);
-//
+
+        workInput = new JTextArea();
+        workInput.setBounds(itemsXPos, 100, (int) (2.5 * itemsWidth), 315);
+//        add(workInput);
+
+        submitSecondPage = new JButton("Continue to Resume View");
+        submitSecondPage.setBounds(itemsXPos, 435, itemsWidth, 30);
+        submitSecondPage.addActionListener(this);
+//        add(submitSecondPage);
+
 //        changePeriod = new JButton("Change Period");
 //        changePeriod.setBounds(btnsX, 270, 140, 30);
 //        changePeriod.addActionListener(this);
@@ -131,36 +146,20 @@ private JTextField nameInput;
                 g.drawString("CITY NAME, STATE NAME", itemsXPos, 165 + textVerticalOffset);
                 g.drawString("Email: (Format: xxx@yyy.zzz)", itemsXPos, 215 + textVerticalOffset);
                 g.drawString("Application Objective:", itemsXPos, 265 + textVerticalOffset);
-                g.drawString("Applicable Skills: (Format: one per line!)", itemsXPos, 315 + textVerticalOffset);
-                g.drawString("BRIEF DESCRIPTION: LONGER DESCRIPTION)", items2ndColXPos, 330 + textVerticalOffset);
+                g.drawString("Applicable Skills: (Format: one per line!", itemsXPos, 315 + textVerticalOffset);
+                g.drawString("BRIEF DESCRIPTION: LONGER DESCRIPTION)", itemsXPos, 330 + textVerticalOffset);
 
-                g.drawString("Applicable Education: (Format: one per line!,", items2ndColXPos, 85 + textVerticalOffset);
+                g.drawString("Applicable Education: (Format: one per line!,", items2ndColXPos, 100 + textVerticalOffset);
                 // TODO(Neil): Add graduation info...
-                g.drawString("BRIEF DESCRIPTION: LONGER DESCRIPTION)", items2ndColXPos, 100 + textVerticalOffset);
+                g.drawString("DIPLOMA from INSTITUTION: (YYYY-MM) LONGER DESCRIPTION)", items2ndColXPos, 115 + textVerticalOffset);
                 break;
-            case 2: //
+            case 2: // query work experience
+                // TODO(Neil): Add date support...
+                g.drawString("Applicable Work Experience: (Format: one per line!, POSITION at COMPANY: (YYYY-MM to YYYY-MM) DESCRIPTION)", itemsXPos, 100 + textVerticalOffset);
                 break;
             case 3: //
                 break;
         }
-
-//        g.drawString("Students List:", 25, 20);
-//        g.drawString("Schedule Breakdown: ", 25 + 200 + 150, 20);
-
-//        if (selectedStudent != -1) {
-//            int yPos = getPreferredSize().height - 25 - 140;
-//            g.drawString("Profile Picture:", 25 + 200 + 5, yPos);
-//            studentsList.get(selectedStudent).getItem2().drawProfilePicture(g, new Point(25 + 200 + 5, yPos), this);
-//
-//            g.drawString("Period Number:", btnsX, 175);
-//            g.drawString("Course Name:", btnsX, 225);
-//        } else {
-//            int xPos = 10;
-//            for (int i = 0; i < studentsList.size(); i++) {
-//                studentsList.get(i).getItem2().drawProfilePicture(g, new Point(xPos, getPreferredSize().height - 50 - 100), this);
-//                xPos += 150;
-//            }
-//        }
     }
 
     public void actionPerformed(ActionEvent e) {
@@ -177,7 +176,27 @@ private JTextField nameInput;
             String[] skills = skillsInput.getText().split("\n");
             resumeList.add(new ResumeSection("Applicable Skills:", skills));
 
+            // DIPLOMA from INSTITUTION: (YYYY-MM) LONGER DESCRIPTION
             String[] education = educationInput.getText().split("\n");
+            Arrays.sort(education, new Comparator<String>() {
+                @Override
+                public int compare(String o1, String o2) {
+                    String dateStr1 = o1.substring(o1.indexOf("(") + 1, o1.indexOf("-")) + o1.substring(o1.indexOf("-") + 1, o1.indexOf(")"));
+                    String dateStr2 = o2.substring(o2.indexOf("(") + 1, o2.indexOf("-")) + o2.substring(o2.indexOf("-") + 1, o2.indexOf(")"));
+
+                    try {
+                        int date1 = Integer.parseInt(dateStr1);
+                        int date2 = Integer.parseInt(dateStr2);
+
+                        if (date1 > date2) return -1;
+                        else if (date1 < date2) return 1;
+                        else return 0;
+                    } catch (NumberFormatException err) {
+                        System.out.println("NUMBER FORMAT EXCEPTION: o1: " + o1 + ", o2: " + o2);
+                        return 0;
+                    }
+                }
+            });
             resumeList.add(new ResumeSection("Applicable Education:", education));
 
             remove(nameInput);
@@ -186,6 +205,36 @@ private JTextField nameInput;
             remove(objectiveInput);
             remove(skillsInput);
             remove(educationInput);
+            remove(submitFirstPage);
+            currentScreen++;
+            add(workInput);
+            add(submitSecondPage);
+        } else if (e.getSource() == submitSecondPage) {
+            // POSITION at COMPANY: (YYYY-MM to YYYY-MM) DESCRIPTION
+            String[] work = workInput.getText().split("\n");
+            Arrays.sort(work, new Comparator<String>() {
+                @Override
+                public int compare(String o1, String o2) {
+                    String endDateStr1 = o1.substring(o1.indexOf("to ") + 3, o1.indexOf("-", o1.indexOf("to "))) + o1.substring(o1.indexOf("-", o1.indexOf("to ")) + 1, o1.indexOf(")"));
+                    String endDateStr2 = o2.substring(o2.indexOf("to ") + 3, o2.indexOf("-", o2.indexOf("to "))) + o2.substring(o2.indexOf("-", o2.indexOf("to ")) + 1, o2.indexOf(")"));
+
+                    try {
+                        int endDate1 = Integer.parseInt(endDateStr1);
+                        int endDate2 = Integer.parseInt(endDateStr2);
+
+                        if (endDate1 > endDate2) return -1;
+                        else if (endDate1 < endDate2) return 1;
+                        else return 0;
+                    } catch (NumberFormatException err) {
+                        System.out.println("NUMBER FORMAT EXCEPTION: o1: " + o1 + ", o2: " + o2);
+                        return 0;
+                    }
+                }
+            });
+            resumeList.add(new ResumeSection("Applicable Work Experience:", work));
+
+            remove(workInput);
+            remove(submitSecondPage);
             currentScreen++;
         }
         repaint();
