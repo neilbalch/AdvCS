@@ -1,3 +1,4 @@
+import javax.print.DocFlavor;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
@@ -193,28 +194,53 @@ public class Screen extends JPanel implements ActionListener {
 
             // DIPLOMA from INSTITUTION: (YYYY-MM) LONGER DESCRIPTION
             String[] education = educationInput.getText().split("\n");
-            Arrays.sort(education, new Comparator<String>() {
-                @Override
-                public int compare(String o1, String o2) {
+            ArrayList<String> educationSorted = new ArrayList<>(education.length);
+            for (String o1 : education) {
+                ListIterator<String> sortIter = educationSorted.listIterator();
+                boolean inserted = false;
+                while (sortIter.hasNext()) {
+                    String o2 = sortIter.next();
                     String dateStr1 = o1.substring(o1.indexOf("(") + 1, o1.indexOf("-")) + o1.substring(o1.indexOf("-") + 1, o1.indexOf(")"));
                     String dateStr2 = o2.substring(o2.indexOf("(") + 1, o2.indexOf("-")) + o2.substring(o2.indexOf("-") + 1, o2.indexOf(")"));
-
                     try {
                         int date1 = Integer.parseInt(dateStr1);
                         int date2 = Integer.parseInt(dateStr2);
 
-                        if (date1 > date2) return -1;
-                        else if (date1 < date2) return 1;
-                        else return 0;
+                        if (date1 > date2) {
+                            sortIter.previous();
+                            sortIter.add(o1);
+                            inserted = true;
+                            break;
+                        }
                     } catch (NumberFormatException err) {
                         System.out.println("NUMBER FORMAT EXCEPTION: o1: " + o1 + ", o2: " + o2);
-                        return 0;
                     }
                 }
-            });
+
+                if (!inserted) sortIter.add(o1);
+            }
+//            Arrays.sort(education, new Comparator<String>() {
+//                @Override
+//                public int compare(String o1, String o2) {
+//                    String dateStr1 = o1.substring(o1.indexOf("(") + 1, o1.indexOf("-")) + o1.substring(o1.indexOf("-") + 1, o1.indexOf(")"));
+//                    String dateStr2 = o2.substring(o2.indexOf("(") + 1, o2.indexOf("-")) + o2.substring(o2.indexOf("-") + 1, o2.indexOf(")"));
+//
+//                    try {
+//                        int date1 = Integer.parseInt(dateStr1);
+//                        int date2 = Integer.parseInt(dateStr2);
+//
+//                        if (date1 > date2) return -1;
+//                        else if (date1 < date2) return 1;
+//                        else return 0;
+//                    } catch (NumberFormatException err) {
+//                        System.out.println("NUMBER FORMAT EXCEPTION: o1: " + o1 + ", o2: " + o2);
+//                        return 0;
+//                    }
+//                }
+//            });
 
             while (iter.hasNext()) iter.next();
-            iter.add(new ResumeSection("Applicable Education:", education));
+            iter.add(new ResumeSection("Applicable Education:", educationSorted.toArray(new String[1])));
 //            resumeList.add(new ResumeSection("Applicable Education:", education));
 
             remove(nameInput);
@@ -234,27 +260,53 @@ public class Screen extends JPanel implements ActionListener {
         } else if (e.getSource() == submitSecondPage) {
             // POSITION at COMPANY: (YYYY-MM to YYYY-MM) DESCRIPTION
             String[] work = workInput.getText().split("\n");
-            Arrays.sort(work, new Comparator<String>() {
-                @Override
-                public int compare(String o1, String o2) {
+            ArrayList<String> workSorted = new ArrayList<>(work.length);
+            for (String o1 : work) {
+                ListIterator<String> sortIter = workSorted.listIterator();
+                boolean inserted = false;
+                while (sortIter.hasNext()) {
+                    String o2 = sortIter.next();
                     String endDateStr1 = o1.substring(o1.indexOf("to ") + 3, o1.indexOf("-", o1.indexOf("to "))) + o1.substring(o1.indexOf("-", o1.indexOf("to ")) + 1, o1.indexOf(")"));
                     String endDateStr2 = o2.substring(o2.indexOf("to ") + 3, o2.indexOf("-", o2.indexOf("to "))) + o2.substring(o2.indexOf("-", o2.indexOf("to ")) + 1, o2.indexOf(")"));
-
                     try {
-                        int endDate1 = Integer.parseInt(endDateStr1);
-                        int endDate2 = Integer.parseInt(endDateStr2);
+                        int date1 = Integer.parseInt(endDateStr1);
+                        int date2 = Integer.parseInt(endDateStr2);
 
-                        if (endDate1 > endDate2) return -1;
-                        else if (endDate1 < endDate2) return 1;
-                        else return 0;
+                        if (date1 > date2) {
+                            sortIter.previous();
+                            sortIter.add(o1);
+                            inserted = true;
+                            break;
+                        }
                     } catch (NumberFormatException err) {
                         System.out.println("NUMBER FORMAT EXCEPTION: o1: " + o1 + ", o2: " + o2);
-                        return 0;
                     }
                 }
-            });
+
+                if (!inserted) sortIter.add(o1);
+            }
+//            Arrays.sort(work, new Comparator<String>() {
+//                @Override
+//                public int compare(String o1, String o2) {
+//                    String endDateStr1 = o1.substring(o1.indexOf("to ") + 3, o1.indexOf("-", o1.indexOf("to "))) + o1.substring(o1.indexOf("-", o1.indexOf("to ")) + 1, o1.indexOf(")"));
+//                    String endDateStr2 = o2.substring(o2.indexOf("to ") + 3, o2.indexOf("-", o2.indexOf("to "))) + o2.substring(o2.indexOf("-", o2.indexOf("to ")) + 1, o2.indexOf(")"));
+//
+//                    try {
+//                        int endDate1 = Integer.parseInt(endDateStr1);
+//                        int endDate2 = Integer.parseInt(endDateStr2);
+//
+//                        if (endDate1 > endDate2) return -1;
+//                        else if (endDate1 < endDate2) return 1;
+//                        else return 0;
+//                    } catch (NumberFormatException err) {
+//                        System.out.println("NUMBER FORMAT EXCEPTION: o1: " + o1 + ", o2: " + o2);
+//                        return 0;
+//                    }
+//                }
+//            });
+
             while (iter.hasNext()) iter.next();
-            iter.add(new ResumeSection("Applicable Work Experience:", work));
+            iter.add(new ResumeSection("Applicable Work Experience:", workSorted.toArray(new String[1])));
 //            resumeList.add(new ResumeSection("Applicable Work Experience:", work));
 
 //            remove(workInput);
