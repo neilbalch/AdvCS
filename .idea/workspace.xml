@@ -2,12 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="36939a02-4d05-4550-9e2f-c504bf2e9922" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Labs/Big-O Lab/Big-O Lab.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Labs/Big-O Lab/Runner.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Labs/Big-O Lab/Screen.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Labs/Big-O Lab/names.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Labs/Big-O Lab/Screen.java" beforeDir="false" afterPath="$PROJECT_DIR$/Labs/Big-O Lab/Screen.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -161,7 +157,7 @@
       <workItem from="1567696237138" duration="7639000" />
       <workItem from="1567727755809" duration="17706000" />
       <workItem from="1568342658079" duration="31727000" />
-      <workItem from="1569102779811" duration="17451000" />
+      <workItem from="1569102779811" duration="19069000" />
     </task>
     <task id="LOCAL-00001" summary="Classwork from August 22, 2019">
       <created>1566521518017</created>
@@ -345,7 +341,14 @@
       <option name="project" value="LOCAL" />
       <updated>1569457588498</updated>
     </task>
-    <option name="localTasksCounter" value="27" />
+    <task id="LOCAL-00027" summary="First work on Big-O lab">
+      <created>1569524718365</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1569524718365</updated>
+    </task>
+    <option name="localTasksCounter" value="28" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -389,7 +392,8 @@
     <MESSAGE value="aaaaaaaaaah" />
     <MESSAGE value="Add README." />
     <MESSAGE value="Final dose of work on Iterators Lab" />
-    <option name="LAST_COMMIT_MESSAGE" value="Final dose of work on Iterators Lab" />
+    <MESSAGE value="First work on Big-O lab" />
+    <option name="LAST_COMMIT_MESSAGE" value="First work on Big-O lab" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">

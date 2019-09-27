@@ -4,16 +4,6 @@ import java.awt.event.*;
 import java.util.*;
 import java.io.*;
 
-class Pair<T, U> {
-    public T t;
-    public U u;
-
-    public Pair(T t, U u) {
-        this.t = t;
-        this.u = u;
-    }
-}
-
 class Student {
     public String first;
     public String last;
@@ -85,7 +75,6 @@ class StudentDatabase {
 public class Screen extends JPanel implements ActionListener {
     private int itemsXPos = 100;
     private int itemsWidth = 250;
-    private int items2ndColXPos = itemsXPos + itemsWidth + 50;
     private StudentDatabase students;
 
     private JList<String> studentsDisplay;
