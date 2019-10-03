@@ -32,7 +32,7 @@ class Item implements Comparable<Item> {
 
     public int hashCode() {
         int hashCode = 0;
-        for (char c : name.toCharArray()) {
+        for (char c : name.toLowerCase().toCharArray()) {
             hashCode += c;
         }
         hashCode += price * 100;
@@ -192,6 +192,12 @@ public class Screen extends JPanel implements ActionListener {
         g.drawString("Item name:", itemsXPos, 50 + textVerticalOffset);
         g.drawString("Item price:", itemsXPos, 100 + textVerticalOffset);
         g.drawString("Item quantity:", itemsXPos, 150 + textVerticalOffset);
+
+        double totalPrice = 0;
+        for (Pair<Item, Integer> pair : shoppingCart) {
+            totalPrice += pair.t.getPrice() * pair.u;
+        }
+        g.drawString("Total: $" + Math.round(totalPrice * 100.0) / 100.0, 50 + 250 + 125 + 150, 50 + textVerticalOffset);
     }
 
     public void actionPerformed(ActionEvent e) {

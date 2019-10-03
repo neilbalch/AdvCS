@@ -2,12 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="36939a02-4d05-4550-9e2f-c504bf2e9922" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Labs/Sets Lab/Runner.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Labs/Sets Lab/Screen.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Labs/Sets Lab/Sets Lab.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Labs/Sets Lab/StoreA.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Labs/Sets Lab/Screen.java" beforeDir="false" afterPath="$PROJECT_DIR$/Labs/Sets Lab/Screen.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -165,7 +161,7 @@
       <workItem from="1569102779811" duration="27116000" />
       <workItem from="1569855820859" duration="1744000" />
       <workItem from="1569942723262" duration="1583000" />
-      <workItem from="1570115181234" duration="7108000" />
+      <workItem from="1570115181234" duration="7695000" />
     </task>
     <task id="LOCAL-00001" summary="Classwork from August 22, 2019">
       <created>1566521518017</created>
@@ -377,7 +373,14 @@
       <option name="project" value="LOCAL" />
       <updated>1569943078100</updated>
     </task>
-    <option name="localTasksCounter" value="31" />
+    <task id="LOCAL-00031" summary="Non-challenge work on Sets Lab">
+      <created>1570129290807</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1570129290807</updated>
+    </task>
+    <option name="localTasksCounter" value="32" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -399,7 +402,6 @@
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="All? from Bank lab." />
     <MESSAGE value="Final Bank Lab stuff" />
     <MESSAGE value="Classwork from Monday, 08262019." />
     <MESSAGE value="Classwork from Tuesday, 08272019." />
@@ -424,7 +426,8 @@
     <MESSAGE value="Little more work on Big-O lab" />
     <MESSAGE value="Final work on Big-O lab." />
     <MESSAGE value="Classwork from October 1, 2019." />
-    <option name="LAST_COMMIT_MESSAGE" value="Classwork from October 1, 2019." />
+    <MESSAGE value="Non-challenge work on Sets Lab" />
+    <option name="LAST_COMMIT_MESSAGE" value="Non-challenge work on Sets Lab" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
