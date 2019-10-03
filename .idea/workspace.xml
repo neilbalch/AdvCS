@@ -2,7 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="36939a02-4d05-4550-9e2f-c504bf2e9922" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Q1/10012019/WarmUp.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Labs/Sets Lab/Runner.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Labs/Sets Lab/Screen.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Labs/Sets Lab/Sets Lab.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Labs/Sets Lab/StoreA.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -38,7 +42,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/Q1/10012019" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/Labs/Sets Lab" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -58,6 +62,7 @@
       <recent name="" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\neilb\Documents\GitHub\AdvCS\Labs\Sets Lab" />
       <recent name="C:\Users\neilb\Documents\GitHub\AdvCS\Labs\Big-O Lab" />
       <recent name="C:\Users\neilb\Documents\GitHub\AdvCS\Labs\Iterators Lab" />
       <recent name="C:\Users\neilb\Documents\GitHub\AdvCS\Labs\Generics Lab\imgs" />
@@ -76,7 +81,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.WarmUp (2)">
+  <component name="RunManager" selected="Application.Runner (1)">
     <configuration name="Runner Big-O Lab" type="Application" factoryName="Application" temporary="true">
       <option name="MAIN_CLASS_NAME" value="Runner" />
       <module name="Big-O Lab" />
@@ -87,7 +92,7 @@
     </configuration>
     <configuration name="Runner (1)" type="Application" factoryName="Application" temporary="true">
       <option name="MAIN_CLASS_NAME" value="Runner" />
-      <module name="Generics Lab" />
+      <module name="Sets Lab" />
       <option name="WORKING_DIRECTORY" value="$MODULE_WORKING_DIR$" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -123,19 +128,18 @@
       </method>
     </configuration>
     <list>
-      <item itemvalue="Application.Runner" />
-      <item itemvalue="Application.Runner (1)" />
       <item itemvalue="Application.WarmUp (1)" />
       <item itemvalue="Application.Runner Big-O Lab" />
       <item itemvalue="Application.WarmUp (2)" />
+      <item itemvalue="Application.Runner (1)" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.Runner (1)" />
         <item itemvalue="Application.WarmUp (2)" />
         <item itemvalue="Application.Runner Big-O Lab" />
         <item itemvalue="Application.Runner" />
         <item itemvalue="Application.WarmUp (1)" />
-        <item itemvalue="Application.Runner (1)" />
       </list>
     </recent_temporary>
   </component>
@@ -160,7 +164,8 @@
       <workItem from="1568342658079" duration="31727000" />
       <workItem from="1569102779811" duration="27116000" />
       <workItem from="1569855820859" duration="1744000" />
-      <workItem from="1569942723262" duration="236000" />
+      <workItem from="1569942723262" duration="1583000" />
+      <workItem from="1570115181234" duration="7108000" />
     </task>
     <task id="LOCAL-00001" summary="Classwork from August 22, 2019">
       <created>1566521518017</created>
@@ -365,7 +370,14 @@
       <option name="project" value="LOCAL" />
       <updated>1569642498182</updated>
     </task>
-    <option name="localTasksCounter" value="30" />
+    <task id="LOCAL-00030" summary="Classwork from October 1, 2019.">
+      <created>1569943078100</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1569943078100</updated>
+    </task>
+    <option name="localTasksCounter" value="31" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -387,7 +399,6 @@
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Classwork from August 22, 2019" />
     <MESSAGE value="All? from Bank lab." />
     <MESSAGE value="Final Bank Lab stuff" />
     <MESSAGE value="Classwork from Monday, 08262019." />
@@ -412,7 +423,8 @@
     <MESSAGE value="First work on Big-O lab" />
     <MESSAGE value="Little more work on Big-O lab" />
     <MESSAGE value="Final work on Big-O lab." />
-    <option name="LAST_COMMIT_MESSAGE" value="Final work on Big-O lab." />
+    <MESSAGE value="Classwork from October 1, 2019." />
+    <option name="LAST_COMMIT_MESSAGE" value="Classwork from October 1, 2019." />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
