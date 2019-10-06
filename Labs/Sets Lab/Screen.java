@@ -69,7 +69,6 @@ class Pair<T, U> {
 public class Screen extends JPanel implements ActionListener {
     private int itemsXPos = 275;
     private int itemsWidth = 150;
-    private int items2ndColXPos = itemsXPos + itemsWidth + 50;
 
     private ArrayList<Pair<Item, Integer>> shoppingCart;
     private TreeSet<Item> itemsTS;
@@ -81,11 +80,12 @@ public class Screen extends JPanel implements ActionListener {
     private JList<String> cartDisplay;
     private JScrollPane cartDisplayPane;
 
-    private JButton addItemBtn;
     private JTextField nameInput;
     private JTextField priceInput;
     private JTextField qtyInput;
-//    private JTextField objectiveInput;
+    private JButton addItemToCartBtn;
+    private JButton addItemBtn;
+    private JButton deleteItemBtn;
 
     private String[] formatTSasArray() {
         Object[] temp = itemsTS.toArray();
@@ -167,14 +167,20 @@ public class Screen extends JPanel implements ActionListener {
         qtyInput.setBounds(itemsXPos, 150, itemsWidth, 30);
         add(qtyInput);
 
-//        objectiveInput = new JTextField();
-//        objectiveInput.setBounds(itemsXPos, 265, itemsWidth, 30);
-//        add(objectiveInput);
+        addItemToCartBtn = new JButton("Add Item To Cart");
+        addItemToCartBtn.setBounds(itemsXPos, 190, itemsWidth, 30);
+        addItemToCartBtn.addActionListener(this);
+        add(addItemToCartBtn);
 
         addItemBtn = new JButton("Add Item");
-        addItemBtn.setBounds(itemsXPos, 190, itemsWidth, 30);
+        addItemBtn.setBounds(itemsXPos, 230, itemsWidth, 30);
         addItemBtn.addActionListener(this);
         add(addItemBtn);
+
+        deleteItemBtn = new JButton("Remove Item");
+        deleteItemBtn.setBounds(itemsXPos, 270, itemsWidth, 30);
+        deleteItemBtn.addActionListener(this);
+        add(deleteItemBtn);
     }
 
     // Sets the size of the panel
@@ -201,9 +207,9 @@ public class Screen extends JPanel implements ActionListener {
     }
 
     public void actionPerformed(ActionEvent e) {
-        if (e.getSource() == addItemBtn) {
+        if (e.getSource() == addItemToCartBtn) {
             try {
-                String name = nameInput.getText();
+                String name = nameInput.getText().toLowerCase();
                 double price = Double.parseDouble(priceInput.getText());
                 int qty = Integer.parseInt(qtyInput.getText());
                 Item item = new Item(name, price);
@@ -223,7 +229,43 @@ public class Screen extends JPanel implements ActionListener {
 //                FURIOUS JAZZ HANDS
                 JOptionPane.showMessageDialog(null, "ERROR! price and quantity must be decimal and integer numbers respectively!");
             }
+        } else if (e.getSource() == deleteItemBtn) {
+            String name = nameInput.getText().toLowerCase();
+            Item itemToDelete = null;
+            for (Item i : itemsHS) {
+                if (i.getName().compareToIgnoreCase(name) == 0) itemToDelete = i;
+            }
+
+            if (itemToDelete == null)
+                JOptionPane.showMessageDialog(null, "ERROR! item as described doesn't exist!");
+            else {
+                itemsHS.remove(itemToDelete);
+                itemsTS.remove(itemToDelete);
+
+                for (int i = 0; i < shoppingCart.size(); i++) {
+                    if (shoppingCart.get(i).t.equals(itemToDelete)) shoppingCart.remove(i);
+                    break;
+                }
+            }
+        } else if (e.getSource() == addItemBtn) {
+            try {
+                String name = nameInput.getText().toLowerCase();
+                double price = Double.parseDouble(priceInput.getText());
+                Item item = new Item(name, price);
+
+                if (name.equals(""))
+                    JOptionPane.showMessageDialog(null, "ERROR! item name field is mandatory");
+                else {
+                    itemsTS.add(item);
+                    itemsHS.add(item);
+                }
+            } catch (NumberFormatException err) {
+//                FURIOUS JAZZ HANDS
+                JOptionPane.showMessageDialog(null, "ERROR! price and must be decimal and integer numbers respectively!");
+            }
         }
+
+        itemsDisplay.setListData(formatTSasArray());
         cartDisplay.setListData(formatCartasArray());
 
         repaint();
