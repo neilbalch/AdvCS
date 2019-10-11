@@ -64,20 +64,6 @@ class Profile implements Comparable<Profile> {
     }
 }
 
-class Pair<T, U> {
-    public T t;
-    public U u;
-
-    public Pair(T t, U u) {
-        this.t = t;
-        this.u = u;
-    }
-
-    public String toString() {
-        return t.toString() + ", Qty: " + u.toString();
-    }
-}
-
 public class Screen extends JPanel implements ActionListener {
     private int itemsXPos = 275;
     private int itemsWidth = 150;
