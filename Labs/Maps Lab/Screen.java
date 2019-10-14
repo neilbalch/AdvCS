@@ -89,8 +89,11 @@ public class Screen extends JPanel implements ActionListener {
     private JTextField birthYearInput;
     private JButton displayStudentDetailsBtn;
 
-    private JButton addItemBtn;
-    private JButton deleteItemBtn;
+    private JButton switchPagesBtn;
+    private JButton rmProfileBtn;
+    private JTextField schoolName;
+    private JButton changeSchool;
+    private JButton addProfile;
 
     private String[] formatTMasArray(String querySchool) {
         ArrayList<String> returnable = new ArrayList<>();
@@ -191,15 +194,33 @@ public class Screen extends JPanel implements ActionListener {
         displayStudentDetailsBtn.addActionListener(this);
         add(displayStudentDetailsBtn);
 
-        addItemBtn = new JButton("Add Item");
-        addItemBtn.setBounds(itemsXPos, 230, itemsWidth, 30);
-        addItemBtn.addActionListener(this);
-        add(addItemBtn);
+        rmProfileBtn = new JButton("Remove Profile");
+        rmProfileBtn.setBounds(itemsXPos, 190, itemsWidth, 30);
+        rmProfileBtn.addActionListener(this);
+        rmProfileBtn.setVisible(false);
+        add(rmProfileBtn);
 
-        deleteItemBtn = new JButton("Remove Item");
-        deleteItemBtn.setBounds(itemsXPos, 270, itemsWidth, 30);
-        deleteItemBtn.addActionListener(this);
-        add(deleteItemBtn);
+        schoolName = new JTextField();
+        schoolName.setBounds(itemsXPos, 240, itemsWidth, 30);
+        schoolName.setVisible(false);
+        add(schoolName);
+
+        changeSchool = new JButton("Change School");
+        changeSchool.setBounds(itemsXPos, 280, itemsWidth, 30);
+        changeSchool.addActionListener(this);
+        changeSchool.setVisible(false);
+        add(changeSchool);
+
+        addProfile = new JButton("Add Profile");
+        addProfile.setBounds(itemsXPos, 320, itemsWidth, 30);
+        addProfile.addActionListener(this);
+        addProfile.setVisible(false);
+        add(addProfile);
+
+        switchPagesBtn = new JButton("Admin View");
+        switchPagesBtn.setBounds(itemsXPos, getPreferredSize().height - 100, itemsWidth, 30);
+        switchPagesBtn.addActionListener(this);
+        add(switchPagesBtn);
     }
 
     // Sets the size of the panel
@@ -211,15 +232,16 @@ public class Screen extends JPanel implements ActionListener {
         super.paintComponent(g);
 
         int textVerticalOffset = -7;
+        g.drawString("Students List:", 25, 50 + textVerticalOffset);
+        g.drawString("Student Detail:", 50 + 250 + 125, 50 + textVerticalOffset);
+
+        g.drawString("First name:", itemsXPos, 50 + textVerticalOffset);
+        g.drawString("Last price:", itemsXPos, 100 + textVerticalOffset);
+        g.drawString("Birth Year:", itemsXPos, 150 + textVerticalOffset);
+
         if (windowState == WindowPane.NORMAL) {
-            g.drawString("Students List:", 25, 50 + textVerticalOffset);
-            g.drawString("Student Detail:", 50 + 250 + 125, 50 + textVerticalOffset);
-
-            g.drawString("First name:", itemsXPos, 50 + textVerticalOffset);
-            g.drawString("Last price:", itemsXPos, 100 + textVerticalOffset);
-            g.drawString("Birth Year:", itemsXPos, 150 + textVerticalOffset);
         } else if (windowState == WindowPane.ADMIN) {
-
+            g.drawString("School Name:", itemsXPos, 240 + textVerticalOffset);
         }
     }
 
@@ -243,6 +265,76 @@ public class Screen extends JPanel implements ActionListener {
             } catch (NumberFormatException err) {
                 JOptionPane.showMessageDialog(null, "ERROR: Birth Year must be an integer!");
             }
+        } else if (e.getSource() == switchPagesBtn) {
+            if (windowState == WindowPane.NORMAL) {
+//                detailsDisplayPane.setVisible(false);
+//                studentsDisplayPane.setVisible(false);
+//                firstNameInput.setVisible(false);
+//                lastNameInput.setVisible(false);
+//                birthYearInput.setVisible(false);
+                displayStudentDetailsBtn.setVisible(false);
+                rmProfileBtn.setVisible(true);
+                addProfile.setVisible(true);
+                changeSchool.setVisible(true);
+                schoolName.setVisible(true);
+
+                switchPagesBtn.setText("Normal View");
+                windowState = WindowPane.ADMIN;
+            } else if (windowState == WindowPane.ADMIN) {
+//                detailsDisplayPane.setVisible(true);
+//                studentsDisplayPane.setVisible(true);
+//                firstNameInput.setVisible(true);
+//                lastNameInput.setVisible(true);
+//                birthYearInput.setVisible(true);
+                displayStudentDetailsBtn.setVisible(true);
+                rmProfileBtn.setVisible(false);
+                addProfile.setVisible(false);
+                changeSchool.setVisible(false);
+                schoolName.setVisible(false);
+
+                switchPagesBtn.setText("Admin View");
+                windowState = WindowPane.NORMAL;
+            }
+        } else if (e.getSource() == rmProfileBtn) {
+            if (firstNameInput.getText().equals("") || lastNameInput.getText().equals("") || birthYearInput.getText().equals(""))
+                JOptionPane.showMessageDialog(null, "ERROR: First name, last name, and birth year must be completed!");
+
+            try {
+                String first = firstNameInput.getText();
+                String last = lastNameInput.getText();
+                int dob = Integer.parseInt(birthYearInput.getText());
+
+                if (!studentsTM.containsKey(new Profile(first, last, dob))) {
+                    JOptionPane.showMessageDialog(null, "ERROR: Profile as described doesn't exist!");
+                } else {
+                    studentsHM.remove(new Profile(first, last, dob));
+                    studentsTM.remove(new Profile(first, last, dob));
+                    studentsDisplay.setListData(formatTMasArray("*"));
+                }
+            } catch (NumberFormatException err) {
+                JOptionPane.showMessageDialog(null, "ERROR: Year of birth must be an integer!");
+            }
+        } else if (e.getSource() == addProfile) {
+            if (firstNameInput.getText().equals("") || lastNameInput.getText().equals("") || birthYearInput.getText().equals("") || schoolName.getText().equals(""))
+                JOptionPane.showMessageDialog(null, "ERROR: First name, last name, birth year, and school name must be completed!");
+
+            try {
+                String first = firstNameInput.getText();
+                String last = lastNameInput.getText();
+                int dob = Integer.parseInt(birthYearInput.getText());
+                String schoolName = changeSchool.getText();
+                //TODO: Why does this ^^^ return "Change School"?
+                System.out.println(schoolName);
+
+                Profile newProfile = new Profile(first, last, dob);
+                studentsHM.put(newProfile, schoolName);
+                studentsTM.put(newProfile, schoolName);
+                studentsDisplay.setListData(formatTMasArray("*"));
+            } catch (NumberFormatException err) {
+                JOptionPane.showMessageDialog(null, "ERROR: Year of birth must be an integer!");
+            }
+        } else if (e.getSource() == changeSchool) {
+            //TODO: Implement this!
         }
 
         repaint();
