@@ -2,8 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="36939a02-4d05-4550-9e2f-c504bf2e9922" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Labs/Maps Lab/Profile.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Labs/Maps Lab/Screen.java" beforeDir="false" afterPath="$PROJECT_DIR$/Labs/Maps Lab/Screen.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -168,7 +166,7 @@
       <workItem from="1570462507049" duration="529000" />
       <workItem from="1570679071001" duration="9660000" />
       <workItem from="1570908553348" duration="6460000" />
-      <workItem from="1571324762722" duration="3547000" />
+      <workItem from="1571324762722" duration="3924000" />
     </task>
     <task id="LOCAL-00001" summary="Classwork from August 22, 2019">
       <created>1566521518017</created>
@@ -422,7 +420,14 @@
       <option name="project" value="LOCAL" />
       <updated>1571072146709</updated>
     </task>
-    <option name="localTasksCounter" value="37" />
+    <task id="LOCAL-00037" summary="Final commit for Maps Lab">
+      <created>1571328419498</created>
+      <option name="number" value="00037" />
+      <option name="presentableId" value="LOCAL-00037" />
+      <option name="project" value="LOCAL" />
+      <updated>1571328419498</updated>
+    </task>
+    <option name="localTasksCounter" value="38" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -444,7 +449,6 @@
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Classwork from Thursday, 9/5/2019" />
     <MESSAGE value="Initial progress on Inheritance lab." />
     <MESSAGE value="Final progress on Inheritance lab." />
     <MESSAGE value="Classwork from September 10, 2019" />
@@ -469,7 +473,8 @@
     <MESSAGE value="Initial work on Maps Lab" />
     <MESSAGE value="Quizzes and Exams" />
     <MESSAGE value="More work on Maps lab" />
-    <option name="LAST_COMMIT_MESSAGE" value="More work on Maps lab" />
+    <MESSAGE value="Final commit for Maps Lab" />
+    <option name="LAST_COMMIT_MESSAGE" value="Final commit for Maps Lab" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">

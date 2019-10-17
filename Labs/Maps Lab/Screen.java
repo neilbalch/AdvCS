@@ -11,7 +11,7 @@ public class Screen extends JPanel implements ActionListener {
     private int itemsXPos = 275;
     private int itemsWidth = 150;
 
-    private String[] schools = {
+    private final String[] schools = {
             "Mountain View HS",
             "Los Altos HS",
             "Graham MS",
@@ -26,8 +26,7 @@ public class Screen extends JPanel implements ActionListener {
     private TreeMap<Profile, String> studentsTM;
     private HashMap<Profile, String> studentsHM;
     private final String inputFilePath = "names.txt";
-    private String selectedSchool;
-    private String[] availablePeriods = {
+    private final String[] availablePeriods = {
             "Marching Band",
             "PE",
             "Physics",
@@ -66,16 +65,14 @@ public class Screen extends JPanel implements ActionListener {
     private JButton deletePeriod;
     private JTextField periodInput;
 
-    private String[] formatTMasArray(String querySchool) {
+    private String[] formatTMasArray() {
         ArrayList<String> returnable = new ArrayList<>();
         for (Map.Entry<Profile, String> entry : studentsTM.entrySet()) {
             Profile key = entry.getKey();
             String value = entry.getValue();
 
 //            System.out.println(key + " => " + value);
-            if (!querySchool.equalsIgnoreCase("*")) {
-                if (value.equalsIgnoreCase(querySchool)) returnable.add(key.toString());
-            } else returnable.add(key.toString());
+            returnable.add(key.toString());
         }
 
         return returnable.toArray(new String[1]);
@@ -88,7 +85,6 @@ public class Screen extends JPanel implements ActionListener {
         studentsHM = new HashMap<>();
         studentsTM = new TreeMap<>();
 
-        selectedSchool = "*";
         windowState = WindowPane.NORMAL;
 
         try {
@@ -131,20 +127,9 @@ public class Screen extends JPanel implements ActionListener {
 //        System.out.println(studentsHM);
 
         studentsDisplay = new JList<>();
-        studentsDisplay.setListData(formatTMasArray("*"));
+        studentsDisplay.setListData(formatTMasArray());
         studentsDisplayPane = new JScrollPane(studentsDisplay);
         studentsDisplayPane.setBounds(25, 50, 250, getPreferredSize().height - 50 - 25);
-//        schoolsDisplay.addListSelectionListener(new ListSelectionListener() {
-//            @Override
-//            public void valueChanged(ListSelectionEvent e) {
-//                Object selection = ((JList)e.getSource()).getSelectedValue();
-//                String selectedSchool = (String)selection;
-//
-//                selectedSchool = selectedSchool.substring(selectedSchool.indexOf(":") + 1);
-////                System.out.println(selectedSchool);
-//                studentsDisplay.setListData(formatTMasArray(selectedSchool));
-//            }
-//        });
         add(studentsDisplayPane);
 
         detailsDisplay = new JList<>();
@@ -311,7 +296,7 @@ public class Screen extends JPanel implements ActionListener {
                 } else {
                     studentsHM.remove(new Profile(first, last, dob));
                     studentsTM.remove(new Profile(first, last, dob));
-                    studentsDisplay.setListData(formatTMasArray("*"));
+                    studentsDisplay.setListData(formatTMasArray());
                 }
             } catch (NumberFormatException err) {
                 JOptionPane.showMessageDialog(null, "ERROR: Year of birth must be an integer!");
@@ -329,7 +314,7 @@ public class Screen extends JPanel implements ActionListener {
                 Profile newProfile = new Profile(first, last, dob);
                 studentsHM.put(newProfile, school);
                 studentsTM.put(newProfile, school);
-                studentsDisplay.setListData(formatTMasArray("*"));
+                studentsDisplay.setListData(formatTMasArray());
             } catch (NumberFormatException err) {
                 JOptionPane.showMessageDialog(null, "ERROR: Year of birth must be an integer!");
             }
@@ -345,12 +330,12 @@ public class Screen extends JPanel implements ActionListener {
                 Profile queryProfile = new Profile(first, last, dob);
 
                 if (!studentsHM.containsKey(queryProfile)) {
-                    studentsDisplay.setListData(formatTMasArray("*"));
+                    studentsDisplay.setListData(formatTMasArray());
                     JOptionPane.showMessageDialog(null, "ERROR: Profile as described doesn't exist!");
                 } else {
                     studentsHM.put(queryProfile, newSchoolName);
                     studentsTM.put(queryProfile, newSchoolName);
-                    studentsDisplay.setListData(formatTMasArray("*"));
+                    studentsDisplay.setListData(formatTMasArray());
                 }
             } catch (NumberFormatException err) {
                 JOptionPane.showMessageDialog(null, "ERROR: Year of birth must be an integer!");
