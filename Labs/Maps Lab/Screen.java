@@ -7,76 +7,43 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.util.*;
 
-class Profile implements Comparable<Profile> {
-    private String nameFirst;
-    private String nameLast;
-    private int dob;
-
-    public Profile(String nameFirst, String nameLast, int dob) {
-        this.nameFirst = nameFirst;
-        this.nameLast = nameLast;
-        this.dob = dob;
-    }
-
-    public int getDob() {
-        return dob;
-    }
-
-    public String getNameFirst() {
-        return nameFirst;
-    }
-
-    public String getNameLast() {
-        return nameLast;
-    }
-
-    public String toString() {
-        return nameLast + ", " + nameFirst + " : " + dob;
-    }
-
-    public int hashCode() {
-        int hashCode = nameFirst.hashCode() * 11;
-        hashCode += nameLast.hashCode() * 17;
-        hashCode += dob * 19;
-
-        return 23 * hashCode;
-    }
-
-    public boolean equals(Object item) {
-        Profile i = (Profile) item;
-        return nameLast.equalsIgnoreCase(i.getNameFirst()) && nameLast.equalsIgnoreCase(i.getNameLast()) && dob == i.getDob();
-    }
-
-    public int compareTo(Profile i) {
-        int lastComparison = nameLast.compareToIgnoreCase(i.getNameLast());
-        if (lastComparison > 0) return 1;
-        else if (lastComparison < 0) return -1;
-        else {
-            int firstComparison = nameFirst.compareToIgnoreCase(i.getNameFirst());
-            if (firstComparison > 0) return 1;
-            else if (firstComparison < 0) return -1;
-            else {
-                if (dob > i.getDob()) return 1;
-                else if (dob < i.getDob()) return -1;
-                else return 0;
-            }
-        }
-    }
-}
-
 public class Screen extends JPanel implements ActionListener {
     private int itemsXPos = 275;
     private int itemsWidth = 150;
 
-    private String[] schools;
+    private String[] schools = {
+            "Mountain View HS",
+            "Los Altos HS",
+            "Graham MS",
+            "Crittenden MS",
+            "Blach MS",
+            "Huff ES",
+            "Bubb ES",
+            "Homestead HS",
+            "Fremont HS",
+            "Gunn HS"
+    };
     private TreeMap<Profile, String> studentsTM;
     private HashMap<Profile, String> studentsHM;
     private final String inputFilePath = "names.txt";
     private String selectedSchool;
+    private String[] availablePeriods = {
+            "Marching Band",
+            "PE",
+            "Physics",
+            "Calculus",
+            "Photography",
+            "FREE PERIOD",
+            "Wind Ensemble",
+            "English",
+            "Engineering",
+            "String Orchestra",
+            "Earth Science",
+            "Trigonometry",
+            "Advanced Computer Science"
+    };
 
     private enum WindowPane {NORMAL, ADMIN}
-
-    ;
     private WindowPane windowState;
 
     private JList<String> studentsDisplay;
@@ -91,9 +58,13 @@ public class Screen extends JPanel implements ActionListener {
 
     private JButton switchPagesBtn;
     private JButton rmProfileBtn;
-    private JTextField schoolName;
+    private JTextField schoolInput;
     private JButton changeSchool;
     private JButton addProfile;
+
+    private JButton addPeriod;
+    private JButton deletePeriod;
+    private JTextField periodInput;
 
     private String[] formatTMasArray(String querySchool) {
         ArrayList<String> returnable = new ArrayList<>();
@@ -117,7 +88,6 @@ public class Screen extends JPanel implements ActionListener {
         studentsHM = new HashMap<>();
         studentsTM = new TreeMap<>();
 
-        schools = new String[]{"Mountain View HS", "Los Altos HS", "Graham MS", "Crittenden MS", "Blach MS", "Huff ES", "Bubb ES", "Homestead HS", "Fremont HS", "Gunn HS"};
         selectedSchool = "*";
         windowState = WindowPane.NORMAL;
 
@@ -134,6 +104,12 @@ public class Screen extends JPanel implements ActionListener {
                 String nameLast = line.substring(line.indexOf(" ") + 1);
                 int birthYear = (int) (Math.random() * 25 + 1990);
                 Profile student = new Profile(nameFirst, nameLast, birthYear);
+                student.addPeriods(new String[]{
+                        availablePeriods[(int) (Math.random() * availablePeriods.length)],
+                        availablePeriods[(int) (Math.random() * availablePeriods.length)],
+                        availablePeriods[(int) (Math.random() * availablePeriods.length)],
+                        availablePeriods[(int) (Math.random() * availablePeriods.length)]
+                });
 
 //                System.out.println(nameLast + ", " + nameFirst + " : " + birthYear);
 
@@ -200,10 +176,10 @@ public class Screen extends JPanel implements ActionListener {
         rmProfileBtn.setVisible(false);
         add(rmProfileBtn);
 
-        schoolName = new JTextField();
-        schoolName.setBounds(itemsXPos, 240, itemsWidth, 30);
-        schoolName.setVisible(false);
-        add(schoolName);
+        schoolInput = new JTextField();
+        schoolInput.setBounds(itemsXPos, 240, itemsWidth, 30);
+        schoolInput.setVisible(false);
+        add(schoolInput);
 
         changeSchool = new JButton("Change School");
         changeSchool.setBounds(itemsXPos, 280, itemsWidth, 30);
@@ -221,6 +197,20 @@ public class Screen extends JPanel implements ActionListener {
         switchPagesBtn.setBounds(itemsXPos, getPreferredSize().height - 100, itemsWidth, 30);
         switchPagesBtn.addActionListener(this);
         add(switchPagesBtn);
+
+        periodInput = new JTextField();
+        periodInput.setBounds(itemsXPos, 370, itemsWidth, 30);
+        add(periodInput);
+
+        addPeriod = new JButton("Add Period");
+        addPeriod.setBounds(itemsXPos, 410, itemsWidth, 30);
+        addPeriod.addActionListener(this);
+        add(addPeriod);
+
+        deletePeriod = new JButton("Remove Period");
+        deletePeriod.setBounds(itemsXPos, 450, itemsWidth, 30);
+        deletePeriod.addActionListener(this);
+        add(deletePeriod);
     }
 
     // Sets the size of the panel
@@ -239,6 +229,8 @@ public class Screen extends JPanel implements ActionListener {
         g.drawString("Last price:", itemsXPos, 100 + textVerticalOffset);
         g.drawString("Birth Year:", itemsXPos, 150 + textVerticalOffset);
 
+        g.drawString("Period:", itemsXPos, 370 + textVerticalOffset);
+
         if (windowState == WindowPane.NORMAL) {
         } else if (windowState == WindowPane.ADMIN) {
             g.drawString("School Name:", itemsXPos, 240 + textVerticalOffset);
@@ -249,18 +241,28 @@ public class Screen extends JPanel implements ActionListener {
         if (e.getSource() == displayStudentDetailsBtn) {
             String firstName = firstNameInput.getText();
             String lastName = lastNameInput.getText();
+
+            if (firstName.equals("") || lastName.equals(""))
+                JOptionPane.showMessageDialog(null, "ERROR: first name and last name must be provided!");
+
             try {
                 int dob = Integer.parseInt(birthYearInput.getText());
-
-                System.out.println(lastName + ", " + firstName + " : " + dob);
 
                 if (!studentsTM.containsKey(new Profile(firstName, lastName, dob))) {
                     JOptionPane.showMessageDialog(null, "ERROR: Such a student doesn't exist!");
                     detailsDisplay.setListData(new String[1]);
                 } else {
-                    String school = studentsTM.get(new Profile(firstName, lastName, dob));
-                    detailsDisplay.setListData(new String[]{"Attends: " + school});
-                    // TODO: Add challenge schedule functionality.
+                    Profile query = new Profile(firstName, lastName, dob);
+                    String school = studentsTM.get(query);
+                    Set<Profile> keys = studentsTM.keySet();
+                    String[] periods = new String[]{school};
+                    for (Profile profile : keys) {
+                        if (profile.equals(query)) {
+                            periods = profile.formatAllAsStrings();
+                        }
+                    }
+//                    detailsDisplay.setListData(new String[]{"Attends: " + school});
+                    detailsDisplay.setListData(periods);
                 }
             } catch (NumberFormatException err) {
                 JOptionPane.showMessageDialog(null, "ERROR: Birth Year must be an integer!");
@@ -276,7 +278,7 @@ public class Screen extends JPanel implements ActionListener {
                 rmProfileBtn.setVisible(true);
                 addProfile.setVisible(true);
                 changeSchool.setVisible(true);
-                schoolName.setVisible(true);
+                schoolInput.setVisible(true);
 
                 switchPagesBtn.setText("Normal View");
                 windowState = WindowPane.ADMIN;
@@ -290,7 +292,7 @@ public class Screen extends JPanel implements ActionListener {
                 rmProfileBtn.setVisible(false);
                 addProfile.setVisible(false);
                 changeSchool.setVisible(false);
-                schoolName.setVisible(false);
+                schoolInput.setVisible(false);
 
                 switchPagesBtn.setText("Admin View");
                 windowState = WindowPane.NORMAL;
@@ -315,26 +317,109 @@ public class Screen extends JPanel implements ActionListener {
                 JOptionPane.showMessageDialog(null, "ERROR: Year of birth must be an integer!");
             }
         } else if (e.getSource() == addProfile) {
-            if (firstNameInput.getText().equals("") || lastNameInput.getText().equals("") || birthYearInput.getText().equals("") || schoolName.getText().equals(""))
+            if (firstNameInput.getText().equals("") || lastNameInput.getText().equals("") || birthYearInput.getText().equals("") || schoolInput.getText().equals(""))
                 JOptionPane.showMessageDialog(null, "ERROR: First name, last name, birth year, and school name must be completed!");
 
             try {
                 String first = firstNameInput.getText();
                 String last = lastNameInput.getText();
                 int dob = Integer.parseInt(birthYearInput.getText());
-                String schoolName = changeSchool.getText();
-                //TODO: Why does this ^^^ return "Change School"?
-                System.out.println(schoolName);
+                String school = schoolInput.getText();
 
                 Profile newProfile = new Profile(first, last, dob);
-                studentsHM.put(newProfile, schoolName);
-                studentsTM.put(newProfile, schoolName);
+                studentsHM.put(newProfile, school);
+                studentsTM.put(newProfile, school);
                 studentsDisplay.setListData(formatTMasArray("*"));
             } catch (NumberFormatException err) {
                 JOptionPane.showMessageDialog(null, "ERROR: Year of birth must be an integer!");
             }
         } else if (e.getSource() == changeSchool) {
-            //TODO: Implement this!
+            if (firstNameInput.getText().equals("") || lastNameInput.getText().equals("") || birthYearInput.getText().equals("") || schoolInput.getText().equals(""))
+                JOptionPane.showMessageDialog(null, "ERROR: First name, last name, birth year, and school name must be completed!");
+
+            try {
+                String first = firstNameInput.getText();
+                String last = lastNameInput.getText();
+                int dob = Integer.parseInt(birthYearInput.getText());
+                String newSchoolName = schoolInput.getText();
+                Profile queryProfile = new Profile(first, last, dob);
+
+                if (!studentsHM.containsKey(queryProfile)) {
+                    studentsDisplay.setListData(formatTMasArray("*"));
+                    JOptionPane.showMessageDialog(null, "ERROR: Profile as described doesn't exist!");
+                } else {
+                    studentsHM.put(queryProfile, newSchoolName);
+                    studentsTM.put(queryProfile, newSchoolName);
+                    studentsDisplay.setListData(formatTMasArray("*"));
+                }
+            } catch (NumberFormatException err) {
+                JOptionPane.showMessageDialog(null, "ERROR: Year of birth must be an integer!");
+            }
+        } else if (e.getSource() == addPeriod) {
+            String firstName = firstNameInput.getText();
+            String lastName = lastNameInput.getText();
+            String newPeriod = periodInput.getText();
+
+            if (firstName.equals("") || lastName.equals("") || newPeriod.equals(""))
+                JOptionPane.showMessageDialog(null, "ERROR: first name, last name, and period name must be provided!");
+
+            try {
+                int dob = Integer.parseInt(birthYearInput.getText());
+
+                if (!studentsTM.containsKey(new Profile(firstName, lastName, dob))) {
+                    JOptionPane.showMessageDialog(null, "ERROR: Such a student doesn't exist!");
+                    detailsDisplay.setListData(new String[1]);
+                } else {
+                    Profile query = new Profile(firstName, lastName, dob);
+                    String school = studentsTM.get(query);
+                    Set<Profile> keys = studentsTM.keySet();
+                    String[] periods = new String[]{school};
+                    for (Profile profile : keys) {
+                        if (profile.equals(query)) {
+                            profile.addPeriods(new String[]{newPeriod});
+                            periods = profile.formatAllAsStrings();
+                        }
+                    }
+//                    detailsDisplay.setListData(new String[]{"Attends: " + school});
+                    detailsDisplay.setListData(periods);
+                }
+            } catch (NumberFormatException err) {
+                JOptionPane.showMessageDialog(null, "ERROR: Birth Year must be an integer!");
+            }
+        } else if (e.getSource() == deletePeriod) {
+            String firstName = firstNameInput.getText();
+            String lastName = lastNameInput.getText();
+            String periodToDelete = periodInput.getText();
+
+            if (firstName.equals("") || lastName.equals("") || periodToDelete.equals(""))
+                JOptionPane.showMessageDialog(null, "ERROR: first name, last name, and period name must be provided!");
+
+            try {
+                int dob = Integer.parseInt(birthYearInput.getText());
+
+                if (!studentsTM.containsKey(new Profile(firstName, lastName, dob))) {
+                    JOptionPane.showMessageDialog(null, "ERROR: Such a student doesn't exist!");
+                    detailsDisplay.setListData(new String[1]);
+                } else {
+                    Profile query = new Profile(firstName, lastName, dob);
+                    String school = studentsTM.get(query);
+                    Set<Profile> keys = studentsTM.keySet();
+                    String[] periods = new String[]{school};
+                    for (Profile profile : keys) {
+                        if (profile.equals(query)) {
+                            if (!profile.removePeriod(periodToDelete))
+                                JOptionPane.showMessageDialog(null, "ERROR: Such a period doesn't exist on the selected profile!");
+
+                            periods = profile.formatAllAsStrings();
+                        }
+                    }
+                    //                    detailsDisplay.setListData(new String[]{"Attends: " + school});
+                    detailsDisplay.setListData(periods);
+                }
+            } catch (NumberFormatException err) {
+                JOptionPane.showMessageDialog(null, "ERROR: Birth Year must be an integer!");
+            }
+
         }
 
         repaint();
