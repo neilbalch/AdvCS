@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="36939a02-4d05-4550-9e2f-c504bf2e9922" name="Default Changelist" comment="" />
+    <list default="true" id="36939a02-4d05-4550-9e2f-c504bf2e9922" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Labs/Stacks Lab/BalchNeilStacks.zip" beforeDir="false" afterPath="$PROJECT_DIR$/Labs/Stacks Lab/BalchNeilStacks.zip" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Labs/Stacks Lab/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/Labs/Stacks Lab/Game.java" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -165,7 +169,7 @@
       <workItem from="1570679071001" duration="9660000" />
       <workItem from="1570908553348" duration="6460000" />
       <workItem from="1571324762722" duration="4014000" />
-      <workItem from="1571929847699" duration="5302000" />
+      <workItem from="1571929847699" duration="5698000" />
     </task>
     <task id="LOCAL-00001" summary="Classwork from August 22, 2019">
       <created>1566521518017</created>
@@ -440,7 +444,14 @@
       <option name="project" value="LOCAL" />
       <updated>1571935343951</updated>
     </task>
-    <option name="localTasksCounter" value="40" />
+    <task id="LOCAL-00040" summary="Completed Stacks Lab... with formatting">
+      <created>1571935495135</created>
+      <option name="number" value="00040" />
+      <option name="presentableId" value="LOCAL-00040" />
+      <option name="project" value="LOCAL" />
+      <updated>1571935495135</updated>
+    </task>
+    <option name="localTasksCounter" value="41" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -462,7 +473,6 @@
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Classwork from September 10, 2019" />
     <MESSAGE value="Generics lab stuff" />
     <MESSAGE value="Classwork from September 13, 2019" />
     <MESSAGE value="Final work on Generics Lab" />
@@ -487,7 +497,8 @@
     <MESSAGE value="Final commit for Maps Lab" />
     <MESSAGE value="Semantic style changes to Maps Lab" />
     <MESSAGE value="Completed Stacks Lab" />
-    <option name="LAST_COMMIT_MESSAGE" value="Completed Stacks Lab" />
+    <MESSAGE value="Completed Stacks Lab... with formatting" />
+    <option name="LAST_COMMIT_MESSAGE" value="Completed Stacks Lab... with formatting" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">

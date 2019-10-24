@@ -198,11 +198,22 @@ public class Game extends JPanel implements ActionListener, MouseListener, Mouse
     @Override
     public void actionPerformed(ActionEvent e) {
         if (e.getSource() == clearGrid) {
+            ArrayList<Delta> deltas = new ArrayList<>();
+
             for (int r = 0; r < state.canvas.length; r++) {
                 for (int c = 0; c < state.canvas[r].length; c++) {
+                    if (!state.canvas[r][c].equals(Color.WHITE)) {
+                        Delta delta = new Delta();
+                        delta.location = new Point(r, c);
+                        delta.changedFrom = state.canvas[r][c];
+                        delta.changedTo = Color.WHITE;
+                        deltas.add(delta);
+                    }
                     state.canvas[r][c] = Color.WHITE;
                 }
             }
+
+            changeList.push(deltas);
         } else if (e.getSource() == export) exportImage();
         else if (e.getSource() == undo) {
             if (changeList.size() == 0) return;
