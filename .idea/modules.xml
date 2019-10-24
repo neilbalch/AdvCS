@@ -21,6 +21,7 @@
       <module fileurl="file://$PROJECT_DIR$/Labs/Iterators Lab/Iterators Lab.iml" filepath="$PROJECT_DIR$/Labs/Iterators Lab/Iterators Lab.iml" />
       <module fileurl="file://$PROJECT_DIR$/Labs/Maps Lab/Maps Lab.iml" filepath="$PROJECT_DIR$/Labs/Maps Lab/Maps Lab.iml" />
       <module fileurl="file://$PROJECT_DIR$/Labs/Sets Lab/Sets Lab.iml" filepath="$PROJECT_DIR$/Labs/Sets Lab/Sets Lab.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Labs/Stacks Lab/Stacks Lab.iml" filepath="$PROJECT_DIR$/Labs/Stacks Lab/Stacks Lab.iml" />
     </modules>
   </component>
 </project>

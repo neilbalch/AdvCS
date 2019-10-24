@@ -2,7 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="36939a02-4d05-4550-9e2f-c504bf2e9922" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/Labs/Maps Lab/Screen.java" beforeDir="false" afterPath="$PROJECT_DIR$/Labs/Maps Lab/Screen.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Labs/Stacks Lab/Game.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Labs/Stacks Lab/Pixel Art Lab.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Labs/Stacks Lab/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Labs/Stacks Lab/Runner.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Labs/Stacks Lab/Stacks Lab.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -37,7 +43,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/Labs/Maps Lab" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/Labs/Stacks Lab" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -76,7 +82,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.Runner-Maps Lab">
+  <component name="RunManager" selected="Application.Runner (2)">
     <configuration name="Runner Big-O Lab" type="Application" factoryName="Application" temporary="true">
       <option name="MAIN_CLASS_NAME" value="Runner" />
       <module name="Big-O Lab" />
@@ -93,17 +99,17 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Runner-Maps Lab" type="Application" factoryName="Application" temporary="true">
+    <configuration name="Runner (2)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Runner" />
-      <module name="Maps Lab" />
-      <option name="WORKING_DIRECTORY" value="$MODULE_WORKING_DIR$" />
+      <module name="Stacks Lab" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Runner" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+    <configuration name="Runner-Maps Lab" type="Application" factoryName="Application" temporary="true">
       <option name="MAIN_CLASS_NAME" value="Runner" />
-      <module name="Iterators Lab" />
+      <module name="Maps Lab" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_WORKING_DIR$" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -124,19 +130,19 @@
       </method>
     </configuration>
     <list>
-      <item itemvalue="Application.Runner" />
       <item itemvalue="Application.Runner Big-O Lab" />
       <item itemvalue="Application.WarmUp (2)" />
       <item itemvalue="Application.Runner (1)" />
       <item itemvalue="Application.Runner-Maps Lab" />
+      <item itemvalue="Application.Runner (2)" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.Runner (2)" />
         <item itemvalue="Application.Runner-Maps Lab" />
         <item itemvalue="Application.Runner (1)" />
         <item itemvalue="Application.WarmUp (2)" />
         <item itemvalue="Application.Runner Big-O Lab" />
-        <item itemvalue="Application.Runner" />
       </list>
     </recent_temporary>
   </component>
@@ -166,7 +172,8 @@
       <workItem from="1570462507049" duration="529000" />
       <workItem from="1570679071001" duration="9660000" />
       <workItem from="1570908553348" duration="6460000" />
-      <workItem from="1571324762722" duration="3924000" />
+      <workItem from="1571324762722" duration="4014000" />
+      <workItem from="1571929847699" duration="5038000" />
     </task>
     <task id="LOCAL-00001" summary="Classwork from August 22, 2019">
       <created>1566521518017</created>
@@ -427,7 +434,14 @@
       <option name="project" value="LOCAL" />
       <updated>1571328419498</updated>
     </task>
-    <option name="localTasksCounter" value="38" />
+    <task id="LOCAL-00038" summary="Semantic style changes to Maps Lab">
+      <created>1571328760177</created>
+      <option name="number" value="00038" />
+      <option name="presentableId" value="LOCAL-00038" />
+      <option name="project" value="LOCAL" />
+      <updated>1571328760177</updated>
+    </task>
+    <option name="localTasksCounter" value="39" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -449,7 +463,6 @@
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Initial progress on Inheritance lab." />
     <MESSAGE value="Final progress on Inheritance lab." />
     <MESSAGE value="Classwork from September 10, 2019" />
     <MESSAGE value="Generics lab stuff" />
@@ -474,7 +487,8 @@
     <MESSAGE value="Quizzes and Exams" />
     <MESSAGE value="More work on Maps lab" />
     <MESSAGE value="Final commit for Maps Lab" />
-    <option name="LAST_COMMIT_MESSAGE" value="Final commit for Maps Lab" />
+    <MESSAGE value="Semantic style changes to Maps Lab" />
+    <option name="LAST_COMMIT_MESSAGE" value="Semantic style changes to Maps Lab" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
