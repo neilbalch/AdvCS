@@ -265,7 +265,6 @@ public class Game extends JPanel implements ActionListener, MouseListener, Mouse
     @Override
     public void mousePressed(MouseEvent e) {
     }
-
     @Override
     public void mouseReleased(MouseEvent e) {
 //        System.out.println("MOUSE RELEASED");
@@ -276,11 +275,9 @@ public class Game extends JPanel implements ActionListener, MouseListener, Mouse
             dragChangeList.clear();
         }
     }
-
     @Override
     public void mouseEntered(MouseEvent e) {
     }
-
     @Override
     public void mouseExited(MouseEvent e) {
     }
@@ -319,7 +316,6 @@ public class Game extends JPanel implements ActionListener, MouseListener, Mouse
 
         repaint();
     }
-
     @Override
     public void mouseMoved(MouseEvent e) {
     }
