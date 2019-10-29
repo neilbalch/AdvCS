@@ -2,9 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="36939a02-4d05-4550-9e2f-c504bf2e9922" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/Q2/10292019/Warmup.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Labs/Stacks Lab/BalchNeilStacks.zip" beforeDir="false" afterPath="$PROJECT_DIR$/Labs/Stacks Lab/BalchNeilStacks.zip" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Labs/Stacks Lab/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/Labs/Stacks Lab/Game.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -39,7 +38,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/Labs/Stacks Lab" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/Q2/10292019" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -78,15 +77,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.Runner (2)">
-    <configuration name="Runner Big-O Lab" type="Application" factoryName="Application" temporary="true">
-      <option name="MAIN_CLASS_NAME" value="Runner" />
-      <module name="Big-O Lab" />
-      <option name="WORKING_DIRECTORY" value="$MODULE_WORKING_DIR$" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
+  <component name="RunManager" selected="Application.Warmup">
     <configuration name="Runner (1)" type="Application" factoryName="Application" temporary="true">
       <option name="MAIN_CLASS_NAME" value="Runner" />
       <module name="Sets Lab" />
@@ -110,14 +101,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Runner" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Runner" />
-      <module name="Generics Lab" />
-      <option name="WORKING_DIRECTORY" value="$MODULE_WORKING_DIR$" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="WarmUp (2)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="WarmUp" />
       <module name="10012019" />
@@ -125,20 +108,27 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="Warmup" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Warmup" />
+      <module name="10292019" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <list>
-      <item itemvalue="Application.Runner Big-O Lab" />
       <item itemvalue="Application.WarmUp (2)" />
       <item itemvalue="Application.Runner (1)" />
       <item itemvalue="Application.Runner-Maps Lab" />
       <item itemvalue="Application.Runner (2)" />
+      <item itemvalue="Application.Warmup" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.Warmup" />
         <item itemvalue="Application.Runner (2)" />
         <item itemvalue="Application.Runner-Maps Lab" />
         <item itemvalue="Application.Runner (1)" />
         <item itemvalue="Application.WarmUp (2)" />
-        <item itemvalue="Application.Runner Big-O Lab" />
       </list>
     </recent_temporary>
   </component>
@@ -169,7 +159,10 @@
       <workItem from="1570679071001" duration="9660000" />
       <workItem from="1570908553348" duration="6460000" />
       <workItem from="1571324762722" duration="4014000" />
-      <workItem from="1571929847699" duration="5698000" />
+      <workItem from="1571929847699" duration="6146000" />
+      <workItem from="1571960967481" duration="156000" />
+      <workItem from="1572277503046" duration="1240000" />
+      <workItem from="1572334301838" duration="717000" />
     </task>
     <task id="LOCAL-00001" summary="Classwork from August 22, 2019">
       <created>1566521518017</created>
@@ -451,7 +444,14 @@
       <option name="project" value="LOCAL" />
       <updated>1571935495135</updated>
     </task>
-    <option name="localTasksCounter" value="41" />
+    <task id="LOCAL-00041" summary="Fix issue where clearing the canvas couldn't be undone.">
+      <created>1571936599343</created>
+      <option name="number" value="00041" />
+      <option name="presentableId" value="LOCAL-00041" />
+      <option name="project" value="LOCAL" />
+      <updated>1571936599343</updated>
+    </task>
+    <option name="localTasksCounter" value="42" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -473,7 +473,6 @@
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Generics lab stuff" />
     <MESSAGE value="Classwork from September 13, 2019" />
     <MESSAGE value="Final work on Generics Lab" />
     <MESSAGE value="Classwork from September 19, 2019" />
@@ -498,7 +497,8 @@
     <MESSAGE value="Semantic style changes to Maps Lab" />
     <MESSAGE value="Completed Stacks Lab" />
     <MESSAGE value="Completed Stacks Lab... with formatting" />
-    <option name="LAST_COMMIT_MESSAGE" value="Completed Stacks Lab... with formatting" />
+    <MESSAGE value="Fix issue where clearing the canvas couldn't be undone." />
+    <option name="LAST_COMMIT_MESSAGE" value="Fix issue where clearing the canvas couldn't be undone." />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
