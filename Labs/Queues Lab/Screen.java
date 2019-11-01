@@ -99,8 +99,16 @@ class Patient implements Comparable<Patient> {
         return description;
     }
 
+    public void updateDescription(String description) {
+        this.description = description;
+    }
+
     public CasePriority getPriority() {
         return priority;
+    }
+
+    public void updatePriority(CasePriority p) {
+        this.priority = p;
     }
 
     public Age getAge() {
@@ -155,6 +163,8 @@ public class Screen extends JPanel implements ActionListener {
     private JComboBox prioritySelection;
     private JComboBox ageSelection;
     private JButton addPatientBtn;
+    private JButton updatePatientPriorityBtn;
+    private JButton updatePatientIllnessBtn;
 
     private Patient currentPatient;
     private JTextArea patientDescriptor;
@@ -196,6 +206,7 @@ public class Screen extends JPanel implements ActionListener {
         queueDisplay.setListData(formatQueueAsArray());
         queueDisplayPane = new JScrollPane(queueDisplay);
         queueDisplayPane.setBounds(itemsXPos + 225, 330, getPreferredSize().width - itemsXPos - 200 - 25, (getPreferredSize().height - 50 - 25) / 2);
+        queueDisplayPane.setVisible(false);
         add(queueDisplayPane);
 
         pQueueDisplay = new JList<>();
@@ -230,6 +241,16 @@ public class Screen extends JPanel implements ActionListener {
         switchViews.addActionListener(this);
         add(switchViews);
 
+        updatePatientIllnessBtn = new JButton("Update Illness");
+        updatePatientIllnessBtn.setBounds(itemsXPos, 300, itemsWidth, 30);
+        updatePatientIllnessBtn.addActionListener(this);
+        add(updatePatientIllnessBtn);
+
+        updatePatientPriorityBtn = new JButton("Update Priority");
+        updatePatientPriorityBtn.setBounds(itemsXPos, 340, itemsWidth, 30);
+        updatePatientPriorityBtn.addActionListener(this);
+        add(updatePatientPriorityBtn);
+
         ////////////////////////////////////////////////////////////////////////////////////////////
 
         patientDescriptor = new JTextArea();
@@ -263,10 +284,10 @@ public class Screen extends JPanel implements ActionListener {
             g.drawString("Current Patient:", itemsXPos, 60 + textVerticalOffset);
             g.drawString("Discharge Note:", itemsXPos, 280 + textVerticalOffset);
 
+            g.drawString("Queue of Discharged Patients:", itemsXPos + 225, 330 + textVerticalOffset);
         } else {
             g.drawString("Add a Patient:", itemsXPos, 50 + textVerticalOffset);
             g.drawString("Priority Queue of Patients:", itemsXPos + 225, 50 + textVerticalOffset);
-            g.drawString("Queue of Discharged Patients:", itemsXPos + 225, 330 + textVerticalOffset);
 
             g.drawString("Patient Name:", itemsXPos, 70 + textVerticalOffset);
             g.drawString("Ailment Description:", itemsXPos, 120 + textVerticalOffset);
@@ -300,7 +321,7 @@ public class Screen extends JPanel implements ActionListener {
             inDoctorView = !inDoctorView;
 
             if (inDoctorView) {
-                queueDisplayPane.setVisible(false);
+                queueDisplayPane.setVisible(true);
                 pQueueDisplayPane.setVisible(false);
                 nameInput.setVisible(false);
                 illnessDescription.setVisible(false);
@@ -320,7 +341,7 @@ public class Screen extends JPanel implements ActionListener {
 
                 switchViews.setText("Switch to Nurse View");
             } else {
-                queueDisplayPane.setVisible(true);
+                queueDisplayPane.setVisible(false);
                 pQueueDisplayPane.setVisible(true);
                 nameInput.setVisible(true);
                 illnessDescription.setVisible(true);
@@ -347,6 +368,35 @@ public class Screen extends JPanel implements ActionListener {
                 currentPatient = pQueue.poll();
                 if (currentPatient != null)
                     patientDescriptor.setText(currentPatient.formatForDisplay());
+            }
+        } else if (e.getSource() == updatePatientIllnessBtn) {
+            String name = nameInput.getText();
+            String newIllness = illnessDescription.getText();
+
+            Iterator iter = pQueue.iterator();
+            while (iter.hasNext()) {
+                Patient temp = (Patient) iter.next();
+                if (temp.getName().equalsIgnoreCase(name)) {
+                    temp.updateDescription(newIllness);
+                }
+            }
+        } else if (e.getSource() == updatePatientPriorityBtn) {
+            String name = nameInput.getText();
+            String priorityStr = (String) prioritySelection.getSelectedItem();
+
+            Patient.CasePriority priority = null;
+            for (Patient.CasePriority cp : Patient.CasePriority.values()) {
+                if (cp.name().equalsIgnoreCase(priorityStr)) priority = cp;
+            }
+
+            if (priority != null) {
+                Iterator iter = pQueue.iterator();
+                while (iter.hasNext()) {
+                    Patient temp = (Patient) iter.next();
+                    if (temp.getName().equalsIgnoreCase(name)) {
+                        temp.updatePriority(priority);
+                    }
+                }
             }
         }
 
