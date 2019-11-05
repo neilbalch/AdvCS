@@ -2,13 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="36939a02-4d05-4550-9e2f-c504bf2e9922" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Q2/11042019/11042019.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Q2/11042019/Part1Client.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Q2/11042019/Part1Server.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Q2/11042019/Part2Client.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Q2/11042019/Part2Server.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Q2/11042019/Part2Client.java" beforeDir="false" afterPath="$PROJECT_DIR$/Q2/11042019/Part2Client.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Q2/11042019/Part2Server.java" beforeDir="false" afterPath="$PROJECT_DIR$/Q2/11042019/Part2Server.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -82,7 +78,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.Part1Client">
+  <component name="RunManager" selected="Application.Part2Client">
     <configuration name="Part1Client" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Part1Client" />
       <module name="11042019" />
@@ -97,9 +93,16 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Runner (2)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Runner" />
-      <module name="Stacks Lab" />
+    <configuration name="Part2Client" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Part2Client" />
+      <module name="11042019" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Part2Server" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Part2Server" />
+      <module name="11042019" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -111,27 +114,20 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Warmup" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Warmup" />
-      <module name="10292019" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <list>
-      <item itemvalue="Application.Runner (2)" />
-      <item itemvalue="Application.Warmup" />
       <item itemvalue="Application.Runner" />
       <item itemvalue="Application.Part1Server" />
       <item itemvalue="Application.Part1Client" />
+      <item itemvalue="Application.Part2Server" />
+      <item itemvalue="Application.Part2Client" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.Part2Client" />
+        <item itemvalue="Application.Part2Server" />
         <item itemvalue="Application.Part1Client" />
         <item itemvalue="Application.Part1Server" />
         <item itemvalue="Application.Runner" />
-        <item itemvalue="Application.Warmup" />
-        <item itemvalue="Application.Runner (2)" />
       </list>
     </recent_temporary>
   </component>
@@ -169,7 +165,7 @@
       <workItem from="1572395080990" duration="208000" />
       <workItem from="1572534407719" duration="9825000" />
       <workItem from="1572621697914" duration="1492000" />
-      <workItem from="1572884921234" duration="1910000" />
+      <workItem from="1572884921234" duration="4873000" />
     </task>
     <task id="LOCAL-00001" summary="Classwork from August 22, 2019">
       <created>1566521518017</created>
@@ -500,7 +496,14 @@
       <option name="project" value="LOCAL" />
       <updated>1572622911338</updated>
     </task>
-    <option name="localTasksCounter" value="48" />
+    <task id="LOCAL-00048" summary="Beginning of classwork from November 4, 2019">
+      <created>1572887089167</created>
+      <option name="number" value="00048" />
+      <option name="presentableId" value="LOCAL-00048" />
+      <option name="project" value="LOCAL" />
+      <updated>1572887089167</updated>
+    </task>
+    <option name="localTasksCounter" value="49" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -522,7 +525,6 @@
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="More work on iterators lab" />
     <MESSAGE value="Add date-based sorting to iterators lab" />
     <MESSAGE value="Added fucking iterator usage to the iterator lab." />
     <MESSAGE value="aaaaaaaaaah" />
@@ -547,7 +549,8 @@
     <MESSAGE value="Queues Lab" />
     <MESSAGE value="Queues Lab -- add .zip file" />
     <MESSAGE value="Fixed queues lab." />
-    <option name="LAST_COMMIT_MESSAGE" value="Fixed queues lab." />
+    <MESSAGE value="Beginning of classwork from November 4, 2019" />
+    <option name="LAST_COMMIT_MESSAGE" value="Beginning of classwork from November 4, 2019" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">

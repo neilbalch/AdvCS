@@ -1,24 +1,8 @@
 import java.io.*;
 import java.net.*;
 import java.util.HashMap;
-
-//class Pair<T, U> {
-//    private T t;
-//    private U u;
-//
-//    public Pair(T t, U u) {
-//        this.t = t;
-//        this.u = u;
-//    }
-//
-//    public T getT() {
-//        return t;
-//    }
-//
-//    public U getU() {
-//        return u;
-//    }
-//}
+import java.util.Iterator;
+import java.util.Map;
 
 public class Part2Server extends Thread {
     private ServerSocket serverSocket;
@@ -39,35 +23,35 @@ public class Part2Server extends Thread {
                 DataInputStream in = new DataInputStream(server.getInputStream());
                 DataOutputStream out = new DataOutputStream(server.getOutputStream());
 
-//                ArrayList<Pair<String, String>> questions = new ArrayList<>();
-//                questions.add(new Pair<String, String>("Capital of California?", "Sacramento"));
-//                questions.add(new Pair<String, String>("What state is the biggest by land area?", "Alaska"));
-//                questions.add(new Pair<String, String>("What state is most populous?", "California"));
-//                questions.add(new Pair<String, String>("In what continent is Mother Russia?", "Asia"));
-//                questions.add(new Pair<String, String>("Which country is north of the US?", "Canada"));
-
                 HashMap<String, String> responses = new HashMap<>();
                 responses.put("How do you make holy water?", "You boil the hell out of it.");
-                responses.put("", "");
-                responses.put("", "");
-                responses.put("", "");
-                responses.put("", "");
+                responses.put("Why did the chicken cross the road?", "To get to the other side!");
+                responses.put("What do you call cheese that's not yours?", "Nacho cheese!");
+                responses.put("What do elves learn in school?", "The elf-abet.");
+                responses.put("What do you call a fake noodle?", "An impasta!");
 
-//                for(Pair<String, String> question : questions) {
-//                    out.writeUTF(question.getT());
-//                    String response = in.readUTF();
-//
-//                    if(response.equalsIgnoreCase(question.getU()))
-//                        out.writeUTF("Correct!");
-//                    else
-//                        out.writeUTF("Incorrect! The correct answer was: " + question.getU());
-//                }
+                while (true) {
+                    System.out.println("Waiting for a message: ");
+                    String message = in.readUTF();
+                    if (message.equalsIgnoreCase("bye")) break;
+
+                    boolean found = false;
+                    Iterator iter = responses.entrySet().iterator();
+                    while (iter.hasNext()) {
+                        Map.Entry pair = (Map.Entry) iter.next();
+                        if (((String) pair.getKey()).equalsIgnoreCase(message)) {
+                            out.writeUTF((String) pair.getValue());
+                            found = true;
+                        }
+                    }
+                    if (!found) out.writeUTF("Not an option!");
+                }
 
 //                System.out.println(in.readUTF());
 //                out.writeUTF("Thank you for connecting to " + server.getLocalSocketAddress()
 //                        + "\nGoodbye!");
 
-                out.writeUTF("none more");
+//                out.writeUTF("none more");
                 server.close();
 
             } catch (SocketTimeoutException s) {
@@ -82,10 +66,10 @@ public class Part2Server extends Thread {
 
     public static void main(String[] args) {
 //        int port = Integer.parseInt(args[0]);
-        int port = 1024;
+        int port = 1025;
 
         try {
-            Thread t = new Part1Server(port);
+            Thread t = new Part2Server(port);
             t.start();
         } catch (IOException e) {
             e.printStackTrace();
