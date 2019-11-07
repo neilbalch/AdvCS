@@ -2,9 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="36939a02-4d05-4550-9e2f-c504bf2e9922" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/Q2/11072019/Client.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Q2/11072019/ClientRunner.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Q2/11072019/Server.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Q2/11072019/ServerRunner.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Q2/11042019/Part2Client.java" beforeDir="false" afterPath="$PROJECT_DIR$/Q2/11042019/Part2Client.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Q2/11042019/Part2Server.java" beforeDir="false" afterPath="$PROJECT_DIR$/Q2/11042019/Part2Server.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -39,7 +42,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/Q2/11042019" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/Q2/11072019" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -78,7 +81,14 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.Part2Client">
+  <component name="RunManager" selected="Application.ClientRunner">
+    <configuration name="ClientRunner" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="ClientRunner" />
+      <module name="11072019" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="Part1Client" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Part1Client" />
       <module name="11042019" />
@@ -93,13 +103,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Part2Client" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Part2Client" />
-      <module name="11042019" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="Part2Server" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Part2Server" />
       <module name="11042019" />
@@ -107,27 +110,27 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Runner" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Runner" />
-      <module name="Queues Lab" />
+    <configuration name="ServerRunner" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="ServerRunner" />
+      <module name="11072019" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
     <list>
-      <item itemvalue="Application.Runner" />
       <item itemvalue="Application.Part1Server" />
       <item itemvalue="Application.Part1Client" />
       <item itemvalue="Application.Part2Server" />
-      <item itemvalue="Application.Part2Client" />
+      <item itemvalue="Application.ServerRunner" />
+      <item itemvalue="Application.ClientRunner" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.Part2Client" />
+        <item itemvalue="Application.ClientRunner" />
+        <item itemvalue="Application.ServerRunner" />
         <item itemvalue="Application.Part2Server" />
         <item itemvalue="Application.Part1Client" />
         <item itemvalue="Application.Part1Server" />
-        <item itemvalue="Application.Runner" />
       </list>
     </recent_temporary>
   </component>
@@ -165,7 +168,8 @@
       <workItem from="1572395080990" duration="208000" />
       <workItem from="1572534407719" duration="9825000" />
       <workItem from="1572621697914" duration="1492000" />
-      <workItem from="1572884921234" duration="4873000" />
+      <workItem from="1572884921234" duration="7310000" />
+      <workItem from="1573142953898" duration="3292000" />
     </task>
     <task id="LOCAL-00001" summary="Classwork from August 22, 2019">
       <created>1566521518017</created>
@@ -503,7 +507,14 @@
       <option name="project" value="LOCAL" />
       <updated>1572887089167</updated>
     </task>
-    <option name="localTasksCounter" value="49" />
+    <task id="LOCAL-00049" summary="End of classwork from November 4, 2019">
+      <created>1572971228385</created>
+      <option name="number" value="00049" />
+      <option name="presentableId" value="LOCAL-00049" />
+      <option name="project" value="LOCAL" />
+      <updated>1572971228385</updated>
+    </task>
+    <option name="localTasksCounter" value="50" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -525,7 +536,6 @@
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Add date-based sorting to iterators lab" />
     <MESSAGE value="Added fucking iterator usage to the iterator lab." />
     <MESSAGE value="aaaaaaaaaah" />
     <MESSAGE value="Add README." />
@@ -550,7 +560,8 @@
     <MESSAGE value="Queues Lab -- add .zip file" />
     <MESSAGE value="Fixed queues lab." />
     <MESSAGE value="Beginning of classwork from November 4, 2019" />
-    <option name="LAST_COMMIT_MESSAGE" value="Beginning of classwork from November 4, 2019" />
+    <MESSAGE value="End of classwork from November 4, 2019" />
+    <option name="LAST_COMMIT_MESSAGE" value="End of classwork from November 4, 2019" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
