@@ -2,10 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="36939a02-4d05-4550-9e2f-c504bf2e9922" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Q2/11072019/Client.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Q2/11072019/ClientRunner.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Q2/11072019/Server.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Q2/11072019/ServerRunner.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Q2/11122019/11122019.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Q2/11122019/Client.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Q2/11122019/Server.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Q2/11122019/Student.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
@@ -16,7 +16,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="CoverageViewManager">
-    <option name="myElementSize" value="235" />
+    <option name="myElementSize" value="262" />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -42,7 +42,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/Q2/11072019" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/Q2/11122019" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -81,7 +81,14 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.ClientRunner">
+  <component name="RunManager" selected="Application.Client">
+    <configuration name="Client" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Client" />
+      <module name="11122019" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="ClientRunner" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="ClientRunner" />
       <module name="11072019" />
@@ -89,23 +96,9 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Part1Client" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Part1Client" />
-      <module name="11042019" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="Part1Server" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Part1Server" />
-      <module name="11042019" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="Part2Server" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Part2Server" />
-      <module name="11042019" />
+    <configuration name="Server" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Server" />
+      <module name="11122019" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -117,20 +110,27 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="TestServer" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="TestServer" />
+      <module name="11122019" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <list>
-      <item itemvalue="Application.Part1Server" />
-      <item itemvalue="Application.Part1Client" />
-      <item itemvalue="Application.Part2Server" />
       <item itemvalue="Application.ServerRunner" />
       <item itemvalue="Application.ClientRunner" />
+      <item itemvalue="Application.Server" />
+      <item itemvalue="Application.Client" />
+      <item itemvalue="Application.TestServer" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.ClientRunner" />
+        <item itemvalue="Application.Client" />
+        <item itemvalue="Application.Server" />
+        <item itemvalue="Application.TestServer" />
         <item itemvalue="Application.ServerRunner" />
-        <item itemvalue="Application.Part2Server" />
-        <item itemvalue="Application.Part1Client" />
-        <item itemvalue="Application.Part1Server" />
+        <item itemvalue="Application.ClientRunner" />
       </list>
     </recent_temporary>
   </component>
@@ -169,14 +169,8 @@
       <workItem from="1572534407719" duration="9825000" />
       <workItem from="1572621697914" duration="1492000" />
       <workItem from="1572884921234" duration="7310000" />
-      <workItem from="1573142953898" duration="3292000" />
-    </task>
-    <task id="LOCAL-00001" summary="Classwork from August 22, 2019">
-      <created>1566521518017</created>
-      <option name="number" value="00001" />
-      <option name="presentableId" value="LOCAL-00001" />
-      <option name="project" value="LOCAL" />
-      <updated>1566521518017</updated>
+      <workItem from="1573142953898" duration="6403000" />
+      <workItem from="1573574760690" duration="5314000" />
     </task>
     <task id="LOCAL-00002" summary="All? from Bank lab.">
       <created>1566521545441</created>
@@ -514,7 +508,14 @@
       <option name="project" value="LOCAL" />
       <updated>1572971228385</updated>
     </task>
-    <option name="localTasksCounter" value="50" />
+    <task id="LOCAL-00050" summary="Classwork from November 7, 2019.">
+      <created>1573146454600</created>
+      <option name="number" value="00050" />
+      <option name="presentableId" value="LOCAL-00050" />
+      <option name="project" value="LOCAL" />
+      <updated>1573146454601</updated>
+    </task>
+    <option name="localTasksCounter" value="51" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -536,7 +537,6 @@
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Added fucking iterator usage to the iterator lab." />
     <MESSAGE value="aaaaaaaaaah" />
     <MESSAGE value="Add README." />
     <MESSAGE value="Final dose of work on Iterators Lab" />
@@ -561,10 +561,12 @@
     <MESSAGE value="Fixed queues lab." />
     <MESSAGE value="Beginning of classwork from November 4, 2019" />
     <MESSAGE value="End of classwork from November 4, 2019" />
-    <option name="LAST_COMMIT_MESSAGE" value="End of classwork from November 4, 2019" />
+    <MESSAGE value="Classwork from November 7, 2019." />
+    <option name="LAST_COMMIT_MESSAGE" value="Classwork from November 7, 2019." />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/AdvCS$Server.ic" NAME="Server Coverage Results" MODIFIED="1573590929592" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
     <SUITE FILE_PATH="coverage/AdvCS$WarmUp__1_.ic" NAME="WarmUp (1) Coverage Results" MODIFIED="1568906781169" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
   </component>
 </project>
