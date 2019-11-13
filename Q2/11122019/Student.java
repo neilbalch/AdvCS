@@ -9,7 +9,6 @@ public class Student implements Serializable {
         this.id = id;
     }
 
-
     public String getName() {
         return name;
     }
@@ -26,9 +25,8 @@ public class Student implements Serializable {
         this.id = id;
     }
 
-    @java.lang.Override
-    public java.lang.String toString() {
-        return "Name: " + name + " ID: " + id
-                ;
+    @Override
+    public String toString() {
+        return "Name: " + name + " ID: " + id;
     }
 }

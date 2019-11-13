@@ -2,11 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="36939a02-4d05-4550-9e2f-c504bf2e9922" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Q2/11122019/11122019.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Q2/11122019/Client.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Q2/11122019/Server.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Q2/11122019/Student.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -17,6 +12,20 @@
   </component>
   <component name="CoverageViewManager">
     <option name="myElementSize" value="262" />
+  </component>
+  <component name="DatabaseView">
+    <option name="SHOW_INTERMEDIATE" value="true" />
+    <option name="GROUP_DATA_SOURCES" value="true" />
+    <option name="GROUP_SCHEMA" value="true" />
+    <option name="GROUP_CONTENTS" value="false" />
+    <option name="SORT_POSITIONED" value="false" />
+    <option name="SHOW_EMPTY_GROUPS" value="false" />
+    <option name="AUTO_SCROLL_FROM_SOURCE" value="false" />
+    <option name="HIDDEN_KINDS">
+      <set />
+    </option>
+    <expand />
+    <select />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -52,7 +61,7 @@
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="project.structure.last.edited" value="Project" />
+    <property name="project.structure.last.edited" value="Artifacts" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="settings.editor.selected.configurable" value="editor.preferences.fonts.default" />
@@ -170,14 +179,7 @@
       <workItem from="1572621697914" duration="1492000" />
       <workItem from="1572884921234" duration="7310000" />
       <workItem from="1573142953898" duration="6403000" />
-      <workItem from="1573574760690" duration="5314000" />
-    </task>
-    <task id="LOCAL-00002" summary="All? from Bank lab.">
-      <created>1566521545441</created>
-      <option name="number" value="00002" />
-      <option name="presentableId" value="LOCAL-00002" />
-      <option name="project" value="LOCAL" />
-      <updated>1566521545441</updated>
+      <workItem from="1573574760690" duration="7187000" />
     </task>
     <task id="LOCAL-00003" summary="Final Bank Lab stuff">
       <created>1566588815886</created>
@@ -515,7 +517,14 @@
       <option name="project" value="LOCAL" />
       <updated>1573146454601</updated>
     </task>
-    <option name="localTasksCounter" value="51" />
+    <task id="LOCAL-00051" summary="Classwork from November 12, 2019.">
+      <created>1573593815091</created>
+      <option name="number" value="00051" />
+      <option name="presentableId" value="LOCAL-00051" />
+      <option name="project" value="LOCAL" />
+      <updated>1573593815092</updated>
+    </task>
+    <option name="localTasksCounter" value="52" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -537,7 +546,6 @@
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="aaaaaaaaaah" />
     <MESSAGE value="Add README." />
     <MESSAGE value="Final dose of work on Iterators Lab" />
     <MESSAGE value="First work on Big-O lab" />
@@ -562,7 +570,8 @@
     <MESSAGE value="Beginning of classwork from November 4, 2019" />
     <MESSAGE value="End of classwork from November 4, 2019" />
     <MESSAGE value="Classwork from November 7, 2019." />
-    <option name="LAST_COMMIT_MESSAGE" value="Classwork from November 7, 2019." />
+    <MESSAGE value="Classwork from November 12, 2019." />
+    <option name="LAST_COMMIT_MESSAGE" value="Classwork from November 12, 2019." />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
