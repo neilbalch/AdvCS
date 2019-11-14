@@ -34,7 +34,7 @@ public class Server {
                     objOut.writeObject(students);
                 } else if (msg == 2) { // Add
                     System.out.println("Received add request");
-                    String name = dataIn.readUTF();
+                    String name = dataIn.readUTF().toLowerCase();
                     int id = dataIn.readInt();
 
                     students.add(new Student(name, id));
@@ -43,12 +43,14 @@ public class Server {
                     objOut.writeObject(students);
                 } else if (msg == 3) { // Remove
                     System.out.println("Received remove request");
-                    String name = dataIn.readUTF();
+                    String name = dataIn.readUTF().toLowerCase();
                     int id = dataIn.readInt();
                     Student query = new Student(name, id);
 
-                    if (students.contains(query))
-                        students.removeIf(o -> o.equals(query));
+                    System.out.println(students);
+                    System.out.println(query);
+                    students.removeIf(o -> o.equals(query));
+//                    System.out.println("ERR! Student not found!");
 
                     objOut.reset();
                     objOut.writeObject(students);

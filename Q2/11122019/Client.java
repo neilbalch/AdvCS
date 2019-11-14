@@ -5,7 +5,7 @@ import java.util.HashSet;
 public class Client {
     public static void main(String[] args) {
         try {
-            Socket client = new Socket("localhost", 1024);
+            Socket client = new Socket("10.210.27.95", 1024);
 
             System.out.println("Just connected to " + client.getRemoteSocketAddress());
             ObjectOutputStream objOut = new ObjectOutputStream(client.getOutputStream());
@@ -21,6 +21,12 @@ public class Client {
             dataOut.writeUTF("Joe Schmo");
             dataOut.writeInt(1234);
             System.out.println("Student add request sent");
+            System.out.println((HashSet<Student>) objIn.readObject());
+
+            dataOut.writeInt(3);
+            dataOut.writeUTF("Joe Schmo");
+            dataOut.writeInt(1234);
+            System.out.println("Student remove request sent");
             System.out.println((HashSet<Student>) objIn.readObject());
 
             dataOut.writeInt(0);

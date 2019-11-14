@@ -29,4 +29,20 @@ public class Student implements Serializable {
     public String toString() {
         return "Name: " + name + " ID: " + id;
     }
+
+    public boolean equals(Object o) {
+        Student other = (Student) o;
+
+        return other.getId() == id && other.getName().equalsIgnoreCase(name);
+//        boolean equals = true;
+//        if(other.getId() != id) {
+//            System.out.println(other.getId() + " != " + id);
+//            equals = false;
+//        } else if(!other.getName().equalsIgnoreCase(name)) {
+//            System.out.println(other.getName() + " != " + name);
+//            equals = false;
+//        }
+//
+//        return equals;
+    }
 }

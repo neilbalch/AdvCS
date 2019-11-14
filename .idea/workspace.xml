@@ -2,7 +2,18 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="36939a02-4d05-4550-9e2f-c504bf2e9922" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/Labs/Networking Lab/ClientRunner.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Labs/Networking Lab/ClientScreen.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Labs/Networking Lab/GameState.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Labs/Networking Lab/Networking Lab.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Labs/Networking Lab/ServerRunner.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Labs/Networking Lab/ServerScreen.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Q2/11072019/Server.java" beforeDir="false" afterPath="$PROJECT_DIR$/Q2/11072019/Server.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Q2/11122019/Client.java" beforeDir="false" afterPath="$PROJECT_DIR$/Q2/11122019/Client.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Q2/11122019/Server.java" beforeDir="false" afterPath="$PROJECT_DIR$/Q2/11122019/Server.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Q2/11122019/Student.java" beforeDir="false" afterPath="$PROJECT_DIR$/Q2/11122019/Student.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -51,7 +62,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/Q2/11122019" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/Labs/Networking Lab" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -71,11 +82,11 @@
       <recent name="" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\neilb\Documents\GitHub\AdvCS\Labs\Networking Lab" />
       <recent name="C:\Users\neilb\Documents\GitHub\AdvCS\Labs\Queues Lab" />
       <recent name="C:\Users\neilb\Documents\GitHub\AdvCS\Labs\Maps Lab" />
       <recent name="C:\Users\neilb\Documents\GitHub\AdvCS\Labs\Sets Lab" />
       <recent name="C:\Users\neilb\Documents\GitHub\AdvCS\Labs\Big-O Lab" />
-      <recent name="C:\Users\neilb\Documents\GitHub\AdvCS\Labs\Iterators Lab" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -90,7 +101,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.Client">
+  <component name="RunManager" selected="Application.ServerRunner (1)">
     <configuration name="Client" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Client" />
       <module name="11122019" />
@@ -98,16 +109,16 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ClientRunner" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="ClientRunner" />
-      <module name="11072019" />
+    <configuration name="Server" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Server" />
+      <module name="11122019" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Server" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Server" />
-      <module name="11122019" />
+    <configuration name="ServerRunner (1)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="ServerRunner" />
+      <module name="Networking Lab" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -128,18 +139,18 @@
     </configuration>
     <list>
       <item itemvalue="Application.ServerRunner" />
-      <item itemvalue="Application.ClientRunner" />
       <item itemvalue="Application.Server" />
       <item itemvalue="Application.Client" />
       <item itemvalue="Application.TestServer" />
+      <item itemvalue="Application.ServerRunner (1)" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.Client" />
+        <item itemvalue="Application.ServerRunner (1)" />
         <item itemvalue="Application.Server" />
-        <item itemvalue="Application.TestServer" />
         <item itemvalue="Application.ServerRunner" />
-        <item itemvalue="Application.ClientRunner" />
+        <item itemvalue="Application.Client" />
+        <item itemvalue="Application.TestServer" />
       </list>
     </recent_temporary>
   </component>
@@ -179,14 +190,8 @@
       <workItem from="1572621697914" duration="1492000" />
       <workItem from="1572884921234" duration="7310000" />
       <workItem from="1573142953898" duration="6403000" />
-      <workItem from="1573574760690" duration="7187000" />
-    </task>
-    <task id="LOCAL-00003" summary="Final Bank Lab stuff">
-      <created>1566588815886</created>
-      <option name="number" value="00003" />
-      <option name="presentableId" value="LOCAL-00003" />
-      <option name="project" value="LOCAL" />
-      <updated>1566588815886</updated>
+      <workItem from="1573574760690" duration="7454000" />
+      <workItem from="1573717953435" duration="3699000" />
     </task>
     <task id="LOCAL-00004" summary="Classwork from Monday, 08262019.">
       <created>1566833503652</created>
@@ -524,7 +529,14 @@
       <option name="project" value="LOCAL" />
       <updated>1573593815092</updated>
     </task>
-    <option name="localTasksCounter" value="52" />
+    <task id="LOCAL-00052" summary="Formatting for classwork from November 12, 2019.">
+      <created>1573621135927</created>
+      <option name="number" value="00052" />
+      <option name="presentableId" value="LOCAL-00052" />
+      <option name="project" value="LOCAL" />
+      <updated>1573621135927</updated>
+    </task>
+    <option name="localTasksCounter" value="53" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -546,7 +558,6 @@
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Add README." />
     <MESSAGE value="Final dose of work on Iterators Lab" />
     <MESSAGE value="First work on Big-O lab" />
     <MESSAGE value="Little more work on Big-O lab" />
@@ -571,7 +582,8 @@
     <MESSAGE value="End of classwork from November 4, 2019" />
     <MESSAGE value="Classwork from November 7, 2019." />
     <MESSAGE value="Classwork from November 12, 2019." />
-    <option name="LAST_COMMIT_MESSAGE" value="Classwork from November 12, 2019." />
+    <MESSAGE value="Formatting for classwork from November 12, 2019." />
+    <option name="LAST_COMMIT_MESSAGE" value="Formatting for classwork from November 12, 2019." />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
