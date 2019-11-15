@@ -30,10 +30,10 @@ class GameState implements Serializable {
                 g.setColor(Color.BLACK);
                 switch (board[r][c]) {
                     case 1:
-                        g.drawString("X", topLeft.x + c * (50 + 3) + 15, topLeft.y + r * (50 + 3) + 40);
+                        g.drawString("X", topLeft.x + c * (50 + 3) + 10, topLeft.y + r * (50 + 3) + 40);
                         break;
                     case 2:
-                        g.drawString("O", topLeft.x + c * (50 + 3) + 15, topLeft.y + r * (50 + 3) + 40);
+                        g.drawString("O", topLeft.x + c * (50 + 3) + 10, topLeft.y + r * (50 + 3) + 40);
                         break;
                 }
 

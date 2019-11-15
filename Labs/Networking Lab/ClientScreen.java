@@ -11,7 +11,7 @@ public class ClientScreen extends JPanel implements ActionListener, MouseListene
     private int itemsWidth = 150;
 
     private JButton restartGame;
-//
+
 //    private JList<String> queueDisplay;
 //    private JScrollPane queueDisplayPane;
 //    private JList<String> pQueueDisplay;
@@ -56,6 +56,9 @@ public class ClientScreen extends JPanel implements ActionListener, MouseListene
                 while (true) {
                     game = (GameState) in.readObject();
                     System.out.println("New Board Received");
+                    if (game.state == GameState.State.OVER) restartGame.setVisible(true);
+                    if (restartGame.isVisible() && game.state != GameState.State.OVER)
+                        restartGame.setVisible(false);
                     repaint();
                 }
             } catch (IOException | ClassNotFoundException err) {
@@ -146,11 +149,11 @@ public class ClientScreen extends JPanel implements ActionListener, MouseListene
 
         int textVerticalOffset = -7;
         g.setColor(Color.BLACK);
-        g.setFont(new Font("Arial", Font.BOLD, 18));
-        g.drawString("You are player O. It is player " + (game.state == GameState.State.TURN1 ? "X's" : "O's") + " turn.", 100, 100 + textVerticalOffset);
-
-        if (game.checkTicTackToe() != 0)
-            g.drawString("Player " + (game.checkTicTackToe() == 1 ? "X" : "O") + " won the game!", 250, 100 + textVerticalOffset);
+        g.setFont(new Font("Arial", Font.BOLD, 16));
+        g.drawString("You are player O. " + (game.checkTicTackToe() == 0
+                        ? "It is player " + (game.state == GameState.State.TURN1 ? "X's" : "O's") + " turn."
+                        : "Player " + (game.checkTicTackToe() == 1 ? "X" : "O") + " won the game!"),
+                100, 100 + textVerticalOffset);
 
         game.drawBoard(g);
     }
@@ -178,7 +181,7 @@ public class ClientScreen extends JPanel implements ActionListener, MouseListene
             if (game.handleClick(e.getPoint())) {
                 System.out.println("Board Changed");
 
-                if (game.checkTicTackToe() == 1 || game.checkFull()) {
+                if (game.checkTicTackToe() == 2 || game.checkFull()) {
                     game.state = GameState.State.OVER;
                     restartGame.setVisible(true);
                 }
@@ -192,24 +195,16 @@ public class ClientScreen extends JPanel implements ActionListener, MouseListene
             }
         } else System.out.println("Turn is of: " + game.state.name());
     }
-
     @Override
     public void mousePressed(MouseEvent e) {
-
     }
-
     @Override
     public void mouseReleased(MouseEvent e) {
-
     }
-
     @Override
     public void mouseEntered(MouseEvent e) {
-
     }
-
     @Override
     public void mouseExited(MouseEvent e) {
-
     }
 }

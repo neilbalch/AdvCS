@@ -61,6 +61,9 @@ public class ServerScreen extends JPanel implements ActionListener, MouseListene
                 while (true) {
                     game = (GameState) in.readObject();
                     System.out.println("New Board Received");
+                    if (game.state == GameState.State.OVER) restartGame.setVisible(true);
+                    if (restartGame.isVisible() && game.state != GameState.State.OVER)
+                        restartGame.setVisible(false);
                     repaint();
                 }
             } catch (IOException | ClassNotFoundException err) {
@@ -151,16 +154,26 @@ public class ServerScreen extends JPanel implements ActionListener, MouseListene
 
         int textVerticalOffset = -7;
         g.setColor(Color.BLACK);
-        g.setFont(new Font("Arial", Font.BOLD, 18));
-        g.drawString("You are player X. It is player " + (game.state == GameState.State.TURN1 ? "X's" : "O's") + " turn.", 100, 100 + textVerticalOffset);
-
-        if (game.checkTicTackToe() != 0)
-            g.drawString("Player " + (game.checkTicTackToe() == 1 ? "X" : "O") + " won the game!", 250, 100 + textVerticalOffset);
+        g.setFont(new Font("Arial", Font.BOLD, 16));
+        g.drawString("You are player X. " + (game.checkTicTackToe() == 0
+                        ? "It is player " + (game.state == GameState.State.TURN1 ? "X's" : "O's") + " turn."
+                        : "Player " + (game.checkTicTackToe() == 1 ? "X" : "O") + " won the game!"),
+                100, 100 + textVerticalOffset);
 
         game.drawBoard(g);
     }
 
     public void actionPerformed(ActionEvent e) {
+        if (e.getSource() == restartGame) {
+            restartGame.setVisible(true);
+            game = new GameState(new Point(100, 100));
+
+            try {
+                out.writeObject(game);
+            } catch (IOException err) {
+                System.out.println(err.toString());
+            }
+        }
 
         repaint();
     }
@@ -173,8 +186,10 @@ public class ServerScreen extends JPanel implements ActionListener, MouseListene
             if (game.handleClick(e.getPoint())) {
                 System.out.println("Board Changed");
 
-                if (game.checkTicTackToe() == 1 || game.checkFull())
+                if (game.checkTicTackToe() == 1 || game.checkFull()) {
                     game.state = GameState.State.OVER;
+                    restartGame.setVisible(true);
+                }
 
                 try {
                     out.writeObject(game);
