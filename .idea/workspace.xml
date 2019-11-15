@@ -8,12 +8,7 @@
       <change afterPath="$PROJECT_DIR$/Labs/Networking Lab/Networking Lab.iml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/Labs/Networking Lab/ServerRunner.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/Labs/Networking Lab/ServerScreen.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Q2/11072019/Server.java" beforeDir="false" afterPath="$PROJECT_DIR$/Q2/11072019/Server.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Q2/11122019/Client.java" beforeDir="false" afterPath="$PROJECT_DIR$/Q2/11122019/Client.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Q2/11122019/Server.java" beforeDir="false" afterPath="$PROJECT_DIR$/Q2/11122019/Server.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Q2/11122019/Student.java" beforeDir="false" afterPath="$PROJECT_DIR$/Q2/11122019/Student.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -101,10 +96,17 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.ServerRunner (1)">
+  <component name="RunManager" selected="Application.ClientRunner">
     <configuration name="Client" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Client" />
       <module name="11122019" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ClientRunner" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="ClientRunner" />
+      <module name="Networking Lab" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -130,27 +132,20 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="TestServer" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="TestServer" />
-      <module name="11122019" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <list>
       <item itemvalue="Application.ServerRunner" />
       <item itemvalue="Application.Server" />
       <item itemvalue="Application.Client" />
-      <item itemvalue="Application.TestServer" />
       <item itemvalue="Application.ServerRunner (1)" />
+      <item itemvalue="Application.ClientRunner" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.ClientRunner" />
         <item itemvalue="Application.ServerRunner (1)" />
         <item itemvalue="Application.Server" />
         <item itemvalue="Application.ServerRunner" />
         <item itemvalue="Application.Client" />
-        <item itemvalue="Application.TestServer" />
       </list>
     </recent_temporary>
   </component>
@@ -191,14 +186,9 @@
       <workItem from="1572884921234" duration="7310000" />
       <workItem from="1573142953898" duration="6403000" />
       <workItem from="1573574760690" duration="7454000" />
-      <workItem from="1573717953435" duration="3699000" />
-    </task>
-    <task id="LOCAL-00004" summary="Classwork from Monday, 08262019.">
-      <created>1566833503652</created>
-      <option name="number" value="00004" />
-      <option name="presentableId" value="LOCAL-00004" />
-      <option name="project" value="LOCAL" />
-      <updated>1566833503652</updated>
+      <workItem from="1573717953435" duration="6381000" />
+      <workItem from="1573758416566" duration="240000" />
+      <workItem from="1573775941511" duration="4425000" />
     </task>
     <task id="LOCAL-00005" summary="Classwork from Monday, 08262019.">
       <created>1566833541208</created>
@@ -536,7 +526,14 @@
       <option name="project" value="LOCAL" />
       <updated>1573621135927</updated>
     </task>
-    <option name="localTasksCounter" value="53" />
+    <task id="LOCAL-00053" summary="Fix classwork from November 12, 2019.">
+      <created>1573750972487</created>
+      <option name="number" value="00053" />
+      <option name="presentableId" value="LOCAL-00053" />
+      <option name="project" value="LOCAL" />
+      <updated>1573750972487</updated>
+    </task>
+    <option name="localTasksCounter" value="54" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -558,7 +555,6 @@
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Final dose of work on Iterators Lab" />
     <MESSAGE value="First work on Big-O lab" />
     <MESSAGE value="Little more work on Big-O lab" />
     <MESSAGE value="Final work on Big-O lab." />
@@ -583,7 +579,8 @@
     <MESSAGE value="Classwork from November 7, 2019." />
     <MESSAGE value="Classwork from November 12, 2019." />
     <MESSAGE value="Formatting for classwork from November 12, 2019." />
-    <option name="LAST_COMMIT_MESSAGE" value="Formatting for classwork from November 12, 2019." />
+    <MESSAGE value="Fix classwork from November 12, 2019." />
+    <option name="LAST_COMMIT_MESSAGE" value="Fix classwork from November 12, 2019." />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
