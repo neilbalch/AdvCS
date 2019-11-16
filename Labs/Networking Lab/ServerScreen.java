@@ -1,3 +1,4 @@
+import javax.sound.sampled.*;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
@@ -6,6 +7,7 @@ import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.net.ServerSocket;
 import java.net.Socket;
+import java.net.URL;
 
 public class ServerScreen extends JPanel implements ActionListener, MouseListener {
     private int itemsXPos = 25;
@@ -13,29 +15,65 @@ public class ServerScreen extends JPanel implements ActionListener, MouseListene
 
     private JButton restartGame;
 
-//    private JList<String> queueDisplay;
-//    private JScrollPane queueDisplayPane;
-//    private JList<String> pQueueDisplay;
-//    private JScrollPane pQueueDisplayPane;
-//
-//    private JTextField nameInput;
-//    private JTextField illnessDescription;
-//    private JComboBox prioritySelection;
-//    private JComboBox ageSelection;
-//    private JButton addPatientBtn;
-//    private JButton updatePatientPriorityBtn;
-//    private JButton updatePatientIllnessBtn;
-//
-//    private JTextArea patientDescriptor;
-//    private JTextField dischargeMessage;
-//    private JButton dischargePatientBtnn;
-
     private GameState game;
     private ServerSocket serverSock;
     private Socket clientSock;
     private ObjectOutputStream out;
     private ObjectInputStream in;
     private int port = 1024;
+
+    private enum Sounds {
+        GAME_LOST("game_lost.wav"),
+        GAME_TIED("game_tied.wav"),
+        GAME_WON("game_won.wav"),
+        MOVES_O("moves_o.wav"),
+        MOVES_X("moves_x.wav");
+
+        // Nested class for specifying volume
+        public static enum Volume {MUTE, LOW, MEDIUM, HIGH}
+
+        public static Volume volume = Volume.LOW;
+
+        // Each sound effect has its own clip, loaded with its own sound file.
+        private Clip clip;
+
+        Sounds(String soundFileName) {
+            try {
+                // Use URL (instead of File) to read from disk and JAR.
+                URL url = this.getClass().getClassLoader().getResource(soundFileName);
+                // Set up an audio input stream piped from the sound file.
+                AudioInputStream audioInputStream = AudioSystem.getAudioInputStream(url);
+                // Get a clip resource.
+                clip = AudioSystem.getClip();
+                // Open audio clip and load samples from the audio input stream.
+                clip.open(audioInputStream);
+            } catch (UnsupportedAudioFileException e) {
+//                e.printStackTrace();
+                System.out.println(e.toString());
+            } catch (IOException e) {
+//                e.printStackTrace();
+                System.out.println(e.toString());
+            } catch (LineUnavailableException e) {
+//                e.printStackTrace();
+                System.out.println(e.toString());
+            }
+        }
+
+        // Play or Re-play the sound effect from the beginning, by rewinding.
+        public void play() {
+            if (volume != Volume.MUTE) {
+                if (clip.isRunning())
+                    clip.stop();   // Stop the player if it is still running
+                clip.setFramePosition(0); // rewind to the beginning
+                clip.start();     // Start playing
+            }
+        }
+
+        // Optional static method to pre-load all the sound files.
+        static void init() {
+            values(); // calls the constructor for all the elements
+        }
+    }
 
     public ServerScreen() {
         this.setLayout(null);
@@ -61,7 +99,21 @@ public class ServerScreen extends JPanel implements ActionListener, MouseListene
                 while (true) {
                     game = (GameState) in.readObject();
                     System.out.println("New Board Received");
-                    if (game.state == GameState.State.OVER) restartGame.setVisible(true);
+
+                    if (game.state == GameState.State.OVER) {
+                        switch (game.checkTicTackToe()) {
+                            case 1: // Player 1 won. Will never happen.
+                                Sounds.GAME_WON.play();
+                                break;
+                            case 2: // Player 2 won.
+                                Sounds.GAME_LOST.play();
+                                break;
+                            case 0: // Tie
+                                Sounds.GAME_TIED.play();
+                                break;
+                        }
+                        restartGame.setVisible(true);
+                    } else Sounds.MOVES_O.play();
                     if (restartGame.isVisible() && game.state != GameState.State.OVER)
                         restartGame.setVisible(false);
                     repaint();
@@ -74,102 +126,48 @@ public class ServerScreen extends JPanel implements ActionListener, MouseListene
 
         addMouseListener(this);
 
-//        queueDisplay = new JList<>();
-//        queueDisplay.setListData(formatQueueAsArray());
-//        queueDisplayPane = new JScrollPane(queueDisplay);
-//        queueDisplayPane.setBounds(itemsXPos + 225, 330, getPreferredSize().width - itemsXPos - 200 - 25, (getPreferredSize().height - 50 - 25) / 2);
-//        queueDisplayPane.setVisible(false);
-//        add(queueDisplayPane);
-//
-//        pQueueDisplay = new JList<>();
-//        pQueueDisplay.setListData(formatPQueueAsArray());
-//        pQueueDisplayPane = new JScrollPane(pQueueDisplay);
-//        pQueueDisplayPane.setBounds(itemsXPos + 225, 50, getPreferredSize().width - itemsXPos - 200 - 25, (getPreferredSize().height - 50 - 25) / 2);
-//        add(pQueueDisplayPane);
-
-//        nameInput = new JTextField();
-//        nameInput.setBounds(itemsXPos, 70, itemsWidth, 30);
-//        add(nameInput);
-//
-//        illnessDescription = new JTextField();
-//        illnessDescription.setBounds(itemsXPos, 120, itemsWidth, 30);
-//        add(illnessDescription);
-//
-//        prioritySelection = new JComboBox(Patient.CasePriority.names());
-//        prioritySelection.setBounds(itemsXPos, 170, itemsWidth, 30);
-//        add(prioritySelection);
-//
-//        ageSelection = new JComboBox(Patient.Age.names());
-//        ageSelection.setBounds(itemsXPos, 220, itemsWidth, 30);
-//        add(ageSelection);
-//
-//        addPatientBtn = new JButton("Add Patient");
-//        addPatientBtn.setBounds(itemsXPos, 260, itemsWidth, 30);
-//        addPatientBtn.addActionListener(this);
-//        add(addPatientBtn);
-//
         restartGame = new JButton("Restart Game");
         restartGame.setBounds(100, 15, (int) itemsWidth, 30);
         restartGame.addActionListener(this);
         restartGame.setVisible(false);
         add(restartGame);
-//
-//        updatePatientIllnessBtn = new JButton("Update Illness");
-//        updatePatientIllnessBtn.setBounds(itemsXPos, 300, itemsWidth, 30);
-//        updatePatientIllnessBtn.addActionListener(this);
-//        add(updatePatientIllnessBtn);
-//
-//        updatePatientPriorityBtn = new JButton("Update Priority");
-//        updatePatientPriorityBtn.setBounds(itemsXPos, 340, itemsWidth, 30);
-//        updatePatientPriorityBtn.addActionListener(this);
-//        add(updatePatientPriorityBtn);
-
-        ////////////////////////////////////////////////////////////////////////////////////////////
-
-//        patientDescriptor = new JTextArea();
-//        patientDescriptor.setBounds(itemsXPos, 60, getPreferredSize().width - 60 - 50, 200);
-//        patientDescriptor.setVisible(false);
-//        patientDescriptor.setEditable(false);
-//        add(patientDescriptor);
-//
-//        dischargeMessage = new JTextField();
-//        dischargeMessage.setBounds(itemsXPos, 280, getPreferredSize().width - 60 - 50, 30);
-//        dischargeMessage.setVisible(false);
-//        add(dischargeMessage);
-//
-//        dischargePatientBtn = new JButton("Discharge Patient");
-//        dischargePatientBtn.setBounds(itemsXPos, 320, itemsWidth, 30);
-//        dischargePatientBtn.addActionListener(this);
-//        dischargePatientBtn.setVisible(false);
-//        add(dischargePatientBtn);
     }
 
     // Sets the size of the panel
+    @Override
     public Dimension getPreferredSize() {
         return new Dimension(800, 600);
     }
 
+    @Override
     public void paintComponent(Graphics g) {
         super.paintComponent(g);
+        System.out.println("Painting Screen");
 
         int textVerticalOffset = -7;
         g.setColor(Color.BLACK);
         g.setFont(new Font("Arial", Font.BOLD, 16));
-        g.drawString("You are player X. " + (game.checkTicTackToe() == 0
+        g.drawString("You are player 1 (X). " + (game.checkTicTackToe() == 0
                         ? "It is player " + (game.state == GameState.State.TURN1 ? "X's" : "O's") + " turn."
                         : "Player " + (game.checkTicTackToe() == 1 ? "X" : "O") + " won the game!"),
                 100, 100 + textVerticalOffset);
 
+        g.drawString("Number of Wins:", 450, 100);
+        g.drawString("Player 1:" + game.getPlayer1Wins(), 460, 130);
+        g.drawString("Player 2:" + game.getPlayer2Wins(), 460, 160);
+
         game.drawBoard(g);
     }
 
+    @Override
     public void actionPerformed(ActionEvent e) {
         if (e.getSource() == restartGame) {
             restartGame.setVisible(true);
-            game = new GameState(new Point(100, 100));
+            game.reset();
 
             try {
                 out.writeObject(game);
+                out.reset();
             } catch (IOException err) {
                 System.out.println(err.toString());
             }
@@ -180,19 +178,31 @@ public class ServerScreen extends JPanel implements ActionListener, MouseListene
 
     @Override
     public void mouseClicked(MouseEvent e) {
-        System.out.println("Clicked");
         if (game.state == GameState.State.TURN1) {
-            System.out.println("My Turn");
             if (game.handleClick(e.getPoint())) {
                 System.out.println("Board Changed");
+                Sounds.MOVES_X.play();
 
-                if (game.checkTicTackToe() == 1 || game.checkFull()) {
+                if (game.state != GameState.State.OVER && (game.checkTicTackToe() == 1 || game.checkFull())) {
                     game.state = GameState.State.OVER;
+                    game.addWin(1);
+                    switch (game.checkTicTackToe()) {
+                        case 1: // Player 1 won.
+                            Sounds.GAME_WON.play();
+                            break;
+                        case 2: // Player 2 won. Will never happen.
+                            Sounds.GAME_LOST.play();
+                            break;
+                        case 0: // Tie
+                            Sounds.GAME_TIED.play();
+                            break;
+                    }
                     restartGame.setVisible(true);
                 }
 
                 try {
                     out.writeObject(game);
+                    out.reset();
                 } catch (IOException err) {
                     System.out.println(err.toString());
                 }

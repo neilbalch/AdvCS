@@ -2,6 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="36939a02-4d05-4550-9e2f-c504bf2e9922" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/Labs/Networking Lab/Lightswitch Lever-Click - Royalty Free SFX.m4a" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Labs/Networking Lab/game_lost.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Labs/Networking Lab/game_tied.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Labs/Networking Lab/game_won.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Labs/Networking Lab/lose.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Labs/Networking Lab/moves_o.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Labs/Networking Lab/moves_x.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Labs/Networking Lab/win.wav" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Labs/Networking Lab/ClientScreen.java" beforeDir="false" afterPath="$PROJECT_DIR$/Labs/Networking Lab/ClientScreen.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Labs/Networking Lab/GameState.java" beforeDir="false" afterPath="$PROJECT_DIR$/Labs/Networking Lab/GameState.java" afterDir="false" />
@@ -185,14 +193,7 @@
       <workItem from="1573574760690" duration="7454000" />
       <workItem from="1573717953435" duration="6381000" />
       <workItem from="1573758416566" duration="240000" />
-      <workItem from="1573775941511" duration="5725000" />
-    </task>
-    <task id="LOCAL-00006" summary="Classwork from Monday, 08262019.">
-      <created>1566833584296</created>
-      <option name="number" value="00006" />
-      <option name="presentableId" value="LOCAL-00006" />
-      <option name="project" value="LOCAL" />
-      <updated>1566833584296</updated>
+      <workItem from="1573775941511" duration="8923000" />
     </task>
     <task id="LOCAL-00007" summary="Classwork from Tuesday, 08272019.">
       <created>1566919060480</created>
@@ -530,7 +531,14 @@
       <option name="project" value="LOCAL" />
       <updated>1573837477626</updated>
     </task>
-    <option name="localTasksCounter" value="55" />
+    <task id="LOCAL-00055" summary="Networking Lab, minus challenge.">
+      <created>1573844535356</created>
+      <option name="number" value="00055" />
+      <option name="presentableId" value="LOCAL-00055" />
+      <option name="project" value="LOCAL" />
+      <updated>1573844535356</updated>
+    </task>
+    <option name="localTasksCounter" value="56" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -552,7 +560,6 @@
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Little more work on Big-O lab" />
     <MESSAGE value="Final work on Big-O lab." />
     <MESSAGE value="Classwork from October 1, 2019." />
     <MESSAGE value="Non-challenge work on Sets Lab" />
@@ -577,7 +584,8 @@
     <MESSAGE value="Formatting for classwork from November 12, 2019." />
     <MESSAGE value="Fix classwork from November 12, 2019." />
     <MESSAGE value="Work from classtime on Networking Lab from November 14 and 15, 2019." />
-    <option name="LAST_COMMIT_MESSAGE" value="Work from classtime on Networking Lab from November 14 and 15, 2019." />
+    <MESSAGE value="Networking Lab, minus challenge." />
+    <option name="LAST_COMMIT_MESSAGE" value="Networking Lab, minus challenge." />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">

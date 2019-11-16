@@ -3,8 +3,6 @@ import java.io.Serializable;
 
 class GameState implements Serializable {
     public enum State {START, TURN1, TURN2, OVER}
-
-    ;
     public State state;
 
 //    public enum Mode {PvP, PvComp};
@@ -13,11 +11,21 @@ class GameState implements Serializable {
     public int[][] board;
     private Point topLeft;
 
+    private int player1Wins;
+    private int player2Wins;
+
     public GameState(Point topLeft) {
         state = State.TURN1;
 //        mode = Mode.PvP;
         board = new int[3][3];
         this.topLeft = topLeft;
+        player1Wins = 0;
+        player2Wins = 0;
+    }
+
+    public void reset() {
+        state = State.TURN1;
+        board = new int[3][3];
     }
 
     public void drawBoard(Graphics g) {
@@ -52,6 +60,19 @@ class GameState implements Serializable {
         if (location.x > topLeft.x && location.x < bottomRight.x &&
                 location.y > topLeft.y && location.y < bottomRight.y) return true;
         else return false;
+    }
+
+    public void addWin(int playerNum) {
+        if (playerNum == 1) player1Wins++;
+        if (playerNum == 2) player2Wins++;
+    }
+
+    public int getPlayer1Wins() {
+        return player1Wins;
+    }
+
+    public int getPlayer2Wins() {
+        return player2Wins;
     }
 
     public boolean handleClick(Point click) {
