@@ -1,16 +1,19 @@
 import javax.sound.sampled.*;
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseListener;
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.net.Socket;
 import java.net.URL;
 
-public class ClientScreen extends JPanel implements ActionListener, MouseListener {
-    private int itemsXPos = 25;
-    private int itemsWidth = 150;
+public class Client extends JPanel implements ActionListener, MouseListener {
+    private static final int itemsWidth = 150;
+    private static final int port = 1024;
 
     private JButton restartGame;
 
@@ -18,7 +21,6 @@ public class ClientScreen extends JPanel implements ActionListener, MouseListene
     private Socket clientSock;
     private ObjectOutputStream out;
     private ObjectInputStream in;
-    private int port = 1024;
 
     private enum Sounds {
         GAME_LOST("game_lost.wav"),
@@ -30,7 +32,7 @@ public class ClientScreen extends JPanel implements ActionListener, MouseListene
         // Nested class for specifying volume
         public static enum Volume {MUTE, LOW, MEDIUM, HIGH}
 
-        public static Volume volume = Volume.LOW;
+        public static Sounds.Volume volume = Sounds.Volume.LOW;
 
         // Each sound effect has its own clip, loaded with its own sound file.
         private Clip clip;
@@ -59,7 +61,7 @@ public class ClientScreen extends JPanel implements ActionListener, MouseListene
 
         // Play or Re-play the sound effect from the beginning, by rewinding.
         public void play() {
-            if (volume != Volume.MUTE) {
+            if (volume != Sounds.Volume.MUTE) {
                 if (clip.isRunning())
                     clip.stop();   // Stop the player if it is still running
                 clip.setFramePosition(0); // rewind to the beginning
@@ -73,9 +75,10 @@ public class ClientScreen extends JPanel implements ActionListener, MouseListene
         }
     }
 
-    public ClientScreen() {
+    public Client() {
         this.setLayout(null);
         this.setFocusable(true);
+        this.setPreferredSize(new Dimension(800, 600));
 
         game = new GameState(new Point(100, 100));
         try {
@@ -125,12 +128,6 @@ public class ClientScreen extends JPanel implements ActionListener, MouseListene
         restartGame.addActionListener(this);
         restartGame.setVisible(false);
         add(restartGame);
-    }
-
-    // Sets the size of the panel
-    @Override
-    public Dimension getPreferredSize() {
-        return new Dimension(800, 600);
     }
 
     @Override
@@ -208,16 +205,21 @@ public class ClientScreen extends JPanel implements ActionListener, MouseListene
     @Override
     public void mousePressed(MouseEvent e) {
     }
-
     @Override
     public void mouseReleased(MouseEvent e) {
     }
-
     @Override
     public void mouseEntered(MouseEvent e) {
     }
-
     @Override
     public void mouseExited(MouseEvent e) {
+    }
+
+    public static void main(String[] args) {
+        JFrame frame = new JFrame("Ready Player 2!");
+        frame.add(new Client());
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frame.pack();
+        frame.setVisible(true);
     }
 }

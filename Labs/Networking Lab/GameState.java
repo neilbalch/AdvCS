@@ -2,7 +2,7 @@ import java.awt.*;
 import java.io.Serializable;
 
 class GameState implements Serializable {
-    public enum State {START, TURN1, TURN2, OVER}
+    public enum State {TURN1, TURN2, OVER}
     public State state;
 
 //    public enum Mode {PvP, PvComp};
@@ -106,7 +106,7 @@ class GameState implements Serializable {
         System.out.println();
     }
 
-    public boolean insertXO(int r, int c) {
+    private boolean insertXO(int r, int c) {
         if (board[r][c] == 0) {
             if (state == State.TURN1) {
                 board[r][c] = 1;
