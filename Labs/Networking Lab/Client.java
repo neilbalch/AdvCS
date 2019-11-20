@@ -92,7 +92,7 @@ public class Client extends JPanel implements ActionListener, MouseListener {
             System.out.println(err.toString());
         }
 
-        Thread listener = new Thread(() -> {
+        Thread packetListener = new Thread(() -> {
             try {
                 while (true) {
                     game = (GameState) in.readObject();
@@ -120,7 +120,7 @@ public class Client extends JPanel implements ActionListener, MouseListener {
                 System.out.println(err.toString());
             }
         });
-        listener.start();
+        packetListener.start();
 
         addMouseListener(this);
         restartGame = new JButton("Restart Game");

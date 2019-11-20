@@ -24,6 +24,9 @@ public class Server extends JPanel implements ActionListener, MouseListener {
     private ObjectOutputStream out;
     private ObjectInputStream in;
 
+    private boolean animating;
+    private int animationTime;
+
     private enum Sounds {
         GAME_LOST("game_lost.wav"),
         GAME_TIED("game_tied.wav"),
@@ -97,7 +100,7 @@ public class Server extends JPanel implements ActionListener, MouseListener {
             System.out.println(err.toString());
         }
 
-        Thread listener = new Thread(() -> {
+        Thread packetListener = new Thread(() -> {
             try {
                 while (true) {
                     game = (GameState) in.readObject();
@@ -125,7 +128,40 @@ public class Server extends JPanel implements ActionListener, MouseListener {
                 System.out.println(err.toString());
             }
         });
-        listener.start();
+        packetListener.start();
+
+        animating = false;
+        animationTime = 0;
+        Thread animator = new Thread(() -> {
+            // count: 0-100: in-animation, 100-300: static, 300-400: out-animation
+            animating = true;
+            while (animationTime < 400) {
+                try {
+                    repaint();
+                    animationTime++;
+                    Thread.sleep(10);
+                } catch (InterruptedException err) {
+                    System.out.println(err.toString());
+                }
+            }
+            animating = false;
+
+//            for(int count = 0; count < 400; count++) {
+//                try {
+//                    if(count < 100) {
+//
+//                    } else if(count < 300) {
+//
+//                    } else { // count < 400
+//
+//                    }
+//
+//                    Thread.sleep(10);
+//                } catch (InterruptedException e) {
+//                    e.printStackTrace();
+//                }
+//            }
+        });
 
         addMouseListener(this);
 
