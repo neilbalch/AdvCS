@@ -2,14 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="36939a02-4d05-4550-9e2f-c504bf2e9922" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Labs/Networking Lab/AnimationTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Labs/Networking Lab/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Labs/Semester 1 Final/GameState.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Labs/Semester 1 Final/Message.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Labs/Semester 1 Final/Semester 1 Final.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Labs/Semester 1 Final/Tile.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Labs/Networking Lab/Client.java" beforeDir="false" afterPath="$PROJECT_DIR$/Labs/Networking Lab/Client.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Labs/Networking Lab/Main.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Labs/Networking Lab/Server.java" beforeDir="false" afterPath="$PROJECT_DIR$/Labs/Networking Lab/Server.java" afterDir="false" />
     </list>
-    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -51,12 +50,17 @@
   <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="2" id="Add" />
   </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
   <component name="PropertiesComponent">
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/Labs/Networking Lab" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/Labs/Semester 1 Final" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -84,19 +88,7 @@
       <recent name="C:\Users\neilb\Documents\GitHub\AdvCS\Labs\Big-O Lab" />
     </key>
   </component>
-  <component name="RunDashboard">
-    <option name="ruleStates">
-      <list>
-        <RuleState>
-          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
-        </RuleState>
-        <RuleState>
-          <option name="name" value="StatusDashboardGroupingRule" />
-        </RuleState>
-      </list>
-    </option>
-  </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Application.AnimationTest">
     <configuration name="AnimationTest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="AnimationTest" />
       <module name="Networking Lab" />
@@ -118,13 +110,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Server" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Server" />
-      <module name="Networking Lab" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="ServerRunner" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="ServerRunner" />
       <module name="11072019" />
@@ -132,22 +117,37 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="Server" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Server" />
+      <module name="Networking Lab" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <list>
+      <item itemvalue="Application.AnimationTest" />
+      <item itemvalue="Application.Client" />
       <item itemvalue="Application.ServerRunner" />
       <item itemvalue="Application.Server" />
-      <item itemvalue="Application.ServerRunner (1)" />
-      <item itemvalue="Application.ClientRunner" />
-      <item itemvalue="Application.GameAnimationTest" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.GameAnimationTest" />
-        <item itemvalue="Application.ClientRunner" />
-        <item itemvalue="Application.ServerRunner (1)" />
         <item itemvalue="Application.Server" />
         <item itemvalue="Application.ServerRunner" />
       </list>
     </recent_temporary>
+  </component>
+  <component name="ServiceViewManager">
+    <option name="viewStates">
+      <list>
+        <serviceView>
+          <treeState>
+            <expand />
+            <select />
+          </treeState>
+        </serviceView>
+      </list>
+    </option>
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -189,14 +189,9 @@
       <workItem from="1573717953435" duration="6381000" />
       <workItem from="1573758416566" duration="240000" />
       <workItem from="1573775941511" duration="8923000" />
-      <workItem from="1574033444396" duration="14798000" />
-    </task>
-    <task id="LOCAL-00010" summary="Classwork from Thursday, 9/5/2019">
-      <created>1567697457320</created>
-      <option name="number" value="00010" />
-      <option name="presentableId" value="LOCAL-00010" />
-      <option name="project" value="LOCAL" />
-      <updated>1567697457320</updated>
+      <workItem from="1574033444396" duration="15725000" />
+      <workItem from="1574965365707" duration="10000" />
+      <workItem from="1575303131011" duration="6598000" />
     </task>
     <task id="LOCAL-00011" summary="Initial progress on Inheritance lab.">
       <created>1567702249706</created>
@@ -534,7 +529,14 @@
       <option name="project" value="LOCAL" />
       <updated>1574218097477</updated>
     </task>
-    <option name="localTasksCounter" value="59" />
+    <task id="LOCAL-00059" summary="Animations for Networking Lab">
+      <created>1574311354071</created>
+      <option name="number" value="00059" />
+      <option name="presentableId" value="LOCAL-00059" />
+      <option name="project" value="LOCAL" />
+      <updated>1574311354072</updated>
+    </task>
+    <option name="localTasksCounter" value="60" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -556,7 +558,6 @@
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Oops, slight fix for Sets Lab" />
     <MESSAGE value="Final? work on Sets Lab." />
     <MESSAGE value="Initial work on Maps Lab" />
     <MESSAGE value="Quizzes and Exams" />
@@ -581,8 +582,23 @@
     <MESSAGE value="Full Networking Lab, minus challenge." />
     <MESSAGE value="Full Networking Lab, minus challenge. -- Better formatting and stuff." />
     <MESSAGE value="Beginning of animation test for Networking Lab" />
-    <option name="LAST_COMMIT_MESSAGE" value="Beginning of animation test for Networking Lab" />
+    <MESSAGE value="Animations for Networking Lab" />
+    <option name="LAST_COMMIT_MESSAGE" value="Animations for Networking Lab" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="709" y="232" key="FileChooserDialogImpl" timestamp="1575304859901">
+      <screen x="0" y="0" width="1858" height="1080" />
+    </state>
+    <state x="709" y="232" key="FileChooserDialogImpl/0.0.1858.1080@0.0.1858.1080" timestamp="1575304859901" />
+    <state x="594" y="238" key="NewModule_or_Project.wizard" timestamp="1575304866208">
+      <screen x="0" y="0" width="1858" height="1080" />
+    </state>
+    <state x="594" y="238" key="NewModule_or_Project.wizard/0.0.1858.1080@0.0.1858.1080" timestamp="1575304866208" />
+    <state x="592" y="235" width="672" height="678" key="search.everywhere.popup" timestamp="1575304539340">
+      <screen x="0" y="0" width="1858" height="1080" />
+    </state>
+    <state x="592" y="235" width="672" height="678" key="search.everywhere.popup/0.0.1858.1080@0.0.1858.1080" timestamp="1575304539340" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/AdvCS$Server.ic" NAME="Server Coverage Results" MODIFIED="1573590929592" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
