@@ -2,12 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="36939a02-4d05-4550-9e2f-c504bf2e9922" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Labs/Semester 1 Final/GameState.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Labs/Semester 1 Final/Message.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Labs/Semester 1 Final/Semester 1 Final.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Labs/Semester 1 Final/Tile.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Labs/Semester 1 Final/Client.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Labs/Semester 1 Final/Screen.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Labs/Semester 1 Final/Server.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Labs/Semester 1 Final/GameState.java" beforeDir="false" afterPath="$PROJECT_DIR$/Labs/Semester 1 Final/GameState.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Labs/Semester 1 Final/Message.java" beforeDir="false" afterPath="$PROJECT_DIR$/Labs/Semester 1 Final/Message.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Labs/Semester 1 Final/Tile.java" beforeDir="false" afterPath="$PROJECT_DIR$/Labs/Semester 1 Final/Tile.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -60,7 +61,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/Labs/Semester 1 Final" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../APCS/Labs/Final Project/Screen.java" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -88,7 +89,7 @@
       <recent name="C:\Users\neilb\Documents\GitHub\AdvCS\Labs\Big-O Lab" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.AnimationTest">
+  <component name="RunManager" selected="Application.Server (1)">
     <configuration name="AnimationTest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="AnimationTest" />
       <module name="Networking Lab" />
@@ -99,6 +100,13 @@
     <configuration name="Client" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Client" />
       <module name="Networking Lab" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Server (1)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Server" />
+      <module name="Semester 1 Final" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -129,9 +137,12 @@
       <item itemvalue="Application.Client" />
       <item itemvalue="Application.ServerRunner" />
       <item itemvalue="Application.Server" />
+      <item itemvalue="Application.Server (1)" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.Server (1)" />
+        <item itemvalue="Application.AnimationTest" />
         <item itemvalue="Application.Server" />
         <item itemvalue="Application.ServerRunner" />
       </list>
@@ -191,14 +202,8 @@
       <workItem from="1573775941511" duration="8923000" />
       <workItem from="1574033444396" duration="15725000" />
       <workItem from="1574965365707" duration="10000" />
-      <workItem from="1575303131011" duration="6598000" />
-    </task>
-    <task id="LOCAL-00011" summary="Initial progress on Inheritance lab.">
-      <created>1567702249706</created>
-      <option name="number" value="00011" />
-      <option name="presentableId" value="LOCAL-00011" />
-      <option name="project" value="LOCAL" />
-      <updated>1567702249707</updated>
+      <workItem from="1575303131011" duration="7542000" />
+      <workItem from="1575389537697" duration="8379000" />
     </task>
     <task id="LOCAL-00012" summary="Initial progress on Inheritance lab.">
       <created>1567725392140</created>
@@ -536,7 +541,14 @@
       <option name="project" value="LOCAL" />
       <updated>1574311354072</updated>
     </task>
-    <option name="localTasksCounter" value="60" />
+    <task id="LOCAL-00060" summary="Initial framework work for Semester 1 Final project.">
+      <created>1575357918607</created>
+      <option name="number" value="00060" />
+      <option name="presentableId" value="LOCAL-00060" />
+      <option name="project" value="LOCAL" />
+      <updated>1575357918608</updated>
+    </task>
+    <option name="localTasksCounter" value="61" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -558,7 +570,6 @@
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Final? work on Sets Lab." />
     <MESSAGE value="Initial work on Maps Lab" />
     <MESSAGE value="Quizzes and Exams" />
     <MESSAGE value="More work on Maps lab" />
@@ -583,22 +594,71 @@
     <MESSAGE value="Full Networking Lab, minus challenge. -- Better formatting and stuff." />
     <MESSAGE value="Beginning of animation test for Networking Lab" />
     <MESSAGE value="Animations for Networking Lab" />
-    <option name="LAST_COMMIT_MESSAGE" value="Animations for Networking Lab" />
+    <MESSAGE value="Initial framework work for Semester 1 Final project." />
+    <option name="LAST_COMMIT_MESSAGE" value="Initial framework work for Semester 1 Final project." />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="709" y="232" key="FileChooserDialogImpl" timestamp="1575304859901">
+    <state x="609" y="267" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog" timestamp="1575389487210">
       <screen x="0" y="0" width="1858" height="1080" />
     </state>
-    <state x="709" y="232" key="FileChooserDialogImpl/0.0.1858.1080@0.0.1858.1080" timestamp="1575304859901" />
+    <state x="609" y="267" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog/0.0.1858.1080@0.0.1858.1080" timestamp="1575389487210" />
+    <state x="436" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1575565639336">
+      <screen x="0" y="0" width="1858" height="1080" />
+    </state>
+    <state x="436" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1858.1080@0.0.1858.1080" timestamp="1575565639336" />
+    <state x="497" y="134" key="CommitChangelistDialog2" timestamp="1575357917612">
+      <screen x="0" y="0" width="1858" height="1080" />
+    </state>
+    <state x="497" y="134" key="CommitChangelistDialog2/0.0.1858.1080@0.0.1858.1080" timestamp="1575357917612" />
+    <state x="709" y="232" key="FileChooserDialogImpl" timestamp="1575565523463">
+      <screen x="0" y="0" width="1858" height="1080" />
+    </state>
+    <state x="709" y="232" key="FileChooserDialogImpl/0.0.1858.1080@0.0.1858.1080" timestamp="1575565523463" />
+    <state width="1837" height="212" key="GridCell.Tab.0.bottom" timestamp="1575573784082">
+      <screen x="0" y="0" width="1858" height="1080" />
+    </state>
+    <state width="1837" height="212" key="GridCell.Tab.0.bottom/0.0.1858.1080@0.0.1858.1080" timestamp="1575573784082" />
+    <state width="1837" height="212" key="GridCell.Tab.0.center" timestamp="1575573784075">
+      <screen x="0" y="0" width="1858" height="1080" />
+    </state>
+    <state width="1837" height="212" key="GridCell.Tab.0.center/0.0.1858.1080@0.0.1858.1080" timestamp="1575573784075" />
+    <state width="1837" height="212" key="GridCell.Tab.0.left" timestamp="1575573784073">
+      <screen x="0" y="0" width="1858" height="1080" />
+    </state>
+    <state width="1837" height="212" key="GridCell.Tab.0.left/0.0.1858.1080@0.0.1858.1080" timestamp="1575573784073" />
+    <state width="1837" height="212" key="GridCell.Tab.0.right" timestamp="1575573784076">
+      <screen x="0" y="0" width="1858" height="1080" />
+    </state>
+    <state width="1837" height="212" key="GridCell.Tab.0.right/0.0.1858.1080@0.0.1858.1080" timestamp="1575573784076" />
+    <state width="1837" height="296" key="GridCell.Tab.1.bottom" timestamp="1575391343354">
+      <screen x="0" y="0" width="1858" height="1080" />
+    </state>
+    <state width="1837" height="296" key="GridCell.Tab.1.bottom/0.0.1858.1080@0.0.1858.1080" timestamp="1575391343354" />
+    <state width="1837" height="296" key="GridCell.Tab.1.center" timestamp="1575391343354">
+      <screen x="0" y="0" width="1858" height="1080" />
+    </state>
+    <state width="1837" height="296" key="GridCell.Tab.1.center/0.0.1858.1080@0.0.1858.1080" timestamp="1575391343354" />
+    <state width="1837" height="296" key="GridCell.Tab.1.left" timestamp="1575391343354">
+      <screen x="0" y="0" width="1858" height="1080" />
+    </state>
+    <state width="1837" height="296" key="GridCell.Tab.1.left/0.0.1858.1080@0.0.1858.1080" timestamp="1575391343354" />
+    <state width="1837" height="296" key="GridCell.Tab.1.right" timestamp="1575391343354">
+      <screen x="0" y="0" width="1858" height="1080" />
+    </state>
+    <state width="1837" height="296" key="GridCell.Tab.1.right/0.0.1858.1080@0.0.1858.1080" timestamp="1575391343354" />
     <state x="594" y="238" key="NewModule_or_Project.wizard" timestamp="1575304866208">
       <screen x="0" y="0" width="1858" height="1080" />
     </state>
     <state x="594" y="238" key="NewModule_or_Project.wizard/0.0.1858.1080@0.0.1858.1080" timestamp="1575304866208" />
-    <state x="592" y="235" width="672" height="678" key="search.everywhere.popup" timestamp="1575304539340">
+    <state x="521" y="272" key="Vcs.Push.Dialog.v2" timestamp="1575357920825">
       <screen x="0" y="0" width="1858" height="1080" />
     </state>
-    <state x="592" y="235" width="672" height="678" key="search.everywhere.popup/0.0.1858.1080@0.0.1858.1080" timestamp="1575304539340" />
+    <state x="521" y="272" key="Vcs.Push.Dialog.v2/0.0.1858.1080@0.0.1858.1080" timestamp="1575357920825" />
+    <state x="592" y="235" width="672" height="678" key="search.everywhere.popup" timestamp="1575564323869">
+      <screen x="0" y="0" width="1858" height="1080" />
+    </state>
+    <state x="592" y="235" width="672" height="678" key="search.everywhere.popup/0.0.1858.1080@0.0.1858.1080" timestamp="1575564323869" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/AdvCS$Server.ic" NAME="Server Coverage Results" MODIFIED="1573590929592" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />

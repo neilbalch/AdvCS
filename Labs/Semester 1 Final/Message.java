@@ -9,15 +9,15 @@ public class Message implements Serializable {
     public Action action;
 
     // Only used for PlayerMoved
-    public Point direction;
+    public Point newLocation;
 
-    public static Message createMessage(int player, Action action, Point direction) {
+    public static Message createMessage(int player, Action action, Point newLocation) {
         Message msg = new Message();
         msg.player = player;
         msg.action = action;
 
-        if (action == Action.PlayerMoved) msg.direction = direction;
-        else msg.direction = null;
+        if (action == Action.PlayerMoved) msg.newLocation = newLocation;
+        else msg.newLocation = null;
 
         return msg;
     }

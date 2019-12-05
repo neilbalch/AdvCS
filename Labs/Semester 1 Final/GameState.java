@@ -51,8 +51,22 @@ public class GameState {
 
     }
 
-    public void drawMe(Graphics g) {
+    public void draw(Graphics g, Dimension windowSize) {
+        g.setColor(Color.WHITE);
+        g.fillRect(0, 0, windowSize.width, windowSize.height);
 
+        int squareSize = windowSize.height / 10;
+        int x = squareSize;
+        int y = squareSize;
+        g.setColor(Color.BLACK);
+        for (int r = 0; r < 9; r++) {
+            for (int c = 0; c < 9; c++) {
+                g.fillRect(x, 0, 1, 800);
+                x += squareSize;
+            }
+            g.fillRect(0, y, 800, 1);
+            y += squareSize;
+        }
     }
 
     public void deductHealthPoint(int player) {
@@ -86,7 +100,7 @@ public class GameState {
                 player2Location.setLocation(player2Location.x, player2Location.y + 1);
         }
 
-        Message msg = Message.createMessage(player, Message.Action.PlayerMoved, direction);
+        Message msg = Message.createMessage(player, Message.Action.PlayerMoved, player == 1 ? player1Location : player2Location);
         // TODO: Send message.
     }
 }
