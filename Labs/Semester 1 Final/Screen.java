@@ -19,8 +19,8 @@ public class Screen extends JPanel {
     private int player2Items;
     private boolean instanceIsServer;
 
-    private Point player1Location;
-    private Point player2Location;
+    private Point player1Position;
+    private Point player2Position;
 
     public Screen(boolean server) {
         this.setLayout(null);
@@ -41,8 +41,8 @@ public class Screen extends JPanel {
         player1Items = 0;
         player2Items = 0;
 
-        player1Location = new Point(300, 300);
-        player2Location = new Point(300, 300);
+        player1Position = new Point(300, 300);
+        player2Position = new Point(300, 300);
 
         if (instanceIsServer) {
             // Generate new board.
@@ -97,17 +97,21 @@ public class Screen extends JPanel {
             public void keyTyped(KeyEvent e) {
 //                System.out.println("triggered");
                 if (e.getKeyChar() == 'w') {
-                    if (amIPlayer1) player1Location.translate(0, -moveMagnitude);
-                    else player2Location.move(0, -moveMagnitude);
+//                    if (amIPlayer1) player1Location.translate(0, -moveMagnitude);
+//                    else player2Location.move(0, -moveMagnitude);
+                    movePlayer(amIPlayer1 ? 1 : 2, new Point(0, 1));
                 } else if (e.getKeyChar() == 's') {
-                    if (amIPlayer1) player1Location.translate(0, moveMagnitude);
-                    else player2Location.move(0, moveMagnitude);
+//                    if (amIPlayer1) player1Location.translate(0, moveMagnitude);
+//                    else player2Location.move(0, moveMagnitude);
+                    movePlayer(amIPlayer1 ? 1 : 2, new Point(0, -1));
                 } else if (e.getKeyChar() == 'a') {
-                    if (amIPlayer1) player1Location.translate(-moveMagnitude, 0);
-                    else player2Location.move(-moveMagnitude, 0);
+//                    if (amIPlayer1) player1Location.translate(-moveMagnitude, 0);
+//                    else player2Location.move(-moveMagnitude, 0);
+                    movePlayer(amIPlayer1 ? 1 : 2, new Point(-1, 0));
                 } else if (e.getKeyChar() == 'd') {
-                    if (amIPlayer1) player1Location.translate(moveMagnitude, 0);
-                    else player2Location.move(moveMagnitude, 0);
+//                    if (amIPlayer1) player1Location.translate(moveMagnitude, 0);
+//                    else player2Location.move(moveMagnitude, 0);
+                    movePlayer(amIPlayer1 ? 1 : 2, new Point(1, 0));
                 }
 
                 repaint();
@@ -147,6 +151,10 @@ public class Screen extends JPanel {
 
                 board.get(new Point(r, c)).draw(g, new Point(x + 1, y + 1), squareSize);
 
+                g.setColor(Color.WHITE);
+                g.setFont(new Font("Calibri", Font.BOLD, 11));
+                g.drawString(r + ", " + c, x + 1, y + 10);
+
                 g.setColor(Color.BLACK);
                 g.fillRect(x + squareSize, 0, 1, windowSize.height);
                 x += squareSize;
@@ -156,14 +164,18 @@ public class Screen extends JPanel {
             y += squareSize;
             x = 0;
 
-            // TODO: Draw players!
             g.setColor(new Color(0, 10, 162));
-            g.fillRect(player1Location.x + 1 - 5, player1Location.y, 8, 15);
-            g.fillRect(player2Location.x + 1 - 5, player2Location.y, 8, 15);
+            g.fillRect(player1Position.x + 1 - 5, player1Position.y, 8, 15);
+            g.fillRect(player2Position.x + 1 - 5, player2Position.y, 8, 15);
             g.setColor(new Color(203, 174, 108));
-            g.fillOval(player1Location.x - 5, player1Location.y - 5, 10, 10);
-            g.fillOval(player2Location.x - 5, player2Location.y - 5, 10, 10);
+            g.fillOval(player1Position.x - 5, player1Position.y - 5, 10, 10);
+            g.fillOval(player2Position.x - 5, player2Position.y - 5, 10, 10);
         }
+
+        g.setColor(Color.WHITE);
+        g.setFont(new Font("Calibri", Font.BOLD, 24));
+        g.drawString("Player 1 Items: " + player1Items, 10, 25);
+        g.drawString("Player 2 Items: " + player2Items, 10, 50);
     }
 
     public void deductHealthPoint(int player) {
@@ -178,26 +190,108 @@ public class Screen extends JPanel {
         }
     }
 
+    private boolean coordsWithin(Point location, Point topLeft, Point bottomRight) {
+        if (location.x > topLeft.x && location.x < bottomRight.x &&
+                location.y > topLeft.y && location.y < bottomRight.y) return true;
+        else return false;
+    }
+
     public void movePlayer(int player, Point direction) {
+        Dimension move = null;
+        boolean healthLost = false;
         if (direction.x == -1) {
-            if (player == 1) player1Location.setLocation(player1Location.x - 1, player1Location.y);
-            else if (player == 2)
-                player2Location.setLocation(player2Location.x - 1, player2Location.y);
+            if (player == 1) {
+                int r = Math.round((float) player1Position.y / 60) - 1;
+                int c = Math.round((float) player1Position.x / 60) - 1;
+                System.out.println(r + "\t" + c);
+
+                if (board.get(new Point(r - 1, c)).type == Tile.Type.MOUNTAIN) {
+                    player1Health.pop();
+                    healthLost = true;
+                } else if (board.get(new Point(r - 1, c)).type == Tile.Type.WATER) {
+                } else move = new Dimension(-moveMagnitude, 0);
+            } else {
+                int r = Math.round((float) player2Position.y / 60) - 1;
+                int c = Math.round((float) player2Position.x / 60) - 1;
+                System.out.println(r + "\t" + c);
+
+                if (board.get(new Point(r - 1, c)).type == Tile.Type.MOUNTAIN) {
+                    player2Health.pop();
+                    healthLost = true;
+                } else if (board.get(new Point(r - 1, c)).type == Tile.Type.WATER) {
+                } else move = new Dimension(-moveMagnitude, 0);
+            }
         } else if (direction.x == 1) {
-            if (player == 1) player1Location.setLocation(player1Location.x + 1, player1Location.y);
-            else if (player == 2)
-                player2Location.setLocation(player2Location.x + 1, player2Location.y);
+            if (player == 1) {
+                int r = Math.round((float) player1Position.y / 60) - 1;
+                int c = Math.round((float) player1Position.x / 60) - 1;
+//                System.out.println(r + "\t" + c);
+
+                if (board.get(new Point(r + 1, c)).type == Tile.Type.MOUNTAIN) {
+                    player1Health.pop();
+                    healthLost = true;
+                } else if (board.get(new Point(r + 1, c)).type == Tile.Type.WATER) {
+                } else move = new Dimension(moveMagnitude, 0);
+            } else {
+                int r = Math.round((float) player2Position.y / 60) - 1;
+                int c = Math.round((float) player2Position.x / 60) - 1;
+//                System.out.println(r + "\t" + c);
+
+                if (board.get(new Point(r - 1, c)).type == Tile.Type.MOUNTAIN) {
+                    player2Health.pop();
+                    healthLost = true;
+                } else if (board.get(new Point(r - 1, c)).type == Tile.Type.WATER) {
+                } else move = new Dimension(moveMagnitude, 0);
+            }
         } else if (direction.y == -1) {
-            if (player == 1) player1Location.setLocation(player1Location.x, player1Location.y - 1);
-            else if (player == 2)
-                player2Location.setLocation(player2Location.x, player2Location.y - 1);
+            move = new Dimension(0, moveMagnitude);
         } else if (direction.y == 1) {
-            if (player == 1) player1Location.setLocation(player1Location.x, player1Location.y + 1);
-            else if (player == 2)
-                player2Location.setLocation(player2Location.x, player2Location.y + 1);
+            move = new Dimension(0, -moveMagnitude);
         }
 
-        Message msg = Message.createMessage(player, Message.Action.PlayerMoved, player == 1 ? player1Location : player2Location);
-        // TODO: Send message.
+        if (healthLost) {
+            Message msg = Message.createMessage(player, Message.Action.PlayerLostHealth, null);
+            // TODO: Send message.
+        }
+
+        if (player == 1 && move != null) {
+            player1Position.translate(move.width, move.height);
+        }
+        if (player == 2 && move != null) player2Position.translate(move.width, move.height);
+
+        for (int r = 0; r < 10; r++) {
+            for (int c = 0; c < 10; c++) {
+                Tile temp = board.get(new Point(r, c));
+                Point topLeft = new Point(c * getPreferredSize().height / 10, r * getPreferredSize().height / 10);
+                Point bottomRight = new Point((c + 1) * getPreferredSize().height / 10, (r + 1) * getPreferredSize().height / 10);
+
+//                System.out.println(System.currentTimeMillis()/1000.0 + "\t" + new Point(r, c).toString() + "\t" +
+//                        coordsWithin(player1Location, topLeft, bottomRight) + "\t" + player1Location + "\t" + topLeft + "\t" + bottomRight + "\t" + temp.hasItem);
+
+                // Detection for item pickup
+                if (player == 1 && coordsWithin(player1Position, topLeft, bottomRight) && temp.hasItem) {
+                    System.out.println("Player1 gets item.");
+                    temp.hasItem = false;
+                    player1Items++;
+
+                    board.put(new Point(r, c), temp);
+                    Message msg = Message.createMessage(player, Message.Action.PlayerGotItem, null);
+                    // TODO: Send message.
+                } else if (player == 2 && coordsWithin(player2Position, topLeft, bottomRight) && temp.hasItem) {
+                    System.out.println("Player2 gets item.");
+                    temp.hasItem = false;
+                    player2Items++;
+
+                    board.put(new Point(r, c), temp);
+                    Message msg = Message.createMessage(player, Message.Action.PlayerGotItem, null);
+                    // TODO: Send message.
+                }
+            }
+        }
+
+        if (move != null) {
+            Message msg = Message.createMessage(player, Message.Action.PlayerMoved, player == 1 ? player1Position : player2Position);
+            // TODO: Send message.
+        }
     }
 }
