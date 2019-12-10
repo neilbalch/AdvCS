@@ -1,6 +1,7 @@
 import java.awt.*;
+import java.io.Serializable;
 
-public class Tile {
+public class Tile implements Serializable {
     public enum Type {LAND, MOUNTAIN, WATER}
 
     public Type type;

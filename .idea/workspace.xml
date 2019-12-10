@@ -4,6 +4,7 @@
     <list default="true" id="36939a02-4d05-4550-9e2f-c504bf2e9922" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Labs/Semester 1 Final/Screen.java" beforeDir="false" afterPath="$PROJECT_DIR$/Labs/Semester 1 Final/Screen.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Labs/Semester 1 Final/Tile.java" beforeDir="false" afterPath="$PROJECT_DIR$/Labs/Semester 1 Final/Tile.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -84,7 +85,7 @@
       <recent name="C:\Users\neilb\Documents\GitHub\AdvCS\Labs\Big-O Lab" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.Server (1)">
+  <component name="RunManager" selected="Application.Client (1)">
     <configuration name="AnimationTest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="AnimationTest" />
       <module name="Networking Lab" />
@@ -92,9 +93,9 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Client" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+    <configuration name="Client (1)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Client" />
-      <module name="Networking Lab" />
+      <module name="Semester 1 Final" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -129,13 +130,14 @@
     </configuration>
     <list>
       <item itemvalue="Application.AnimationTest" />
-      <item itemvalue="Application.Client" />
       <item itemvalue="Application.ServerRunner" />
       <item itemvalue="Application.Server" />
       <item itemvalue="Application.Server (1)" />
+      <item itemvalue="Application.Client (1)" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.Client (1)" />
         <item itemvalue="Application.Server (1)" />
         <item itemvalue="Application.AnimationTest" />
         <item itemvalue="Application.Server" />
@@ -199,14 +201,7 @@
       <workItem from="1574965365707" duration="10000" />
       <workItem from="1575303131011" duration="7542000" />
       <workItem from="1575389537697" duration="16831000" />
-      <workItem from="1575786328171" duration="4697000" />
-    </task>
-    <task id="LOCAL-00014" summary="Classwork from September 10, 2019">
-      <created>1568130921945</created>
-      <option name="number" value="00014" />
-      <option name="presentableId" value="LOCAL-00014" />
-      <option name="project" value="LOCAL" />
-      <updated>1568130921945</updated>
+      <workItem from="1575786328171" duration="7207000" />
     </task>
     <task id="LOCAL-00015" summary="Generics lab stuff">
       <created>1568432901260</created>
@@ -544,7 +539,14 @@
       <option name="project" value="LOCAL" />
       <updated>1575652864456</updated>
     </task>
-    <option name="localTasksCounter" value="63" />
+    <task id="LOCAL-00063" summary="In class work from December 9, 2019 on Semester 1 Final project.">
+      <created>1575911171431</created>
+      <option name="number" value="00063" />
+      <option name="presentableId" value="LOCAL-00063" />
+      <option name="project" value="LOCAL" />
+      <updated>1575911171432</updated>
+    </task>
+    <option name="localTasksCounter" value="64" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -566,7 +568,6 @@
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="More work on Maps lab" />
     <MESSAGE value="Final commit for Maps Lab" />
     <MESSAGE value="Semantic style changes to Maps Lab" />
     <MESSAGE value="Completed Stacks Lab" />
@@ -591,7 +592,8 @@
     <MESSAGE value="Initial framework work for Semester 1 Final project." />
     <MESSAGE value="In class work from December 5, 2019 on Semester 1 Final project." />
     <MESSAGE value="In class work from December 6, 2019 on Semester 1 Final project." />
-    <option name="LAST_COMMIT_MESSAGE" value="In class work from December 6, 2019 on Semester 1 Final project." />
+    <MESSAGE value="In class work from December 9, 2019 on Semester 1 Final project." />
+    <option name="LAST_COMMIT_MESSAGE" value="In class work from December 9, 2019 on Semester 1 Final project." />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="WindowStateProjectService">
@@ -603,73 +605,62 @@
       <screen x="0" y="0" width="1858" height="1080" />
     </state>
     <state x="436" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1858.1080@0.0.1858.1080" timestamp="1575565639336" />
-    <state x="497" y="134" key="CommitChangelistDialog2" timestamp="1575652862514">
+    <state x="497" y="134" key="CommitChangelistDialog2" timestamp="1575911170354">
       <screen x="0" y="0" width="1858" height="1080" />
     </state>
-    <state x="497" y="134" key="CommitChangelistDialog2/0.0.1858.1080@0.0.1858.1080" timestamp="1575652862514" />
+    <state x="497" y="134" key="CommitChangelistDialog2/0.0.1858.1080@0.0.1858.1080" timestamp="1575911170354" />
     <state x="709" y="232" key="FileChooserDialogImpl" timestamp="1575565523463">
       <screen x="0" y="0" width="1858" height="1080" />
     </state>
     <state x="709" y="232" key="FileChooserDialogImpl/0.0.1858.1080@0.0.1858.1080" timestamp="1575565523463" />
-    <state width="1837" height="283" key="GridCell.Tab.0.bottom" timestamp="1575911145043">
+    <state width="1837" height="255" key="GridCell.Tab.0.bottom" timestamp="1576000142308">
       <screen x="0" y="0" width="1858" height="1080" />
     </state>
-    <state width="1837" height="283" key="GridCell.Tab.0.bottom/0.0.1858.1080@0.0.1858.1080" timestamp="1575911145043" />
-    <state width="1837" height="283" key="GridCell.Tab.0.center" timestamp="1575911145043">
+    <state width="1837" height="255" key="GridCell.Tab.0.bottom/0.0.1858.1080@0.0.1858.1080" timestamp="1576000142308" />
+    <state width="1837" height="255" key="GridCell.Tab.0.center" timestamp="1576000142308">
       <screen x="0" y="0" width="1858" height="1080" />
     </state>
-    <state width="1837" height="283" key="GridCell.Tab.0.center/0.0.1858.1080@0.0.1858.1080" timestamp="1575911145043" />
-    <state width="1837" height="283" key="GridCell.Tab.0.left" timestamp="1575911145043">
+    <state width="1837" height="255" key="GridCell.Tab.0.center/0.0.1858.1080@0.0.1858.1080" timestamp="1576000142308" />
+    <state width="1837" height="255" key="GridCell.Tab.0.left" timestamp="1576000142308">
       <screen x="0" y="0" width="1858" height="1080" />
     </state>
-    <state width="1837" height="283" key="GridCell.Tab.0.left/0.0.1858.1080@0.0.1858.1080" timestamp="1575911145043" />
-    <state width="1837" height="283" key="GridCell.Tab.0.right" timestamp="1575911145043">
+    <state width="1837" height="255" key="GridCell.Tab.0.left/0.0.1858.1080@0.0.1858.1080" timestamp="1576000142308" />
+    <state width="1837" height="255" key="GridCell.Tab.0.right" timestamp="1576000142308">
       <screen x="0" y="0" width="1858" height="1080" />
     </state>
-    <state width="1837" height="283" key="GridCell.Tab.0.right/0.0.1858.1080@0.0.1858.1080" timestamp="1575911145043" />
-    <state width="1837" height="283" key="GridCell.Tab.1.bottom" timestamp="1575911145044">
+    <state width="1837" height="255" key="GridCell.Tab.0.right/0.0.1858.1080@0.0.1858.1080" timestamp="1576000142308" />
+    <state width="1837" height="283" key="GridCell.Tab.1.bottom" timestamp="1575996112298">
       <screen x="0" y="0" width="1858" height="1080" />
     </state>
-    <state width="1837" height="283" key="GridCell.Tab.1.bottom/0.0.1858.1080@0.0.1858.1080" timestamp="1575911145044" />
-    <state width="1837" height="283" key="GridCell.Tab.1.center" timestamp="1575911145044">
+    <state width="1837" height="283" key="GridCell.Tab.1.bottom/0.0.1858.1080@0.0.1858.1080" timestamp="1575996112298" />
+    <state width="1837" height="283" key="GridCell.Tab.1.center" timestamp="1575996112298">
       <screen x="0" y="0" width="1858" height="1080" />
     </state>
-    <state width="1837" height="283" key="GridCell.Tab.1.center/0.0.1858.1080@0.0.1858.1080" timestamp="1575911145043" />
-    <state width="1837" height="283" key="GridCell.Tab.1.left" timestamp="1575911145043">
+    <state width="1837" height="283" key="GridCell.Tab.1.center/0.0.1858.1080@0.0.1858.1080" timestamp="1575996112298" />
+    <state width="1837" height="283" key="GridCell.Tab.1.left" timestamp="1575996112298">
       <screen x="0" y="0" width="1858" height="1080" />
     </state>
-    <state width="1837" height="283" key="GridCell.Tab.1.left/0.0.1858.1080@0.0.1858.1080" timestamp="1575911145043" />
-    <state width="1837" height="283" key="GridCell.Tab.1.right" timestamp="1575911145044">
+    <state width="1837" height="283" key="GridCell.Tab.1.left/0.0.1858.1080@0.0.1858.1080" timestamp="1575996112298" />
+    <state width="1837" height="283" key="GridCell.Tab.1.right" timestamp="1575996112298">
       <screen x="0" y="0" width="1858" height="1080" />
     </state>
-    <state width="1837" height="283" key="GridCell.Tab.1.right/0.0.1858.1080@0.0.1858.1080" timestamp="1575911145044" />
+    <state width="1837" height="283" key="GridCell.Tab.1.right/0.0.1858.1080@0.0.1858.1080" timestamp="1575996112298" />
     <state x="594" y="238" key="NewModule_or_Project.wizard" timestamp="1575304866208">
       <screen x="0" y="0" width="1858" height="1080" />
     </state>
     <state x="594" y="238" key="NewModule_or_Project.wizard/0.0.1858.1080@0.0.1858.1080" timestamp="1575304866208" />
-    <state x="521" y="272" key="Vcs.Push.Dialog.v2" timestamp="1575573831365">
+    <state x="521" y="272" key="Vcs.Push.Dialog.v2" timestamp="1575911174711">
       <screen x="0" y="0" width="1858" height="1080" />
     </state>
-    <state x="521" y="272" key="Vcs.Push.Dialog.v2/0.0.1858.1080@0.0.1858.1080" timestamp="1575573831365" />
-    <state x="585" y="250" key="run.anything.popup" timestamp="1575611940804">
+    <state x="521" y="272" key="Vcs.Push.Dialog.v2/0.0.1858.1080@0.0.1858.1080" timestamp="1575911174711" />
+    <state x="585" y="250" key="run.anything.popup" timestamp="1575996635925">
       <screen x="0" y="0" width="1858" height="1080" />
     </state>
-    <state x="585" y="250" key="run.anything.popup/0.0.1858.1080@0.0.1858.1080" timestamp="1575611940804" />
+    <state x="585" y="250" key="run.anything.popup/0.0.1858.1080@0.0.1858.1080" timestamp="1575996635925" />
     <state x="592" y="235" width="672" height="678" key="search.everywhere.popup" timestamp="1575651414768">
       <screen x="0" y="0" width="1858" height="1080" />
     </state>
     <state x="592" y="235" width="672" height="678" key="search.everywhere.popup/0.0.1858.1080@0.0.1858.1080" timestamp="1575651414768" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/Labs/Semester 1 Final/Screen.java</url>
-          <line>202</line>
-          <option name="timeStamp" value="11" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/AdvCS$Server.ic" NAME="Server Coverage Results" MODIFIED="1573590929592" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
