@@ -1,3 +1,4 @@
+import javax.sound.sampled.*;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.KeyEvent;
@@ -7,6 +8,7 @@ import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.net.ServerSocket;
 import java.net.Socket;
+import java.net.URL;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Stack;
@@ -27,6 +29,56 @@ public class Screen extends JPanel {
     private Socket socket;
     private ObjectOutputStream out;
     private ObjectInputStream in;
+
+    private enum Sounds {
+        COLLECT_ITEM("collect_item.wav"),
+        HEALTH_LOST("health_lost.wav");
+
+        // Nested class for specifying volume
+        public static enum Volume {MUTE, LOW, MEDIUM, HIGH}
+
+        public static Sounds.Volume volume = Sounds.Volume.LOW;
+
+        // Each sound effect has its own clip, loaded with its own sound file.
+        private Clip clip;
+
+        Sounds(String soundFileName) {
+            try {
+                // Use URL (instead of File) to read from disk and JAR.
+                URL url = this.getClass().getClassLoader().getResource(soundFileName);
+                // Set up an audio input stream piped from the sound file.
+                AudioInputStream audioInputStream = AudioSystem.getAudioInputStream(url);
+                // Get a clip resource.
+                clip = AudioSystem.getClip();
+                // Open audio clip and load samples from the audio input stream.
+                clip.open(audioInputStream);
+            } catch (UnsupportedAudioFileException e) {
+//                e.printStackTrace();
+                System.out.println(e.toString());
+            } catch (IOException e) {
+//                e.printStackTrace();
+                System.out.println(e.toString());
+            } catch (LineUnavailableException e) {
+//                e.printStackTrace();
+                System.out.println(e.toString());
+            }
+        }
+
+        // Play or Re-play the sound effect from the beginning, by rewinding.
+        public void play() {
+            if (volume != Sounds.Volume.MUTE) {
+                if (clip.isRunning())
+                    clip.stop();   // Stop the player if it is still running
+                clip.setFramePosition(0); // rewind to the beginning
+                clip.start();     // Start playing
+            }
+        }
+
+        // Optional static method to pre-load all the sound files.
+        static void init() {
+            values(); // calls the constructor for all the elements
+        }
+    }
 
     public Screen(boolean server) {
         this.setLayout(null);
@@ -54,48 +106,49 @@ public class Screen extends JPanel {
 
         if (instanceIsServer) {
             // Generate new board.
-            int numWaterAreas = 3;
-            int numMountainAreas = 8;
-            int numGems = 11;
-            ArrayList<Point> waterList = new ArrayList<>();
-            ArrayList<Point> mountainList = new ArrayList<>();
-            ArrayList<Point> gemsList = new ArrayList<>();
-            for (int i = 0; i < numWaterAreas; i++) {
-                Point temp;
-                do {
-                    temp = new Point((int) (Math.random() * 10), (int) (Math.random() * 10));
-                } while (waterList.contains(temp));
-                waterList.add(temp);
-            }
-            for (int i = 0; i < numMountainAreas; i++) {
-                Point temp;
-                do {
-                    temp = new Point((int) (Math.random() * 10), (int) (Math.random() * 10));
-                } while (waterList.contains(temp) || mountainList.contains(temp));
-                mountainList.add(temp);
-            }
-            for (int i = 0; i < numGems; i++) {
-                Point temp;
-                do {
-                    temp = new Point((int) (Math.random() * 10), (int) (Math.random() * 10));
-                } while (waterList.contains(temp) || mountainList.contains(temp));
-                gemsList.add(temp);
-            }
+            {
+                int numWaterAreas = 3;
+                int numMountainAreas = 8;
+                int numGems = 11;
+                ArrayList<Point> waterList = new ArrayList<>();
+                ArrayList<Point> mountainList = new ArrayList<>();
+                ArrayList<Point> gemsList = new ArrayList<>();
+                for (int i = 0; i < numWaterAreas; i++) {
+                    Point temp;
+                    do {
+                        temp = new Point((int) (Math.random() * 10), (int) (Math.random() * 10));
+                    } while (waterList.contains(temp));
+                    waterList.add(temp);
+                }
+                for (int i = 0; i < numMountainAreas; i++) {
+                    Point temp;
+                    do {
+                        temp = new Point((int) (Math.random() * 10), (int) (Math.random() * 10));
+                    } while (waterList.contains(temp) || mountainList.contains(temp));
+                    mountainList.add(temp);
+                }
+                for (int i = 0; i < numGems; i++) {
+                    Point temp;
+                    do {
+                        temp = new Point((int) (Math.random() * 10), (int) (Math.random() * 10));
+                    } while (waterList.contains(temp) || mountainList.contains(temp));
+                    gemsList.add(temp);
+                }
 
-            for (int r = 0; r < 10; r++) {
-                for (int c = 0; c < 10; c++) {
+                for (int r = 0; r < 10; r++) {
+                    for (int c = 0; c < 10; c++) {
 //                    System.out.println("r: " + r + ", c: " + c);
-                    if (mountainList.contains(new Point(r, c))) {
-                        board.put(new Point(r, c), Tile.createTile(Tile.Type.MOUNTAIN, gemsList.contains(new Point(r, c))));
-                    } else if (waterList.contains(new Point(r, c))) {
-                        board.put(new Point(r, c), Tile.createTile(Tile.Type.WATER, gemsList.contains(new Point(r, c))));
-                    } else {
-                        board.put(new Point(r, c), Tile.createTile(Tile.Type.LAND, gemsList.contains(new Point(r, c))));
+                        if (mountainList.contains(new Point(r, c))) {
+                            board.put(new Point(r, c), Tile.createTile(Tile.Type.MOUNTAIN, gemsList.contains(new Point(r, c))));
+                        } else if (waterList.contains(new Point(r, c))) {
+                            board.put(new Point(r, c), Tile.createTile(Tile.Type.WATER, gemsList.contains(new Point(r, c))));
+                        } else {
+                            board.put(new Point(r, c), Tile.createTile(Tile.Type.LAND, gemsList.contains(new Point(r, c))));
+                        }
                     }
                 }
             }
 
-            // TODO: Open socket and send first board object.
             try {
                 sSocket = new ServerSocket(port);
                 sSocket.setSoTimeout(10000);
@@ -113,7 +166,6 @@ public class Screen extends JPanel {
                 System.out.println(err.toString());
             }
         } else {
-            // TODO: Open socket and receive first board object.
             try {
                 socket = new Socket("localhost", port);
 
@@ -175,7 +227,37 @@ public class Screen extends JPanel {
             }
         });
 
-        // TODO: Start thread to poll receiving messages.
+        Thread receiver = new Thread(() -> {
+            while (true) {
+                try {
+                    Message msg = (Message) in.readObject();
+//                    System.out.println("Message Received! " + msg.action.toString());
+
+                    switch (msg.action) {
+                        case PlayerLostHealth:
+                            playerHealth[msg.player - 1].pop();
+                            break;
+                        case PlayerGotItem:
+                            playerItems[msg.player - 1]++;
+                            board.get(msg.mapCoord).hasItem = false;
+                            break;
+                        case PlayerMoved:
+                            playerPosition[msg.player - 1] = msg.newLocation;
+                            break;
+                        default:
+                            System.out.println("ERR: Unidentified message type received!");
+                            break;
+                    }
+                } catch (IOException e) {
+                    e.printStackTrace();
+                } catch (ClassNotFoundException e) {
+                    e.printStackTrace();
+                }
+
+                repaint();
+            }
+        });
+        receiver.start();
     }
 
     public void paintComponent(Graphics g) {
@@ -240,8 +322,14 @@ public class Screen extends JPanel {
 
     public void deductHealthPoint(int player) {
         playerHealth[player - 1].pop();
-        Message msg = Message.createMessage(player, Message.Action.PlayerLostHealth, null);
-        // TODO: Send message.
+        Message msg = Message.createMessage(player, Message.Action.PlayerLostHealth, null, null);
+        try {
+            out.reset();
+            out.writeObject(msg);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        Sounds.HEALTH_LOST.play();
     }
 
     private boolean coordsWithin(Point location, Point topLeft, Point bottomRight) {
@@ -326,23 +414,40 @@ public class Screen extends JPanel {
                     playerItems[0]++;
 
                     board.put(new Point(r, c), temp);
-                    Message msg = Message.createMessage(player, Message.Action.PlayerGotItem, null);
-                    // TODO: Send message.
+                    Message msg = Message.createMessage(player, Message.Action.PlayerGotItem, null, new Point(r, c));
+                    try {
+                        out.reset();
+                        out.writeObject(msg);
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                    }
+                    Sounds.COLLECT_ITEM.play();
                 } else if (player == 2 && coordsWithin(playerPosition[1], topLeft, bottomRight) && temp.hasItem) {
                     System.out.println("Player2 gets item.");
                     temp.hasItem = false;
                     playerItems[1]++;
 
                     board.put(new Point(r, c), temp);
-                    Message msg = Message.createMessage(player, Message.Action.PlayerGotItem, null);
-                    // TODO: Send message.
+                    Message msg = Message.createMessage(player, Message.Action.PlayerGotItem, null, new Point(r, c));
+                    try {
+                        out.reset();
+                        out.writeObject(msg);
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                    }
+                    Sounds.COLLECT_ITEM.play();
                 }
             }
         }
 
         if (move != null) {
-            Message msg = Message.createMessage(player, Message.Action.PlayerMoved, playerPosition[player - 1]);
-            // TODO: Send message.
+            Message msg = Message.createMessage(player, Message.Action.PlayerMoved, playerPosition[player - 1], null);
+            try {
+                out.reset();
+                out.writeObject(msg);
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
         }
     }
 }
