@@ -24,11 +24,10 @@ public class Screen extends JPanel {
     private Point[] playerPosition;
     private int[] playerItems;
 
-    private boolean instanceIsServer;
-    private ServerSocket sSocket;
-    private Socket socket;
     private ObjectOutputStream out;
     private ObjectInputStream in;
+
+    private boolean currentlyPainting = false;
 
     private enum Sounds {
         COLLECT_ITEM("collect_item.wav"),
@@ -80,14 +79,13 @@ public class Screen extends JPanel {
         }
     }
 
-    public Screen(boolean server) {
+    public Screen(boolean amIPlayer1) {
         this.setLayout(null);
         this.setFocusable(true);
         this.setPreferredSize(new Dimension(600, 600));
-        this.amIPlayer1 = server;
+        this.amIPlayer1 = amIPlayer1;
 
         board = new HashMap<Point, Tile>();
-        instanceIsServer = server;
 
         playerHealth = new Stack[2];
         playerHealth[0] = new Stack<Integer>();
@@ -104,16 +102,17 @@ public class Screen extends JPanel {
         playerPosition[1] = new Point(300, 300);
 
 
-        if (instanceIsServer) {
+        Socket socket;
+        if (amIPlayer1) {
             // Generate new board.
             {
-                int numWaterAreas = 3;
-                int numMountainAreas = 8;
+                int numOtherAreas = 10;
+                int numMountainAreas = 10;
                 int numGems = 11;
                 ArrayList<Point> waterList = new ArrayList<>();
                 ArrayList<Point> mountainList = new ArrayList<>();
                 ArrayList<Point> gemsList = new ArrayList<>();
-                for (int i = 0; i < numWaterAreas; i++) {
+                for (int i = 0; i < numOtherAreas; i++) {
                     Point temp;
                     do {
                         temp = new Point((int) (Math.random() * 10), (int) (Math.random() * 10));
@@ -141,7 +140,7 @@ public class Screen extends JPanel {
                         if (mountainList.contains(new Point(r, c))) {
                             board.put(new Point(r, c), Tile.createTile(Tile.Type.MOUNTAIN, gemsList.contains(new Point(r, c))));
                         } else if (waterList.contains(new Point(r, c))) {
-                            board.put(new Point(r, c), Tile.createTile(Tile.Type.WATER, gemsList.contains(new Point(r, c))));
+                            board.put(new Point(r, c), Tile.createTile(Tile.Type.UNTRAVERSABLE, gemsList.contains(new Point(r, c))));
                         } else {
                             board.put(new Point(r, c), Tile.createTile(Tile.Type.LAND, gemsList.contains(new Point(r, c))));
                         }
@@ -150,7 +149,7 @@ public class Screen extends JPanel {
             }
 
             try {
-                sSocket = new ServerSocket(port);
+                ServerSocket sSocket = new ServerSocket(port);
                 sSocket.setSoTimeout(10000);
 
                 System.out.println("Waiting for a client...");
@@ -173,15 +172,8 @@ public class Screen extends JPanel {
                 in = new ObjectInputStream(socket.getInputStream());
 
                 try {
-//                    Object o = in.readObject();
-//                    System.out.println(o);
-//                    HashMap<Point, Tile> conv = (HashMap<Point, Tile>)o;
-//                    System.out.println(conv);
-
                     board = (HashMap<Point, Tile>) in.readObject();
-                } catch (IOException e) {
-                    e.printStackTrace();
-                } catch (ClassNotFoundException e) {
+                } catch (IOException | ClassNotFoundException e) {
                     e.printStackTrace();
                 }
 
@@ -198,19 +190,19 @@ public class Screen extends JPanel {
                 if (e.getKeyChar() == 'w') {
 //                    if (amIPlayer1) player1Location.translate(0, -moveMagnitude);
 //                    else player2Location.move(0, -moveMagnitude);
-                    movePlayer(amIPlayer1 ? 1 : 2, new Point(0, 1));
+                    movePlayer(Screen.this.amIPlayer1 ? 1 : 2, new Point(0, 1));
                 } else if (e.getKeyChar() == 's') {
 //                    if (amIPlayer1) player1Location.translate(0, moveMagnitude);
 //                    else player2Location.move(0, moveMagnitude);
-                    movePlayer(amIPlayer1 ? 1 : 2, new Point(0, -1));
+                    movePlayer(Screen.this.amIPlayer1 ? 1 : 2, new Point(0, -1));
                 } else if (e.getKeyChar() == 'a') {
 //                    if (amIPlayer1) player1Location.translate(-moveMagnitude, 0);
 //                    else player2Location.move(-moveMagnitude, 0);
-                    movePlayer(amIPlayer1 ? 1 : 2, new Point(-1, 0));
+                    movePlayer(Screen.this.amIPlayer1 ? 1 : 2, new Point(-1, 0));
                 } else if (e.getKeyChar() == 'd') {
 //                    if (amIPlayer1) player1Location.translate(moveMagnitude, 0);
 //                    else player2Location.move(moveMagnitude, 0);
-                    movePlayer(amIPlayer1 ? 1 : 2, new Point(1, 0));
+                    movePlayer(Screen.this.amIPlayer1 ? 1 : 2, new Point(1, 0));
                 }
 
                 repaint();
@@ -233,6 +225,8 @@ public class Screen extends JPanel {
                     Message msg = (Message) in.readObject();
 //                    System.out.println("Message Received! " + msg.action.toString());
 
+                    while (currentlyPainting) Thread.sleep(1);
+
                     switch (msg.action) {
                         case PlayerLostHealth:
                             playerHealth[msg.player - 1].pop();
@@ -248,9 +242,7 @@ public class Screen extends JPanel {
                             System.out.println("ERR: Unidentified message type received!");
                             break;
                     }
-                } catch (IOException e) {
-                    e.printStackTrace();
-                } catch (ClassNotFoundException e) {
+                } catch (IOException | ClassNotFoundException | InterruptedException e) {
                     e.printStackTrace();
                 }
 
@@ -261,16 +253,15 @@ public class Screen extends JPanel {
     }
 
     public void paintComponent(Graphics g) {
+        currentlyPainting = true;
         super.paintComponent(g);
-
         Dimension windowSize = this.getPreferredSize();
+        int squareSize = windowSize.height / 10;
 
         g.setColor(Color.WHITE);
         g.fillRect(0, 0, windowSize.width, windowSize.height);
 
-        int squareSize = windowSize.height / 10;
-        int x = 0;
-        int y = 0;
+        int x = 0, y = 0;
         g.setColor(Color.BLACK);
         g.fillRect(x, 0, 1, windowSize.height);
         g.fillRect(0, y, windowSize.width, 1);
@@ -280,19 +271,24 @@ public class Screen extends JPanel {
 
                 board.get(new Point(r, c)).draw(g, new Point(x + 1, y + 1), squareSize);
 
-                g.setColor(Color.WHITE);
-                g.setFont(new Font("Calibri", Font.BOLD, 11));
-                g.drawString(r + ", " + c, x + 1, y + 10);
+                // Map square labels
+//                g.setColor(Color.WHITE);
+//                g.setFont(new Font("Calibri", Font.BOLD, 11));
+//                g.drawString(r + ", " + c, x + 1, y + 10);
 
+                // Vertical divider lines
                 g.setColor(Color.BLACK);
                 g.fillRect(x + squareSize, 0, 1, windowSize.height);
                 x += squareSize;
             }
+
+            // Horizontal divider lines
             g.setColor(Color.BLACK);
             g.fillRect(0, y + squareSize, windowSize.width, 1);
             y += squareSize;
             x = 0;
 
+            // Draw Player 1
             g.setColor(new Color(0, 10, 162));
             g.fillRect(playerPosition[0].x + 1 - 5, playerPosition[0].y, 8, 15);
             g.setColor(new Color(203, 174, 108));
@@ -301,6 +297,7 @@ public class Screen extends JPanel {
             g.setFont(new Font("Calibri", Font.BOLD, 10));
             g.drawString("1", playerPosition[0].x + 2 - 5, playerPosition[0].y + 15);
 
+            // Draw Player 2
             g.setColor(new Color(0, 10, 162));
             g.fillRect(playerPosition[1].x + 1 - 5, playerPosition[1].y, 8, 15);
             g.setColor(new Color(203, 174, 108));
@@ -310,24 +307,35 @@ public class Screen extends JPanel {
             g.drawString("2", playerPosition[1].x + 2 - 5, playerPosition[1].y + 15);
         }
 
+        // Scoreboard?
         g.setColor(Color.WHITE);
-        g.setFont(new Font("Calibri", instanceIsServer ? Font.BOLD : Font.PLAIN, 18));
+        g.setFont(new Font("Calibri", amIPlayer1 ? Font.BOLD : Font.PLAIN, 18));
         g.drawString("Player 1 Items: " + playerItems[0] + ", Health: " + playerHealth[0].size(), 10, 20);
-        g.setFont(new Font("Calibri", instanceIsServer ? Font.PLAIN : Font.BOLD, 18));
+        g.setFont(new Font("Calibri", amIPlayer1 ? Font.PLAIN : Font.BOLD, 18));
         g.drawString("Player 2 Items: " + playerItems[1] + ", Health: " + playerHealth[1].size(), 10, 40);
-
-        g.setFont(new Font("Calibri", Font.BOLD, 18));
-        g.drawString("Player1Loc: " + playerPosition[0].toString(), 10, 60);
+        currentlyPainting = false;
     }
 
     public void deductHealthPoint(int player) {
         playerHealth[player - 1].pop();
-        Message msg = Message.createMessage(player, Message.Action.PlayerLostHealth, null, null);
-        try {
-            out.reset();
-            out.writeObject(msg);
-        } catch (IOException e) {
-            e.printStackTrace();
+        {
+            Message msg = Message.createMessage(player, Message.Action.PlayerLostHealth, null, null);
+            try {
+                out.reset();
+                out.writeObject(msg);
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+        playerPosition[player - 1] = new Point(300, 300);
+        {
+            Message msg = Message.createMessage(player, Message.Action.PlayerMoved, playerPosition[player - 1], null);
+            try {
+                out.reset();
+                out.writeObject(msg);
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
         }
         Sounds.HEALTH_LOST.play();
     }
@@ -341,57 +349,45 @@ public class Screen extends JPanel {
     public void movePlayer(int player, Point direction) {
         Dimension move = null;
         //TODO: Close the gap between a no-no tile and the player... currently is the middle of a tile, needs to be closer to the offending edge.
+        int player_r = (int) ((float) playerPosition[player - 1].y / 60);
+        int player_c = (int) ((float) playerPosition[player - 1].x / 60);
+//        System.out.println(player_r + "\t" + player_c);
+
         if (direction.x == -1) {
             if (playerPosition[player - 1].x < 60) return;
 
-            int r = (int) ((float) playerPosition[player - 1].y / 60);
-            int c = (int) ((float) playerPosition[player - 1].x / 60);
-//            System.out.println(r + "\t" + c);
-
-            Tile queryTile = board.get(new Point(r, c - 1));
+            Tile queryTile = board.get(new Point(player_r, player_c - 1));
             if (queryTile.type == Tile.Type.MOUNTAIN) {
                 if (playerHealth[player - 1].size() != 0)
                     deductHealthPoint(player);
-            } else if (queryTile.type == Tile.Type.WATER) {
+            } else if (queryTile.type == Tile.Type.UNTRAVERSABLE) {
             } else move = new Dimension(-moveMagnitude, 0);
         } else if (direction.x == 1) {
             if (playerPosition[player - 1].x > getPreferredSize().width - 60) return;
 
-            int r = (int) ((float) playerPosition[player - 1].y / 60);
-            int c = (int) ((float) playerPosition[player - 1].x / 60);
-//                System.out.println(r + "\t" + c);
-
-            Tile queryTile = board.get(new Point(r, c + 1));
+            Tile queryTile = board.get(new Point(player_r, player_c + 1));
             if (queryTile.type == Tile.Type.MOUNTAIN) {
                 if (playerHealth[player - 1].size() != 0)
                     deductHealthPoint(player);
-            } else if (queryTile.type == Tile.Type.WATER) {
+            } else if (queryTile.type == Tile.Type.UNTRAVERSABLE) {
             } else move = new Dimension(moveMagnitude, 0);
         } else if (direction.y == -1) {
             if (playerPosition[player - 1].y > getPreferredSize().height - 60) return;
 
-            int r = (int) ((float) playerPosition[player - 1].y / 60);
-            int c = (int) ((float) playerPosition[player - 1].x / 60);
-//            System.out.println(r + "\t" + c);
-
-            Tile queryTile = board.get(new Point(r + 1, c));
+            Tile queryTile = board.get(new Point(player_r + 1, player_c));
             if (queryTile.type == Tile.Type.MOUNTAIN) {
                 if (playerHealth[player - 1].size() != 0)
                     deductHealthPoint(player);
-            } else if (queryTile.type == Tile.Type.WATER) {
+            } else if (queryTile.type == Tile.Type.UNTRAVERSABLE) {
             } else move = new Dimension(0, moveMagnitude);
         } else if (direction.y == 1) {
             if (playerPosition[player - 1].y < 60) return;
 
-            int r = (int) ((float) playerPosition[player - 1].y / 60);
-            int c = (int) ((float) playerPosition[player - 1].x / 60);
-//            System.out.println(r + "\t" + c);
-
-            Tile queryTile = board.get(new Point(r - 1, c));
+            Tile queryTile = board.get(new Point(player_r - 1, player_c));
             if (queryTile.type == Tile.Type.MOUNTAIN) {
                 if (playerHealth[player - 1].size() != 0)
                     deductHealthPoint(player);
-            } else if (queryTile.type == Tile.Type.WATER) {
+            } else if (queryTile.type == Tile.Type.UNTRAVERSABLE) {
             } else move = new Dimension(0, -moveMagnitude);
         }
 
@@ -409,7 +405,7 @@ public class Screen extends JPanel {
 //                        coordsWithin(player1Location, topLeft, bottomRight) + "\t" + player1Location + "\t" + topLeft + "\t" + bottomRight + "\t" + temp.hasItem);
 
                 if (player == 1 && coordsWithin(playerPosition[0], topLeft, bottomRight) && temp.hasItem) {
-                    System.out.println("Player1 gets item.");
+//                    System.out.println("Player1 gets item.");
                     temp.hasItem = false;
                     playerItems[0]++;
 
@@ -423,7 +419,7 @@ public class Screen extends JPanel {
                     }
                     Sounds.COLLECT_ITEM.play();
                 } else if (player == 2 && coordsWithin(playerPosition[1], topLeft, bottomRight) && temp.hasItem) {
-                    System.out.println("Player2 gets item.");
+//                    System.out.println("Player2 gets item.");
                     temp.hasItem = false;
                     playerItems[1]++;
 
@@ -440,6 +436,7 @@ public class Screen extends JPanel {
             }
         }
 
+        // Send player move
         if (move != null) {
             Message msg = Message.createMessage(player, Message.Action.PlayerMoved, playerPosition[player - 1], null);
             try {

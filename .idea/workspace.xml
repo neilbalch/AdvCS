@@ -2,12 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="36939a02-4d05-4550-9e2f-c504bf2e9922" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Labs/Semester 1 Final/Both.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Labs/Semester 1 Final/Terraria Male player hurt Sound [savefrom.net].m4a" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Labs/Semester 1 Final/moves_o.wav" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Labs/Semester 1 Final/Message.java" beforeDir="false" afterPath="$PROJECT_DIR$/Labs/Semester 1 Final/Message.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Labs/Semester 1 Final/Both.java" beforeDir="false" afterPath="$PROJECT_DIR$/Labs/Semester 1 Final/RunBoth.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Labs/Semester 1 Final/Screen.java" beforeDir="false" afterPath="$PROJECT_DIR$/Labs/Semester 1 Final/Screen.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Labs/Semester 1 Final/Tile.java" beforeDir="false" afterPath="$PROJECT_DIR$/Labs/Semester 1 Final/Tile.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -88,7 +86,7 @@
       <recent name="C:\Users\neilb\Documents\GitHub\AdvCS\Labs\Big-O Lab" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.Both">
+  <component name="RunManager" selected="Application.RunBoth">
     <configuration name="AnimationTest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="AnimationTest" />
       <module name="Networking Lab" />
@@ -96,15 +94,15 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Both" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Both" />
+    <configuration name="Client (1)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Client" />
       <module name="Semester 1 Final" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Client (1)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Client" />
+    <configuration name="RunBoth" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="RunBoth" />
       <module name="Semester 1 Final" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -136,11 +134,11 @@
       <item itemvalue="Application.Server" />
       <item itemvalue="Application.Server (1)" />
       <item itemvalue="Application.Client (1)" />
-      <item itemvalue="Application.Both" />
+      <item itemvalue="Application.RunBoth" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.Both" />
+        <item itemvalue="Application.RunBoth" />
         <item itemvalue="Application.Client (1)" />
         <item itemvalue="Application.Server (1)" />
         <item itemvalue="Application.AnimationTest" />
@@ -204,14 +202,7 @@
       <workItem from="1574965365707" duration="10000" />
       <workItem from="1575303131011" duration="7542000" />
       <workItem from="1575389537697" duration="16831000" />
-      <workItem from="1575786328171" duration="11265000" />
-    </task>
-    <task id="LOCAL-00016" summary="Classwork from September 13, 2019">
-      <created>1568432946244</created>
-      <option name="number" value="00016" />
-      <option name="presentableId" value="LOCAL-00016" />
-      <option name="project" value="LOCAL" />
-      <updated>1568432946244</updated>
+      <workItem from="1575786328171" duration="15498000" />
     </task>
     <task id="LOCAL-00017" summary="Final work on Generics Lab">
       <created>1568527331518</created>
@@ -549,7 +540,14 @@
       <option name="project" value="LOCAL" />
       <updated>1576000159759</updated>
     </task>
-    <option name="localTasksCounter" value="65" />
+    <task id="LOCAL-00065" summary="Complete Semester 1 Final project?">
+      <created>1576168939279</created>
+      <option name="number" value="00065" />
+      <option name="presentableId" value="LOCAL-00065" />
+      <option name="project" value="LOCAL" />
+      <updated>1576168939279</updated>
+    </task>
+    <option name="localTasksCounter" value="66" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -571,7 +569,6 @@
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Semantic style changes to Maps Lab" />
     <MESSAGE value="Completed Stacks Lab" />
     <MESSAGE value="Completed Stacks Lab... with formatting" />
     <MESSAGE value="Fix issue where clearing the canvas couldn't be undone." />
@@ -596,7 +593,8 @@
     <MESSAGE value="In class work from December 6, 2019 on Semester 1 Final project." />
     <MESSAGE value="In class work from December 9, 2019 on Semester 1 Final project." />
     <MESSAGE value="In class work from December 10, 2019 on Semester 1 Final project." />
-    <option name="LAST_COMMIT_MESSAGE" value="In class work from December 10, 2019 on Semester 1 Final project." />
+    <MESSAGE value="Complete Semester 1 Final project?" />
+    <option name="LAST_COMMIT_MESSAGE" value="Complete Semester 1 Final project?" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="WindowStateProjectService">
@@ -608,62 +606,62 @@
       <screen x="0" y="0" width="1858" height="1080" />
     </state>
     <state x="436" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1858.1080@0.0.1858.1080" timestamp="1575565639336" />
-    <state x="497" y="134" key="CommitChangelistDialog2" timestamp="1576000158874">
+    <state x="497" y="134" key="CommitChangelistDialog2" timestamp="1576173515948">
       <screen x="0" y="0" width="1858" height="1080" />
     </state>
-    <state x="497" y="134" key="CommitChangelistDialog2/0.0.1858.1080@0.0.1858.1080" timestamp="1576000158874" />
+    <state x="497" y="134" key="CommitChangelistDialog2/0.0.1858.1080@0.0.1858.1080" timestamp="1576173515948" />
     <state x="709" y="232" key="FileChooserDialogImpl" timestamp="1575565523463">
       <screen x="0" y="0" width="1858" height="1080" />
     </state>
     <state x="709" y="232" key="FileChooserDialogImpl/0.0.1858.1080@0.0.1858.1080" timestamp="1575565523463" />
-    <state width="1837" height="255" key="GridCell.Tab.0.bottom" timestamp="1576168915152">
+    <state width="1837" height="255" key="GridCell.Tab.0.bottom" timestamp="1576173497941">
       <screen x="0" y="0" width="1858" height="1080" />
     </state>
-    <state width="1837" height="255" key="GridCell.Tab.0.bottom/0.0.1858.1080@0.0.1858.1080" timestamp="1576168915152" />
-    <state width="1837" height="255" key="GridCell.Tab.0.center" timestamp="1576168915152">
+    <state width="1837" height="255" key="GridCell.Tab.0.bottom/0.0.1858.1080@0.0.1858.1080" timestamp="1576173497941" />
+    <state width="1837" height="255" key="GridCell.Tab.0.center" timestamp="1576173497941">
       <screen x="0" y="0" width="1858" height="1080" />
     </state>
-    <state width="1837" height="255" key="GridCell.Tab.0.center/0.0.1858.1080@0.0.1858.1080" timestamp="1576168915152" />
-    <state width="1837" height="255" key="GridCell.Tab.0.left" timestamp="1576168915152">
+    <state width="1837" height="255" key="GridCell.Tab.0.center/0.0.1858.1080@0.0.1858.1080" timestamp="1576173497941" />
+    <state width="1837" height="255" key="GridCell.Tab.0.left" timestamp="1576173497940">
       <screen x="0" y="0" width="1858" height="1080" />
     </state>
-    <state width="1837" height="255" key="GridCell.Tab.0.left/0.0.1858.1080@0.0.1858.1080" timestamp="1576168915152" />
-    <state width="1837" height="255" key="GridCell.Tab.0.right" timestamp="1576168915152">
+    <state width="1837" height="255" key="GridCell.Tab.0.left/0.0.1858.1080@0.0.1858.1080" timestamp="1576173497940" />
+    <state width="1837" height="255" key="GridCell.Tab.0.right" timestamp="1576173497941">
       <screen x="0" y="0" width="1858" height="1080" />
     </state>
-    <state width="1837" height="255" key="GridCell.Tab.0.right/0.0.1858.1080@0.0.1858.1080" timestamp="1576168915152" />
-    <state width="1837" height="283" key="GridCell.Tab.1.bottom" timestamp="1575996112298">
+    <state width="1837" height="255" key="GridCell.Tab.0.right/0.0.1858.1080@0.0.1858.1080" timestamp="1576173497941" />
+    <state width="1837" height="283" key="GridCell.Tab.1.bottom" timestamp="1576171931976">
       <screen x="0" y="0" width="1858" height="1080" />
     </state>
-    <state width="1837" height="283" key="GridCell.Tab.1.bottom/0.0.1858.1080@0.0.1858.1080" timestamp="1575996112298" />
-    <state width="1837" height="283" key="GridCell.Tab.1.center" timestamp="1575996112298">
+    <state width="1837" height="283" key="GridCell.Tab.1.bottom/0.0.1858.1080@0.0.1858.1080" timestamp="1576171931976" />
+    <state width="1837" height="283" key="GridCell.Tab.1.center" timestamp="1576171931976">
       <screen x="0" y="0" width="1858" height="1080" />
     </state>
-    <state width="1837" height="283" key="GridCell.Tab.1.center/0.0.1858.1080@0.0.1858.1080" timestamp="1575996112298" />
-    <state width="1837" height="283" key="GridCell.Tab.1.left" timestamp="1575996112298">
+    <state width="1837" height="283" key="GridCell.Tab.1.center/0.0.1858.1080@0.0.1858.1080" timestamp="1576171931976" />
+    <state width="1837" height="283" key="GridCell.Tab.1.left" timestamp="1576171931976">
       <screen x="0" y="0" width="1858" height="1080" />
     </state>
-    <state width="1837" height="283" key="GridCell.Tab.1.left/0.0.1858.1080@0.0.1858.1080" timestamp="1575996112298" />
-    <state width="1837" height="283" key="GridCell.Tab.1.right" timestamp="1575996112298">
+    <state width="1837" height="283" key="GridCell.Tab.1.left/0.0.1858.1080@0.0.1858.1080" timestamp="1576171931976" />
+    <state width="1837" height="283" key="GridCell.Tab.1.right" timestamp="1576171931976">
       <screen x="0" y="0" width="1858" height="1080" />
     </state>
-    <state width="1837" height="283" key="GridCell.Tab.1.right/0.0.1858.1080@0.0.1858.1080" timestamp="1575996112298" />
+    <state width="1837" height="283" key="GridCell.Tab.1.right/0.0.1858.1080@0.0.1858.1080" timestamp="1576171931976" />
     <state x="594" y="238" key="NewModule_or_Project.wizard" timestamp="1575304866208">
       <screen x="0" y="0" width="1858" height="1080" />
     </state>
     <state x="594" y="238" key="NewModule_or_Project.wizard/0.0.1858.1080@0.0.1858.1080" timestamp="1575304866208" />
-    <state x="521" y="272" key="Vcs.Push.Dialog.v2" timestamp="1576000161359">
+    <state x="521" y="272" key="Vcs.Push.Dialog.v2" timestamp="1576168941888">
       <screen x="0" y="0" width="1858" height="1080" />
     </state>
-    <state x="521" y="272" key="Vcs.Push.Dialog.v2/0.0.1858.1080@0.0.1858.1080" timestamp="1576000161359" />
+    <state x="521" y="272" key="Vcs.Push.Dialog.v2/0.0.1858.1080@0.0.1858.1080" timestamp="1576168941888" />
     <state x="585" y="250" key="run.anything.popup" timestamp="1575996635925">
       <screen x="0" y="0" width="1858" height="1080" />
     </state>
     <state x="585" y="250" key="run.anything.popup/0.0.1858.1080@0.0.1858.1080" timestamp="1575996635925" />
-    <state x="592" y="235" width="672" height="678" key="search.everywhere.popup" timestamp="1575651414768">
+    <state x="592" y="235" width="672" height="678" key="search.everywhere.popup" timestamp="1576171682493">
       <screen x="0" y="0" width="1858" height="1080" />
     </state>
-    <state x="592" y="235" width="672" height="678" key="search.everywhere.popup/0.0.1858.1080@0.0.1858.1080" timestamp="1575651414768" />
+    <state x="592" y="235" width="672" height="678" key="search.everywhere.popup/0.0.1858.1080@0.0.1858.1080" timestamp="1576171682493" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/AdvCS$Server.ic" NAME="Server Coverage Results" MODIFIED="1573590929592" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />

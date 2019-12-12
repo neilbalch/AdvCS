@@ -1,6 +1,6 @@
 import javax.swing.*;
 
-public class Both {
+public class RunBoth {
     public static void main(String[] args) {
         Thread server = new Thread(() -> {
             JFrame frame = new JFrame("Ready Player 1!");
