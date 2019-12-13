@@ -23,6 +23,7 @@ public class Screen extends JPanel {
     private Stack<Integer>[] playerHealth;
     private Point[] playerPosition;
     private int[] playerItems;
+    private Message.State gameState = Message.State.IN_PROGRESS;
 
     private ObjectOutputStream out;
     private ObjectInputStream in;
@@ -155,6 +156,8 @@ public class Screen extends JPanel {
         this.addKeyListener(new KeyListener() {
             @Override
             public void keyTyped(KeyEvent e) {
+                if (gameState != Message.State.IN_PROGRESS) return;
+
                 if (e.getKeyChar() == 'w') {
                     movePlayer(Screen.this.amIPlayer1 ? 1 : 2, new Point(0, 1));
                 } else if (e.getKeyChar() == 's') {
@@ -178,7 +181,7 @@ public class Screen extends JPanel {
         });
 
         Thread messageReceiver = new Thread(() -> {
-            while (true) {
+            do {
                 try {
                     Message msg = (Message) in.readObject();
 
@@ -193,6 +196,10 @@ public class Screen extends JPanel {
                         case PlayerMoved:
                             playerPosition[msg.player - 1] = msg.newLocation;
                             break;
+                        case GameStateChanged:
+                            System.out.println(msg.newState.toString());
+                            gameState = msg.newState;
+                            break;
                         default:
                             System.out.println("ERR: Unidentified message type received!");
                             break;
@@ -202,7 +209,7 @@ public class Screen extends JPanel {
                 }
 
                 repaint();
-            }
+            } while (gameState == Message.State.IN_PROGRESS);
         });
         messageReceiver.start();
     }
@@ -266,6 +273,16 @@ public class Screen extends JPanel {
         g.drawString("Player 1 Items: " + playerItems[0] + ", Health: " + playerHealth[0].size(), 10, 20);
         g.setFont(new Font("Calibri", amIPlayer1 ? Font.PLAIN : Font.BOLD, 18));
         g.drawString("Player 2 Items: " + playerItems[1] + ", Health: " + playerHealth[1].size(), 10, 40);
+
+        // End Game Screen
+        if (gameState != Message.State.IN_PROGRESS) {
+            g.setColor(new Color(255, 255, 255, 150));
+            g.fillRect(0, 0, windowSize.width, windowSize.height);
+
+            g.setColor(Color.BLACK);
+            g.setFont(new Font("Comic Sans MS", Font.BOLD, 64));
+            g.drawString("Player " + (gameState == Message.State.Player1Wins ? "1" : "2") + " wins!", 85, 300);
+        }
     }
 
     private void writeMsg(Message msg) {
@@ -279,11 +296,16 @@ public class Screen extends JPanel {
 
     public void deductHealthPoint(int player) {
         playerHealth[player - 1].pop();
-        writeMsg(Message.createMessage(player, Message.Action.PlayerLostHealth, null, null));
+        writeMsg(Message.createMessage(player, Message.Action.PlayerLostHealth, null, null, null));
 
-        playerPosition[player - 1] = new Point(300, 300);
-        writeMsg(Message.createMessage(player, Message.Action.PlayerMoved, playerPosition[player - 1], null));
-        Sounds.HEALTH_LOST.play();
+        if (playerHealth[player - 1].size() != 0) {
+            playerPosition[player - 1] = new Point(300, 300);
+            writeMsg(Message.createMessage(player, Message.Action.PlayerMoved, playerPosition[player - 1], null, null));
+            Sounds.HEALTH_LOST.play();
+        } else {
+            gameState = player - 1 == 0 ? Message.State.Player2Wins : Message.State.Player1Wins;
+            writeMsg(Message.createMessage(player, Message.Action.GameStateChanged, null, null, gameState));
+        }
     }
 
     private boolean coordsWithin(Point location, Point topLeft, Point bottomRight) {
@@ -337,7 +359,10 @@ public class Screen extends JPanel {
             } else move = new Dimension(0, -moveMagnitude);
         }
 
-        if (move != null) playerPosition[player - 1].translate(move.width, move.height);
+        if (move != null) {
+            playerPosition[player - 1].translate(move.width, move.height);
+            writeMsg(Message.createMessage(player, Message.Action.PlayerMoved, playerPosition[player - 1], null, null));
+        }
 
         // Detection for item pickup
         for (int r = 0; r < 10; r++) {
@@ -352,14 +377,15 @@ public class Screen extends JPanel {
                     playerItems[player - 1]++;
 
                     board.put(new Point(r, c), temp);
-                    writeMsg(Message.createMessage(player, Message.Action.PlayerGotItem, null, new Point(r, c)));
+                    writeMsg(Message.createMessage(player, Message.Action.PlayerGotItem, null, new Point(r, c), null));
                     Sounds.COLLECT_ITEM.play();
+
+                    if (playerItems[player - 1] >= 7) {
+                        gameState = player - 1 == 0 ? Message.State.Player1Wins : Message.State.Player2Wins;
+                        writeMsg(Message.createMessage(player, Message.Action.GameStateChanged, null, null, gameState));
+                    }
                 }
             }
         }
-
-        // Send player move
-        if (move != null)
-            writeMsg(Message.createMessage(player, Message.Action.PlayerMoved, playerPosition[player - 1], null));
     }
 }

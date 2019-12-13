@@ -3,6 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="36939a02-4d05-4550-9e2f-c504bf2e9922" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Labs/Semester 1 Final/Message.java" beforeDir="false" afterPath="$PROJECT_DIR$/Labs/Semester 1 Final/Message.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Labs/Semester 1 Final/Screen.java" beforeDir="false" afterPath="$PROJECT_DIR$/Labs/Semester 1 Final/Screen.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -201,14 +202,7 @@
       <workItem from="1575303131011" duration="7542000" />
       <workItem from="1575389537697" duration="16831000" />
       <workItem from="1575786328171" duration="16578000" />
-      <workItem from="1576208010724" duration="1822000" />
-    </task>
-    <task id="LOCAL-00018" summary="Classwork from September 19, 2019">
-      <created>1568939282643</created>
-      <option name="number" value="00018" />
-      <option name="presentableId" value="LOCAL-00018" />
-      <option name="project" value="LOCAL" />
-      <updated>1568939282644</updated>
+      <workItem from="1576208010724" duration="4224000" />
     </task>
     <task id="LOCAL-00019" summary="Beginning iterators lab">
       <created>1568939302424</created>
@@ -546,7 +540,14 @@
       <option name="project" value="LOCAL" />
       <updated>1576173534871</updated>
     </task>
-    <option name="localTasksCounter" value="67" />
+    <task id="LOCAL-00067" summary="Code cleanup of Semester 1 Final project.">
+      <created>1576210595820</created>
+      <option name="number" value="00067" />
+      <option name="presentableId" value="LOCAL-00067" />
+      <option name="project" value="LOCAL" />
+      <updated>1576210595822</updated>
+    </task>
+    <option name="localTasksCounter" value="68" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -568,7 +569,6 @@
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Completed Stacks Lab... with formatting" />
     <MESSAGE value="Fix issue where clearing the canvas couldn't be undone." />
     <MESSAGE value="Warmup from October 29, 2019" />
     <MESSAGE value="Queues Lab" />
@@ -593,7 +593,8 @@
     <MESSAGE value="In class work from December 10, 2019 on Semester 1 Final project." />
     <MESSAGE value="Complete Semester 1 Final project?" />
     <MESSAGE value="Complete more of Semester 1 Final project?" />
-    <option name="LAST_COMMIT_MESSAGE" value="Complete more of Semester 1 Final project?" />
+    <MESSAGE value="Code cleanup of Semester 1 Final project." />
+    <option name="LAST_COMMIT_MESSAGE" value="Code cleanup of Semester 1 Final project." />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="WindowStateProjectService">
@@ -605,30 +606,30 @@
       <screen x="0" y="0" width="1858" height="1080" />
     </state>
     <state x="436" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1858.1080@0.0.1858.1080" timestamp="1575565639336" />
-    <state x="497" y="134" key="CommitChangelistDialog2" timestamp="1576173533496">
+    <state x="497" y="134" key="CommitChangelistDialog2" timestamp="1576210594794">
       <screen x="0" y="0" width="1858" height="1080" />
     </state>
-    <state x="497" y="134" key="CommitChangelistDialog2/0.0.1858.1080@0.0.1858.1080" timestamp="1576173533496" />
+    <state x="497" y="134" key="CommitChangelistDialog2/0.0.1858.1080@0.0.1858.1080" timestamp="1576210594794" />
     <state x="709" y="232" key="FileChooserDialogImpl" timestamp="1575565523463">
       <screen x="0" y="0" width="1858" height="1080" />
     </state>
     <state x="709" y="232" key="FileChooserDialogImpl/0.0.1858.1080@0.0.1858.1080" timestamp="1575565523463" />
-    <state width="1837" height="255" key="GridCell.Tab.0.bottom" timestamp="1576210571230">
+    <state width="1837" height="255" key="GridCell.Tab.0.bottom" timestamp="1576254867569">
       <screen x="0" y="0" width="1858" height="1080" />
     </state>
-    <state width="1837" height="255" key="GridCell.Tab.0.bottom/0.0.1858.1080@0.0.1858.1080" timestamp="1576210571230" />
-    <state width="1837" height="255" key="GridCell.Tab.0.center" timestamp="1576210571230">
+    <state width="1837" height="255" key="GridCell.Tab.0.bottom/0.0.1858.1080@0.0.1858.1080" timestamp="1576254867569" />
+    <state width="1837" height="255" key="GridCell.Tab.0.center" timestamp="1576254867569">
       <screen x="0" y="0" width="1858" height="1080" />
     </state>
-    <state width="1837" height="255" key="GridCell.Tab.0.center/0.0.1858.1080@0.0.1858.1080" timestamp="1576210571230" />
-    <state width="1837" height="255" key="GridCell.Tab.0.left" timestamp="1576210571230">
+    <state width="1837" height="255" key="GridCell.Tab.0.center/0.0.1858.1080@0.0.1858.1080" timestamp="1576254867569" />
+    <state width="1837" height="255" key="GridCell.Tab.0.left" timestamp="1576254867568">
       <screen x="0" y="0" width="1858" height="1080" />
     </state>
-    <state width="1837" height="255" key="GridCell.Tab.0.left/0.0.1858.1080@0.0.1858.1080" timestamp="1576210571230" />
-    <state width="1837" height="255" key="GridCell.Tab.0.right" timestamp="1576210571230">
+    <state width="1837" height="255" key="GridCell.Tab.0.left/0.0.1858.1080@0.0.1858.1080" timestamp="1576254867568" />
+    <state width="1837" height="255" key="GridCell.Tab.0.right" timestamp="1576254867569">
       <screen x="0" y="0" width="1858" height="1080" />
     </state>
-    <state width="1837" height="255" key="GridCell.Tab.0.right/0.0.1858.1080@0.0.1858.1080" timestamp="1576210571230" />
+    <state width="1837" height="255" key="GridCell.Tab.0.right/0.0.1858.1080@0.0.1858.1080" timestamp="1576254867569" />
     <state width="1837" height="283" key="GridCell.Tab.1.bottom" timestamp="1576171931976">
       <screen x="0" y="0" width="1858" height="1080" />
     </state>
@@ -649,18 +650,18 @@
       <screen x="0" y="0" width="1858" height="1080" />
     </state>
     <state x="594" y="238" key="NewModule_or_Project.wizard/0.0.1858.1080@0.0.1858.1080" timestamp="1575304866208" />
-    <state x="521" y="272" key="Vcs.Push.Dialog.v2" timestamp="1576173536787">
+    <state x="521" y="272" key="Vcs.Push.Dialog.v2" timestamp="1576210598806">
       <screen x="0" y="0" width="1858" height="1080" />
     </state>
-    <state x="521" y="272" key="Vcs.Push.Dialog.v2/0.0.1858.1080@0.0.1858.1080" timestamp="1576173536787" />
+    <state x="521" y="272" key="Vcs.Push.Dialog.v2/0.0.1858.1080@0.0.1858.1080" timestamp="1576210598806" />
     <state x="585" y="250" key="run.anything.popup" timestamp="1575996635925">
       <screen x="0" y="0" width="1858" height="1080" />
     </state>
     <state x="585" y="250" key="run.anything.popup/0.0.1858.1080@0.0.1858.1080" timestamp="1575996635925" />
-    <state x="592" y="235" width="672" height="678" key="search.everywhere.popup" timestamp="1576171682493">
+    <state x="592" y="235" width="672" height="678" key="search.everywhere.popup" timestamp="1576210665279">
       <screen x="0" y="0" width="1858" height="1080" />
     </state>
-    <state x="592" y="235" width="672" height="678" key="search.everywhere.popup/0.0.1858.1080@0.0.1858.1080" timestamp="1576171682493" />
+    <state x="592" y="235" width="672" height="678" key="search.everywhere.popup/0.0.1858.1080@0.0.1858.1080" timestamp="1576210665279" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/AdvCS$Server.ic" NAME="Server Coverage Results" MODIFIED="1573590929592" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />

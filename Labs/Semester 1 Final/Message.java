@@ -4,7 +4,7 @@ import java.io.Serializable;
 public class Message implements Serializable {
     public int player;
 
-    public enum Action {PlayerLostHealth, PlayerMoved, PlayerGotItem}
+    public enum Action {PlayerLostHealth, PlayerMoved, PlayerGotItem, GameStateChanged}
 
     public Action action;
 
@@ -14,7 +14,12 @@ public class Message implements Serializable {
     // Only used for PlayerGotItem
     public Point mapCoord; // r, c index of map location from where the item was taken.
 
-    public static Message createMessage(int player, Action action, Point newLocation, Point mapCoord) {
+    // Only used for GameStateChanged
+    public enum State {IN_PROGRESS, Player1Wins, Player2Wins}
+
+    public State newState;
+
+    public static Message createMessage(int player, Action action, Point newLocation, Point mapCoord, State newState) {
         Message msg = new Message();
         msg.player = player;
         msg.action = action;
@@ -24,6 +29,9 @@ public class Message implements Serializable {
 
         if (action == Action.PlayerGotItem) msg.mapCoord = mapCoord;
         else msg.mapCoord = null;
+
+        if (action == Action.GameStateChanged) msg.newState = newState;
+        else msg.newState = null;
 
         return msg;
     }
