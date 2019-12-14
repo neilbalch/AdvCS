@@ -2,9 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="36939a02-4d05-4550-9e2f-c504bf2e9922" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Labs/Semester 1 Final/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Labs/Semester 1 Final/Testing Report.pdf" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Labs/Semester 1 Final/Screen.java" beforeDir="false" afterPath="$PROJECT_DIR$/Labs/Semester 1 Final/Screen.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -202,14 +201,7 @@
       <workItem from="1575303131011" duration="7542000" />
       <workItem from="1575389537697" duration="16831000" />
       <workItem from="1575786328171" duration="16578000" />
-      <workItem from="1576208010724" duration="8895000" />
-    </task>
-    <task id="LOCAL-00020" summary="More work on iterators lab">
-      <created>1568995565263</created>
-      <option name="number" value="00020" />
-      <option name="presentableId" value="LOCAL-00020" />
-      <option name="project" value="LOCAL" />
-      <updated>1568995565263</updated>
+      <workItem from="1576208010724" duration="10296000" />
     </task>
     <task id="LOCAL-00021" summary="Add date-based sorting to iterators lab">
       <created>1569099149675</created>
@@ -547,7 +539,14 @@
       <option name="project" value="LOCAL" />
       <updated>1576255122414</updated>
     </task>
-    <option name="localTasksCounter" value="69" />
+    <task id="LOCAL-00069" summary="Complete Semester 1 Final project with better collision detection.">
+      <created>1576311961968</created>
+      <option name="number" value="00069" />
+      <option name="presentableId" value="LOCAL-00069" />
+      <option name="project" value="LOCAL" />
+      <updated>1576311961968</updated>
+    </task>
+    <option name="localTasksCounter" value="70" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -569,7 +568,6 @@
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Warmup from October 29, 2019" />
     <MESSAGE value="Queues Lab" />
     <MESSAGE value="Queues Lab -- add .zip file" />
     <MESSAGE value="Fixed queues lab." />
@@ -594,7 +592,8 @@
     <MESSAGE value="Complete more of Semester 1 Final project?" />
     <MESSAGE value="Code cleanup of Semester 1 Final project." />
     <MESSAGE value="Complete Semester 1 Final project w/o better collision detection." />
-    <option name="LAST_COMMIT_MESSAGE" value="Complete Semester 1 Final project w/o better collision detection." />
+    <MESSAGE value="Complete Semester 1 Final project with better collision detection." />
+    <option name="LAST_COMMIT_MESSAGE" value="Complete Semester 1 Final project with better collision detection." />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="WindowStateProjectService">
@@ -606,30 +605,30 @@
       <screen x="0" y="0" width="1858" height="1080" />
     </state>
     <state x="436" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1858.1080@0.0.1858.1080" timestamp="1575565639336" />
-    <state x="497" y="134" key="CommitChangelistDialog2" timestamp="1576255121462">
+    <state x="497" y="134" key="CommitChangelistDialog2" timestamp="1576311960996">
       <screen x="0" y="0" width="1858" height="1080" />
     </state>
-    <state x="497" y="134" key="CommitChangelistDialog2/0.0.1858.1080@0.0.1858.1080" timestamp="1576255121462" />
+    <state x="497" y="134" key="CommitChangelistDialog2/0.0.1858.1080@0.0.1858.1080" timestamp="1576311960996" />
     <state x="709" y="232" key="FileChooserDialogImpl" timestamp="1576310345415">
       <screen x="0" y="0" width="1858" height="1080" />
     </state>
     <state x="709" y="232" key="FileChooserDialogImpl/0.0.1858.1080@0.0.1858.1080" timestamp="1576310345415" />
-    <state width="1837" height="255" key="GridCell.Tab.0.bottom" timestamp="1576311940542">
+    <state width="1837" height="255" key="GridCell.Tab.0.bottom" timestamp="1576349870956">
       <screen x="0" y="0" width="1858" height="1080" />
     </state>
-    <state width="1837" height="255" key="GridCell.Tab.0.bottom/0.0.1858.1080@0.0.1858.1080" timestamp="1576311940542" />
-    <state width="1837" height="255" key="GridCell.Tab.0.center" timestamp="1576311940542">
+    <state width="1837" height="255" key="GridCell.Tab.0.bottom/0.0.1858.1080@0.0.1858.1080" timestamp="1576349870956" />
+    <state width="1837" height="255" key="GridCell.Tab.0.center" timestamp="1576349870956">
       <screen x="0" y="0" width="1858" height="1080" />
     </state>
-    <state width="1837" height="255" key="GridCell.Tab.0.center/0.0.1858.1080@0.0.1858.1080" timestamp="1576311940542" />
-    <state width="1837" height="255" key="GridCell.Tab.0.left" timestamp="1576311940541">
+    <state width="1837" height="255" key="GridCell.Tab.0.center/0.0.1858.1080@0.0.1858.1080" timestamp="1576349870956" />
+    <state width="1837" height="255" key="GridCell.Tab.0.left" timestamp="1576349870956">
       <screen x="0" y="0" width="1858" height="1080" />
     </state>
-    <state width="1837" height="255" key="GridCell.Tab.0.left/0.0.1858.1080@0.0.1858.1080" timestamp="1576311940541" />
-    <state width="1837" height="255" key="GridCell.Tab.0.right" timestamp="1576311940542">
+    <state width="1837" height="255" key="GridCell.Tab.0.left/0.0.1858.1080@0.0.1858.1080" timestamp="1576349870956" />
+    <state width="1837" height="255" key="GridCell.Tab.0.right" timestamp="1576349870956">
       <screen x="0" y="0" width="1858" height="1080" />
     </state>
-    <state width="1837" height="255" key="GridCell.Tab.0.right/0.0.1858.1080@0.0.1858.1080" timestamp="1576311940542" />
+    <state width="1837" height="255" key="GridCell.Tab.0.right/0.0.1858.1080@0.0.1858.1080" timestamp="1576349870956" />
     <state width="1837" height="283" key="GridCell.Tab.1.bottom" timestamp="1576311164667">
       <screen x="0" y="0" width="1858" height="1080" />
     </state>
@@ -650,10 +649,10 @@
       <screen x="0" y="0" width="1858" height="1080" />
     </state>
     <state x="594" y="238" key="NewModule_or_Project.wizard/0.0.1858.1080@0.0.1858.1080" timestamp="1575304866208" />
-    <state x="521" y="272" key="Vcs.Push.Dialog.v2" timestamp="1576210598806">
+    <state x="521" y="272" key="Vcs.Push.Dialog.v2" timestamp="1576311963523">
       <screen x="0" y="0" width="1858" height="1080" />
     </state>
-    <state x="521" y="272" key="Vcs.Push.Dialog.v2/0.0.1858.1080@0.0.1858.1080" timestamp="1576210598806" />
+    <state x="521" y="272" key="Vcs.Push.Dialog.v2/0.0.1858.1080@0.0.1858.1080" timestamp="1576311963523" />
     <state x="585" y="250" key="run.anything.popup" timestamp="1575996635925">
       <screen x="0" y="0" width="1858" height="1080" />
     </state>
