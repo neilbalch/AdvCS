@@ -315,51 +315,18 @@ public class Screen extends JPanel {
     }
 
     public void movePlayer(int player, Point direction) {
-        Dimension move = null;
-        //TODO: Close the gap between a no-no tile and the player... currently is the middle of a tile, needs to be closer to the offending edge.
-        int player_r = (int) ((float) playerPosition[player - 1].y / 60);
-        int player_c = (int) ((float) playerPosition[player - 1].x / 60);
-//        System.out.println(player_r + "\t" + player_c);
+        Dimension move = new Dimension(direction.x * moveMagnitude, direction.y * -moveMagnitude);
+        if (!coordsWithin(new Point(playerPosition[player - 1].x + move.width, playerPosition[player - 1].y + move.height), new Point(0, 0), new Point(600, 600)))
+            return;
 
-        if (direction.x == -1) {
-            if (playerPosition[player - 1].x < 60) return;
-
-            Tile queryTile = board.get(new Point(player_r, player_c - 1));
-            if (queryTile.type == Tile.Type.MOUNTAIN) {
-                if (playerHealth[player - 1].size() != 0)
-                    deductHealthPoint(player);
-            } else if (queryTile.type == Tile.Type.UNTRAVERSABLE) {
-            } else move = new Dimension(-moveMagnitude, 0);
-        } else if (direction.x == 1) {
-            if (playerPosition[player - 1].x > getPreferredSize().width - 60) return;
-
-            Tile queryTile = board.get(new Point(player_r, player_c + 1));
-            if (queryTile.type == Tile.Type.MOUNTAIN) {
-                if (playerHealth[player - 1].size() != 0)
-                    deductHealthPoint(player);
-            } else if (queryTile.type == Tile.Type.UNTRAVERSABLE) {
-            } else move = new Dimension(moveMagnitude, 0);
-        } else if (direction.y == -1) {
-            if (playerPosition[player - 1].y > getPreferredSize().height - 60) return;
-
-            Tile queryTile = board.get(new Point(player_r + 1, player_c));
-            if (queryTile.type == Tile.Type.MOUNTAIN) {
-                if (playerHealth[player - 1].size() != 0)
-                    deductHealthPoint(player);
-            } else if (queryTile.type == Tile.Type.UNTRAVERSABLE) {
-            } else move = new Dimension(0, moveMagnitude);
-        } else if (direction.y == 1) {
-            if (playerPosition[player - 1].y < 60) return;
-
-            Tile queryTile = board.get(new Point(player_r - 1, player_c));
-            if (queryTile.type == Tile.Type.MOUNTAIN) {
-                if (playerHealth[player - 1].size() != 0)
-                    deductHealthPoint(player);
-            } else if (queryTile.type == Tile.Type.UNTRAVERSABLE) {
-            } else move = new Dimension(0, -moveMagnitude);
-        }
-
-        if (move != null) {
+        int new_r = (int) ((float) (playerPosition[player - 1].y + move.height) / 60);
+        int new_c = (int) ((float) (playerPosition[player - 1].x + move.width) / 60);
+        Tile queryTile = board.get(new Point(new_r, new_c));
+        if (queryTile.type == Tile.Type.MOUNTAIN) {
+            if (playerHealth[player - 1].size() != 0)
+                deductHealthPoint(player);
+        } else if (queryTile.type == Tile.Type.UNTRAVERSABLE) {
+        } else {
             playerPosition[player - 1].translate(move.width, move.height);
             writeMsg(Message.createMessage(player, Message.Action.PlayerMoved, playerPosition[player - 1], null, null));
         }
