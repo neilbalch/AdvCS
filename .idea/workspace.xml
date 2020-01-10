@@ -1,7 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="36939a02-4d05-4550-9e2f-c504bf2e9922" name="Default Changelist" comment="" />
+    <list default="true" id="36939a02-4d05-4550-9e2f-c504bf2e9922" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/Q3/01092020/01092020.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Q3/01092020/LL_demo.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Q3/01092020/LinkedList.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -50,10 +56,11 @@
   </component>
   <component name="PropertiesComponent">
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../APCS/Labs/Final Project/Screen.java" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/Q3/01092020" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -81,17 +88,24 @@
       <recent name="C:\Users\neilb\Documents\GitHub\AdvCS\Labs\Big-O Lab" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.RunBoth">
-    <configuration name="AnimationTest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="AnimationTest" />
-      <module name="Networking Lab" />
+  <component name="RunManager" selected="Application.LinkedList">
+    <configuration name="Client (1)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Client" />
+      <module name="Semester 1 Final" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Client (1)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Client" />
-      <module name="Semester 1 Final" />
+    <configuration name="LL_demo" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="LL_demo" />
+      <module name="01092020" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="LinkedList" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="LinkedList" />
+      <module name="01092020" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -112,32 +126,25 @@
     </configuration>
     <configuration name="Server" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Server" />
-      <module name="11122019" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="Server" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Server" />
       <module name="Networking Lab" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
     <list>
-      <item itemvalue="Application.AnimationTest" />
-      <item itemvalue="Application.Server" />
       <item itemvalue="Application.Server (1)" />
       <item itemvalue="Application.Client (1)" />
       <item itemvalue="Application.RunBoth" />
+      <item itemvalue="Application.LL_demo" />
+      <item itemvalue="Application.LinkedList" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.LinkedList" />
+        <item itemvalue="Application.LL_demo" />
         <item itemvalue="Application.RunBoth" />
         <item itemvalue="Application.Client (1)" />
         <item itemvalue="Application.Server (1)" />
-        <item itemvalue="Application.AnimationTest" />
-        <item itemvalue="Application.Server" />
       </list>
     </recent_temporary>
   </component>
@@ -201,6 +208,7 @@
       <workItem from="1576208010724" duration="10391000" />
       <workItem from="1576368162414" duration="3000" />
       <workItem from="1576512722697" duration="788000" />
+      <workItem from="1578586067234" duration="3994000" />
     </task>
     <task id="LOCAL-00023" summary="Added fucking iterator usage to the iterator lab.">
       <created>1569105121077</created>
@@ -608,26 +616,26 @@
       <screen x="0" y="0" width="1858" height="1080" />
     </state>
     <state x="497" y="134" key="CommitChangelistDialog2/0.0.1858.1080@0.0.1858.1080" timestamp="1576513585523" />
-    <state x="709" y="232" key="FileChooserDialogImpl" timestamp="1576310345415">
+    <state x="709" y="232" key="FileChooserDialogImpl" timestamp="1578586265538">
       <screen x="0" y="0" width="1858" height="1080" />
     </state>
-    <state x="709" y="232" key="FileChooserDialogImpl/0.0.1858.1080@0.0.1858.1080" timestamp="1576310345415" />
-    <state width="1837" height="255" key="GridCell.Tab.0.bottom" timestamp="1576513607206">
+    <state x="709" y="232" key="FileChooserDialogImpl/0.0.1858.1080@0.0.1858.1080" timestamp="1578586265538" />
+    <state width="1837" height="255" key="GridCell.Tab.0.bottom" timestamp="1578640193140">
       <screen x="0" y="0" width="1858" height="1080" />
     </state>
-    <state width="1837" height="255" key="GridCell.Tab.0.bottom/0.0.1858.1080@0.0.1858.1080" timestamp="1576513607206" />
-    <state width="1837" height="255" key="GridCell.Tab.0.center" timestamp="1576513607206">
+    <state width="1837" height="255" key="GridCell.Tab.0.bottom/0.0.1858.1080@0.0.1858.1080" timestamp="1578640193140" />
+    <state width="1837" height="255" key="GridCell.Tab.0.center" timestamp="1578640193140">
       <screen x="0" y="0" width="1858" height="1080" />
     </state>
-    <state width="1837" height="255" key="GridCell.Tab.0.center/0.0.1858.1080@0.0.1858.1080" timestamp="1576513607206" />
-    <state width="1837" height="255" key="GridCell.Tab.0.left" timestamp="1576513607206">
+    <state width="1837" height="255" key="GridCell.Tab.0.center/0.0.1858.1080@0.0.1858.1080" timestamp="1578640193140" />
+    <state width="1837" height="255" key="GridCell.Tab.0.left" timestamp="1578640193139">
       <screen x="0" y="0" width="1858" height="1080" />
     </state>
-    <state width="1837" height="255" key="GridCell.Tab.0.left/0.0.1858.1080@0.0.1858.1080" timestamp="1576513607206" />
-    <state width="1837" height="255" key="GridCell.Tab.0.right" timestamp="1576513607206">
+    <state width="1837" height="255" key="GridCell.Tab.0.left/0.0.1858.1080@0.0.1858.1080" timestamp="1578640193139" />
+    <state width="1837" height="255" key="GridCell.Tab.0.right" timestamp="1578640193140">
       <screen x="0" y="0" width="1858" height="1080" />
     </state>
-    <state width="1837" height="255" key="GridCell.Tab.0.right/0.0.1858.1080@0.0.1858.1080" timestamp="1576513607206" />
+    <state width="1837" height="255" key="GridCell.Tab.0.right/0.0.1858.1080@0.0.1858.1080" timestamp="1578640193140" />
     <state width="1837" height="283" key="GridCell.Tab.1.bottom" timestamp="1576349913527">
       <screen x="0" y="0" width="1858" height="1080" />
     </state>
@@ -644,14 +652,18 @@
       <screen x="0" y="0" width="1858" height="1080" />
     </state>
     <state width="1837" height="283" key="GridCell.Tab.1.right/0.0.1858.1080@0.0.1858.1080" timestamp="1576349913527" />
-    <state x="594" y="238" key="NewModule_or_Project.wizard" timestamp="1575304866208">
+    <state x="594" y="238" key="NewModule_or_Project.wizard" timestamp="1578586267713">
       <screen x="0" y="0" width="1858" height="1080" />
     </state>
-    <state x="594" y="238" key="NewModule_or_Project.wizard/0.0.1858.1080@0.0.1858.1080" timestamp="1575304866208" />
+    <state x="594" y="238" key="NewModule_or_Project.wizard/0.0.1858.1080@0.0.1858.1080" timestamp="1578586267713" />
     <state x="521" y="272" key="Vcs.Push.Dialog.v2" timestamp="1576513587841">
       <screen x="0" y="0" width="1858" height="1080" />
     </state>
     <state x="521" y="272" key="Vcs.Push.Dialog.v2/0.0.1858.1080@0.0.1858.1080" timestamp="1576513587841" />
+    <state x="727" y="230" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1578586510645">
+      <screen x="0" y="0" width="1858" height="1080" />
+    </state>
+    <state x="727" y="230" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/0.0.1858.1080@0.0.1858.1080" timestamp="1578586510645" />
     <state x="585" y="250" key="run.anything.popup" timestamp="1575996635925">
       <screen x="0" y="0" width="1858" height="1080" />
     </state>
