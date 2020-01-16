@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="36939a02-4d05-4550-9e2f-c504bf2e9922" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Labs/Singly Linked List Lab/Screen.java" beforeDir="false" afterPath="$PROJECT_DIR$/Labs/Singly Linked List Lab/Runner.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -201,14 +200,7 @@
       <workItem from="1578586067234" duration="9796000" />
       <workItem from="1579020622363" duration="415000" />
       <workItem from="1579191022749" duration="180000" />
-      <workItem from="1579191219737" duration="6337000" />
-    </task>
-    <task id="LOCAL-00027" summary="First work on Big-O lab">
-      <created>1569524718365</created>
-      <option name="number" value="00027" />
-      <option name="presentableId" value="LOCAL-00027" />
-      <option name="project" value="LOCAL" />
-      <updated>1569524718365</updated>
+      <workItem from="1579191219737" duration="6665000" />
     </task>
     <task id="LOCAL-00028" summary="Little more work on Big-O lab">
       <created>1569557032437</created>
@@ -546,7 +538,14 @@
       <option name="project" value="LOCAL" />
       <updated>1579197521250</updated>
     </task>
-    <option name="localTasksCounter" value="76" />
+    <task id="LOCAL-00076" summary="Vast majority of work on Singly Linked List Lab -- conform to spec">
+      <created>1579202413242</created>
+      <option name="number" value="00076" />
+      <option name="presentableId" value="LOCAL-00076" />
+      <option name="project" value="LOCAL" />
+      <updated>1579202413243</updated>
+    </task>
+    <option name="localTasksCounter" value="77" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -568,7 +567,6 @@
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Classwork from November 12, 2019." />
     <MESSAGE value="Formatting for classwork from November 12, 2019." />
     <MESSAGE value="Fix classwork from November 12, 2019." />
     <MESSAGE value="Work from classtime on Networking Lab from November 14 and 15, 2019." />
@@ -593,7 +591,8 @@
     <MESSAGE value="Classwork from January 10, 2020" />
     <MESSAGE value="Vast majority of work on Singly Linked List Lab" />
     <MESSAGE value="Vast majority of work on Singly Linked List Lab -- small fix" />
-    <option name="LAST_COMMIT_MESSAGE" value="Vast majority of work on Singly Linked List Lab -- small fix" />
+    <MESSAGE value="Vast majority of work on Singly Linked List Lab -- conform to spec" />
+    <option name="LAST_COMMIT_MESSAGE" value="Vast majority of work on Singly Linked List Lab -- conform to spec" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="WindowStateProjectService">
@@ -609,10 +608,10 @@
       <screen x="0" y="0" width="1858" height="1080" />
     </state>
     <state x="436" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1858.1080@0.0.1858.1080" timestamp="1575565639336" />
-    <state x="497" y="134" key="CommitChangelistDialog2" timestamp="1579197520500">
+    <state x="497" y="134" key="CommitChangelistDialog2" timestamp="1579202411794">
       <screen x="0" y="0" width="1858" height="1080" />
     </state>
-    <state x="497" y="134" key="CommitChangelistDialog2/0.0.1858.1080@0.0.1858.1080" timestamp="1579197520500" />
+    <state x="497" y="134" key="CommitChangelistDialog2/0.0.1858.1080@0.0.1858.1080" timestamp="1579202411794" />
     <state x="709" y="232" key="FileChooserDialogImpl" timestamp="1579191110267">
       <screen x="0" y="0" width="1858" height="1080" />
     </state>
@@ -653,10 +652,10 @@
       <screen x="0" y="0" width="1858" height="1080" />
     </state>
     <state x="594" y="238" key="NewModule_or_Project.wizard/0.0.1858.1080@0.0.1858.1080" timestamp="1579191112898" />
-    <state x="521" y="272" key="Vcs.Push.Dialog.v2" timestamp="1579197522602">
+    <state x="521" y="272" key="Vcs.Push.Dialog.v2" timestamp="1579202415051">
       <screen x="0" y="0" width="1858" height="1080" />
     </state>
-    <state x="521" y="272" key="Vcs.Push.Dialog.v2/0.0.1858.1080@0.0.1858.1080" timestamp="1579197522602" />
+    <state x="521" y="272" key="Vcs.Push.Dialog.v2/0.0.1858.1080@0.0.1858.1080" timestamp="1579202415051" />
     <state x="727" y="230" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1579192105331">
       <screen x="0" y="0" width="1858" height="1080" />
     </state>
