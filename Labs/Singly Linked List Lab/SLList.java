@@ -7,7 +7,7 @@ public class SLList {
     public enum SortingMethods {NAME, PRICE, TIME}
 
     ;
-    private SortingMethods currentSortMethod = SortingMethods.NAME;
+    private SortingMethods currentSortMethod = SortingMethods.TIME;
 
     public SLList() {
         this.head = null;
