@@ -4,7 +4,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.time.LocalDateTime;
 
-public class Screen extends JPanel implements ActionListener {
+public class Runner extends JPanel implements ActionListener {
     private SLList shoppingList;
     private JList<ItemPair> listView;
     private JScrollPane listPane;
@@ -18,7 +18,7 @@ public class Screen extends JPanel implements ActionListener {
     private JButton sortPrice;
     private JButton sortTime;
 
-    public Screen() {
+    public Runner() {
         shoppingList = new SLList();
         shoppingList.add(new ItemPair(new Item("Portobello Mushrooms", 1.25, LocalDateTime.now()), 1));
         shoppingList.add(new ItemPair(new Item("Marmite", 10.00, LocalDateTime.now()), 1));
@@ -136,7 +136,7 @@ public class Screen extends JPanel implements ActionListener {
 
     public static void main(String[] args) {
         JFrame frame = new JFrame("Shopping List Helper");
-        frame.add(new Screen());
+        frame.add(new Runner());
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.pack();
         frame.setVisible(true);
