@@ -83,16 +83,86 @@ public class DLList<T> {
         }
     }
 
+    public void set(int index, T element) {
+        //System.out.println("index: " + index + ", size: " + size + ", element: " + element);
+
+        if (size == 0) {
+            //System.out.println("Setting element: size = 0");
+            Node<T> node = new Node<T>(element, null, null);
+            head = node;
+            tail = node;
+            size++;
+        } else if (index <= size / 2.0) {
+            //System.out.println("Setting element: from head");
+            Node<T> tmpHead = head;
+            for (int i = 0; i < index - 1; i++) {
+                tmpHead = tmpHead.next();
+            }
+            tmpHead.set(element);
+        } else if (index > size / 2.0) {
+            //System.out.println("Setting element: from tail");
+            Node<T> tmpTail = tail;
+            for (int i = size - 1; i >= index; i--) {
+                tmpTail = tmpTail.prev();
+            }
+            tmpTail.set(element);
+        }
+    }
+
+    public void remove(int index) {
+        //System.out.println("index: " + index + ", size: " + size);
+
+        if (size == 0) {
+            return;
+        } else if (index == 0) {
+            head = head.next();
+            size--;
+        } else if (index <= size / 2.0) {
+            //System.out.println("Removing element: from head");
+            Node<T> tmpHead = head;
+            for (int i = 0; i < index; i++) {
+                tmpHead = tmpHead.next();
+            }
+
+            tmpHead.next().setPrev(tmpHead.prev());
+            tmpHead.prev().setNext(tmpHead.next());
+            size--;
+        } else if (index > size / 2.0) {
+            //System.out.println("Removing element: from tail");
+            Node<T> tmpTail = tail;
+            for (int i = size - 1; i >= index; i--) {
+                tmpTail = tmpTail.prev();
+            }
+
+            tmpTail.prev().setNext(tmpTail.next());
+            size--;
+        }
+    }
+
     public int size() {
         return size;
     }
 
     public String toString() {
-        String out = "[";
-        for (int i = 0; i < size - 2; i++) {
+        if (size == 0) return "Size: 0 [ ]";
+        //if(size == 1) return "[ " + head.get().toString() + " ]";
+
+        String out = "Size: " + size + " [";
+        for (int i = 0; i <= size - 2; i++) {
             out += get(i) + ", ";
         }
         out += get(size - 1) + "]";
         return out;
+    }
+
+    public boolean contains(T t) {
+        Node<T> tmpHead = head;
+        for (int i = 0; i < size; i++) {
+            if (tmpHead.get().equals(t)) {
+                return true;
+            }
+            tmpHead = tmpHead.next();
+        }
+        return false;
     }
 }
