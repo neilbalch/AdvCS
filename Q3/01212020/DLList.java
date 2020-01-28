@@ -95,7 +95,7 @@ public class DLList<T> {
         } else if (index <= size / 2.0) {
             //System.out.println("Setting element: from head");
             Node<T> tmpHead = head;
-            for (int i = 0; i < index - 1; i++) {
+            for (int i = 0; i < index; i++) {
                 tmpHead = tmpHead.next();
             }
             tmpHead.set(element);

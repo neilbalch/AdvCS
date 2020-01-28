@@ -1,5 +1,4 @@
 import java.util.Scanner;
-import java.util.ArrayList;
 
 class Main {
     private enum SortMethod {song, artist, time}
@@ -38,17 +37,14 @@ class Main {
         System.out.println();
         System.out.println("------------ PART 2 ------------");
 
-        // Currently Broken parts:
-        // 3 4 5 6 7 8 9
-
         DLList<Song> list = new DLList<Song>();
 
         int time = 0;
         boolean dontBreak = true;
         SortMethod currentMethod = SortMethod.time;
 
-        list.add(new Song("a", "a", 0));
-        list.add(new Song("b", "b", 1));
+        list.add(new Song("b", "b", 0));
+        list.add(new Song("a", "a", 1));
         list.add(new Song("c", "c", 2));
         time = 3;
 
@@ -80,7 +76,6 @@ class Main {
                     String newSong = input.next();
                     System.out.print("Enter the Artist: ");
                     String artist = input.next();
-                    System.out.println("Time before adding: " + time);
                     if (!list.contains(new Song(newSong, artist, time))) {
                         for (int i = 0; i < list.size(); i++) {
                             if (list.get(i).getSong().compareTo(newSong) < 0 && currentMethod == SortMethod.song) {
@@ -99,7 +94,6 @@ class Main {
                             }
                             time++;
                         }
-                        System.out.println("Time after adding: " + time);
                     } else System.out.println("Oops, that song already exists!");
                     break;
                 case 2: // Display song list
@@ -135,10 +129,7 @@ class Main {
                     songName = input.next();
 
                     for (int i = 0; i < list.size(); i++) {
-                        if (list.get(i).getSong().equalsIgnoreCase(songName)) {
-                            list.remove(i);
-                            break;
-                        }
+                        if (list.get(i).getSong().equalsIgnoreCase(songName)) list.remove(i);
                     }
                     break;
                 case 7: // Sort by artist name
@@ -146,7 +137,8 @@ class Main {
                         for (int j = i + 1; j < list.size(); j++) {
                             if (list.get(i).getArtist().compareTo(list.get(j).getArtist()) > 0) {
                                 Song temp = list.get(i);
-                                list.set(i, list.get(j));
+                                Song temp2 = list.get(j);
+                                list.set(i, temp2);
                                 list.set(j, temp);
                             }
                         }
@@ -159,7 +151,8 @@ class Main {
                         for (int j = i + 1; j < list.size(); j++) {
                             if (list.get(i).getSong().compareTo(list.get(j).getSong()) > 0) {
                                 Song temp = list.get(i);
-                                list.set(i, list.get(j));
+                                Song temp2 = list.get(j);
+                                list.set(i, temp2);
                                 list.set(j, temp);
                             }
                         }
@@ -172,7 +165,8 @@ class Main {
                         for (int j = i + 1; j < list.size(); j++) {
                             if (list.get(i).getTime() > list.get(j).getTime()) {
                                 Song temp = list.get(i);
-                                list.set(i, list.get(j));
+                                Song temp2 = list.get(j);
+                                list.set(i, temp2);
                                 list.set(j, temp);
                             }
                         }
