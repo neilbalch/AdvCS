@@ -87,22 +87,24 @@ public class DLList<T extends Comparable<T>> {
     }
 
     public void set(int index, T data) {
-        if (index < size - 1) return;
-        else if (index < size / 2.0) {
-            Node<T> tmpHead = head.next();
-            for (int i = 0; i < index; i++) {
-                tmpHead = tmpHead.next();
-            }
-
-            tmpHead.set(data);
-        } else {
-            Node<T> tmpHead = head.prev();
-            for (int i = size; i >= index; i--) {
-                tmpHead = tmpHead.prev();
-            }
-
-            tmpHead.set(data);
-        }
+//        if (index < size - 1) return;
+//        else if (index < size / 2.0) {
+//            Node<T> tmpHead = head.next();
+//            for (int i = 0; i < index; i++) {
+//                tmpHead = tmpHead.next();
+//            }
+//
+//            tmpHead.set(data);
+//        } else {
+//            Node<T> tmpHead = head.prev();
+//            for (int i = size; i >= index; i--) {
+//                tmpHead = tmpHead.prev();
+//            }
+//
+//            tmpHead.set(data);
+//        }
+        this.remove(index);
+        this.add(data);
     }
 
     public String toString() {
@@ -118,5 +120,28 @@ public class DLList<T extends Comparable<T>> {
 
     public int size() {
         return size;
+    }
+
+    public boolean contains(T data) {
+        Node<T> tmpHead = head.next();
+        while (tmpHead.get() != null) {
+            if (tmpHead.get().equals(data)) return true;
+            else tmpHead = tmpHead.next();
+        }
+        return false;
+    }
+
+    public int indexOf(T data) {
+        Node<T> tmpHead = head.next();
+        int index = 0;
+
+        while (tmpHead.get() != null) {
+            if (tmpHead.get().equals(data)) return index;
+            else {
+                tmpHead = tmpHead.next();
+                index++;
+            }
+        }
+        return -1;
     }
 }

@@ -27,8 +27,15 @@ public class Task implements Comparable<Task> {
         return rank + " : " + name;
     }
 
+    @Override
     public int compareTo(Task o) {
         if (rank != o.getRank()) return rank - o.getRank();
         else return name.compareToIgnoreCase(o.getName());
+    }
+
+    @Override
+    public boolean equals(Object oth) {
+        Task o = (Task) oth;
+        return rank == o.getRank() && name.equalsIgnoreCase(o.getName());
     }
 }

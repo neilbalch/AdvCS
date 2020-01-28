@@ -2,15 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="36939a02-4d05-4550-9e2f-c504bf2e9922" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Q3/01272020/01272020.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Q3/01272020/DLList.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Q3/01272020/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Q3/01272020/Node.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Q3/01272020/Task.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Q3/01212020/DLList.java" beforeDir="false" afterPath="$PROJECT_DIR$/Q3/01212020/DLList.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Q3/01212020/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/Q3/01212020/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Q3/01272020/DLList.java" beforeDir="false" afterPath="$PROJECT_DIR$/Q3/01272020/DLList.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Q3/01272020/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/Q3/01272020/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Q3/01272020/Task.java" beforeDir="false" afterPath="$PROJECT_DIR$/Q3/01272020/Task.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -209,14 +204,7 @@
       <workItem from="1579020622363" duration="415000" />
       <workItem from="1579191022749" duration="180000" />
       <workItem from="1579191219737" duration="6872000" />
-      <workItem from="1579626116542" duration="17881000" />
-    </task>
-    <task id="LOCAL-00031" summary="Non-challenge work on Sets Lab">
-      <created>1570129290807</created>
-      <option name="number" value="00031" />
-      <option name="presentableId" value="LOCAL-00031" />
-      <option name="project" value="LOCAL" />
-      <updated>1570129290807</updated>
+      <workItem from="1579626116542" duration="22552000" />
     </task>
     <task id="LOCAL-00032" summary="Oops, slight fix for Sets Lab">
       <created>1570129973592</created>
@@ -554,7 +542,14 @@
       <option name="project" value="LOCAL" />
       <updated>1579885422868</updated>
     </task>
-    <option name="localTasksCounter" value="80" />
+    <task id="LOCAL-00080" summary="Most of classwork from January 27, 2020">
+      <created>1580183286911</created>
+      <option name="number" value="00080" />
+      <option name="presentableId" value="LOCAL-00080" />
+      <option name="project" value="LOCAL" />
+      <updated>1580183286911</updated>
+    </task>
+    <option name="localTasksCounter" value="81" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -576,7 +571,6 @@
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Networking Lab, minus challenge." />
     <MESSAGE value="Full Networking Lab, minus challenge." />
     <MESSAGE value="Full Networking Lab, minus challenge. -- Better formatting and stuff." />
     <MESSAGE value="Beginning of animation test for Networking Lab" />
@@ -601,7 +595,8 @@
     <MESSAGE value="Singly Linked List Lab fina commit" />
     <MESSAGE value="Part 1 of classwork from January 21, 2020" />
     <MESSAGE value="Part 2 (WIP) of classwork from January 24, 2020" />
-    <option name="LAST_COMMIT_MESSAGE" value="Part 2 (WIP) of classwork from January 24, 2020" />
+    <MESSAGE value="Most of classwork from January 27, 2020" />
+    <option name="LAST_COMMIT_MESSAGE" value="Most of classwork from January 27, 2020" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="WindowStateProjectService">
@@ -617,30 +612,30 @@
       <screen x="0" y="0" width="1858" height="1080" />
     </state>
     <state x="436" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1858.1080@0.0.1858.1080" timestamp="1575565639336" />
-    <state x="497" y="134" key="CommitChangelistDialog2" timestamp="1579885420850">
+    <state x="497" y="134" key="CommitChangelistDialog2" timestamp="1580183285896">
       <screen x="0" y="0" width="1858" height="1080" />
     </state>
-    <state x="497" y="134" key="CommitChangelistDialog2/0.0.1858.1080@0.0.1858.1080" timestamp="1579885420850" />
+    <state x="497" y="134" key="CommitChangelistDialog2/0.0.1858.1080@0.0.1858.1080" timestamp="1580183285896" />
     <state x="709" y="232" key="FileChooserDialogImpl" timestamp="1580149352121">
       <screen x="0" y="0" width="1858" height="1080" />
     </state>
     <state x="709" y="232" key="FileChooserDialogImpl/0.0.1858.1080@0.0.1858.1080" timestamp="1580149352121" />
-    <state width="1837" height="279" key="GridCell.Tab.0.bottom" timestamp="1580183255894">
+    <state width="1837" height="279" key="GridCell.Tab.0.bottom" timestamp="1580227671595">
       <screen x="0" y="0" width="1858" height="1080" />
     </state>
-    <state width="1837" height="279" key="GridCell.Tab.0.bottom/0.0.1858.1080@0.0.1858.1080" timestamp="1580183255894" />
-    <state width="1837" height="279" key="GridCell.Tab.0.center" timestamp="1580183255893">
+    <state width="1837" height="279" key="GridCell.Tab.0.bottom/0.0.1858.1080@0.0.1858.1080" timestamp="1580227671595" />
+    <state width="1837" height="279" key="GridCell.Tab.0.center" timestamp="1580227671595">
       <screen x="0" y="0" width="1858" height="1080" />
     </state>
-    <state width="1837" height="279" key="GridCell.Tab.0.center/0.0.1858.1080@0.0.1858.1080" timestamp="1580183255893" />
-    <state width="1837" height="279" key="GridCell.Tab.0.left" timestamp="1580183255892">
+    <state width="1837" height="279" key="GridCell.Tab.0.center/0.0.1858.1080@0.0.1858.1080" timestamp="1580227671595" />
+    <state width="1837" height="279" key="GridCell.Tab.0.left" timestamp="1580227671594">
       <screen x="0" y="0" width="1858" height="1080" />
     </state>
-    <state width="1837" height="279" key="GridCell.Tab.0.left/0.0.1858.1080@0.0.1858.1080" timestamp="1580183255892" />
-    <state width="1837" height="279" key="GridCell.Tab.0.right" timestamp="1580183255894">
+    <state width="1837" height="279" key="GridCell.Tab.0.left/0.0.1858.1080@0.0.1858.1080" timestamp="1580227671594" />
+    <state width="1837" height="279" key="GridCell.Tab.0.right" timestamp="1580227671595">
       <screen x="0" y="0" width="1858" height="1080" />
     </state>
-    <state width="1837" height="279" key="GridCell.Tab.0.right/0.0.1858.1080@0.0.1858.1080" timestamp="1580183255894" />
+    <state width="1837" height="279" key="GridCell.Tab.0.right/0.0.1858.1080@0.0.1858.1080" timestamp="1580227671595" />
     <state width="1837" height="341" key="GridCell.Tab.1.bottom" timestamp="1580143923138">
       <screen x="0" y="0" width="1858" height="1080" />
     </state>
@@ -677,10 +672,10 @@
       <screen x="0" y="0" width="1858" height="1080" />
     </state>
     <state x="585" y="250" key="run.anything.popup/0.0.1858.1080@0.0.1858.1080" timestamp="1579893374423" />
-    <state x="592" y="235" width="672" height="678" key="search.everywhere.popup" timestamp="1580149429933">
+    <state x="592" y="235" width="672" height="678" key="search.everywhere.popup" timestamp="1580183556102">
       <screen x="0" y="0" width="1858" height="1080" />
     </state>
-    <state x="592" y="235" width="672" height="678" key="search.everywhere.popup/0.0.1858.1080@0.0.1858.1080" timestamp="1580149429933" />
+    <state x="592" y="235" width="672" height="678" key="search.everywhere.popup/0.0.1858.1080@0.0.1858.1080" timestamp="1580183556102" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/AdvCS$Server.ic" NAME="Server Coverage Results" MODIFIED="1573590929592" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
