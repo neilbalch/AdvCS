@@ -2,10 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="36939a02-4d05-4550-9e2f-c504bf2e9922" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/Labs/Video Poker Lab/Card.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Labs/Video Poker Lab/DLList.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Labs/Video Poker Lab/DLNode.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Labs/Video Poker Lab/Main.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Labs/Video Poker Lab/Video Poker Lab.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Q3/01272020/DLList.java" beforeDir="false" afterPath="$PROJECT_DIR$/Q3/01272020/DLList.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Q3/01272020/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/Q3/01272020/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Q3/01272020/Task.java" beforeDir="false" afterPath="$PROJECT_DIR$/Q3/01272020/Task.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -59,7 +62,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/Q3/01272020" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/Labs/Video Poker Lab" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -80,21 +83,14 @@
       <recent name="" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\neilb\Documents\GitHub\AdvCS\Labs\Video Poker Lab" />
       <recent name="C:\Users\neilb\Documents\GitHub\AdvCS\Labs\Networking Lab" />
       <recent name="C:\Users\neilb\Documents\GitHub\AdvCS\Labs\Queues Lab" />
       <recent name="C:\Users\neilb\Documents\GitHub\AdvCS\Labs\Maps Lab" />
       <recent name="C:\Users\neilb\Documents\GitHub\AdvCS\Labs\Sets Lab" />
-      <recent name="C:\Users\neilb\Documents\GitHub\AdvCS\Labs\Big-O Lab" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.Main (2)">
-    <configuration name="LinkedList" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="LinkedList" />
-      <module name="01092020" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
+  <component name="RunManager" selected="Application.Main (3)">
     <configuration name="Main (1)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Main" />
       <module name="01212020" />
@@ -105,6 +101,13 @@
     <configuration name="Main (2)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Main" />
       <module name="01272020" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Main (3)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Main" />
+      <module name="Video Poker Lab" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -124,19 +127,19 @@
       </method>
     </configuration>
     <list>
-      <item itemvalue="Application.LinkedList" />
       <item itemvalue="Application.Main" />
       <item itemvalue="Application.Runner" />
       <item itemvalue="Application.Main (1)" />
       <item itemvalue="Application.Main (2)" />
+      <item itemvalue="Application.Main (3)" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.Main (3)" />
         <item itemvalue="Application.Main (2)" />
         <item itemvalue="Application.Main (1)" />
         <item itemvalue="Application.Runner" />
         <item itemvalue="Application.Main" />
-        <item itemvalue="Application.LinkedList" />
       </list>
     </recent_temporary>
   </component>
@@ -204,14 +207,7 @@
       <workItem from="1579020622363" duration="415000" />
       <workItem from="1579191022749" duration="180000" />
       <workItem from="1579191219737" duration="6872000" />
-      <workItem from="1579626116542" duration="22552000" />
-    </task>
-    <task id="LOCAL-00032" summary="Oops, slight fix for Sets Lab">
-      <created>1570129973592</created>
-      <option name="number" value="00032" />
-      <option name="presentableId" value="LOCAL-00032" />
-      <option name="project" value="LOCAL" />
-      <updated>1570129973592</updated>
+      <workItem from="1579626116542" duration="35435000" />
     </task>
     <task id="LOCAL-00033" summary="Final? work on Sets Lab.">
       <created>1570330944752</created>
@@ -549,7 +545,14 @@
       <option name="project" value="LOCAL" />
       <updated>1580183286911</updated>
     </task>
-    <option name="localTasksCounter" value="81" />
+    <task id="LOCAL-00081" summary="Rest of classwork from January 27, 2020">
+      <created>1580227687552</created>
+      <option name="number" value="00081" />
+      <option name="presentableId" value="LOCAL-00081" />
+      <option name="project" value="LOCAL" />
+      <updated>1580227687552</updated>
+    </task>
+    <option name="localTasksCounter" value="82" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -571,7 +574,6 @@
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Full Networking Lab, minus challenge." />
     <MESSAGE value="Full Networking Lab, minus challenge. -- Better formatting and stuff." />
     <MESSAGE value="Beginning of animation test for Networking Lab" />
     <MESSAGE value="Animations for Networking Lab" />
@@ -596,86 +598,87 @@
     <MESSAGE value="Part 1 of classwork from January 21, 2020" />
     <MESSAGE value="Part 2 (WIP) of classwork from January 24, 2020" />
     <MESSAGE value="Most of classwork from January 27, 2020" />
-    <option name="LAST_COMMIT_MESSAGE" value="Most of classwork from January 27, 2020" />
+    <MESSAGE value="Rest of classwork from January 27, 2020" />
+    <option name="LAST_COMMIT_MESSAGE" value="Rest of classwork from January 27, 2020" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="734" y="224" key="#com.intellij.ide.util.MemberChooser" timestamp="1580183107327">
+    <state x="734" y="224" key="#com.intellij.ide.util.MemberChooser" timestamp="1580403368390">
       <screen x="0" y="0" width="1858" height="1080" />
     </state>
-    <state x="734" y="224" key="#com.intellij.ide.util.MemberChooser/0.0.1858.1080@0.0.1858.1080" timestamp="1580183107327" />
+    <state x="734" y="224" key="#com.intellij.ide.util.MemberChooser/0.0.1858.1080@0.0.1858.1080" timestamp="1580403368390" />
     <state x="609" y="267" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog" timestamp="1575389487210">
       <screen x="0" y="0" width="1858" height="1080" />
     </state>
     <state x="609" y="267" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog/0.0.1858.1080@0.0.1858.1080" timestamp="1575389487210" />
-    <state x="436" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1575565639336">
+    <state x="436" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1580228467207">
       <screen x="0" y="0" width="1858" height="1080" />
     </state>
-    <state x="436" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1858.1080@0.0.1858.1080" timestamp="1575565639336" />
-    <state x="497" y="134" key="CommitChangelistDialog2" timestamp="1580183285896">
+    <state x="436" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1858.1080@0.0.1858.1080" timestamp="1580228467207" />
+    <state x="497" y="134" key="CommitChangelistDialog2" timestamp="1580227686632">
       <screen x="0" y="0" width="1858" height="1080" />
     </state>
-    <state x="497" y="134" key="CommitChangelistDialog2/0.0.1858.1080@0.0.1858.1080" timestamp="1580183285896" />
-    <state x="709" y="232" key="FileChooserDialogImpl" timestamp="1580149352121">
+    <state x="497" y="134" key="CommitChangelistDialog2/0.0.1858.1080@0.0.1858.1080" timestamp="1580227686632" />
+    <state x="709" y="232" key="FileChooserDialogImpl" timestamp="1580228430561">
       <screen x="0" y="0" width="1858" height="1080" />
     </state>
-    <state x="709" y="232" key="FileChooserDialogImpl/0.0.1858.1080@0.0.1858.1080" timestamp="1580149352121" />
-    <state width="1837" height="279" key="GridCell.Tab.0.bottom" timestamp="1580227671595">
+    <state x="709" y="232" key="FileChooserDialogImpl/0.0.1858.1080@0.0.1858.1080" timestamp="1580228430561" />
+    <state width="1837" height="252" key="GridCell.Tab.0.bottom" timestamp="1580406282472">
       <screen x="0" y="0" width="1858" height="1080" />
     </state>
-    <state width="1837" height="279" key="GridCell.Tab.0.bottom/0.0.1858.1080@0.0.1858.1080" timestamp="1580227671595" />
-    <state width="1837" height="279" key="GridCell.Tab.0.center" timestamp="1580227671595">
+    <state width="1837" height="252" key="GridCell.Tab.0.bottom/0.0.1858.1080@0.0.1858.1080" timestamp="1580406282472" />
+    <state width="1837" height="252" key="GridCell.Tab.0.center" timestamp="1580406282472">
       <screen x="0" y="0" width="1858" height="1080" />
     </state>
-    <state width="1837" height="279" key="GridCell.Tab.0.center/0.0.1858.1080@0.0.1858.1080" timestamp="1580227671595" />
-    <state width="1837" height="279" key="GridCell.Tab.0.left" timestamp="1580227671594">
+    <state width="1837" height="252" key="GridCell.Tab.0.center/0.0.1858.1080@0.0.1858.1080" timestamp="1580406282472" />
+    <state width="1837" height="252" key="GridCell.Tab.0.left" timestamp="1580406282472">
       <screen x="0" y="0" width="1858" height="1080" />
     </state>
-    <state width="1837" height="279" key="GridCell.Tab.0.left/0.0.1858.1080@0.0.1858.1080" timestamp="1580227671594" />
-    <state width="1837" height="279" key="GridCell.Tab.0.right" timestamp="1580227671595">
+    <state width="1837" height="252" key="GridCell.Tab.0.left/0.0.1858.1080@0.0.1858.1080" timestamp="1580406282472" />
+    <state width="1837" height="252" key="GridCell.Tab.0.right" timestamp="1580406282472">
       <screen x="0" y="0" width="1858" height="1080" />
     </state>
-    <state width="1837" height="279" key="GridCell.Tab.0.right/0.0.1858.1080@0.0.1858.1080" timestamp="1580227671595" />
-    <state width="1837" height="341" key="GridCell.Tab.1.bottom" timestamp="1580143923138">
+    <state width="1837" height="252" key="GridCell.Tab.0.right/0.0.1858.1080@0.0.1858.1080" timestamp="1580406282472" />
+    <state width="1837" height="341" key="GridCell.Tab.1.bottom" timestamp="1580402178663">
       <screen x="0" y="0" width="1858" height="1080" />
     </state>
-    <state width="1837" height="341" key="GridCell.Tab.1.bottom/0.0.1858.1080@0.0.1858.1080" timestamp="1580143923138" />
-    <state width="1837" height="341" key="GridCell.Tab.1.center" timestamp="1580143923138">
+    <state width="1837" height="341" key="GridCell.Tab.1.bottom/0.0.1858.1080@0.0.1858.1080" timestamp="1580402178663" />
+    <state width="1837" height="341" key="GridCell.Tab.1.center" timestamp="1580402178663">
       <screen x="0" y="0" width="1858" height="1080" />
     </state>
-    <state width="1837" height="341" key="GridCell.Tab.1.center/0.0.1858.1080@0.0.1858.1080" timestamp="1580143923138" />
-    <state width="1837" height="341" key="GridCell.Tab.1.left" timestamp="1580143923138">
+    <state width="1837" height="341" key="GridCell.Tab.1.center/0.0.1858.1080@0.0.1858.1080" timestamp="1580402178663" />
+    <state width="1837" height="341" key="GridCell.Tab.1.left" timestamp="1580402178663">
       <screen x="0" y="0" width="1858" height="1080" />
     </state>
-    <state width="1837" height="341" key="GridCell.Tab.1.left/0.0.1858.1080@0.0.1858.1080" timestamp="1580143923138" />
-    <state width="1837" height="341" key="GridCell.Tab.1.right" timestamp="1580143923138">
+    <state width="1837" height="341" key="GridCell.Tab.1.left/0.0.1858.1080@0.0.1858.1080" timestamp="1580402178663" />
+    <state width="1837" height="341" key="GridCell.Tab.1.right" timestamp="1580402178663">
       <screen x="0" y="0" width="1858" height="1080" />
     </state>
-    <state width="1837" height="341" key="GridCell.Tab.1.right/0.0.1858.1080@0.0.1858.1080" timestamp="1580143923138" />
-    <state x="594" y="238" key="NewModule_or_Project.wizard" timestamp="1580142114929">
+    <state width="1837" height="341" key="GridCell.Tab.1.right/0.0.1858.1080@0.0.1858.1080" timestamp="1580402178663" />
+    <state x="594" y="238" key="NewModule_or_Project.wizard" timestamp="1580228432674">
       <screen x="0" y="0" width="1858" height="1080" />
     </state>
-    <state x="594" y="238" key="NewModule_or_Project.wizard/0.0.1858.1080@0.0.1858.1080" timestamp="1580142114929" />
-    <state x="521" y="272" width="683" height="533" key="Vcs.Push.Dialog.v2" timestamp="1579885427515">
+    <state x="594" y="238" key="NewModule_or_Project.wizard/0.0.1858.1080@0.0.1858.1080" timestamp="1580228432674" />
+    <state x="521" y="272" width="683" height="533" key="Vcs.Push.Dialog.v2" timestamp="1580227688803">
       <screen x="0" y="0" width="1858" height="1080" />
     </state>
-    <state x="521" y="272" width="683" height="533" key="Vcs.Push.Dialog.v2/0.0.1858.1080@0.0.1858.1080" timestamp="1579885427515" />
-    <state x="727" y="230" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1580142093094">
+    <state x="521" y="272" width="683" height="533" key="Vcs.Push.Dialog.v2/0.0.1858.1080@0.0.1858.1080" timestamp="1580227688803" />
+    <state x="727" y="230" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1580404923527">
       <screen x="0" y="0" width="1858" height="1080" />
     </state>
-    <state x="727" y="230" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/0.0.1858.1080@0.0.1858.1080" timestamp="1580142093094" />
+    <state x="727" y="230" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/0.0.1858.1080@0.0.1858.1080" timestamp="1580404923527" />
     <state x="311" y="161" key="new project wizard" timestamp="1580142103267">
       <screen x="0" y="0" width="1858" height="1080" />
     </state>
     <state x="311" y="161" key="new project wizard/0.0.1858.1080@0.0.1858.1080" timestamp="1580142103267" />
-    <state x="585" y="250" key="run.anything.popup" timestamp="1579893374423">
+    <state x="585" y="250" key="run.anything.popup" timestamp="1580404444983">
       <screen x="0" y="0" width="1858" height="1080" />
     </state>
-    <state x="585" y="250" key="run.anything.popup/0.0.1858.1080@0.0.1858.1080" timestamp="1579893374423" />
-    <state x="592" y="235" width="672" height="678" key="search.everywhere.popup" timestamp="1580183556102">
+    <state x="585" y="250" key="run.anything.popup/0.0.1858.1080@0.0.1858.1080" timestamp="1580404444983" />
+    <state x="592" y="235" width="672" height="678" key="search.everywhere.popup" timestamp="1580229780572">
       <screen x="0" y="0" width="1858" height="1080" />
     </state>
-    <state x="592" y="235" width="672" height="678" key="search.everywhere.popup/0.0.1858.1080@0.0.1858.1080" timestamp="1580183556102" />
+    <state x="592" y="235" width="672" height="678" key="search.everywhere.popup/0.0.1858.1080@0.0.1858.1080" timestamp="1580229780572" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/AdvCS$Server.ic" NAME="Server Coverage Results" MODIFIED="1573590929592" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
