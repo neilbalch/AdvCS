@@ -3,8 +3,6 @@ import java.awt.*;
 public class Card {
     enum Suit {CLUB, DIAMOND, HEART, SPADE}
 
-    ;
-
     private Suit suit;
     private int number;
 

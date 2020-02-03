@@ -179,11 +179,14 @@ public class Main extends JPanel implements ActionListener {
         } else if (e.getSource() == draw) {
             for (int i = 0; i < cardsHeld.length; i++) {
                 if (!cardsHeld[i]) {
-                    System.out.println("Replacing card " + (i + 1));
                     if (deck.size() > 0) hand.set(i, deck.remove(0));
                     else hand.remove(i);
+                } else {
+                    // Reset status
+                    cardsHeld[i] = false;
                 }
             }
+            // TODO: Check for winning cases from above, high-valued conditions first.
         }
 
         repaint();
@@ -191,7 +194,7 @@ public class Main extends JPanel implements ActionListener {
 
     public static void main(String[] args) {
         Main game = new Main();
-        JFrame frame = new JFrame("Viiiiideooooo Pooooookkkkkeeeeeerrrrrrrr!");
+        JFrame frame = new JFrame("Video Poker");
 
         frame.add(game);
 

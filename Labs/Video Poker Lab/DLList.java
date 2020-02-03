@@ -65,6 +65,7 @@ public class DLList<T> {
             }
             tmpHead.prev().setNext(tmpHead.next());
             tmpHead.next().setPrev(tmpHead.prev());
+            size--;
             return tmpHead.get();
         } else {
             DLNode<T> tmpHead = head.prev();
@@ -73,6 +74,7 @@ public class DLList<T> {
             }
             tmpHead.prev().setNext(tmpHead.next());
             tmpHead.next().setPrev(tmpHead.prev());
+            size--;
             return tmpHead.get();
         }
     }
@@ -83,6 +85,7 @@ public class DLList<T> {
             if (tmpHead.get().equals(data)) {
                 tmpHead.prev().setNext(tmpHead.next());
                 tmpHead.next().setPrev(tmpHead.prev());
+                size--;
                 return tmpHead.get();
             } else tmpHead = tmpHead.next();
         }
@@ -100,7 +103,7 @@ public class DLList<T> {
             tmpHead.set(data);
         } else {
             DLNode<T> tmpHead = head.prev();
-            for (int i = size; i >= index; i--) {
+            for (int i = size - 1; i > index; i--) {
                 tmpHead = tmpHead.prev();
             }
 

@@ -2,13 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="36939a02-4d05-4550-9e2f-c504bf2e9922" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Labs/Video Poker Lab/Card.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Labs/Video Poker Lab/DLList.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Labs/Video Poker Lab/DLNode.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Labs/Video Poker Lab/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Labs/Video Poker Lab/Video Poker Lab.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Labs/Video Poker Lab/Card.java" beforeDir="false" afterPath="$PROJECT_DIR$/Labs/Video Poker Lab/Card.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Labs/Video Poker Lab/DLList.java" beforeDir="false" afterPath="$PROJECT_DIR$/Labs/Video Poker Lab/DLList.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Labs/Video Poker Lab/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/Labs/Video Poker Lab/Main.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -207,14 +204,8 @@
       <workItem from="1579020622363" duration="415000" />
       <workItem from="1579191022749" duration="180000" />
       <workItem from="1579191219737" duration="6872000" />
-      <workItem from="1579626116542" duration="35435000" />
-    </task>
-    <task id="LOCAL-00033" summary="Final? work on Sets Lab.">
-      <created>1570330944752</created>
-      <option name="number" value="00033" />
-      <option name="presentableId" value="LOCAL-00033" />
-      <option name="project" value="LOCAL" />
-      <updated>1570330944752</updated>
+      <workItem from="1579626116542" duration="36089000" />
+      <workItem from="1580484666035" duration="11683000" />
     </task>
     <task id="LOCAL-00034" summary="Initial work on Maps Lab">
       <created>1570774711516</created>
@@ -552,7 +543,14 @@
       <option name="project" value="LOCAL" />
       <updated>1580227687552</updated>
     </task>
-    <option name="localTasksCounter" value="82" />
+    <task id="LOCAL-00082" summary="Work on Video Poker Lab from January 30, 2020">
+      <created>1580406311162</created>
+      <option name="number" value="00082" />
+      <option name="presentableId" value="LOCAL-00082" />
+      <option name="project" value="LOCAL" />
+      <updated>1580406311162</updated>
+    </task>
+    <option name="localTasksCounter" value="83" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -574,7 +572,6 @@
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Full Networking Lab, minus challenge. -- Better formatting and stuff." />
     <MESSAGE value="Beginning of animation test for Networking Lab" />
     <MESSAGE value="Animations for Networking Lab" />
     <MESSAGE value="Initial framework work for Semester 1 Final project." />
@@ -599,7 +596,8 @@
     <MESSAGE value="Part 2 (WIP) of classwork from January 24, 2020" />
     <MESSAGE value="Most of classwork from January 27, 2020" />
     <MESSAGE value="Rest of classwork from January 27, 2020" />
-    <option name="LAST_COMMIT_MESSAGE" value="Rest of classwork from January 27, 2020" />
+    <MESSAGE value="Work on Video Poker Lab from January 30, 2020" />
+    <option name="LAST_COMMIT_MESSAGE" value="Work on Video Poker Lab from January 30, 2020" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="WindowStateProjectService">
@@ -615,54 +613,54 @@
       <screen x="0" y="0" width="1858" height="1080" />
     </state>
     <state x="436" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1858.1080@0.0.1858.1080" timestamp="1580228467207" />
-    <state x="497" y="134" key="CommitChangelistDialog2" timestamp="1580227686632">
+    <state x="497" y="134" key="CommitChangelistDialog2" timestamp="1580406310154">
       <screen x="0" y="0" width="1858" height="1080" />
     </state>
-    <state x="497" y="134" key="CommitChangelistDialog2/0.0.1858.1080@0.0.1858.1080" timestamp="1580227686632" />
+    <state x="497" y="134" key="CommitChangelistDialog2/0.0.1858.1080@0.0.1858.1080" timestamp="1580406310154" />
     <state x="709" y="232" key="FileChooserDialogImpl" timestamp="1580228430561">
       <screen x="0" y="0" width="1858" height="1080" />
     </state>
     <state x="709" y="232" key="FileChooserDialogImpl/0.0.1858.1080@0.0.1858.1080" timestamp="1580228430561" />
-    <state width="1837" height="252" key="GridCell.Tab.0.bottom" timestamp="1580406282472">
+    <state width="1837" height="252" key="GridCell.Tab.0.bottom" timestamp="1580749626687">
       <screen x="0" y="0" width="1858" height="1080" />
     </state>
-    <state width="1837" height="252" key="GridCell.Tab.0.bottom/0.0.1858.1080@0.0.1858.1080" timestamp="1580406282472" />
-    <state width="1837" height="252" key="GridCell.Tab.0.center" timestamp="1580406282472">
+    <state width="1837" height="252" key="GridCell.Tab.0.bottom/0.0.1858.1080@0.0.1858.1080" timestamp="1580749626687" />
+    <state width="1837" height="252" key="GridCell.Tab.0.center" timestamp="1580749626685">
       <screen x="0" y="0" width="1858" height="1080" />
     </state>
-    <state width="1837" height="252" key="GridCell.Tab.0.center/0.0.1858.1080@0.0.1858.1080" timestamp="1580406282472" />
-    <state width="1837" height="252" key="GridCell.Tab.0.left" timestamp="1580406282472">
+    <state width="1837" height="252" key="GridCell.Tab.0.center/0.0.1858.1080@0.0.1858.1080" timestamp="1580749626685" />
+    <state width="1837" height="252" key="GridCell.Tab.0.left" timestamp="1580749626683">
       <screen x="0" y="0" width="1858" height="1080" />
     </state>
-    <state width="1837" height="252" key="GridCell.Tab.0.left/0.0.1858.1080@0.0.1858.1080" timestamp="1580406282472" />
-    <state width="1837" height="252" key="GridCell.Tab.0.right" timestamp="1580406282472">
+    <state width="1837" height="252" key="GridCell.Tab.0.left/0.0.1858.1080@0.0.1858.1080" timestamp="1580749626683" />
+    <state width="1837" height="252" key="GridCell.Tab.0.right" timestamp="1580749626687">
       <screen x="0" y="0" width="1858" height="1080" />
     </state>
-    <state width="1837" height="252" key="GridCell.Tab.0.right/0.0.1858.1080@0.0.1858.1080" timestamp="1580406282472" />
-    <state width="1837" height="341" key="GridCell.Tab.1.bottom" timestamp="1580402178663">
+    <state width="1837" height="252" key="GridCell.Tab.0.right/0.0.1858.1080@0.0.1858.1080" timestamp="1580749626687" />
+    <state width="1837" height="255" key="GridCell.Tab.1.bottom" timestamp="1580746413558">
       <screen x="0" y="0" width="1858" height="1080" />
     </state>
-    <state width="1837" height="341" key="GridCell.Tab.1.bottom/0.0.1858.1080@0.0.1858.1080" timestamp="1580402178663" />
-    <state width="1837" height="341" key="GridCell.Tab.1.center" timestamp="1580402178663">
+    <state width="1837" height="255" key="GridCell.Tab.1.bottom/0.0.1858.1080@0.0.1858.1080" timestamp="1580746413558" />
+    <state width="1837" height="255" key="GridCell.Tab.1.center" timestamp="1580746413558">
       <screen x="0" y="0" width="1858" height="1080" />
     </state>
-    <state width="1837" height="341" key="GridCell.Tab.1.center/0.0.1858.1080@0.0.1858.1080" timestamp="1580402178663" />
-    <state width="1837" height="341" key="GridCell.Tab.1.left" timestamp="1580402178663">
+    <state width="1837" height="255" key="GridCell.Tab.1.center/0.0.1858.1080@0.0.1858.1080" timestamp="1580746413558" />
+    <state width="1837" height="255" key="GridCell.Tab.1.left" timestamp="1580746413557">
       <screen x="0" y="0" width="1858" height="1080" />
     </state>
-    <state width="1837" height="341" key="GridCell.Tab.1.left/0.0.1858.1080@0.0.1858.1080" timestamp="1580402178663" />
-    <state width="1837" height="341" key="GridCell.Tab.1.right" timestamp="1580402178663">
+    <state width="1837" height="255" key="GridCell.Tab.1.left/0.0.1858.1080@0.0.1858.1080" timestamp="1580746413557" />
+    <state width="1837" height="255" key="GridCell.Tab.1.right" timestamp="1580746413558">
       <screen x="0" y="0" width="1858" height="1080" />
     </state>
-    <state width="1837" height="341" key="GridCell.Tab.1.right/0.0.1858.1080@0.0.1858.1080" timestamp="1580402178663" />
+    <state width="1837" height="255" key="GridCell.Tab.1.right/0.0.1858.1080@0.0.1858.1080" timestamp="1580746413558" />
     <state x="594" y="238" key="NewModule_or_Project.wizard" timestamp="1580228432674">
       <screen x="0" y="0" width="1858" height="1080" />
     </state>
     <state x="594" y="238" key="NewModule_or_Project.wizard/0.0.1858.1080@0.0.1858.1080" timestamp="1580228432674" />
-    <state x="521" y="272" width="683" height="533" key="Vcs.Push.Dialog.v2" timestamp="1580227688803">
+    <state x="521" y="272" width="683" height="533" key="Vcs.Push.Dialog.v2" timestamp="1580406312545">
       <screen x="0" y="0" width="1858" height="1080" />
     </state>
-    <state x="521" y="272" width="683" height="533" key="Vcs.Push.Dialog.v2/0.0.1858.1080@0.0.1858.1080" timestamp="1580227688803" />
+    <state x="521" y="272" width="683" height="533" key="Vcs.Push.Dialog.v2/0.0.1858.1080@0.0.1858.1080" timestamp="1580406312545" />
     <state x="727" y="230" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1580404923527">
       <screen x="0" y="0" width="1858" height="1080" />
     </state>
@@ -679,6 +677,17 @@
       <screen x="0" y="0" width="1858" height="1080" />
     </state>
     <state x="592" y="235" width="672" height="678" key="search.everywhere.popup/0.0.1858.1080@0.0.1858.1080" timestamp="1580229780572" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/Labs/Video Poker Lab/Main.java</url>
+          <line>191</line>
+          <option name="timeStamp" value="10" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/AdvCS$Server.ic" NAME="Server Coverage Results" MODIFIED="1573590929592" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
