@@ -1,6 +1,6 @@
 import java.awt.*;
 
-public class Card {
+public class Card implements Comparable<Card> {
     enum Suit {CLUB, DIAMOND, HEART, SPADE}
 
     private Suit suit;
@@ -27,7 +27,9 @@ public class Card {
         this.number = number;
     }
 
-    public boolean equals(Card o) {
+    @Override
+    public boolean equals(Object oth) {
+        Card o = (Card) oth;
         return suit == o.getSuit() && number == o.getNumber();
     }
 
@@ -74,5 +76,12 @@ public class Card {
         if (number == 13) return "K" + suit;
         if (number == 14) return "A" + suit;
         else return number + suit;
+    }
+
+    @Override
+    public int compareTo(Card o) {
+        int suitCompare = suit.compareTo(o.getSuit());
+        if (suitCompare != 0) return suitCompare;
+        else return number - o.getNumber();
     }
 }

@@ -186,7 +186,57 @@ public class Main extends JPanel implements ActionListener {
                     cardsHeld[i] = false;
                 }
             }
+
             // TODO: Check for winning cases from above, high-valued conditions first.
+            int pointsWon = 0;
+            DLList<Card> handSorted = new DLList<>();
+            for (int j = 0; j < hand.size(); j++) handSorted.add(hand.get(j));
+            handSorted.sort();
+
+            DLList<Card> tmpHand = new DLList<>();
+            tmpHand.add(new Card(Card.Suit.SPADE, 2));
+            tmpHand.add(new Card(Card.Suit.SPADE, 3));
+            tmpHand.add(new Card(Card.Suit.SPADE, 4));
+            tmpHand.add(new Card(Card.Suit.SPADE, 5));
+            tmpHand.add(new Card(Card.Suit.SPADE, 6));
+            tmpHand.add(new Card(Card.Suit.SPADE, 7));
+            tmpHand.add(new Card(Card.Suit.SPADE, 8));
+
+            for (int i = 0; i < 4; i++) {
+                if (pointsWon != 0) break;
+
+                Card.Suit reqSuit = Card.Suit.CLUB;
+                switch (i) {
+                    case 0:
+                        reqSuit = Card.Suit.CLUB;
+                        break;
+                    case 1:
+                        reqSuit = Card.Suit.DIAMOND;
+                        break;
+                    case 2:
+                        reqSuit = Card.Suit.HEART;
+                        break;
+                    case 3:
+                        reqSuit = Card.Suit.SPADE;
+                        break;
+                }
+
+                if (hand.contains(new Card(reqSuit, 10)) &&
+                        hand.contains(new Card(reqSuit, 11)) &&
+                        hand.contains(new Card(reqSuit, 12)) &&
+                        hand.contains(new Card(reqSuit, 13)) &&
+                        hand.contains(new Card(reqSuit, 14))) { // Royal flush
+                    pointsWon += 250;
+                } else {
+                    int sequenceLength = 0;
+                    for (int j = 2; j < 15; j++) {
+                        if (hand.contains(new Card(reqSuit, j))) sequenceLength++;
+                        else sequenceLength = 0;
+
+                        if (sequenceLength >= 5) pointsWon += 50; // Straight flush
+                    }
+                }
+            }
         }
 
         repaint();

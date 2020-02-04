@@ -1,4 +1,4 @@
-public class DLList<T> {
+public class DLList<T extends Comparable<T>> {
     private DLNode<T> head;
     private int size;
 
@@ -149,5 +149,17 @@ public class DLList<T> {
             }
         }
         return -1;
+    }
+
+    public void sort() {
+        for (int i = 0; i < size - 1; i++) {
+            for (int j = i + 1; j < size; j++) {
+                if (get(i).compareTo(get(j)) > 0) {
+                    T temp = get(i);
+                    set(i, get(j));
+                    set(j, temp);
+                }
+            }
+        }
     }
 }
