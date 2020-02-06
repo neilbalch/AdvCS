@@ -56,13 +56,17 @@ public class Card implements Comparable<Card> {
     private String getSuitStr() {
         switch (this.suit) {
             case CLUB:
-                return "♣";
+//                return "♣";
+                return "C";
             case DIAMOND:
-                return "♦";
+//                return "♦";
+                return "D";
             case HEART:
-                return "♥";
+//                return "♥";
+                return "H";
             case SPADE:
-                return "♠";
+//                return "♠";
+                return "S";
             default:
                 return "";
         }

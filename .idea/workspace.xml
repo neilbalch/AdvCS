@@ -2,9 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="36939a02-4d05-4550-9e2f-c504bf2e9922" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/Labs/Video Poker Lab/game_lost.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Labs/Video Poker Lab/game_won.wav" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Labs/Video Poker Lab/Card.java" beforeDir="false" afterPath="$PROJECT_DIR$/Labs/Video Poker Lab/Card.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Labs/Video Poker Lab/DLList.java" beforeDir="false" afterPath="$PROJECT_DIR$/Labs/Video Poker Lab/DLList.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Labs/Video Poker Lab/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/Labs/Video Poker Lab/Main.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -88,6 +89,13 @@
     </key>
   </component>
   <component name="RunManager" selected="Application.Main (3)">
+    <configuration name="Client" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Client" />
+      <module name="Networking Lab" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="Main (1)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Main" />
       <module name="01212020" />
@@ -105,13 +113,7 @@
     <configuration name="Main (3)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Main" />
       <module name="Video Poker Lab" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Main" />
-      <module name="01102020" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_WORKING_DIR$" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -124,19 +126,19 @@
       </method>
     </configuration>
     <list>
-      <item itemvalue="Application.Main" />
       <item itemvalue="Application.Runner" />
       <item itemvalue="Application.Main (1)" />
       <item itemvalue="Application.Main (2)" />
       <item itemvalue="Application.Main (3)" />
+      <item itemvalue="Application.Client" />
     </list>
     <recent_temporary>
       <list>
         <item itemvalue="Application.Main (3)" />
+        <item itemvalue="Application.Client" />
         <item itemvalue="Application.Main (2)" />
         <item itemvalue="Application.Main (1)" />
         <item itemvalue="Application.Runner" />
-        <item itemvalue="Application.Main" />
       </list>
     </recent_temporary>
   </component>
@@ -206,14 +208,7 @@
       <workItem from="1579191219737" duration="6872000" />
       <workItem from="1579626116542" duration="36089000" />
       <workItem from="1580484666035" duration="11683000" />
-      <workItem from="1580831149080" duration="2880000" />
-    </task>
-    <task id="LOCAL-00034" summary="Initial work on Maps Lab">
-      <created>1570774711516</created>
-      <option name="number" value="00034" />
-      <option name="presentableId" value="LOCAL-00034" />
-      <option name="project" value="LOCAL" />
-      <updated>1570774711516</updated>
+      <workItem from="1580831149080" duration="10507000" />
     </task>
     <task id="LOCAL-00035" summary="Quizzes and Exams">
       <created>1570809340474</created>
@@ -551,7 +546,14 @@
       <option name="project" value="LOCAL" />
       <updated>1580406311162</updated>
     </task>
-    <option name="localTasksCounter" value="83" />
+    <task id="LOCAL-00083" summary="Work on Video Poker Lab from February 4, 2020">
+      <created>1580836195472</created>
+      <option name="number" value="00083" />
+      <option name="presentableId" value="LOCAL-00083" />
+      <option name="project" value="LOCAL" />
+      <updated>1580836195472</updated>
+    </task>
+    <option name="localTasksCounter" value="84" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -573,7 +575,6 @@
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Beginning of animation test for Networking Lab" />
     <MESSAGE value="Animations for Networking Lab" />
     <MESSAGE value="Initial framework work for Semester 1 Final project." />
     <MESSAGE value="In class work from December 5, 2019 on Semester 1 Final project." />
@@ -598,14 +599,19 @@
     <MESSAGE value="Most of classwork from January 27, 2020" />
     <MESSAGE value="Rest of classwork from January 27, 2020" />
     <MESSAGE value="Work on Video Poker Lab from January 30, 2020" />
-    <option name="LAST_COMMIT_MESSAGE" value="Work on Video Poker Lab from January 30, 2020" />
+    <MESSAGE value="Work on Video Poker Lab from February 4, 2020" />
+    <option name="LAST_COMMIT_MESSAGE" value="Work on Video Poker Lab from February 4, 2020" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="734" y="224" key="#com.intellij.ide.util.MemberChooser" timestamp="1580834469436">
+    <state x="78" y="72" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1580970877287">
       <screen x="0" y="0" width="1858" height="1080" />
     </state>
-    <state x="734" y="224" key="#com.intellij.ide.util.MemberChooser/0.0.1858.1080@0.0.1858.1080" timestamp="1580834469436" />
+    <state x="78" y="72" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1858.1080@0.0.1858.1080" timestamp="1580970877287" />
+    <state x="734" y="224" key="#com.intellij.ide.util.MemberChooser" timestamp="1580969080730">
+      <screen x="0" y="0" width="1858" height="1080" />
+    </state>
+    <state x="734" y="224" key="#com.intellij.ide.util.MemberChooser/0.0.1858.1080@0.0.1858.1080" timestamp="1580969080730" />
     <state x="609" y="267" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog" timestamp="1575389487210">
       <screen x="0" y="0" width="1858" height="1080" />
     </state>
@@ -614,30 +620,34 @@
       <screen x="0" y="0" width="1858" height="1080" />
     </state>
     <state x="436" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1858.1080@0.0.1858.1080" timestamp="1580228467207" />
-    <state x="497" y="134" key="CommitChangelistDialog2" timestamp="1580749653267">
+    <state x="659" y="287" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1580970453534">
       <screen x="0" y="0" width="1858" height="1080" />
     </state>
-    <state x="497" y="134" key="CommitChangelistDialog2/0.0.1858.1080@0.0.1858.1080" timestamp="1580749653267" />
+    <state x="659" y="287" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1858.1080@0.0.1858.1080" timestamp="1580970453534" />
+    <state x="497" y="134" key="CommitChangelistDialog2" timestamp="1580836194564">
+      <screen x="0" y="0" width="1858" height="1080" />
+    </state>
+    <state x="497" y="134" key="CommitChangelistDialog2/0.0.1858.1080@0.0.1858.1080" timestamp="1580836194564" />
     <state x="709" y="232" key="FileChooserDialogImpl" timestamp="1580228430561">
       <screen x="0" y="0" width="1858" height="1080" />
     </state>
     <state x="709" y="232" key="FileChooserDialogImpl/0.0.1858.1080@0.0.1858.1080" timestamp="1580228430561" />
-    <state width="1837" height="252" key="GridCell.Tab.0.bottom" timestamp="1580836179522">
+    <state width="1837" height="252" key="GridCell.Tab.0.bottom" timestamp="1580971495200">
       <screen x="0" y="0" width="1858" height="1080" />
     </state>
-    <state width="1837" height="252" key="GridCell.Tab.0.bottom/0.0.1858.1080@0.0.1858.1080" timestamp="1580836179522" />
-    <state width="1837" height="252" key="GridCell.Tab.0.center" timestamp="1580836179522">
+    <state width="1837" height="252" key="GridCell.Tab.0.bottom/0.0.1858.1080@0.0.1858.1080" timestamp="1580971495200" />
+    <state width="1837" height="252" key="GridCell.Tab.0.center" timestamp="1580971495200">
       <screen x="0" y="0" width="1858" height="1080" />
     </state>
-    <state width="1837" height="252" key="GridCell.Tab.0.center/0.0.1858.1080@0.0.1858.1080" timestamp="1580836179522" />
-    <state width="1837" height="252" key="GridCell.Tab.0.left" timestamp="1580836179522">
+    <state width="1837" height="252" key="GridCell.Tab.0.center/0.0.1858.1080@0.0.1858.1080" timestamp="1580971495200" />
+    <state width="1837" height="252" key="GridCell.Tab.0.left" timestamp="1580971495200">
       <screen x="0" y="0" width="1858" height="1080" />
     </state>
-    <state width="1837" height="252" key="GridCell.Tab.0.left/0.0.1858.1080@0.0.1858.1080" timestamp="1580836179522" />
-    <state width="1837" height="252" key="GridCell.Tab.0.right" timestamp="1580836179522">
+    <state width="1837" height="252" key="GridCell.Tab.0.left/0.0.1858.1080@0.0.1858.1080" timestamp="1580971495200" />
+    <state width="1837" height="252" key="GridCell.Tab.0.right" timestamp="1580971495200">
       <screen x="0" y="0" width="1858" height="1080" />
     </state>
-    <state width="1837" height="252" key="GridCell.Tab.0.right/0.0.1858.1080@0.0.1858.1080" timestamp="1580836179522" />
+    <state width="1837" height="252" key="GridCell.Tab.0.right/0.0.1858.1080@0.0.1858.1080" timestamp="1580971495200" />
     <state width="1837" height="255" key="GridCell.Tab.1.bottom" timestamp="1580746413558">
       <screen x="0" y="0" width="1858" height="1080" />
     </state>
@@ -670,10 +680,10 @@
       <screen x="0" y="0" width="1858" height="1080" />
     </state>
     <state x="311" y="161" key="new project wizard/0.0.1858.1080@0.0.1858.1080" timestamp="1580142103267" />
-    <state x="585" y="250" key="run.anything.popup" timestamp="1580404444983">
+    <state x="585" y="250" key="run.anything.popup" timestamp="1580971239923">
       <screen x="0" y="0" width="1858" height="1080" />
     </state>
-    <state x="585" y="250" key="run.anything.popup/0.0.1858.1080@0.0.1858.1080" timestamp="1580404444983" />
+    <state x="585" y="250" key="run.anything.popup/0.0.1858.1080@0.0.1858.1080" timestamp="1580971239923" />
     <state x="592" y="235" width="672" height="678" key="search.everywhere.popup" timestamp="1580834474210">
       <screen x="0" y="0" width="1858" height="1080" />
     </state>
