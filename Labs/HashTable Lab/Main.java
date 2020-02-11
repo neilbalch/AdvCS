@@ -7,6 +7,9 @@ import java.awt.event.*;
 public class Main extends JPanel implements ActionListener {
     private JButton toConsumerView;
     private JButton toDealerView;
+    private JButton purchaseOrRemoveCar;
+    private JButton addCar;
+    private JButton updateCar;
 
     private HashTable<Car> db;
 
@@ -52,7 +55,8 @@ public class Main extends JPanel implements ActionListener {
         makeList.addListSelectionListener(new ListSelectionListener() {
             @Override
             public void valueChanged(ListSelectionEvent e) {
-                String queryMake = recreateMakesList()[makeList.getSelectedIndex()];
+                int selectedIndex = makeList.getSelectedIndex();
+                String queryMake = recreateMakesList()[selectedIndex > -1 ? selectedIndex : 0];
 //                System.out.println("queryMake: " + queryMake);
                 DLList<Car> carsOfMake = db.getByHashCode((new Car(queryMake, "", 0, 0)).hashCode());
 //                System.out.println("carsOfMake: " + carsOfMake.toString());
@@ -70,6 +74,23 @@ public class Main extends JPanel implements ActionListener {
         carPane = new JScrollPane(carList);
         carPane.setBounds(getPreferredSize().width - 400 - 25, 25, 400, getPreferredSize().height - 50);
         add(carPane);
+
+        purchaseOrRemoveCar = new JButton("Purchase");
+        purchaseOrRemoveCar.setBounds(25 + 200 + 15, 25 + 40 * 3, 120, 30);
+        purchaseOrRemoveCar.addActionListener(this);
+        add(purchaseOrRemoveCar);
+
+        addCar = new JButton("Add");
+        addCar.setBounds(25 + 200 + 15, 25 + 40 * 4, 120, 30);
+        addCar.addActionListener(this);
+        addCar.setVisible(false);
+        add(addCar);
+
+        updateCar = new JButton("Update");
+        updateCar.setBounds(25 + 200 + 15, 25 + 40 * 5, 120, 30);
+        updateCar.addActionListener(this);
+        updateCar.setVisible(false);
+        add(updateCar);
 
         db = new HashTable<>();
         db.add(new Car("Toyota", "Camry", 7000, 2005));
@@ -112,10 +133,48 @@ public class Main extends JPanel implements ActionListener {
         if (e.getSource() == toConsumerView) {
             toConsumerView.setEnabled(false);
             toDealerView.setEnabled(true);
+
+            addCar.setVisible(false);
+            updateCar.setVisible(false);
+            updateCar.setVisible(true);
+            purchaseOrRemoveCar.setText("Purchase");
         } else if (e.getSource() == toDealerView) {
             toConsumerView.setEnabled(true);
             toDealerView.setEnabled(false);
+
+            addCar.setVisible(true);
+            updateCar.setVisible(true);
+            purchaseOrRemoveCar.setText("Remove");
+        } else if (e.getSource() == purchaseOrRemoveCar) {
+//            System.out.println(makeList.getSelectedIndex());
+//            System.out.println(carList.getSelectedIndex());
+//            System.out.println();
+
+            if (makeList.getSelectedIndex() > -1 && carList.getSelectedIndex() > -1) {
+                db.get(makeList.getSelectedIndex()).remove(carList.getSelectedIndex());
+                if (db.get(makeList.getSelectedIndex()).size() == 0)
+                    db.remove(makeList.getSelectedIndex());
+            }
+        } else if (e.getSource() == addCar) {
+
+        } else if (e.getSource() == updateCar) {
+
         }
+
+        String[] makesList = recreateMakesList();
+        String queryMake = makesList[makeList.getSelectedIndex()];
+//        System.out.println("queryMake: " + queryMake);
+        DLList<Car> carsOfMake = db.getByHashCode((new Car(queryMake, "", 0, 0)).hashCode());
+//        System.out.println("carsOfMake: " + carsOfMake.toString());
+        String[] cars = new String[carsOfMake.size()];
+        for (int i = 0; i < cars.length; i++) {
+            cars[i] = carsOfMake.get(i).toString();
+        }
+
+        int selectedIndex = makeList.getSelectedIndex();
+        makeList.setListData(makesList);
+        makeList.setSelectedIndex(selectedIndex);
+        carList.setListData(cars);
 
         repaint();
     }

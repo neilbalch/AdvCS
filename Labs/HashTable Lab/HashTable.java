@@ -33,6 +33,22 @@ public class HashTable<T extends Comparable<T>> {
         return temp;
     }
 
+    public void remove(int index) {
+        DLList<T> temp = null;
+        int currentIndex = 0;
+        for (int i = 0; i < table.length; i++) {
+            if (table[i] == null) continue;
+            else {
+                temp = table[i];
+                if (currentIndex == index) {
+                    table[i] = null;
+                    size--;
+                }
+                currentIndex++;
+            }
+        }
+    }
+
     public DLList<T> getByHashCode(int code) {
         for (int i = 0; i < table.length; i++) {
             if (table[i] != null && table[i].hashCode() == code) return table[i];

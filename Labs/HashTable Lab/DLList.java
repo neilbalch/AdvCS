@@ -32,7 +32,9 @@ public class DLList<T extends Comparable<T>> {
     }
 
     public T get(int index) {
-        return getNode(index).get();
+        DLNode<T> temp = getNode(index);
+        if (temp == null) return null;
+        else return temp.get();
     }
 
     public void add(T data) {
