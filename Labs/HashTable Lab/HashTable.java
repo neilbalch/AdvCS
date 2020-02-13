@@ -43,6 +43,7 @@ public class HashTable<T extends Comparable<T>> {
                 if (currentIndex == index) {
                     table[i] = null;
                     size--;
+                    System.out.println("Removed @ index=" + index);
                 }
                 currentIndex++;
             }

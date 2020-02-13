@@ -10,6 +10,9 @@ public class Main extends JPanel implements ActionListener {
     private JButton purchaseOrRemoveCar;
     private JButton addCar;
     private JButton updateCar;
+    private JTextField newCarModel;
+    private JTextField newCarPrice;
+    private JTextField newCarYear;
 
     private HashTable<Car> db;
 
@@ -92,6 +95,22 @@ public class Main extends JPanel implements ActionListener {
         updateCar.setVisible(false);
         add(updateCar);
 
+        newCarModel = new JTextField();
+        newCarModel.setBounds(25 + 200 + 15, 25 + 40 * 5 + 20 + 50, 120, 30);
+        newCarModel.setVisible(false);
+        add(newCarModel);
+
+        newCarPrice = new JTextField();
+        newCarPrice.setBounds(25 + 200 + 15, 25 + 40 * 5 + 20 + 50 * 2, 120, 30);
+        newCarPrice.setVisible(false);
+        add(newCarPrice);
+
+        newCarYear = new JTextField();
+        newCarYear.setBounds(25 + 200 + 15, 25 + 40 * 5 + 20 + 50 * 3, 120, 30);
+        newCarYear.setVisible(false);
+        add(newCarYear);
+
+
         db = new HashTable<>();
         db.add(new Car("Toyota", "Camry", 7000, 2005));
         db.add(new Car("Toyota", "Prius", 13000, 2017));
@@ -126,6 +145,12 @@ public class Main extends JPanel implements ActionListener {
         g.drawString("Makes list: ", 25, 25 + textOffset);
         g.drawString("Cars list: ", getPreferredSize().width - 400 - 25, 25 + textOffset);
         g.drawString("Views Switcher: ", 25 + 200 + 15, 25 + textOffset);
+
+        if (newCarModel.isVisible()) {
+            g.drawString("Model Name:", 25 + 200 + 15, 25 + 40 * 5 + 20 + 50 + textOffset);
+            g.drawString("Price:", 25 + 200 + 15, 25 + 40 * 5 + 20 + 50 * 2 + textOffset);
+            g.drawString("Year:", 25 + 200 + 15, 25 + 40 * 5 + 20 + 50 * 3 + textOffset);
+        }
     }
 
     @Override
@@ -136,8 +161,10 @@ public class Main extends JPanel implements ActionListener {
 
             addCar.setVisible(false);
             updateCar.setVisible(false);
-            updateCar.setVisible(true);
             purchaseOrRemoveCar.setText("Purchase");
+            newCarModel.setVisible(false);
+            newCarPrice.setVisible(false);
+            newCarYear.setVisible(false);
         } else if (e.getSource() == toDealerView) {
             toConsumerView.setEnabled(true);
             toDealerView.setEnabled(false);
@@ -145,24 +172,46 @@ public class Main extends JPanel implements ActionListener {
             addCar.setVisible(true);
             updateCar.setVisible(true);
             purchaseOrRemoveCar.setText("Remove");
+            newCarModel.setVisible(true);
+            newCarPrice.setVisible(true);
+            newCarYear.setVisible(true);
         } else if (e.getSource() == purchaseOrRemoveCar) {
-//            System.out.println(makeList.getSelectedIndex());
-//            System.out.println(carList.getSelectedIndex());
-//            System.out.println();
-
             if (makeList.getSelectedIndex() > -1 && carList.getSelectedIndex() > -1) {
                 db.get(makeList.getSelectedIndex()).remove(carList.getSelectedIndex());
                 if (db.get(makeList.getSelectedIndex()).size() == 0)
                     db.remove(makeList.getSelectedIndex());
             }
-        } else if (e.getSource() == addCar) {
+        } else if (e.getSource() == addCar || e.getSource() == updateCar) {
+            String model = newCarModel.getText();
+            double price;
+            int year;
+            try {
+                price = Double.parseDouble(newCarPrice.getText());
+                year = Integer.parseInt(newCarYear.getText());
+                Car newCar = new Car(makeList.getSelectedValue(), model, price, year);
 
-        } else if (e.getSource() == updateCar) {
+                newCarModel.setText("");
+                newCarPrice.setText("");
+                newCarYear.setText("");
 
+                if (e.getSource() == addCar) db.add(newCar);
+                else if (e.getSource() == updateCar) {
+                    String[] parts = carList.getSelectedValue().split(" ");
+
+                    DLList<Car> cars = db.get(makeList.getSelectedIndex());
+                    int carIndex = -1;
+                    for (int i = 0; i < cars.size(); i++) {
+                        if (cars.get(i).getModel().equalsIgnoreCase(parts[1])) carIndex = i;
+                    }
+                    cars.set(carIndex, newCar);
+                }
+            } catch (NumberFormatException err) {
+                JOptionPane.showMessageDialog(null, "ERROR: price and year must be numbers!");
+            }
         }
 
         String[] makesList = recreateMakesList();
-        String queryMake = makesList[makeList.getSelectedIndex()];
+        String queryMake = makesList[makeList.getSelectedIndex() == -1 ? 0 : makeList.getSelectedIndex()];
 //        System.out.println("queryMake: " + queryMake);
         DLList<Car> carsOfMake = db.getByHashCode((new Car(queryMake, "", 0, 0)).hashCode());
 //        System.out.println("carsOfMake: " + carsOfMake.toString());
@@ -174,7 +223,7 @@ public class Main extends JPanel implements ActionListener {
         int selectedIndex = makeList.getSelectedIndex();
         makeList.setListData(makesList);
         makeList.setSelectedIndex(selectedIndex);
-        carList.setListData(cars);
+        if (makeList.getSelectedIndex() != -1) carList.setListData(cars);
 
         repaint();
     }
