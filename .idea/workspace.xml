@@ -2,17 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="36939a02-4d05-4550-9e2f-c504bf2e9922" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Labs/MyHashMap Lab/Country.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Labs/MyHashMap Lab/DLList.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Labs/MyHashMap Lab/DLNode.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Labs/MyHashMap Lab/HashMap.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Labs/MyHashMap Lab/ImageContainer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Labs/MyHashMap Lab/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Labs/MyHashMap Lab/MyHashMap Lab.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Labs/MyHashMap Lab/countries.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Q3/02142020/filteredVotes.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Q3/02142020/filteredVotes.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Labs/MyHashMap Lab/HashMap.java" beforeDir="false" afterPath="$PROJECT_DIR$/Labs/MyHashMap Lab/HashMap.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Labs/MyHashMap Lab/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/Labs/MyHashMap Lab/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Labs/MyHashMap Lab/MyHashMap Lab.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Labs/MyHashMap Lab/MyHashMap Lab.iml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -62,6 +55,10 @@
   </component>
   <component name="PropertiesComponent">
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
+    <property name="Downloaded.Files.Path.Enabled" value="false" />
+    <property name="Repository.Attach.Annotations" value="false" />
+    <property name="Repository.Attach.JavaDocs" value="false" />
+    <property name="Repository.Attach.Sources" value="false" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
@@ -216,14 +213,7 @@
       <workItem from="1580831149080" duration="17174000" />
       <workItem from="1581147898153" duration="15151000" />
       <workItem from="1582142970134" duration="22000" />
-      <workItem from="1582535391992" duration="8124000" />
-    </task>
-    <task id="LOCAL-00040" summary="Completed Stacks Lab... with formatting">
-      <created>1571935495135</created>
-      <option name="number" value="00040" />
-      <option name="presentableId" value="LOCAL-00040" />
-      <option name="project" value="LOCAL" />
-      <updated>1571935495135</updated>
+      <workItem from="1582535391992" duration="12508000" />
     </task>
     <task id="LOCAL-00041" summary="Fix issue where clearing the canvas couldn't be undone.">
       <created>1571936599343</created>
@@ -561,7 +551,14 @@
       <option name="project" value="LOCAL" />
       <updated>1581615265023</updated>
     </task>
-    <option name="localTasksCounter" value="89" />
+    <task id="LOCAL-00089" summary="Work on MyHashMap Lab from Monday and Tuesday 2/24-25/2020">
+      <created>1582735760736</created>
+      <option name="number" value="00089" />
+      <option name="presentableId" value="LOCAL-00089" />
+      <option name="project" value="LOCAL" />
+      <updated>1582735760736</updated>
+    </task>
+    <option name="localTasksCounter" value="90" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -583,7 +580,6 @@
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="In class work from December 10, 2019 on Semester 1 Final project." />
     <MESSAGE value="Complete Semester 1 Final project?" />
     <MESSAGE value="Complete more of Semester 1 Final project?" />
     <MESSAGE value="Code cleanup of Semester 1 Final project." />
@@ -608,7 +604,8 @@
     <MESSAGE value="Work on HashTable Lab from February 10, 2020" />
     <MESSAGE value="Work on HashTable Lab from February 11, 2020" />
     <MESSAGE value="Completed HashTable Lab on February 13, 2020" />
-    <option name="LAST_COMMIT_MESSAGE" value="Completed HashTable Lab on February 13, 2020" />
+    <MESSAGE value="Work on MyHashMap Lab from Monday and Tuesday 2/24-25/2020" />
+    <option name="LAST_COMMIT_MESSAGE" value="Work on MyHashMap Lab from Monday and Tuesday 2/24-25/2020" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="WindowStateProjectService">
@@ -636,30 +633,30 @@
       <screen x="0" y="0" width="1858" height="1080" />
     </state>
     <state x="659" y="287" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1858.1080@0.0.1858.1080" timestamp="1580970453534" />
-    <state x="497" y="134" key="CommitChangelistDialog2" timestamp="1581615264276">
+    <state x="497" y="134" key="CommitChangelistDialog2" timestamp="1582735759704">
       <screen x="0" y="0" width="1858" height="1080" />
     </state>
-    <state x="497" y="134" key="CommitChangelistDialog2/0.0.1858.1080@0.0.1858.1080" timestamp="1581615264276" />
-    <state x="709" y="232" key="FileChooserDialogImpl" timestamp="1582560516096">
+    <state x="497" y="134" key="CommitChangelistDialog2/0.0.1858.1080@0.0.1858.1080" timestamp="1582735759704" />
+    <state x="709" y="232" key="FileChooserDialogImpl" timestamp="1582779970389">
       <screen x="0" y="0" width="1858" height="1080" />
     </state>
-    <state x="709" y="232" key="FileChooserDialogImpl/0.0.1858.1080@0.0.1858.1080" timestamp="1582560516096" />
-    <state width="1837" height="252" key="GridCell.Tab.0.bottom" timestamp="1582735676150">
+    <state x="709" y="232" key="FileChooserDialogImpl/0.0.1858.1080@0.0.1858.1080" timestamp="1582779970388" />
+    <state width="1837" height="252" key="GridCell.Tab.0.bottom" timestamp="1582834756937">
       <screen x="0" y="0" width="1858" height="1080" />
     </state>
-    <state width="1837" height="252" key="GridCell.Tab.0.bottom/0.0.1858.1080@0.0.1858.1080" timestamp="1582735676150" />
-    <state width="1837" height="252" key="GridCell.Tab.0.center" timestamp="1582735676145">
+    <state width="1837" height="252" key="GridCell.Tab.0.bottom/0.0.1858.1080@0.0.1858.1080" timestamp="1582834756937" />
+    <state width="1837" height="252" key="GridCell.Tab.0.center" timestamp="1582834756934">
       <screen x="0" y="0" width="1858" height="1080" />
     </state>
-    <state width="1837" height="252" key="GridCell.Tab.0.center/0.0.1858.1080@0.0.1858.1080" timestamp="1582735676145" />
-    <state width="1837" height="252" key="GridCell.Tab.0.left" timestamp="1582735676140">
+    <state width="1837" height="252" key="GridCell.Tab.0.center/0.0.1858.1080@0.0.1858.1080" timestamp="1582834756934" />
+    <state width="1837" height="252" key="GridCell.Tab.0.left" timestamp="1582834756932">
       <screen x="0" y="0" width="1858" height="1080" />
     </state>
-    <state width="1837" height="252" key="GridCell.Tab.0.left/0.0.1858.1080@0.0.1858.1080" timestamp="1582735676139" />
-    <state width="1837" height="252" key="GridCell.Tab.0.right" timestamp="1582735676146">
+    <state width="1837" height="252" key="GridCell.Tab.0.left/0.0.1858.1080@0.0.1858.1080" timestamp="1582834756932" />
+    <state width="1837" height="252" key="GridCell.Tab.0.right" timestamp="1582834756935">
       <screen x="0" y="0" width="1858" height="1080" />
     </state>
-    <state width="1837" height="252" key="GridCell.Tab.0.right/0.0.1858.1080@0.0.1858.1080" timestamp="1582735676146" />
+    <state width="1837" height="252" key="GridCell.Tab.0.right/0.0.1858.1080@0.0.1858.1080" timestamp="1582834756935" />
     <state width="1837" height="255" key="GridCell.Tab.1.bottom" timestamp="1581723466874">
       <screen x="0" y="0" width="1858" height="1080" />
     </state>
@@ -684,18 +681,22 @@
       <screen x="0" y="0" width="1858" height="1080" />
     </state>
     <state x="521" y="272" width="683" height="533" key="Vcs.Push.Dialog.v2/0.0.1858.1080@0.0.1858.1080" timestamp="1581615268386" />
-    <state x="727" y="230" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1582648837445">
+    <state x="633" y="433" key="com.intellij.jarRepository.RepositoryAttachDialog-DOWNLOAD" timestamp="1582824726464">
       <screen x="0" y="0" width="1858" height="1080" />
     </state>
-    <state x="727" y="230" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/0.0.1858.1080@0.0.1858.1080" timestamp="1582648837445" />
+    <state x="633" y="433" key="com.intellij.jarRepository.RepositoryAttachDialog-DOWNLOAD/0.0.1858.1080@0.0.1858.1080" timestamp="1582824726464" />
+    <state x="727" y="230" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1582823746726">
+      <screen x="0" y="0" width="1858" height="1080" />
+    </state>
+    <state x="727" y="230" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/0.0.1858.1080@0.0.1858.1080" timestamp="1582823746726" />
     <state x="311" y="161" key="new project wizard" timestamp="1580142103267">
       <screen x="0" y="0" width="1858" height="1080" />
     </state>
     <state x="311" y="161" key="new project wizard/0.0.1858.1080@0.0.1858.1080" timestamp="1580142103267" />
-    <state x="585" y="250" key="run.anything.popup" timestamp="1582561517320">
+    <state x="585" y="250" key="run.anything.popup" timestamp="1582824189755">
       <screen x="0" y="0" width="1858" height="1080" />
     </state>
-    <state x="585" y="250" key="run.anything.popup/0.0.1858.1080@0.0.1858.1080" timestamp="1582561517320" />
+    <state x="585" y="250" key="run.anything.popup/0.0.1858.1080@0.0.1858.1080" timestamp="1582824189755" />
     <state x="592" y="235" width="672" height="678" key="search.everywhere.popup" timestamp="1582647701017">
       <screen x="0" y="0" width="1858" height="1080" />
     </state>

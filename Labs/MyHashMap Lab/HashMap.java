@@ -1,3 +1,5 @@
+import java.lang.reflect.Array;
+
 class Pair<K extends Comparable<K>, V extends Comparable<V>> implements Comparable<Pair<K, V>> {
     public K key;
     public V value;
@@ -42,14 +44,11 @@ public class HashMap<K extends Comparable<K>, V extends Comparable<V>> {
         if (value != null) table[code].value.add(value);
     }
 
-    public K[] getKeys() {
-        K[] keysArr = (K[]) (new Object[size]);
-        int index = 0;
+    @SuppressWarnings("unchecked")
+    public DLList<K> getKeys() {
+        DLList<K> keysArr = new DLList<K>();
         for (int i = 0; i < table.length; i++) {
-            if (table[i] != null) {
-                keysArr[index] = table[i].key;
-                index++;
-            }
+            if (table[i] != null) keysArr.add(table[i].key);
         }
 
         return keysArr;
@@ -57,6 +56,7 @@ public class HashMap<K extends Comparable<K>, V extends Comparable<V>> {
 
     public DLList<V> getValue(K key) {
         for (Pair<K, DLList<V>> item : table) {
+            if (item == null) continue;
             if (item.key.equals(key)) return item.value;
         }
 

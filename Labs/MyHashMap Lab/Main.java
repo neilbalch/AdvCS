@@ -1,3 +1,5 @@
+import org.jetbrains.annotations.NotNull;
+
 import javax.swing.*;
 import javax.swing.event.ListSelectionEvent;
 import javax.swing.event.ListSelectionListener;
@@ -19,11 +21,9 @@ public class Main extends JPanel implements ActionListener {
     private JTextField newCarPrice;
     private JTextField newCarYear;
 
-    private JList<String> makeList;
-    private JScrollPane makePane;
-
-    private JList<String> carList;
-    private JScrollPane carPane;
+    private JList<String> countryList;
+    private JScrollPane countryPane;
+    private String selectedCountryCode;
 
     private HashMap<Country, ImageContainer> map;
     private HashMap<Country, String> countries;
@@ -49,6 +49,7 @@ public class Main extends JPanel implements ActionListener {
 
         map = new HashMap<Country, ImageContainer>();
         countries = new HashMap<Country, String>();
+        selectedCountryCode = null;
 
         try {
             Scanner scan = new Scanner(new File("countries.txt"));
@@ -88,32 +89,23 @@ public class Main extends JPanel implements ActionListener {
 //        toDealerView.addActionListener(this);
 //        add(toDealerView);
 //
-//        makeList = new JList<>();
-//        makePane = new JScrollPane(makeList);
-//        makePane.setBounds(25, 25, 200, getPreferredSize().height - 50);
-//        makeList.addListSelectionListener(new ListSelectionListener() {
-//            @Override
-//            public void valueChanged(ListSelectionEvent e) {
-//                int selectedIndex = makeList.getSelectedIndex();
-//                String queryMake = recreateMakesList()[selectedIndex > -1 ? selectedIndex : 0];
-////                System.out.println("queryMake: " + queryMake);
-//                DLList<Car> carsOfMake = db.getByHashCode((new Car(queryMake, "", 0, 0)).hashCode());
-////                System.out.println("carsOfMake: " + carsOfMake.toString());
-//                String[] cars = new String[carsOfMake.size()];
-//                for (int i = 0; i < cars.length; i++) {
-//                    cars[i] = carsOfMake.get(i).toString();
-//                }
-//
-//                carList.setListData(cars);
-//            }
-//        });
-//        add(makePane);
-//
-//        carList = new JList<>();
-//        carPane = new JScrollPane(carList);
-//        carPane.setBounds(getPreferredSize().width - 400 - 25, 25, 400, getPreferredSize().height - 50);
-//        add(carPane);
-//
+        countryList = new JList<>();
+        countryList.setListData(recreateCountriesList());
+        countryPane = new JScrollPane(countryList);
+        countryPane.setBounds(25, 25, 200, getPreferredSize().height - 50);
+        countryList.addListSelectionListener(new ListSelectionListener() {
+            @Override
+            public void valueChanged(ListSelectionEvent e) {
+                int selectedIndex = countryList.getSelectedIndex();
+                String queryListItem = recreateCountriesList()[selectedIndex > -1 ? selectedIndex : 0];
+                String queryCountryCode = queryListItem.substring(0, queryListItem.indexOf(" "));
+//                System.out.println("\"" + queryCountryCode + "\"");
+                selectedCountryCode = queryCountryCode;
+                repaint();
+            }
+        });
+        add(countryPane);
+
 //        purchaseOrRemoveCar = new JButton("Purchase");
 //        purchaseOrRemoveCar.setBounds(25 + 200 + 15, 25 + 40 * 3, 120, 30);
 //        purchaseOrRemoveCar.addActionListener(this);
@@ -150,16 +142,27 @@ public class Main extends JPanel implements ActionListener {
 //        makeList.setListData(recreateMakesList());
     }
 
-//    private String[] recreateMakesList() {
-//        String[] makes = new String[db.size()];
-//        for (int i = 0; i < makes.length; i++) {
-//            DLList<Car> temp = db.get(i);
-////            System.out.println(temp);
-//            makes[i] = db.get(i).get(0).getMake();
-//        }
-//
-//        return makes;
-//    }
+    @org.jetbrains.annotations.NotNull
+    private String[] recreateCountriesList() {
+        DLList<Country> list = new DLList<>();
+        DLList<Country> keys = map.getKeys();
+//        System.out.println("keys");
+//        System.out.println(keys);
+        for (int i = 0; i < map.size(); i++) {
+            if (map.getValue(keys.get(i)).size() > 0) list.add(keys.get(i));
+        }
+//        System.out.println("filtered keys");
+//        System.out.println(list);
+
+        String[] out = new String[list.size()];
+        for (int i = 0; i < list.size(); i++)
+            out[i] = list.get(i).toString() + " - " + countries.getValue(list.get(i)) + " : " + map.getValue(list.get(i)).size();
+
+//        System.out.println("array");
+//        for(String item : out) System.out.println(" - " + item);
+
+        return out;
+    }
 
     @Override
     public void paintComponent(Graphics g) {
@@ -167,9 +170,13 @@ public class Main extends JPanel implements ActionListener {
         int textOffset = -7;
 
         g.setColor(Color.BLACK);
-        g.drawString("Makes list: ", 25, 25 + textOffset);
-        g.drawString("Cars list: ", getPreferredSize().width - 400 - 25, 25 + textOffset);
-        g.drawString("Views Switcher: ", 25 + 200 + 15, 25 + textOffset);
+        g.drawString("Countries List: ", 25, 25 + textOffset);
+//        g.drawString("Cars list: ", getPreferredSize().width - 400 - 25, 25 + textOffset);
+//        if(selectedCountryCode != null) g.drawString("Selected Country: ", 25 + 200 + 15, 25 + textOffset);
+        if (selectedCountryCode != null) drawStringArr(g, new String[]{
+                        "Selected Country: " + selectedCountryCode + " - " + countries.getValue(new Country(selectedCountryCode)),
+                        ""},
+                new Point(25 + 200 + 15, 25 + textOffset));
 
 //        if (newCarModel.isVisible()) {
 //            g.drawString("Model Name:", 25 + 200 + 15, 25 + 40 * 5 + 20 + 50 + textOffset);
@@ -179,7 +186,7 @@ public class Main extends JPanel implements ActionListener {
     }
 
     @Override
-    public void actionPerformed(ActionEvent e) {
+    public void actionPerformed(@NotNull ActionEvent e) {
         if (e.getSource() == toConsumerView) {
             toConsumerView.setEnabled(false);
             toDealerView.setEnabled(true);
