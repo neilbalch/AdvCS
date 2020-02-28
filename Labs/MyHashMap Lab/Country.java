@@ -17,7 +17,10 @@ public class Country implements Comparable<Country>, Serializable {
 
     @Override
     public int hashCode() {
-        return (int) abbrev.charAt(0) * 11 + (int) abbrev.charAt(1) * 7;
+//        System.out.println("Char 0: " + abbrev.charAt(0) + ", hashed: " + (((int)abbrev.charAt(0)) - 97) * 100);
+//        System.out.println("Char 1: " + abbrev.charAt(1) + ", hashed: " + (((int)abbrev.charAt(1)) - 97));
+//        System.out.println("Combined: " + ((((int)abbrev.charAt(0)) - 97) * 100 + (((int)abbrev.charAt(1)) - 97)));
+        return (((int) abbrev.charAt(0)) - 97) * 100 + (((int) abbrev.charAt(1)) - 97);
     }
 
     @Override

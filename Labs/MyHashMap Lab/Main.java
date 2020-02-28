@@ -13,11 +13,10 @@ public class Main extends JPanel implements ActionListener {
     private JButton jogLeft;
     private JButton jogRight;
     private JButton deletePhoto;
-    private JButton addCar;
-    private JButton updateCar;
-    private JTextField newCarModel;
-    private JTextField newCarPrice;
-    private JTextField newCarYear;
+    private JButton addLandmark;
+    private JTextField countryCode;
+    private JTextField landmarkName;
+    private JTextField imageURL;
 
     private JList<String> countryList;
     private JScrollPane countryPane;
@@ -75,6 +74,7 @@ public class Main extends JPanel implements ActionListener {
         } catch (FileNotFoundException err) {
             System.out.println(err);
         }
+
 //        System.out.println(countries);
 
         if ((new File("mapSave.jobj")).exists()) {
@@ -100,33 +100,36 @@ public class Main extends JPanel implements ActionListener {
                 map.put(new Country("us"), new ImageContainer("aa", new URL("https://www.bing.com/th/id/OIP.YsUb9KOPmlq9XAvhQWbsXgHaE8?pid=Api&rs=1")));
                 map.put(new Country("us"), new ImageContainer("bb", new URL("http://i.huffpost.com/gen/2686060/images/o-FLORIDA-facebook.jpg")));
                 map.put(new Country("us"), new ImageContainer("cc", new URL("https://images.wisegeek.com/jetty-in-the-tropics.jpg")));
-                map.put(new Country("us"), new ImageContainer("dd", new URL("http://www.travelspro.com/images/Packages/LAizawl-Homeof-Highlanders.jpg")));
-                map.put(new Country("us"), new ImageContainer("ee", new URL("https://www.meteo.be/meteo/download/fr/196752/image/gertgoesaert_29122006_glenelg_zuid-australi__2.jpg")));
-                map.put(new Country("us"), new ImageContainer("ff", new URL("https://www.bing.com/th?id=OIP.sUn9D9FqJwrUVbdFPIsZfgHaE_&pid=Api&rs=1")));
+                map.put(new Country("es"), new ImageContainer("dd", new URL("http://www.travelspro.com/images/Packages/LAizawl-Homeof-Highlanders.jpg")));
+                map.put(new Country("es"), new ImageContainer("ee", new URL("https://www.meteo.be/meteo/download/fr/196752/image/gertgoesaert_29122006_glenelg_zuid-australi__2.jpg")));
+                map.put(new Country("es"), new ImageContainer("ff", new URL("https://www.bing.com/th?id=OIP.sUn9D9FqJwrUVbdFPIsZfgHaE_&pid=Api&rs=1")));
+                map.put(new Country("gb"), new ImageContainer("gg", new URL("https://upload.wikimedia.org/wikipedia/commons/6/6b/V%C3%A1rosi_Tan%C3%A1csh%C3%A1z_%282253._sz%C3%A1m%C3%BA_m%C5%B1eml%C3%A9k%29_4.jpg")));
+                map.put(new Country("gb"), new ImageContainer("hh", new URL("http://www.derbytourism.com.au/images/side-images/gibb-river-road/50A.jpg")));
+                map.put(new Country("gb"), new ImageContainer("ii", new URL("http://darkhorseobservatory.org/images/products/146_01_full.jpg")));
             } catch (MalformedURLException err) {
                 System.out.println(err);
             }
 
-//            writeMapToFile();
+            writeMapToFile();
         }
 
 //        System.out.println(map);
 
         jogLeft = new JButton("<");
-        jogLeft.setBounds(25 + 200 + 15, getPreferredSize().height - 50 - 30, 100, 30);
+        jogLeft.setBounds(25 + 200 + 15, getPreferredSize().height - 75 - 30, 100, 30);
         jogLeft.addActionListener(this);
         jogLeft.setEnabled(false);
         jogLeft.setVisible(false);
         add(jogLeft);
 
         jogRight = new JButton(">");
-        jogRight.setBounds(25 + 200 + 15 + 120, getPreferredSize().height - 50 - 30, 100, 30);
+        jogRight.setBounds(25 + 200 + 15 + 120, getPreferredSize().height - 75 - 30, 100, 30);
         jogRight.addActionListener(this);
         jogRight.setVisible(false);
         add(jogRight);
 
         deletePhoto = new JButton("Delete");
-        deletePhoto.setBounds(25 + 200 + 15 + 120 * 2, getPreferredSize().height - 50 - 30, 100, 30);
+        deletePhoto.setBounds(25 + 200 + 15 + 120 * 2, getPreferredSize().height - 75 - 30, 100, 30);
         deletePhoto.addActionListener(this);
         deletePhoto.setVisible(false);
         add(deletePhoto);
@@ -145,43 +148,33 @@ public class Main extends JPanel implements ActionListener {
                 selectedCountryCode = queryCountryCode;
 
                 jogLeft.setVisible(true);
+                jogLeft.setEnabled(false);
                 jogRight.setVisible(true);
+                jogRight.setEnabled(true);
                 deletePhoto.setVisible(true);
                 deletePhoto.setEnabled(true);
+                imageIndex = 0;
                 repaint();
             }
         });
         add(countryPane);
 
-//        addCar = new JButton("Add");
-//        addCar.setBounds(25 + 200 + 15, 25 + 40 * 4, 120, 30);
-//        addCar.addActionListener(this);
-//        addCar.setVisible(false);
-//        add(addCar);
-//
-//        updateCar = new JButton("Update");
-//        updateCar.setBounds(25 + 200 + 15, 25 + 40 * 5, 120, 30);
-//        updateCar.addActionListener(this);
-//        updateCar.setVisible(false);
-//        add(updateCar);
-//
-//        newCarModel = new JTextField();
-//        newCarModel.setBounds(25 + 200 + 15, 25 + 40 * 5 + 20 + 50, 120, 30);
-//        newCarModel.setVisible(false);
-//        add(newCarModel);
-//
-//        newCarPrice = new JTextField();
-//        newCarPrice.setBounds(25 + 200 + 15, 25 + 40 * 5 + 20 + 50 * 2, 120, 30);
-//        newCarPrice.setVisible(false);
-//        add(newCarPrice);
-//
-//        newCarYear = new JTextField();
-//        newCarYear.setBounds(25 + 200 + 15, 25 + 40 * 5 + 20 + 50 * 3, 120, 30);
-//        newCarYear.setVisible(false);
-//        add(newCarYear);
+        countryCode = new JTextField();
+        countryCode.setBounds(25 + 200 + 15, getPreferredSize().height - 50, 120, 30);
+        add(countryCode);
 
+        landmarkName = new JTextField();
+        landmarkName.setBounds(25 + 200 + 15 + 130, getPreferredSize().height - 50, 120, 30);
+        add(landmarkName);
 
-//        makeList.setListData(recreateMakesList());
+        imageURL = new JTextField();
+        imageURL.setBounds(25 + 200 + 15 + 130 * 2, getPreferredSize().height - 50, 120, 30);
+        add(imageURL);
+
+        addLandmark = new JButton("Add");
+        addLandmark.setBounds(25 + 200 + 15 + 130 * 3, getPreferredSize().height - 50, 120, 30);
+        addLandmark.addActionListener(this);
+        add(addLandmark);
     }
 
     private String[] recreateCountriesList() {
@@ -212,14 +205,18 @@ public class Main extends JPanel implements ActionListener {
 
         g.setColor(Color.BLACK);
         g.drawString("Countries List: ", 25, 25 + textOffset);
-//        g.drawString("Cars list: ", getPreferredSize().width - 400 - 25, 25 + textOffset);
-//        if(selectedCountryCode != null) g.drawString("Selected Country: ", 25 + 200 + 15, 25 + textOffset);
+
+        g.drawString("Country Abbrev:", 25 + 200 + 15, getPreferredSize().height - 50 + textOffset);
+        g.drawString("Landmark Name:", 25 + 200 + 15 + 130, getPreferredSize().height - 50 + textOffset);
+        g.drawString("Image URL:", 25 + 200 + 15 + 130 * 2, getPreferredSize().height - 50 + textOffset);
 
         if (selectedCountryCode != null) {
             drawStringArr(g, new String[]{
-                            "Selected Country: " + selectedCountryCode + " - " + countries.getValue(new Country(selectedCountryCode))},
+                            "Country: " + selectedCountryCode + " - "
+                                    + countries.getValue(new Country(selectedCountryCode))
+                                    + "        Landmark name: " +
+                                    map.getValue(new Country(selectedCountryCode)).get(imageIndex).getName()},
                     new Point(25 + 200 + 15, 25 + textOffset));
-
             if (imageIndex == -1) imageIndex = 0;
             ImageContainer container = map.getValue(new Country(selectedCountryCode)).get(imageIndex);
             if (container != null) {
@@ -254,8 +251,31 @@ public class Main extends JPanel implements ActionListener {
             if (map.getValue(new Country(selectedCountryCode)).size() == 0)
                 deletePhoto.setEnabled(false);
 
-//            writeMapToFile();
-        } else if (e.getSource() == addCar || e.getSource() == updateCar) {
+            countryList.setListData(recreateCountriesList());
+            writeMapToFile();
+        } else if (e.getSource() == addLandmark) {
+            try {
+                String countryCodeInput = countryCode.getText().toLowerCase();
+                if (countryCodeInput.length() != 2) {
+                    JOptionPane.showMessageDialog(this, "Error: Country code must be two characters!");
+                    return;
+                } else if (!countries.getKeys().contains(new Country(countryCodeInput))) {
+                    JOptionPane.showMessageDialog(this, "Error: Country code not recognized!");
+                    return;
+                }
+                String landmarkNameInput = landmarkName.getText();
+                URL url = new URL(imageURL.getText());
+
+                map.put(new Country(countryCodeInput), new ImageContainer(landmarkNameInput, url));
+                countryList.setListData(recreateCountriesList());
+                writeMapToFile();
+
+                countryCode.setText("");
+                landmarkName.setText("");
+                imageURL.setText("");
+            } catch (MalformedURLException ex) {
+                JOptionPane.showMessageDialog(this, "Error: URL input must be a valid URL!");
+            }
         }
 
         repaint();

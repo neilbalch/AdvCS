@@ -8,7 +8,8 @@ import java.net.URL;
 public class ImageContainer implements Comparable<ImageContainer>, Serializable {
     private String name;
     private URL url;
-    private BufferedImage img;
+    // https://stackoverflow.com/a/13687603/3339274
+    private transient BufferedImage img;
 
     public void loadImage() {
         Thread loader = new Thread(() -> {
