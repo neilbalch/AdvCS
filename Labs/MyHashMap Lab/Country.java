@@ -1,4 +1,6 @@
-public class Country implements Comparable<Country> {
+import java.io.Serializable;
+
+public class Country implements Comparable<Country>, Serializable {
     private String abbrev;
 
     public Country(String abbrev) {

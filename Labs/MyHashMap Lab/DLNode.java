@@ -1,4 +1,6 @@
-public class DLNode<T> {
+import java.io.Serializable;
+
+public class DLNode<T> implements Serializable {
     private T data;
     private DLNode next;
     private DLNode prev;

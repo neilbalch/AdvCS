@@ -1,6 +1,7 @@
+import java.io.Serializable;
 import java.lang.reflect.Array;
 
-class Pair<K extends Comparable<K>, V extends Comparable<V>> implements Comparable<Pair<K, V>> {
+class Pair<K extends Comparable<K>, V extends Comparable<V>> implements Comparable<Pair<K, V>>, Serializable {
     public K key;
     public V value;
 
@@ -18,7 +19,7 @@ class Pair<K extends Comparable<K>, V extends Comparable<V>> implements Comparab
     }
 }
 
-public class HashMap<K extends Comparable<K>, V extends Comparable<V>> {
+public class HashMap<K extends Comparable<K>, V extends Comparable<V>> implements Serializable {
     private Pair<K, DLList<V>>[] table;
     private DLList<K> keys;
     private int size;

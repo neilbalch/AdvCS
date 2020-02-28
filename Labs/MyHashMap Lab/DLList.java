@@ -1,4 +1,6 @@
-public class DLList<T extends Comparable<T>> implements Comparable<DLList<T>> {
+import java.io.Serializable;
+
+public class DLList<T extends Comparable<T>> implements Comparable<DLList<T>>, Serializable {
     private DLNode<T> head;
     private int size;
 
@@ -76,7 +78,8 @@ public class DLList<T extends Comparable<T>> implements Comparable<DLList<T>> {
             return tmpHead.get();
         } else {
             DLNode<T> tmpHead = head.prev();
-            for (int i = size; i >= index; i--) {
+            for (int i = size - 1; i > index; i--) {
+                System.out.println("prev");
                 tmpHead = tmpHead.prev();
             }
             tmpHead.prev().setNext(tmpHead.next());
