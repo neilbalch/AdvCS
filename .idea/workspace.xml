@@ -2,8 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="36939a02-4d05-4550-9e2f-c504bf2e9922" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/Q4/03092020/03092020.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Q4/03092020/Animal.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Q4/03092020/BTree.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Q4/03092020/Main.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Q4/03092020/TNode.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Q4/03052020/BTree.java" beforeDir="false" afterPath="$PROJECT_DIR$/Q4/03052020/BTree.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -61,7 +66,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/Q4/03052020" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/Q4/03092020" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -89,17 +94,17 @@
       <recent name="C:\Users\neilb\Documents\GitHub\AdvCS\Labs\Networking Lab" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.Main (2)">
-    <configuration name="Main (1)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="Application.Main (3)">
+    <configuration name="Main (2)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Main" />
-      <module name="HashTable Lab" />
+      <module name="03052020" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Main (2)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+    <configuration name="Main (3)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Main" />
-      <module name="03052020" />
+      <module name="03092020" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -129,18 +134,18 @@
     </configuration>
     <list>
       <item itemvalue="Application.Main543" />
-      <item itemvalue="Application.Main (1)" />
       <item itemvalue="Application.Main2432" />
       <item itemvalue="Application.Main" />
       <item itemvalue="Application.Main (2)" />
+      <item itemvalue="Application.Main (3)" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.Main (3)" />
         <item itemvalue="Application.Main (2)" />
         <item itemvalue="Application.Main" />
         <item itemvalue="Application.Main2432" />
         <item itemvalue="Application.Main543" />
-        <item itemvalue="Application.Main (1)" />
       </list>
     </recent_temporary>
   </component>
@@ -217,14 +222,8 @@
       <workItem from="1583338061229" duration="225000" />
       <workItem from="1583425228326" duration="5365000" />
       <workItem from="1583455338259" duration="3726000" />
-      <workItem from="1583767828107" duration="362000" />
-    </task>
-    <task id="LOCAL-00047" summary="Fixed queues lab.">
-      <created>1572622911338</created>
-      <option name="number" value="00047" />
-      <option name="presentableId" value="LOCAL-00047" />
-      <option name="project" value="LOCAL" />
-      <updated>1572622911338</updated>
+      <workItem from="1583767828107" duration="550000" />
+      <workItem from="1583768925522" duration="722000" />
     </task>
     <task id="LOCAL-00048" summary="Beginning of classwork from November 4, 2019">
       <created>1572887089167</created>
@@ -562,7 +561,14 @@
       <option name="project" value="LOCAL" />
       <updated>1583430853399</updated>
     </task>
-    <option name="localTasksCounter" value="96" />
+    <task id="LOCAL-00096" summary="Fix for classwork from March 5, 2020.">
+      <created>1583768233339</created>
+      <option name="number" value="00096" />
+      <option name="presentableId" value="LOCAL-00096" />
+      <option name="project" value="LOCAL" />
+      <updated>1583768233340</updated>
+    </task>
+    <option name="localTasksCounter" value="97" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -584,7 +590,6 @@
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Fixed testing report." />
     <MESSAGE value="Classwork from January 9, 2020" />
     <MESSAGE value="Classwork from January 10, 2020" />
     <MESSAGE value="Vast majority of work on Singly Linked List Lab" />
@@ -609,7 +614,8 @@
     <MESSAGE value="Final MyHashMap Lab commit" />
     <MESSAGE value="Classwork from March 3, 2020." />
     <MESSAGE value="Holy mother of god; classwork from March 5, 2020." />
-    <option name="LAST_COMMIT_MESSAGE" value="Holy mother of god; classwork from March 5, 2020." />
+    <MESSAGE value="Fix for classwork from March 5, 2020." />
+    <option name="LAST_COMMIT_MESSAGE" value="Fix for classwork from March 5, 2020." />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="WindowStateProjectService">
@@ -617,10 +623,10 @@
       <screen x="0" y="0" width="1858" height="1080" />
     </state>
     <state x="78" y="72" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1858.1080@0.0.1858.1080" timestamp="1582649046720" />
-    <state x="686" y="343" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1581005601253">
+    <state x="686" y="343" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1583768971545">
       <screen x="0" y="0" width="1858" height="1080" />
     </state>
-    <state x="686" y="343" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1858.1080@0.0.1858.1080" timestamp="1581005601253" />
+    <state x="686" y="343" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1858.1080@0.0.1858.1080" timestamp="1583768971545" />
     <state x="734" y="224" key="#com.intellij.ide.util.MemberChooser" timestamp="1582648423195">
       <screen x="0" y="0" width="1858" height="1080" />
     </state>
@@ -637,62 +643,62 @@
       <screen x="0" y="0" width="1858" height="1080" />
     </state>
     <state x="659" y="287" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1858.1080@0.0.1858.1080" timestamp="1582915626902" />
-    <state x="497" y="134" key="CommitChangelistDialog2" timestamp="1583430852631">
+    <state x="497" y="134" key="CommitChangelistDialog2" timestamp="1583768232459">
       <screen x="0" y="0" width="1858" height="1080" />
     </state>
-    <state x="497" y="134" key="CommitChangelistDialog2/0.0.1858.1080@0.0.1858.1080" timestamp="1583430852631" />
-    <state x="709" y="232" key="FileChooserDialogImpl" timestamp="1583425280066">
+    <state x="497" y="134" key="CommitChangelistDialog2/0.0.1858.1080@0.0.1858.1080" timestamp="1583768232459" />
+    <state x="709" y="232" key="FileChooserDialogImpl" timestamp="1583769008172">
       <screen x="0" y="0" width="1858" height="1080" />
     </state>
-    <state x="709" y="232" key="FileChooserDialogImpl/0.0.1858.1080@0.0.1858.1080" timestamp="1583425280066" />
-    <state width="1837" height="221" key="GridCell.Tab.0.bottom" timestamp="1583512409064">
+    <state x="709" y="232" key="FileChooserDialogImpl/0.0.1858.1080@0.0.1858.1080" timestamp="1583769008172" />
+    <state width="1837" height="255" key="GridCell.Tab.0.bottom" timestamp="1583780699543">
       <screen x="0" y="0" width="1858" height="1080" />
     </state>
-    <state width="1837" height="221" key="GridCell.Tab.0.bottom/0.0.1858.1080@0.0.1858.1080" timestamp="1583512409064" />
-    <state width="1837" height="221" key="GridCell.Tab.0.center" timestamp="1583512409064">
+    <state width="1837" height="255" key="GridCell.Tab.0.bottom/0.0.1858.1080@0.0.1858.1080" timestamp="1583780699543" />
+    <state width="1837" height="255" key="GridCell.Tab.0.center" timestamp="1583780699543">
       <screen x="0" y="0" width="1858" height="1080" />
     </state>
-    <state width="1837" height="221" key="GridCell.Tab.0.center/0.0.1858.1080@0.0.1858.1080" timestamp="1583512409064" />
-    <state width="1837" height="221" key="GridCell.Tab.0.left" timestamp="1583512409064">
+    <state width="1837" height="255" key="GridCell.Tab.0.center/0.0.1858.1080@0.0.1858.1080" timestamp="1583780699543" />
+    <state width="1837" height="255" key="GridCell.Tab.0.left" timestamp="1583780699543">
       <screen x="0" y="0" width="1858" height="1080" />
     </state>
-    <state width="1837" height="221" key="GridCell.Tab.0.left/0.0.1858.1080@0.0.1858.1080" timestamp="1583512409064" />
-    <state width="1837" height="221" key="GridCell.Tab.0.right" timestamp="1583512409064">
+    <state width="1837" height="255" key="GridCell.Tab.0.left/0.0.1858.1080@0.0.1858.1080" timestamp="1583780699543" />
+    <state width="1837" height="255" key="GridCell.Tab.0.right" timestamp="1583780699543">
       <screen x="0" y="0" width="1858" height="1080" />
     </state>
-    <state width="1837" height="221" key="GridCell.Tab.0.right/0.0.1858.1080@0.0.1858.1080" timestamp="1583512409064" />
-    <state width="1837" height="255" key="GridCell.Tab.1.bottom" timestamp="1583429298952">
+    <state width="1837" height="255" key="GridCell.Tab.0.right/0.0.1858.1080@0.0.1858.1080" timestamp="1583780699543" />
+    <state width="1837" height="255" key="GridCell.Tab.1.bottom" timestamp="1583780699544">
       <screen x="0" y="0" width="1858" height="1080" />
     </state>
-    <state width="1837" height="255" key="GridCell.Tab.1.bottom/0.0.1858.1080@0.0.1858.1080" timestamp="1583429298952" />
-    <state width="1837" height="255" key="GridCell.Tab.1.center" timestamp="1583429298952">
+    <state width="1837" height="255" key="GridCell.Tab.1.bottom/0.0.1858.1080@0.0.1858.1080" timestamp="1583780699544" />
+    <state width="1837" height="255" key="GridCell.Tab.1.center" timestamp="1583780699544">
       <screen x="0" y="0" width="1858" height="1080" />
     </state>
-    <state width="1837" height="255" key="GridCell.Tab.1.center/0.0.1858.1080@0.0.1858.1080" timestamp="1583429298952" />
-    <state width="1837" height="255" key="GridCell.Tab.1.left" timestamp="1583429298952">
+    <state width="1837" height="255" key="GridCell.Tab.1.center/0.0.1858.1080@0.0.1858.1080" timestamp="1583780699544" />
+    <state width="1837" height="255" key="GridCell.Tab.1.left" timestamp="1583780699544">
       <screen x="0" y="0" width="1858" height="1080" />
     </state>
-    <state width="1837" height="255" key="GridCell.Tab.1.left/0.0.1858.1080@0.0.1858.1080" timestamp="1583429298952" />
-    <state width="1837" height="255" key="GridCell.Tab.1.right" timestamp="1583429298952">
+    <state width="1837" height="255" key="GridCell.Tab.1.left/0.0.1858.1080@0.0.1858.1080" timestamp="1583780699544" />
+    <state width="1837" height="255" key="GridCell.Tab.1.right" timestamp="1583780699544">
       <screen x="0" y="0" width="1858" height="1080" />
     </state>
-    <state width="1837" height="255" key="GridCell.Tab.1.right/0.0.1858.1080@0.0.1858.1080" timestamp="1583429298952" />
-    <state x="594" y="238" key="NewModule_or_Project.wizard" timestamp="1583425282118">
+    <state width="1837" height="255" key="GridCell.Tab.1.right/0.0.1858.1080@0.0.1858.1080" timestamp="1583780699544" />
+    <state x="594" y="238" key="NewModule_or_Project.wizard" timestamp="1583769010519">
       <screen x="0" y="0" width="1858" height="1080" />
     </state>
-    <state x="594" y="238" key="NewModule_or_Project.wizard/0.0.1858.1080@0.0.1858.1080" timestamp="1583425282118" />
-    <state x="521" y="272" width="683" height="533" key="Vcs.Push.Dialog.v2" timestamp="1583430854731">
+    <state x="594" y="238" key="NewModule_or_Project.wizard/0.0.1858.1080@0.0.1858.1080" timestamp="1583769010519" />
+    <state x="521" y="272" width="683" height="533" key="Vcs.Push.Dialog.v2" timestamp="1583768235629">
       <screen x="0" y="0" width="1858" height="1080" />
     </state>
-    <state x="521" y="272" width="683" height="533" key="Vcs.Push.Dialog.v2/0.0.1858.1080@0.0.1858.1080" timestamp="1583430854731" />
+    <state x="521" y="272" width="683" height="533" key="Vcs.Push.Dialog.v2/0.0.1858.1080@0.0.1858.1080" timestamp="1583768235629" />
     <state x="633" y="433" key="com.intellij.jarRepository.RepositoryAttachDialog-DOWNLOAD" timestamp="1582824726464">
       <screen x="0" y="0" width="1858" height="1080" />
     </state>
     <state x="633" y="433" key="com.intellij.jarRepository.RepositoryAttachDialog-DOWNLOAD/0.0.1858.1080@0.0.1858.1080" timestamp="1582824726464" />
-    <state x="727" y="230" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1583768166120">
+    <state x="727" y="230" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1583769000996">
       <screen x="0" y="0" width="1858" height="1080" />
     </state>
-    <state x="727" y="230" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/0.0.1858.1080@0.0.1858.1080" timestamp="1583768166120" />
+    <state x="727" y="230" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/0.0.1858.1080@0.0.1858.1080" timestamp="1583769000996" />
     <state x="311" y="161" key="new project wizard" timestamp="1580142103267">
       <screen x="0" y="0" width="1858" height="1080" />
     </state>
@@ -705,6 +711,17 @@
       <screen x="0" y="0" width="1858" height="1080" />
     </state>
     <state x="592" y="235" width="672" height="678" key="search.everywhere.popup/0.0.1858.1080@0.0.1858.1080" timestamp="1582932980283" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/Q4/03092020/Main.java</url>
+          <line>30</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/AdvCS$Server.ic" NAME="Server Coverage Results" MODIFIED="1573590929592" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
