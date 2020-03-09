@@ -2,12 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="36939a02-4d05-4550-9e2f-c504bf2e9922" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Q4/03052020/03052020.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Q4/03052020/BTree.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Q4/03052020/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Q4/03052020/TNode.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Q4/03052020/BTree.java" beforeDir="false" afterPath="$PROJECT_DIR$/Q4/03052020/BTree.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -219,14 +215,9 @@
       <workItem from="1582142970134" duration="22000" />
       <workItem from="1582535391992" duration="31147000" />
       <workItem from="1583338061229" duration="225000" />
-      <workItem from="1583425228326" duration="5182000" />
-    </task>
-    <task id="LOCAL-00046" summary="Fixed queues lab.">
-      <created>1572622873701</created>
-      <option name="number" value="00046" />
-      <option name="presentableId" value="LOCAL-00046" />
-      <option name="project" value="LOCAL" />
-      <updated>1572622873701</updated>
+      <workItem from="1583425228326" duration="5365000" />
+      <workItem from="1583455338259" duration="3726000" />
+      <workItem from="1583767828107" duration="362000" />
     </task>
     <task id="LOCAL-00047" summary="Fixed queues lab.">
       <created>1572622911338</created>
@@ -564,7 +555,14 @@
       <option name="project" value="LOCAL" />
       <updated>1583252990666</updated>
     </task>
-    <option name="localTasksCounter" value="95" />
+    <task id="LOCAL-00095" summary="Holy mother of god; classwork from March 5, 2020.">
+      <created>1583430853399</created>
+      <option name="number" value="00095" />
+      <option name="presentableId" value="LOCAL-00095" />
+      <option name="project" value="LOCAL" />
+      <updated>1583430853399</updated>
+    </task>
+    <option name="localTasksCounter" value="96" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -586,7 +584,6 @@
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Complete Semester 1 Final project, final commit." />
     <MESSAGE value="Fixed testing report." />
     <MESSAGE value="Classwork from January 9, 2020" />
     <MESSAGE value="Classwork from January 10, 2020" />
@@ -611,7 +608,8 @@
     <MESSAGE value="Work on MyHashMap Lab from after school Friday February 28, 2020" />
     <MESSAGE value="Final MyHashMap Lab commit" />
     <MESSAGE value="Classwork from March 3, 2020." />
-    <option name="LAST_COMMIT_MESSAGE" value="Classwork from March 3, 2020." />
+    <MESSAGE value="Holy mother of god; classwork from March 5, 2020." />
+    <option name="LAST_COMMIT_MESSAGE" value="Holy mother of god; classwork from March 5, 2020." />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="WindowStateProjectService">
@@ -639,30 +637,30 @@
       <screen x="0" y="0" width="1858" height="1080" />
     </state>
     <state x="659" y="287" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1858.1080@0.0.1858.1080" timestamp="1582915626902" />
-    <state x="497" y="134" key="CommitChangelistDialog2" timestamp="1583252989966">
+    <state x="497" y="134" key="CommitChangelistDialog2" timestamp="1583430852631">
       <screen x="0" y="0" width="1858" height="1080" />
     </state>
-    <state x="497" y="134" key="CommitChangelistDialog2/0.0.1858.1080@0.0.1858.1080" timestamp="1583252989966" />
+    <state x="497" y="134" key="CommitChangelistDialog2/0.0.1858.1080@0.0.1858.1080" timestamp="1583430852631" />
     <state x="709" y="232" key="FileChooserDialogImpl" timestamp="1583425280066">
       <screen x="0" y="0" width="1858" height="1080" />
     </state>
     <state x="709" y="232" key="FileChooserDialogImpl/0.0.1858.1080@0.0.1858.1080" timestamp="1583425280066" />
-    <state width="1837" height="252" key="GridCell.Tab.0.bottom" timestamp="1583430825243">
+    <state width="1837" height="221" key="GridCell.Tab.0.bottom" timestamp="1583512409064">
       <screen x="0" y="0" width="1858" height="1080" />
     </state>
-    <state width="1837" height="252" key="GridCell.Tab.0.bottom/0.0.1858.1080@0.0.1858.1080" timestamp="1583430825243" />
-    <state width="1837" height="252" key="GridCell.Tab.0.center" timestamp="1583430825242">
+    <state width="1837" height="221" key="GridCell.Tab.0.bottom/0.0.1858.1080@0.0.1858.1080" timestamp="1583512409064" />
+    <state width="1837" height="221" key="GridCell.Tab.0.center" timestamp="1583512409064">
       <screen x="0" y="0" width="1858" height="1080" />
     </state>
-    <state width="1837" height="252" key="GridCell.Tab.0.center/0.0.1858.1080@0.0.1858.1080" timestamp="1583430825242" />
-    <state width="1837" height="252" key="GridCell.Tab.0.left" timestamp="1583430825242">
+    <state width="1837" height="221" key="GridCell.Tab.0.center/0.0.1858.1080@0.0.1858.1080" timestamp="1583512409064" />
+    <state width="1837" height="221" key="GridCell.Tab.0.left" timestamp="1583512409064">
       <screen x="0" y="0" width="1858" height="1080" />
     </state>
-    <state width="1837" height="252" key="GridCell.Tab.0.left/0.0.1858.1080@0.0.1858.1080" timestamp="1583430825242" />
-    <state width="1837" height="252" key="GridCell.Tab.0.right" timestamp="1583430825242">
+    <state width="1837" height="221" key="GridCell.Tab.0.left/0.0.1858.1080@0.0.1858.1080" timestamp="1583512409064" />
+    <state width="1837" height="221" key="GridCell.Tab.0.right" timestamp="1583512409064">
       <screen x="0" y="0" width="1858" height="1080" />
     </state>
-    <state width="1837" height="252" key="GridCell.Tab.0.right/0.0.1858.1080@0.0.1858.1080" timestamp="1583430825242" />
+    <state width="1837" height="221" key="GridCell.Tab.0.right/0.0.1858.1080@0.0.1858.1080" timestamp="1583512409064" />
     <state width="1837" height="255" key="GridCell.Tab.1.bottom" timestamp="1583429298952">
       <screen x="0" y="0" width="1858" height="1080" />
     </state>
@@ -683,18 +681,18 @@
       <screen x="0" y="0" width="1858" height="1080" />
     </state>
     <state x="594" y="238" key="NewModule_or_Project.wizard/0.0.1858.1080@0.0.1858.1080" timestamp="1583425282118" />
-    <state x="521" y="272" width="683" height="533" key="Vcs.Push.Dialog.v2" timestamp="1583211854610">
+    <state x="521" y="272" width="683" height="533" key="Vcs.Push.Dialog.v2" timestamp="1583430854731">
       <screen x="0" y="0" width="1858" height="1080" />
     </state>
-    <state x="521" y="272" width="683" height="533" key="Vcs.Push.Dialog.v2/0.0.1858.1080@0.0.1858.1080" timestamp="1583211854610" />
+    <state x="521" y="272" width="683" height="533" key="Vcs.Push.Dialog.v2/0.0.1858.1080@0.0.1858.1080" timestamp="1583430854731" />
     <state x="633" y="433" key="com.intellij.jarRepository.RepositoryAttachDialog-DOWNLOAD" timestamp="1582824726464">
       <screen x="0" y="0" width="1858" height="1080" />
     </state>
     <state x="633" y="433" key="com.intellij.jarRepository.RepositoryAttachDialog-DOWNLOAD/0.0.1858.1080@0.0.1858.1080" timestamp="1582824726464" />
-    <state x="727" y="230" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1583425268942">
+    <state x="727" y="230" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1583768166120">
       <screen x="0" y="0" width="1858" height="1080" />
     </state>
-    <state x="727" y="230" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/0.0.1858.1080@0.0.1858.1080" timestamp="1583425268942" />
+    <state x="727" y="230" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/0.0.1858.1080@0.0.1858.1080" timestamp="1583768166120" />
     <state x="311" y="161" key="new project wizard" timestamp="1580142103267">
       <screen x="0" y="0" width="1858" height="1080" />
     </state>

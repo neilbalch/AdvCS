@@ -113,7 +113,12 @@ public class BTree<T extends Comparable<T>> {
         if (current.get().equals(element)) {
             boolean hasLeftChild = current.getLeft() != null;
             boolean hasRightChild = current.getRight() != null;
-            boolean currentIsOnLeftOfParent = previous == null ? false : previous.getLeft().equals(current);
+            boolean currentIsOnLeftOfParent;
+            if (previous.getLeft() != null) {
+                currentIsOnLeftOfParent = previous.getLeft().equals(current);
+            } else {
+                currentIsOnLeftOfParent = false;
+            }
 
             if (!hasLeftChild && !hasRightChild) {
                 if (previous == null) root = null;
