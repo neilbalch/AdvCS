@@ -9,13 +9,14 @@ class Main {
         tree.add(new Animal("octopus", 4));
         tree.add(new Animal("bear", 8));
 
+        System.out.println(tree);
+
         {
-//            System.out.println(tree);
-//            System.out.print("Add: Animal name? ");
-//            String name = sc.next();
-//            System.out.print("Add: Animal age? ");
-//            int age = sc.nextInt();
-//            tree.add(new Animal(name, age));
+            System.out.print("Add: Animal name? ");
+            String name = sc.next();
+            System.out.print("Add: Animal age? ");
+            int age = sc.nextInt();
+            tree.add(new Animal(name, age));
         }
 
         System.out.println(tree);

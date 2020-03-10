@@ -14,11 +14,17 @@ public class BTree<T extends Comparable<T>> {
 
     public void add(T data, TNode<T> newRoot) {
         if (newRoot.get().compareTo(data) > 0) {
-            if (newRoot.getLeft() == null) newRoot.setLeft(new TNode(data));
-            else add(data, newRoot.getLeft());
+            if (newRoot.getLeft() == null) {
+                TNode<T> newNode = new TNode<>(data);
+                newNode.setParent(newRoot);
+                newRoot.setLeft(newNode);
+            } else add(data, newRoot.getLeft());
         } else if (newRoot.get().compareTo(data) < 0) {
-            if (newRoot.getRight() == null) newRoot.setRight(new TNode(data));
-            else add(data, newRoot.getRight());
+            if (newRoot.getRight() == null) {
+                TNode<T> newNode = new TNode<>(data);
+                newNode.setParent(newRoot);
+                newRoot.setRight(newNode);
+            } else add(data, newRoot.getRight());
         }
     }
 
@@ -130,10 +136,14 @@ public class BTree<T extends Comparable<T>> {
                     else current.getParent().setRight(null);
                 }
             } else if (hasLeftChild && hasRightChild) {
-                T leastInTree = getLeastInTree(current.getRight());
-                remove(leastInTree);
-                TNode<T> newRoot = new TNode<T>
-                root.;
+                T leastInRightTree = getLeastInTree(current.getRight());
+                remove(leastInRightTree);
+                TNode<T> leftOfCurrent = current.getLeft();
+                TNode<T> rightOfCurrent = current.getRight();
+
+                current.set(leastInRightTree);
+                current.setLeft(leftOfCurrent);
+                current.setRight(rightOfCurrent);
             } else if (hasLeftChild) {
                 if (current.getParent() == null) root = current.getLeft();
                 else {
@@ -143,6 +153,7 @@ public class BTree<T extends Comparable<T>> {
             } else { // hasRightChild
                 if (current.getParent() == null) root = current.getRight();
                 else {
+                    current.getRight().setParent(current.getParent());
                     if (currentIsOnLeftOfParent) current.getParent().setLeft(current.getRight());
                     else current.getParent().setRight(current.getRight());
                 }
