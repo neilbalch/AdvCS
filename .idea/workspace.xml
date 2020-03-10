@@ -2,9 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="36939a02-4d05-4550-9e2f-c504bf2e9922" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/Labs/Binary Search Tree Lab/Account.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Labs/Binary Search Tree Lab/BTree.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Labs/Binary Search Tree Lab/Binary Search Tree Lab.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Labs/Binary Search Tree Lab/TNode.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Q4/03092020/BTree.java" beforeDir="false" afterPath="$PROJECT_DIR$/Q4/03092020/BTree.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Q4/03092020/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/Q4/03092020/Main.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -62,7 +65,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/Q4/03092020" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/Labs/Binary Search Tree Lab" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -83,11 +86,11 @@
       <recent name="" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\neilb\Documents\GitHub\AdvCS\Labs\Binary Search Tree Lab" />
       <recent name="C:\Users\neilb\Documents\GitHub\AdvCS\Labs\MyHashMap Lab" />
       <recent name="C:\Users\neilb\Documents\GitHub\AdvCS\Labs\HashTable Lab" />
       <recent name="C:\Users\neilb\Documents\GitHub\AdvCS\Q3\02062020" />
       <recent name="C:\Users\neilb\Documents\GitHub\AdvCS\Labs\Video Poker Lab" />
-      <recent name="C:\Users\neilb\Documents\GitHub\AdvCS\Labs\Networking Lab" />
     </key>
   </component>
   <component name="RunManager" selected="Application.Main (3)">
@@ -219,14 +222,7 @@
       <workItem from="1583425228326" duration="5365000" />
       <workItem from="1583455338259" duration="3726000" />
       <workItem from="1583767828107" duration="550000" />
-      <workItem from="1583768925522" duration="2883000" />
-    </task>
-    <task id="LOCAL-00049" summary="End of classwork from November 4, 2019">
-      <created>1572971228385</created>
-      <option name="number" value="00049" />
-      <option name="presentableId" value="LOCAL-00049" />
-      <option name="project" value="LOCAL" />
-      <updated>1572971228385</updated>
+      <workItem from="1583768925522" duration="3527000" />
     </task>
     <task id="LOCAL-00050" summary="Classwork from November 7, 2019.">
       <created>1573146454600</created>
@@ -564,7 +560,14 @@
       <option name="project" value="LOCAL" />
       <updated>1583780722724</updated>
     </task>
-    <option name="localTasksCounter" value="98" />
+    <task id="LOCAL-00098" summary="Bug-free classwork from March 9, 2020.">
+      <created>1583855183752</created>
+      <option name="number" value="00098" />
+      <option name="presentableId" value="LOCAL-00098" />
+      <option name="project" value="LOCAL" />
+      <updated>1583855183752</updated>
+    </task>
+    <option name="localTasksCounter" value="99" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -586,7 +589,6 @@
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Classwork from January 10, 2020" />
     <MESSAGE value="Vast majority of work on Singly Linked List Lab" />
     <MESSAGE value="Vast majority of work on Singly Linked List Lab -- small fix" />
     <MESSAGE value="Vast majority of work on Singly Linked List Lab -- conform to spec" />
@@ -611,7 +613,8 @@
     <MESSAGE value="Holy mother of god; classwork from March 5, 2020." />
     <MESSAGE value="Fix for classwork from March 5, 2020." />
     <MESSAGE value="Semi-complete and bug-free classwork from March 9, 2020." />
-    <option name="LAST_COMMIT_MESSAGE" value="Semi-complete and bug-free classwork from March 9, 2020." />
+    <MESSAGE value="Bug-free classwork from March 9, 2020." />
+    <option name="LAST_COMMIT_MESSAGE" value="Bug-free classwork from March 9, 2020." />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="WindowStateProjectService">
@@ -623,10 +626,10 @@
       <screen x="0" y="0" width="1858" height="1080" />
     </state>
     <state x="686" y="343" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1858.1080@0.0.1858.1080" timestamp="1583768971545" />
-    <state x="734" y="224" key="#com.intellij.ide.util.MemberChooser" timestamp="1582648423195">
+    <state x="734" y="224" key="#com.intellij.ide.util.MemberChooser" timestamp="1583855506822">
       <screen x="0" y="0" width="1858" height="1080" />
     </state>
-    <state x="734" y="224" key="#com.intellij.ide.util.MemberChooser/0.0.1858.1080@0.0.1858.1080" timestamp="1582648423195" />
+    <state x="734" y="224" key="#com.intellij.ide.util.MemberChooser/0.0.1858.1080@0.0.1858.1080" timestamp="1583855506822" />
     <state x="609" y="267" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog" timestamp="1575389487210">
       <screen x="0" y="0" width="1858" height="1080" />
     </state>
@@ -639,14 +642,14 @@
       <screen x="0" y="0" width="1858" height="1080" />
     </state>
     <state x="659" y="287" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1858.1080@0.0.1858.1080" timestamp="1582915626902" />
-    <state x="497" y="134" key="CommitChangelistDialog2" timestamp="1583780721978">
+    <state x="497" y="134" key="CommitChangelistDialog2" timestamp="1583855182993">
       <screen x="0" y="0" width="1858" height="1080" />
     </state>
-    <state x="497" y="134" key="CommitChangelistDialog2/0.0.1858.1080@0.0.1858.1080" timestamp="1583780721978" />
-    <state x="709" y="232" key="FileChooserDialogImpl" timestamp="1583769008172">
+    <state x="497" y="134" key="CommitChangelistDialog2/0.0.1858.1080@0.0.1858.1080" timestamp="1583855182993" />
+    <state x="709" y="232" key="FileChooserDialogImpl" timestamp="1583855227978">
       <screen x="0" y="0" width="1858" height="1080" />
     </state>
-    <state x="709" y="232" key="FileChooserDialogImpl/0.0.1858.1080@0.0.1858.1080" timestamp="1583769008172" />
+    <state x="709" y="232" key="FileChooserDialogImpl/0.0.1858.1080@0.0.1858.1080" timestamp="1583855227978" />
     <state width="1837" height="276" key="GridCell.Tab.0.bottom" timestamp="1583855165542">
       <screen x="0" y="0" width="1858" height="1080" />
     </state>
@@ -679,10 +682,10 @@
       <screen x="0" y="0" width="1858" height="1080" />
     </state>
     <state width="1837" height="255" key="GridCell.Tab.1.right/0.0.1858.1080@0.0.1858.1080" timestamp="1583855130259" />
-    <state x="594" y="238" key="NewModule_or_Project.wizard" timestamp="1583769010519">
+    <state x="594" y="238" key="NewModule_or_Project.wizard" timestamp="1583855230361">
       <screen x="0" y="0" width="1858" height="1080" />
     </state>
-    <state x="594" y="238" key="NewModule_or_Project.wizard/0.0.1858.1080@0.0.1858.1080" timestamp="1583769010519" />
+    <state x="594" y="238" key="NewModule_or_Project.wizard/0.0.1858.1080@0.0.1858.1080" timestamp="1583855230361" />
     <state x="521" y="272" width="683" height="533" key="Vcs.Push.Dialog.v2" timestamp="1583780724371">
       <screen x="0" y="0" width="1858" height="1080" />
     </state>
