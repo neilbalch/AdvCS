@@ -2,12 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="36939a02-4d05-4550-9e2f-c504bf2e9922" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Labs/Binary Search Tree Lab/Account.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Labs/Binary Search Tree Lab/BTree.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Labs/Binary Search Tree Lab/Binary Search Tree Lab.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Labs/Binary Search Tree Lab/TNode.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Labs/Binary Search Tree Lab/Main.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Labs/Binary Search Tree Lab/names.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/treeSave.jobj" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Labs/Binary Search Tree Lab/Account.java" beforeDir="false" afterPath="$PROJECT_DIR$/Labs/Binary Search Tree Lab/Account.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Labs/Binary Search Tree Lab/BTree.java" beforeDir="false" afterPath="$PROJECT_DIR$/Labs/Binary Search Tree Lab/BTree.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Labs/Binary Search Tree Lab/TNode.java" beforeDir="false" afterPath="$PROJECT_DIR$/Labs/Binary Search Tree Lab/TNode.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -93,7 +94,7 @@
       <recent name="C:\Users\neilb\Documents\GitHub\AdvCS\Labs\Video Poker Lab" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.Main (3)">
+  <component name="RunManager" selected="Application.Main12345678">
     <configuration name="Main (2)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Main" />
       <module name="03052020" />
@@ -115,6 +116,14 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="Main12345678" type="Application" factoryName="Application" temporary="true">
+      <option name="MAIN_CLASS_NAME" value="Main" />
+      <module name="Binary Search Tree Lab" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_WORKING_DIR$" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="Main2432" type="Application" factoryName="Application" temporary="true">
       <option name="MAIN_CLASS_NAME" value="Main" />
       <module name="MyHashMap Lab" />
@@ -123,28 +132,19 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Main543" type="Application" factoryName="Application" temporary="true">
-      <option name="MAIN_CLASS_NAME" value="Main" />
-      <module name="02142020" />
-      <option name="WORKING_DIRECTORY" value="$MODULE_WORKING_DIR$" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <list>
-      <item itemvalue="Application.Main543" />
       <item itemvalue="Application.Main2432" />
-      <item itemvalue="Application.Main" />
       <item itemvalue="Application.Main (2)" />
       <item itemvalue="Application.Main (3)" />
+      <item itemvalue="Application.Main12345678" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.Main12345678" />
         <item itemvalue="Application.Main (3)" />
         <item itemvalue="Application.Main (2)" />
         <item itemvalue="Application.Main" />
         <item itemvalue="Application.Main2432" />
-        <item itemvalue="Application.Main543" />
       </list>
     </recent_temporary>
   </component>
@@ -222,14 +222,7 @@
       <workItem from="1583425228326" duration="5365000" />
       <workItem from="1583455338259" duration="3726000" />
       <workItem from="1583767828107" duration="550000" />
-      <workItem from="1583768925522" duration="3527000" />
-    </task>
-    <task id="LOCAL-00050" summary="Classwork from November 7, 2019.">
-      <created>1573146454600</created>
-      <option name="number" value="00050" />
-      <option name="presentableId" value="LOCAL-00050" />
-      <option name="project" value="LOCAL" />
-      <updated>1573146454601</updated>
+      <workItem from="1583768925522" duration="9931000" />
     </task>
     <task id="LOCAL-00051" summary="Classwork from November 12, 2019.">
       <created>1573593815091</created>
@@ -567,7 +560,14 @@
       <option name="project" value="LOCAL" />
       <updated>1583855183752</updated>
     </task>
-    <option name="localTasksCounter" value="99" />
+    <task id="LOCAL-00099" summary="Initial commit for Binary Tree lab from March 10, 2020.">
+      <created>1583869187786</created>
+      <option name="number" value="00099" />
+      <option name="presentableId" value="LOCAL-00099" />
+      <option name="project" value="LOCAL" />
+      <updated>1583869187787</updated>
+    </task>
+    <option name="localTasksCounter" value="100" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -589,7 +589,6 @@
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Vast majority of work on Singly Linked List Lab" />
     <MESSAGE value="Vast majority of work on Singly Linked List Lab -- small fix" />
     <MESSAGE value="Vast majority of work on Singly Linked List Lab -- conform to spec" />
     <MESSAGE value="Singly Linked List Lab fina commit" />
@@ -614,14 +613,15 @@
     <MESSAGE value="Fix for classwork from March 5, 2020." />
     <MESSAGE value="Semi-complete and bug-free classwork from March 9, 2020." />
     <MESSAGE value="Bug-free classwork from March 9, 2020." />
-    <option name="LAST_COMMIT_MESSAGE" value="Bug-free classwork from March 9, 2020." />
+    <MESSAGE value="Initial commit for Binary Tree lab from March 10, 2020." />
+    <option name="LAST_COMMIT_MESSAGE" value="Initial commit for Binary Tree lab from March 10, 2020." />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="78" y="72" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1582649046720">
+    <state x="78" y="72" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1584027689730">
       <screen x="0" y="0" width="1858" height="1080" />
     </state>
-    <state x="78" y="72" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1858.1080@0.0.1858.1080" timestamp="1582649046720" />
+    <state x="78" y="72" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1858.1080@0.0.1858.1080" timestamp="1584027689730" />
     <state x="686" y="343" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1583768971545">
       <screen x="0" y="0" width="1858" height="1080" />
     </state>
@@ -638,66 +638,66 @@
       <screen x="0" y="0" width="1858" height="1080" />
     </state>
     <state x="436" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1858.1080@0.0.1858.1080" timestamp="1582563130029" />
-    <state x="659" y="287" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1582915626902">
+    <state x="659" y="287" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1584030507877">
       <screen x="0" y="0" width="1858" height="1080" />
     </state>
-    <state x="659" y="287" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1858.1080@0.0.1858.1080" timestamp="1582915626902" />
-    <state x="497" y="134" key="CommitChangelistDialog2" timestamp="1583855182993">
+    <state x="659" y="287" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1858.1080@0.0.1858.1080" timestamp="1584030507877" />
+    <state x="497" y="134" key="CommitChangelistDialog2" timestamp="1583869186821">
       <screen x="0" y="0" width="1858" height="1080" />
     </state>
-    <state x="497" y="134" key="CommitChangelistDialog2/0.0.1858.1080@0.0.1858.1080" timestamp="1583855182993" />
+    <state x="497" y="134" key="CommitChangelistDialog2/0.0.1858.1080@0.0.1858.1080" timestamp="1583869186821" />
     <state x="709" y="232" key="FileChooserDialogImpl" timestamp="1583855227978">
       <screen x="0" y="0" width="1858" height="1080" />
     </state>
     <state x="709" y="232" key="FileChooserDialogImpl/0.0.1858.1080@0.0.1858.1080" timestamp="1583855227978" />
-    <state width="1837" height="276" key="GridCell.Tab.0.bottom" timestamp="1583855165542">
+    <state width="1837" height="276" key="GridCell.Tab.0.bottom" timestamp="1584031541786">
       <screen x="0" y="0" width="1858" height="1080" />
     </state>
-    <state width="1837" height="276" key="GridCell.Tab.0.bottom/0.0.1858.1080@0.0.1858.1080" timestamp="1583855165542" />
-    <state width="1837" height="276" key="GridCell.Tab.0.center" timestamp="1583855165542">
+    <state width="1837" height="276" key="GridCell.Tab.0.bottom/0.0.1858.1080@0.0.1858.1080" timestamp="1584031541786" />
+    <state width="1837" height="276" key="GridCell.Tab.0.center" timestamp="1584031541786">
       <screen x="0" y="0" width="1858" height="1080" />
     </state>
-    <state width="1837" height="276" key="GridCell.Tab.0.center/0.0.1858.1080@0.0.1858.1080" timestamp="1583855165542" />
-    <state width="1837" height="276" key="GridCell.Tab.0.left" timestamp="1583855165542">
+    <state width="1837" height="276" key="GridCell.Tab.0.center/0.0.1858.1080@0.0.1858.1080" timestamp="1584031541786" />
+    <state width="1837" height="276" key="GridCell.Tab.0.left" timestamp="1584031541786">
       <screen x="0" y="0" width="1858" height="1080" />
     </state>
-    <state width="1837" height="276" key="GridCell.Tab.0.left/0.0.1858.1080@0.0.1858.1080" timestamp="1583855165542" />
-    <state width="1837" height="276" key="GridCell.Tab.0.right" timestamp="1583855165542">
+    <state width="1837" height="276" key="GridCell.Tab.0.left/0.0.1858.1080@0.0.1858.1080" timestamp="1584031541786" />
+    <state width="1837" height="276" key="GridCell.Tab.0.right" timestamp="1584031541786">
       <screen x="0" y="0" width="1858" height="1080" />
     </state>
-    <state width="1837" height="276" key="GridCell.Tab.0.right/0.0.1858.1080@0.0.1858.1080" timestamp="1583855165542" />
-    <state width="1837" height="255" key="GridCell.Tab.1.bottom" timestamp="1583855130259">
+    <state width="1837" height="276" key="GridCell.Tab.0.right/0.0.1858.1080@0.0.1858.1080" timestamp="1584031541786" />
+    <state width="1837" height="255" key="GridCell.Tab.1.bottom" timestamp="1584029029382">
       <screen x="0" y="0" width="1858" height="1080" />
     </state>
-    <state width="1837" height="255" key="GridCell.Tab.1.bottom/0.0.1858.1080@0.0.1858.1080" timestamp="1583855130259" />
-    <state width="1837" height="255" key="GridCell.Tab.1.center" timestamp="1583855130259">
+    <state width="1837" height="255" key="GridCell.Tab.1.bottom/0.0.1858.1080@0.0.1858.1080" timestamp="1584029029382" />
+    <state width="1837" height="255" key="GridCell.Tab.1.center" timestamp="1584029029382">
       <screen x="0" y="0" width="1858" height="1080" />
     </state>
-    <state width="1837" height="255" key="GridCell.Tab.1.center/0.0.1858.1080@0.0.1858.1080" timestamp="1583855130259" />
-    <state width="1837" height="255" key="GridCell.Tab.1.left" timestamp="1583855130259">
+    <state width="1837" height="255" key="GridCell.Tab.1.center/0.0.1858.1080@0.0.1858.1080" timestamp="1584029029382" />
+    <state width="1837" height="255" key="GridCell.Tab.1.left" timestamp="1584029029382">
       <screen x="0" y="0" width="1858" height="1080" />
     </state>
-    <state width="1837" height="255" key="GridCell.Tab.1.left/0.0.1858.1080@0.0.1858.1080" timestamp="1583855130259" />
-    <state width="1837" height="255" key="GridCell.Tab.1.right" timestamp="1583855130259">
+    <state width="1837" height="255" key="GridCell.Tab.1.left/0.0.1858.1080@0.0.1858.1080" timestamp="1584029029382" />
+    <state width="1837" height="255" key="GridCell.Tab.1.right" timestamp="1584029029382">
       <screen x="0" y="0" width="1858" height="1080" />
     </state>
-    <state width="1837" height="255" key="GridCell.Tab.1.right/0.0.1858.1080@0.0.1858.1080" timestamp="1583855130259" />
+    <state width="1837" height="255" key="GridCell.Tab.1.right/0.0.1858.1080@0.0.1858.1080" timestamp="1584029029382" />
     <state x="594" y="238" key="NewModule_or_Project.wizard" timestamp="1583855230361">
       <screen x="0" y="0" width="1858" height="1080" />
     </state>
     <state x="594" y="238" key="NewModule_or_Project.wizard/0.0.1858.1080@0.0.1858.1080" timestamp="1583855230361" />
-    <state x="521" y="272" width="683" height="533" key="Vcs.Push.Dialog.v2" timestamp="1583780724371">
+    <state x="521" y="272" width="683" height="533" key="Vcs.Push.Dialog.v2" timestamp="1583869189025">
       <screen x="0" y="0" width="1858" height="1080" />
     </state>
-    <state x="521" y="272" width="683" height="533" key="Vcs.Push.Dialog.v2/0.0.1858.1080@0.0.1858.1080" timestamp="1583780724371" />
+    <state x="521" y="272" width="683" height="533" key="Vcs.Push.Dialog.v2/0.0.1858.1080@0.0.1858.1080" timestamp="1583869189025" />
     <state x="633" y="433" key="com.intellij.jarRepository.RepositoryAttachDialog-DOWNLOAD" timestamp="1582824726464">
       <screen x="0" y="0" width="1858" height="1080" />
     </state>
     <state x="633" y="433" key="com.intellij.jarRepository.RepositoryAttachDialog-DOWNLOAD/0.0.1858.1080@0.0.1858.1080" timestamp="1582824726464" />
-    <state x="727" y="230" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1583853743175">
+    <state x="727" y="230" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1584030268393">
       <screen x="0" y="0" width="1858" height="1080" />
     </state>
-    <state x="727" y="230" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/0.0.1858.1080@0.0.1858.1080" timestamp="1583853743175" />
+    <state x="727" y="230" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/0.0.1858.1080@0.0.1858.1080" timestamp="1584030268393" />
     <state x="311" y="161" key="new project wizard" timestamp="1580142103267">
       <screen x="0" y="0" width="1858" height="1080" />
     </state>
@@ -706,10 +706,10 @@
       <screen x="0" y="0" width="1858" height="1080" />
     </state>
     <state x="585" y="250" key="run.anything.popup/0.0.1858.1080@0.0.1858.1080" timestamp="1582824189755" />
-    <state x="592" y="235" width="672" height="678" key="search.everywhere.popup" timestamp="1582932980283">
+    <state x="592" y="235" width="672" height="678" key="search.everywhere.popup" timestamp="1584029963465">
       <screen x="0" y="0" width="1858" height="1080" />
     </state>
-    <state x="592" y="235" width="672" height="678" key="search.everywhere.popup/0.0.1858.1080@0.0.1858.1080" timestamp="1582932980283" />
+    <state x="592" y="235" width="672" height="678" key="search.everywhere.popup/0.0.1858.1080@0.0.1858.1080" timestamp="1584029963465" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

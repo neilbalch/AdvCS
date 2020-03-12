@@ -1,4 +1,6 @@
-public class Account implements Comparable<Account> {
+import java.io.Serializable;
+
+public class Account implements Comparable<Account>, Serializable {
     private String first;
     private String last;
     private int pin;
@@ -19,10 +21,15 @@ public class Account implements Comparable<Account> {
 
     @Override
     public int compareTo(Account o) {
-        int val = last.compareTo(o.getLast());
+        int val = last.compareToIgnoreCase(o.getLast());
 
         if (val != 0) return val;
-        else return first.compareTo(o.getFirst());
+        else return first.compareToIgnoreCase(o.getFirst());
+    }
+
+    @Override
+    public String toString() {
+        return first + " " + last;
     }
 
     public String getFirst() {

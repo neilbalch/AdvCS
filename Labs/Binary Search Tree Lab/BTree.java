@@ -1,33 +1,94 @@
-public class BTree<T extends Comparable<T>> {
+import java.io.Serializable;
+
+public class BTree<T extends Comparable<T>> implements Serializable {
     private TNode<T> root;
+    private int passes;
+    private int size;
+
+    private int getTempCounter;
 
     public BTree() {
         root = null;
+        passes = 0;
     }
 
-    public void add(T data) {
+    public int getPasses() {
+        return passes;
+    }
+
+    public int getSize() {
+        return size;
+    }
+
+    public int add(T data) {
+        passes = 1;
+        size++;
+
         if (root == null) root = new TNode<T>(data);
         else {
             add(data, root);
         }
+
+        return passes;
     }
 
-    public void add(T data, TNode<T> newRoot) {
+    private void add(T data, TNode<T> newRoot) {
         if (contains(data)) return;
 
+        passes++;
+
         if (newRoot.get().compareTo(data) > 0) {
+            System.out.println(data + " < " + newRoot.get());
             if (newRoot.getLeft() == null) {
                 TNode<T> newNode = new TNode<>(data);
                 newNode.setParent(newRoot);
                 newRoot.setLeft(newNode);
             } else add(data, newRoot.getLeft());
         } else if (newRoot.get().compareTo(data) < 0) {
+            System.out.println(data + " > " + newRoot.get());
             if (newRoot.getRight() == null) {
                 TNode<T> newNode = new TNode<>(data);
                 newNode.setParent(newRoot);
                 newRoot.setRight(newNode);
             } else add(data, newRoot.getRight());
         }
+    }
+
+    public T get(T query) {
+        if (!contains(query)) return null;
+
+        passes = 0;
+        return get(query, root);
+    }
+
+    private T get(T query, TNode<T> root) {
+        passes++;
+
+        if (root.get().equals(query)) return query;
+        else if (root.get().compareTo(query) > 0)
+            return get(query, root.getRight()); // TODO: Is this the correct comparison direction?
+        else return get(query, root.getLeft());
+    }
+
+    public T get(int queryIndex) {
+        if (queryIndex > size - 1) return null;
+        getTempCounter = 0;
+        passes = 0;
+
+        return get(queryIndex, root);
+    }
+
+    private T get(int queryIndex, TNode<T> root) {
+        passes++;
+        if (root == null) return null;
+
+        T result = get(queryIndex, root.getLeft());
+        if (result != null) return result;
+
+        if (queryIndex == getTempCounter) return root.get();
+        getTempCounter++;
+
+        return get(queryIndex, root.getRight());
     }
 
     public String toStringInOrder(TNode<T> root) {
@@ -176,7 +237,7 @@ public class BTree<T extends Comparable<T>> {
         if (root == null) return "";
 
         txt += inOrderString(root.getLeft());
-        txt += (root.get() + " ");
+        txt += (root.get() + ", ");
         txt += inOrderString(root.getRight());
 
         return txt;
