@@ -3,6 +3,7 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.*;
+import java.text.DecimalFormat;
 import java.util.Scanner;
 
 public class Main extends JPanel implements ActionListener {
@@ -13,13 +14,23 @@ public class Main extends JPanel implements ActionListener {
     private Account queriedAccount;
     private final String saveFile = "treeSave.jobj";
 
-    private JButton addAccount;
-    private JButton getAccount;
+    // Common
+    private JButton changeFirst;
+    private JButton changeLast;
+    private JButton changePIN;
+    private JButton changeBalance;
+    private JTextField newValueField;
     private JTextField firstNameField;
     private JTextField lastNameField;
     private JTextField pinField;
     private JTextField balanceField;
 
+    // Customer View
+    private JButton loginStateChange;
+
+    // Admin View
+    private JButton addAccount;
+    private JButton getAccount;
     private JList<String> accountsList;
     private JScrollPane accountsPane;
 
@@ -51,6 +62,18 @@ public class Main extends JPanel implements ActionListener {
         }
     }
 
+    private String[] recreateAccountsList() {
+//        String[] out = new String[accounts.size()];
+//        for (int i = 0; i < list.size(); i++)
+//            out[i] = list.get(i).toString() + " - " + countries.getValue(list.get(i)) + " : " + map.getValue(list.get(i)).size();
+//
+////        System.out.println("array");
+////        for(String item : out) System.out.println(" - " + item);
+//
+//        return out;
+        return accounts.toString().split(", ");
+    }
+
     public Main() {
         this.setLayout(null);
         this.setPreferredSize(new Dimension(800, 600));
@@ -79,6 +102,7 @@ public class Main extends JPanel implements ActionListener {
                             line.substring(0, line.indexOf(",")),
                             (int) (Math.random() * 10000),
                             Math.random() * 100001));
+//                    System.out.println(accounts.get(accounts.getSize() - 1).getPin());
                 }
             } catch (FileNotFoundException err) {
                 System.out.println(err);
@@ -140,18 +164,30 @@ public class Main extends JPanel implements ActionListener {
         getAccount.setBounds(25 + 200 + 15, 25 + 50 * 3 + 40 * 2, 120, 30);
         getAccount.addActionListener(this);
         add(getAccount);
-    }
 
-    private String[] recreateAccountsList() {
-//        String[] out = new String[accounts.size()];
-//        for (int i = 0; i < list.size(); i++)
-//            out[i] = list.get(i).toString() + " - " + countries.getValue(list.get(i)) + " : " + map.getValue(list.get(i)).size();
-//
-////        System.out.println("array");
-////        for(String item : out) System.out.println(" - " + item);
-//
-//        return out;
-        return accounts.toString().split(", ");
+        changeFirst = new JButton("Change First");
+        changeFirst.setBounds(25 + 200 + 15, 25 + 50 * 3 + 40 * 3, 120, 30);
+        changeFirst.addActionListener(this);
+        add(changeFirst);
+
+        changeLast = new JButton("Change Last");
+        changeLast.setBounds(25 + 200 + 15, 25 + 50 * 3 + 40 * 4, 120, 30);
+        changeLast.addActionListener(this);
+        add(changeLast);
+
+        changePIN = new JButton("Change PIN");
+        changePIN.setBounds(25 + 200 + 15, 25 + 50 * 3 + 40 * 5, 120, 30);
+        changePIN.addActionListener(this);
+        add(changePIN);
+
+        changeBalance = new JButton("Change Balance");
+        changeBalance.setBounds(25 + 200 + 15, 25 + 50 * 3 + 40 * 6, 130, 30);
+        changeBalance.addActionListener(this);
+        add(changeBalance);
+
+        newValueField = new JTextField();
+        newValueField.setBounds(25 + 200 + 15 + 130, 25 + 50 * 3 + 40 * 5, 120, 30);
+        add(newValueField);
     }
 
     @Override
@@ -169,16 +205,22 @@ public class Main extends JPanel implements ActionListener {
         g.drawString("Account Last Name", 25 + 200 + 15, 25 + 50 * 1 + textOffset);
         g.drawString("Account PIN", 25 + 200 + 15, 25 + 50 * 2 + textOffset);
         g.drawString("Account Balance", 25 + 200 + 15, 25 + 50 * 3 + textOffset);
+        g.drawString("New Value: (all account changes)", 25 + 200 + 15 + 130, 25 + 50 * 3 + 40 * 5 + textOffset);
 
         if (queriedAccount != null) {
-
+            g.drawString("Name: " + queriedAccount.getFirst() + " " + queriedAccount.getLast(), 400, 40 + textOffset);
+            g.drawString("PIN: " + queriedAccount.getPin(), 400, 40 + 15 + textOffset);
+            g.drawString("Balance: " + Math.round(queriedAccount.getBalance() * 100) / 100.0, 400, 40 + 15 * 2 + textOffset);
+//            queriedAccount = null;
         }
     }
 
     @Override
     public void actionPerformed(ActionEvent e) {
         if (e.getSource() == toAdminView) {
+            // TODO: Implement!
         } else if (e.getSource() == toCustomerView) {
+            // TODO: Implement!
         } else if (e.getSource() == addAccount) {
             try {
                 int pin = Integer.parseInt(pinField.getText());
@@ -188,13 +230,55 @@ public class Main extends JPanel implements ActionListener {
                 accountsList.setListData(recreateAccountsList());
                 writeTreeToFile();
                 operationJustPerformed = true;
-                System.out.println(accounts);
+//                System.out.println(accounts);
             } catch (NumberFormatException err) {
                 JOptionPane.showMessageDialog(this, "ERROR: PIN and Balance must be numbers!");
             }
         } else if (e.getSource() == getAccount) {
             Account query = new Account(firstNameField.getText(), lastNameField.getText(), 0, 0.0);
+//            System.out.println("\"" + firstNameField.getText() +"\", " + "\"" + lastNameField.getText() +"\"");
+            if (!accounts.contains(query))
+                JOptionPane.showMessageDialog(this, "ERROR: Account not found!");
+
             queriedAccount = accounts.get(query);
+            operationJustPerformed = true;
+        } else { // TODO: Ensure this case remains the last one checked so becomes catch-all for account modifications.
+            Account query = new Account(firstNameField.getText(), lastNameField.getText(), 0, 0.0);
+            String newValue = newValueField.getText();
+            if (firstNameField.getText().equalsIgnoreCase("") || lastNameField.getText().equalsIgnoreCase("")) {
+                JOptionPane.showMessageDialog(this, "ERROR: First and last name must not be blank!");
+                return;
+            }
+
+            if (e.getSource() == changeFirst) {
+                Account temp = accounts.remove(query);
+                temp.setFirst(newValue);
+
+                accounts.add(temp);
+                firstNameField.setText("");
+            } else if (e.getSource() == changeLast) {
+                Account temp = accounts.remove(query);
+                temp.setLast(newValue);
+
+                accounts.add(temp);
+                lastNameField.setText("");
+            } else if (e.getSource() == changePIN) {
+                try {
+                    accounts.get(query).setPin(Integer.parseInt(newValue));
+                } catch (NumberFormatException err) {
+                    JOptionPane.showMessageDialog(this, "ERROR: New PIN must be an integer number!");
+                }
+            } else if (e.getSource() == changeBalance) {
+                try {
+                    accounts.get(query).setBalance(Double.parseDouble(newValue));
+                } catch (NumberFormatException err) {
+                    JOptionPane.showMessageDialog(this, "ERROR: New PIN must be a decimal number!");
+                }
+            }
+
+            accountsList.setListData(recreateAccountsList());
+            writeTreeToFile();
+            operationJustPerformed = false;
         }
 
         repaint();

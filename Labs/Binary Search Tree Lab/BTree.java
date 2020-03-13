@@ -38,14 +38,14 @@ public class BTree<T extends Comparable<T>> implements Serializable {
         passes++;
 
         if (newRoot.get().compareTo(data) > 0) {
-            System.out.println(data + " < " + newRoot.get());
+//            System.out.println(data + " < " + newRoot.get());
             if (newRoot.getLeft() == null) {
                 TNode<T> newNode = new TNode<>(data);
                 newNode.setParent(newRoot);
                 newRoot.setLeft(newNode);
             } else add(data, newRoot.getLeft());
         } else if (newRoot.get().compareTo(data) < 0) {
-            System.out.println(data + " > " + newRoot.get());
+//            System.out.println(data + " > " + newRoot.get());
             if (newRoot.getRight() == null) {
                 TNode<T> newNode = new TNode<>(data);
                 newNode.setParent(newRoot);
@@ -64,10 +64,12 @@ public class BTree<T extends Comparable<T>> implements Serializable {
     private T get(T query, TNode<T> root) {
         passes++;
 
-        if (root.get().equals(query)) return query;
+//        System.out.println(query + " ? " + root);
+
+        if (root.get().equals(query)) return root.get();
         else if (root.get().compareTo(query) > 0)
-            return get(query, root.getRight()); // TODO: Is this the correct comparison direction?
-        else return get(query, root.getLeft());
+            return get(query, root.getLeft());
+        else return get(query, root.getRight());
     }
 
     public T get(int queryIndex) {
@@ -133,20 +135,24 @@ public class BTree<T extends Comparable<T>> implements Serializable {
 //    }
 
     public boolean contains(T element) {
+        passes = 0;
         return contains(element, root);
     }
 
     private boolean contains(T element, TNode<T> root) {
         if (root == null) return false;
+        passes++;
+
+//        System.out.println("\"" + element +"\", " + "\"" + root.get() +"\" " + (element.equals(root.get())));
 
         if (root.get().equals(element)) return true;
         else if (root.get().compareTo(element) > 0) return contains(element, root.getLeft());
         else return contains(element, root.getRight());
     }
 
-    public void remove(T element) {
-        if (!contains(element)) return;
-        else remove(element, root);
+    public T remove(T element) {
+        if (!contains(element)) return null;
+        else return remove(element, root);
     }
 
     private T getLeastInTree(TNode<T> root) {
@@ -175,8 +181,8 @@ public class BTree<T extends Comparable<T>> implements Serializable {
         } else return null;
     }
 
-    private void remove(T element, TNode<T> current) {
-        if (current == null) return;
+    private T remove(T element, TNode<T> current) {
+        if (current == null) return null;
 
         if (current.get().equals(element)) {
             boolean hasLeftChild = current.getLeft() != null;
@@ -222,10 +228,12 @@ public class BTree<T extends Comparable<T>> implements Serializable {
                 }
             }
 
-        } else if (current.get().compareTo(element) > 0)
-            remove(element, current.getLeft());
-        else
-            remove(element, current.getRight());
+            return current.get();
+        } else if (current.get().compareTo(element) > 0) {
+            return remove(element, current.getLeft());
+        } else {
+            return remove(element, current.getRight());
+        }
     }
 
     public String toString() {
