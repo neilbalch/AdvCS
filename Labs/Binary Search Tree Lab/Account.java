@@ -32,6 +32,10 @@ public class Account implements Comparable<Account>, Serializable {
         return first + " " + last;
     }
 
+    public String toStringAll() {
+        return first + " " + last + " " + pin + " " + balance;
+    }
+
     public String getFirst() {
         return first;
     }

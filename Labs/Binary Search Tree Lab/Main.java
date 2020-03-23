@@ -3,34 +3,35 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.*;
-import java.text.DecimalFormat;
 import java.util.Scanner;
 
 public class Main extends JPanel implements ActionListener {
-    private JButton toAdminView;
-    private JButton toCustomerView;
-    private boolean inAdminView = true; // TODO: Set to false by default
+    private boolean inAdminView = false;
     private boolean operationJustPerformed;
-    private Account queriedAccount;
+    private Account adminQueriedAccount;
+    private Account customerAccount;
     private final String saveFile = "treeSave.jobj";
 
     // Common
+    private JButton changeView;
     private JButton changeFirst;
     private JButton changeLast;
     private JButton changePIN;
-    private JButton changeBalance;
     private JTextField newValueField;
     private JTextField firstNameField;
     private JTextField lastNameField;
     private JTextField pinField;
-    private JTextField balanceField;
 
     // Customer View
     private JButton loginStateChange;
+    private JButton deposit;
+    private JButton withdraw;
 
     // Admin View
     private JButton addAccount;
     private JButton getAccount;
+    private JButton changeBalance;
+    private JTextField balanceField;
     private JList<String> accountsList;
     private JScrollPane accountsPane;
 
@@ -80,7 +81,8 @@ public class Main extends JPanel implements ActionListener {
 
         accounts = new BTree<Account>();
         operationJustPerformed = false;
-        queriedAccount = null;
+        adminQueriedAccount = null;
+        customerAccount = null;
 
         if ((new File(saveFile)).exists()) {
             try {
@@ -120,23 +122,16 @@ public class Main extends JPanel implements ActionListener {
 //        System.out.println(temp);
 //        System.out.println(accounts);
 
-        toAdminView = new JButton("Admin");
-        toAdminView.setBounds(25 + 200 + 15, 25, 100, 30);
-        toAdminView.addActionListener(this);
-        toAdminView.setEnabled(false);
-        toAdminView.setVisible(false);
-        add(toAdminView);
-
-        toCustomerView = new JButton("Customer");
-        toCustomerView.setBounds(25 + 200 + 15 + 120, 25, 100, 30);
-        toCustomerView.addActionListener(this);
-        toCustomerView.setVisible(false);
-        add(toCustomerView);
+        changeView = new JButton("Admin");
+        changeView.setBounds(getPreferredSize().width - 100 - 15, getPreferredSize().height - 30 - 15, 100, 30);
+        changeView.addActionListener(this);
+        add(changeView);
 
         accountsList = new JList<>();
         accountsList.setListData(recreateAccountsList());
         accountsPane = new JScrollPane(accountsList);
         accountsPane.setBounds(25, 25, 200, getPreferredSize().height - 50);
+        accountsPane.setVisible(false);
         add(accountsPane);
 
         firstNameField = new JTextField();
@@ -153,41 +148,70 @@ public class Main extends JPanel implements ActionListener {
 
         balanceField = new JTextField();
         balanceField.setBounds(25 + 200 + 15, 25 + 50 * 3, 120, 30);
+        balanceField.setVisible(false);
         add(balanceField);
 
         addAccount = new JButton("Add Account");
         addAccount.setBounds(25 + 200 + 15, 25 + 50 * 3 + 40, 120, 30);
         addAccount.addActionListener(this);
+        addAccount.setVisible(false);
         add(addAccount);
 
         getAccount = new JButton("Get Account");
         getAccount.setBounds(25 + 200 + 15, 25 + 50 * 3 + 40 * 2, 120, 30);
         getAccount.addActionListener(this);
+        getAccount.setVisible(false);
         add(getAccount);
 
         changeFirst = new JButton("Change First");
         changeFirst.setBounds(25 + 200 + 15, 25 + 50 * 3 + 40 * 3, 120, 30);
         changeFirst.addActionListener(this);
+        changeFirst.setEnabled(false);
         add(changeFirst);
 
         changeLast = new JButton("Change Last");
         changeLast.setBounds(25 + 200 + 15, 25 + 50 * 3 + 40 * 4, 120, 30);
         changeLast.addActionListener(this);
+        changeLast.setEnabled(false);
         add(changeLast);
 
         changePIN = new JButton("Change PIN");
         changePIN.setBounds(25 + 200 + 15, 25 + 50 * 3 + 40 * 5, 120, 30);
         changePIN.addActionListener(this);
+        changePIN.setEnabled(false);
         add(changePIN);
 
         changeBalance = new JButton("Change Balance");
         changeBalance.setBounds(25 + 200 + 15, 25 + 50 * 3 + 40 * 6, 130, 30);
         changeBalance.addActionListener(this);
+        changeBalance.setVisible(false);
         add(changeBalance);
 
         newValueField = new JTextField();
         newValueField.setBounds(25 + 200 + 15 + 130, 25 + 50 * 3 + 40 * 5, 120, 30);
+        newValueField.setEnabled(false);
         add(newValueField);
+
+        // Customer View
+
+        loginStateChange = new JButton("Login");
+        loginStateChange.setBounds(25 + 200 + 15 - 100 - 15, 25, 100, 30);
+        loginStateChange.addActionListener(this);
+        add(loginStateChange);
+
+        deposit = new JButton("Deposit");
+        deposit.setBounds(25 + 200 + 15, 25 + 50 * 3 + 40 * 6, 120, 30);
+        deposit.addActionListener(this);
+        deposit.setEnabled(false);
+        add(deposit);
+
+        withdraw = new JButton("Withdraw");
+        withdraw.setBounds(25 + 200 + 15, 25 + 50 * 3 + 40 * 7, 120, 30);
+        withdraw.addActionListener(this);
+        withdraw.setEnabled(false);
+        add(withdraw);
+
+        System.out.println(accounts.get(0).toStringAll());
     }
 
     @Override
@@ -196,31 +220,119 @@ public class Main extends JPanel implements ActionListener {
         int textOffset = -7;
 
         g.setColor(Color.BLACK);
-        g.drawString("Bank Accounts: ", 25, 25 + textOffset);
+        if (inAdminView) {
+            g.drawString("Bank Accounts: ", 25, 25 + textOffset);
+            g.drawString("Account Balance", 25 + 200 + 15, 25 + 50 * 3 + textOffset);
+        }
 
-        if (operationJustPerformed)
+        if (operationJustPerformed) {
             g.drawString("Operation took " + accounts.getPasses() + " passes.", 400, 25 + textOffset);
+            operationJustPerformed = false;
+        }
 
         g.drawString("Account First Name", 25 + 200 + 15, 25 + 50 * 0 + textOffset);
         g.drawString("Account Last Name", 25 + 200 + 15, 25 + 50 * 1 + textOffset);
         g.drawString("Account PIN", 25 + 200 + 15, 25 + 50 * 2 + textOffset);
-        g.drawString("Account Balance", 25 + 200 + 15, 25 + 50 * 3 + textOffset);
         g.drawString("New Value: (all account changes)", 25 + 200 + 15 + 130, 25 + 50 * 3 + 40 * 5 + textOffset);
 
-        if (queriedAccount != null) {
-            g.drawString("Name: " + queriedAccount.getFirst() + " " + queriedAccount.getLast(), 400, 40 + textOffset);
-            g.drawString("PIN: " + queriedAccount.getPin(), 400, 40 + 15 + textOffset);
-            g.drawString("Balance: " + Math.round(queriedAccount.getBalance() * 100) / 100.0, 400, 40 + 15 * 2 + textOffset);
-//            queriedAccount = null;
+        if (adminQueriedAccount != null) {
+            g.drawString("Name: " + adminQueriedAccount.getFirst() + " " + adminQueriedAccount.getLast(), 400, 40 + textOffset);
+            g.drawString("PIN: " + adminQueriedAccount.getPin(), 400, 40 + 15 + textOffset);
+            g.drawString("Balance: $" + Math.round(adminQueriedAccount.getBalance() * 100) / 100.0, 400, 40 + 15 * 2 + textOffset);
+        }
+        if (customerAccount != null) {
+            g.drawString("Name: " + customerAccount.getFirst() + " " + customerAccount.getLast(), 400, 40 + textOffset);
+            g.drawString("PIN: " + customerAccount.getPin(), 400, 40 + 15 + textOffset);
+            g.drawString("Balance: $" + Math.round(customerAccount.getBalance() * 100) / 100.0, 400, 40 + 15 * 2 + textOffset);
         }
     }
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        if (e.getSource() == toAdminView) {
-            // TODO: Implement!
-        } else if (e.getSource() == toCustomerView) {
-            // TODO: Implement!
+        if (e.getSource() == changeView) {
+            inAdminView = !inAdminView;
+
+            if (inAdminView) {
+                addAccount.setVisible(true);
+                getAccount.setVisible(true);
+                changeBalance.setVisible(true);
+                balanceField.setVisible(true);
+                accountsPane.setVisible(true);
+
+                customerAccount = null;
+                changeFirst.setEnabled(true);
+                changeLast.setEnabled(true);
+                changePIN.setEnabled(true);
+                newValueField.setEnabled(true);
+
+                loginStateChange.setVisible(false);
+                deposit.setVisible(false);
+                withdraw.setVisible(false);
+
+                changeView.setText("Customer");
+            } else {
+                addAccount.setVisible(false);
+                getAccount.setVisible(false);
+                changeBalance.setVisible(false);
+                balanceField.setVisible(false);
+                accountsPane.setVisible(false);
+
+                changeFirst.setEnabled(false);
+                changeLast.setEnabled(false);
+                changePIN.setEnabled(false);
+                newValueField.setEnabled(false);
+
+                loginStateChange.setVisible(true);
+                deposit.setVisible(true);
+                withdraw.setVisible(true);
+
+                changeView.setText("Admin");
+            }
+        } else if (e.getSource() == loginStateChange) {
+            if (customerAccount != null) {
+                customerAccount = null;
+                loginStateChange.setText("Login");
+
+                changeFirst.setEnabled(false);
+                changeLast.setEnabled(false);
+                changePIN.setEnabled(false);
+                deposit.setEnabled(false);
+                withdraw.setEnabled(false);
+                newValueField.setEnabled(false);
+            } else {
+                Account query = new Account(firstNameField.getText(), lastNameField.getText(), 0, 0.0);
+                if (firstNameField.getText().equalsIgnoreCase("") || lastNameField.getText().equalsIgnoreCase("")) {
+                    JOptionPane.showMessageDialog(this, "ERROR: First and last name must not be blank!");
+                    return;
+                } else if (!accounts.contains(query)) {
+                    JOptionPane.showMessageDialog(this, "ERROR: Account not found!");
+                    return;
+                } else {
+                    query = accounts.get(query);
+                    try {
+                        int parsedPIN = Integer.parseInt(pinField.getText());
+//                        System.out.println("parsedPIN: " + parsedPIN + ", query.pin: " + query.getPin());
+                        if (query.getPin() != parsedPIN) {
+                            JOptionPane.showMessageDialog(this, "ERROR: PIN is incorrect!");
+                            return;
+                        } else {
+                            customerAccount = query;
+                            loginStateChange.setText("Logout");
+                            operationJustPerformed = true;
+
+                            changeFirst.setEnabled(true);
+                            changeLast.setEnabled(true);
+                            changePIN.setEnabled(true);
+                            deposit.setEnabled(true);
+                            withdraw.setEnabled(true);
+                            newValueField.setEnabled(true);
+                        }
+                    } catch (NumberFormatException err) {
+                        JOptionPane.showMessageDialog(this, "ERROR: PIN must be an integer!");
+                        return;
+                    }
+                }
+            }
         } else if (e.getSource() == addAccount) {
             try {
                 int pin = Integer.parseInt(pinField.getText());
@@ -240,8 +352,24 @@ public class Main extends JPanel implements ActionListener {
             if (!accounts.contains(query))
                 JOptionPane.showMessageDialog(this, "ERROR: Account not found!");
 
-            queriedAccount = accounts.get(query);
+            adminQueriedAccount = accounts.get(query);
             operationJustPerformed = true;
+        } else if (e.getSource() == deposit) {
+            try {
+                double change = Double.parseDouble(newValueField.getText());
+                customerAccount.setBalance(customerAccount.getBalance() + change);
+            } catch (NumberFormatException err) {
+                JOptionPane.showMessageDialog(this, "ERROR: Deposit must be a number!");
+                return;
+            }
+        } else if (e.getSource() == withdraw) {
+            try {
+                double change = Double.parseDouble(newValueField.getText());
+                customerAccount.setBalance(customerAccount.getBalance() - change);
+            } catch (NumberFormatException err) {
+                JOptionPane.showMessageDialog(this, "ERROR: Withdraw amount must be a number!");
+                return;
+            }
         } else { // TODO: Ensure this case remains the last one checked so becomes catch-all for account modifications.
             Account query = new Account(firstNameField.getText(), lastNameField.getText(), 0, 0.0);
             String newValue = newValueField.getText();
@@ -251,17 +379,26 @@ public class Main extends JPanel implements ActionListener {
             }
 
             if (e.getSource() == changeFirst) {
+                if (newValue.equals("")) {
+                    JOptionPane.showMessageDialog(this, "ERROR: New first name must not be empty!");
+                    return;
+                }
+
                 Account temp = accounts.remove(query);
                 temp.setFirst(newValue);
 
                 accounts.add(temp);
-                firstNameField.setText("");
+                firstNameField.setText(newValue);
             } else if (e.getSource() == changeLast) {
+                if (newValue.equals("")) {
+                    JOptionPane.showMessageDialog(this, "ERROR: New last name must not be empty!");
+                    return;
+                }
                 Account temp = accounts.remove(query);
                 temp.setLast(newValue);
 
                 accounts.add(temp);
-                lastNameField.setText("");
+                lastNameField.setText(newValue);
             } else if (e.getSource() == changePIN) {
                 try {
                     accounts.get(query).setPin(Integer.parseInt(newValue));

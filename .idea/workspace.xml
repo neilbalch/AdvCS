@@ -2,10 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="36939a02-4d05-4550-9e2f-c504bf2e9922" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Labs/Binary Search Tree Lab/treeSave.jobj" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Labs/Binary Search Tree Lab/BalchNeilBinarySearchTreeLab.zip" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Labs/Binary Search Tree Lab/BTree.java" beforeDir="false" afterPath="$PROJECT_DIR$/Labs/Binary Search Tree Lab/BTree.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Labs/Binary Search Tree Lab/Account.java" beforeDir="false" afterPath="$PROJECT_DIR$/Labs/Binary Search Tree Lab/Account.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Labs/Binary Search Tree Lab/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/Labs/Binary Search Tree Lab/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Labs/Binary Search Tree Lab/treeSave.jobj" beforeDir="false" afterPath="$PROJECT_DIR$/Labs/Binary Search Tree Lab/treeSave.jobj" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -130,6 +131,7 @@
       </method>
     </configuration>
     <list>
+      <item itemvalue="Application.Main" />
       <item itemvalue="Application.Main2432" />
       <item itemvalue="Application.Main (2)" />
       <item itemvalue="Application.Main (3)" />
@@ -219,14 +221,9 @@
       <workItem from="1583425228326" duration="5365000" />
       <workItem from="1583455338259" duration="3726000" />
       <workItem from="1583767828107" duration="550000" />
-      <workItem from="1583768925522" duration="14406000" />
-    </task>
-    <task id="LOCAL-00052" summary="Formatting for classwork from November 12, 2019.">
-      <created>1573621135927</created>
-      <option name="number" value="00052" />
-      <option name="presentableId" value="LOCAL-00052" />
-      <option name="project" value="LOCAL" />
-      <updated>1573621135927</updated>
+      <workItem from="1583768925522" duration="14969000" />
+      <workItem from="1584212000136" duration="2448000" />
+      <workItem from="1584915959813" duration="4290000" />
     </task>
     <task id="LOCAL-00053" summary="Fix classwork from November 12, 2019.">
       <created>1573750972487</created>
@@ -564,7 +561,14 @@
       <option name="project" value="LOCAL" />
       <updated>1584031574890</updated>
     </task>
-    <option name="localTasksCounter" value="101" />
+    <task id="LOCAL-00101" summary="Work on Binary Tree lab from March 13, 2020.">
+      <created>1584115204190</created>
+      <option name="number" value="00101" />
+      <option name="presentableId" value="LOCAL-00101" />
+      <option name="project" value="LOCAL" />
+      <updated>1584115204190</updated>
+    </task>
+    <option name="localTasksCounter" value="102" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -586,7 +590,6 @@
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Vast majority of work on Singly Linked List Lab -- conform to spec" />
     <MESSAGE value="Singly Linked List Lab fina commit" />
     <MESSAGE value="Part 1 of classwork from January 21, 2020" />
     <MESSAGE value="Part 2 (WIP) of classwork from January 24, 2020" />
@@ -611,7 +614,8 @@
     <MESSAGE value="Bug-free classwork from March 9, 2020." />
     <MESSAGE value="Initial commit for Binary Tree lab from March 10, 2020." />
     <MESSAGE value="Work on Binary Tree lab from March 12, 2020." />
-    <option name="LAST_COMMIT_MESSAGE" value="Work on Binary Tree lab from March 12, 2020." />
+    <MESSAGE value="Work on Binary Tree lab from March 13, 2020." />
+    <option name="LAST_COMMIT_MESSAGE" value="Work on Binary Tree lab from March 13, 2020." />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="WindowStateProjectService">
@@ -627,42 +631,38 @@
       <screen x="0" y="0" width="1858" height="1080" />
     </state>
     <state x="734" y="224" key="#com.intellij.ide.util.MemberChooser/0.0.1858.1080@0.0.1858.1080" timestamp="1583855506822" />
-    <state x="609" y="267" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog" timestamp="1575389487210">
-      <screen x="0" y="0" width="1858" height="1080" />
-    </state>
-    <state x="609" y="267" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog/0.0.1858.1080@0.0.1858.1080" timestamp="1575389487210" />
     <state x="436" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1582563130029">
       <screen x="0" y="0" width="1858" height="1080" />
     </state>
     <state x="436" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1858.1080@0.0.1858.1080" timestamp="1582563130029" />
-    <state x="659" y="287" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1584114502543">
+    <state x="659" y="287" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1584996261899">
       <screen x="0" y="0" width="1858" height="1080" />
     </state>
-    <state x="659" y="287" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1858.1080@0.0.1858.1080" timestamp="1584114502543" />
-    <state x="497" y="134" key="CommitChangelistDialog2" timestamp="1584031573953">
+    <state x="659" y="287" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1858.1080@0.0.1858.1080" timestamp="1584996261899" />
+    <state x="497" y="134" key="CommitChangelistDialog2" timestamp="1584115203230">
       <screen x="0" y="0" width="1858" height="1080" />
     </state>
-    <state x="497" y="134" key="CommitChangelistDialog2/0.0.1858.1080@0.0.1858.1080" timestamp="1584031573953" />
+    <state x="497" y="134" key="CommitChangelistDialog2/0.0.1858.1080@0.0.1858.1080" timestamp="1584115203230" />
     <state x="709" y="232" key="FileChooserDialogImpl" timestamp="1584113913190">
       <screen x="0" y="0" width="1858" height="1080" />
     </state>
     <state x="709" y="232" key="FileChooserDialogImpl/0.0.1858.1080@0.0.1858.1080" timestamp="1584113913190" />
-    <state width="1837" height="276" key="GridCell.Tab.0.bottom" timestamp="1584115188351">
+    <state width="1837" height="276" key="GridCell.Tab.0.bottom" timestamp="1584996358238">
       <screen x="0" y="0" width="1858" height="1080" />
     </state>
-    <state width="1837" height="276" key="GridCell.Tab.0.bottom/0.0.1858.1080@0.0.1858.1080" timestamp="1584115188351" />
-    <state width="1837" height="276" key="GridCell.Tab.0.center" timestamp="1584115188350">
+    <state width="1837" height="276" key="GridCell.Tab.0.bottom/0.0.1858.1080@0.0.1858.1080" timestamp="1584996358238" />
+    <state width="1837" height="276" key="GridCell.Tab.0.center" timestamp="1584996358238">
       <screen x="0" y="0" width="1858" height="1080" />
     </state>
-    <state width="1837" height="276" key="GridCell.Tab.0.center/0.0.1858.1080@0.0.1858.1080" timestamp="1584115188350" />
-    <state width="1837" height="276" key="GridCell.Tab.0.left" timestamp="1584115188350">
+    <state width="1837" height="276" key="GridCell.Tab.0.center/0.0.1858.1080@0.0.1858.1080" timestamp="1584996358238" />
+    <state width="1837" height="276" key="GridCell.Tab.0.left" timestamp="1584996358238">
       <screen x="0" y="0" width="1858" height="1080" />
     </state>
-    <state width="1837" height="276" key="GridCell.Tab.0.left/0.0.1858.1080@0.0.1858.1080" timestamp="1584115188350" />
-    <state width="1837" height="276" key="GridCell.Tab.0.right" timestamp="1584115188351">
+    <state width="1837" height="276" key="GridCell.Tab.0.left/0.0.1858.1080@0.0.1858.1080" timestamp="1584996358238" />
+    <state width="1837" height="276" key="GridCell.Tab.0.right" timestamp="1584996358238">
       <screen x="0" y="0" width="1858" height="1080" />
     </state>
-    <state width="1837" height="276" key="GridCell.Tab.0.right/0.0.1858.1080@0.0.1858.1080" timestamp="1584115188351" />
+    <state width="1837" height="276" key="GridCell.Tab.0.right/0.0.1858.1080@0.0.1858.1080" timestamp="1584996358238" />
     <state width="1837" height="255" key="GridCell.Tab.1.bottom" timestamp="1584029029382">
       <screen x="0" y="0" width="1858" height="1080" />
     </state>
@@ -683,10 +683,14 @@
       <screen x="0" y="0" width="1858" height="1080" />
     </state>
     <state x="594" y="238" key="NewModule_or_Project.wizard/0.0.1858.1080@0.0.1858.1080" timestamp="1583855230361" />
-    <state x="521" y="272" width="683" height="533" key="Vcs.Push.Dialog.v2" timestamp="1584031594699">
+    <state x="721" y="261" key="RollbackChangesDialog" timestamp="1584498302456">
       <screen x="0" y="0" width="1858" height="1080" />
     </state>
-    <state x="521" y="272" width="683" height="533" key="Vcs.Push.Dialog.v2/0.0.1858.1080@0.0.1858.1080" timestamp="1584031594699" />
+    <state x="721" y="261" key="RollbackChangesDialog/0.0.1858.1080@0.0.1858.1080" timestamp="1584498302456" />
+    <state x="521" y="272" width="683" height="533" key="Vcs.Push.Dialog.v2" timestamp="1584115222316">
+      <screen x="0" y="0" width="1858" height="1080" />
+    </state>
+    <state x="521" y="272" width="683" height="533" key="Vcs.Push.Dialog.v2/0.0.1858.1080@0.0.1858.1080" timestamp="1584115222316" />
     <state x="633" y="433" key="com.intellij.jarRepository.RepositoryAttachDialog-DOWNLOAD" timestamp="1582824726464">
       <screen x="0" y="0" width="1858" height="1080" />
     </state>
