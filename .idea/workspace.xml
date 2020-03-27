@@ -2,11 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="36939a02-4d05-4550-9e2f-c504bf2e9922" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Labs/Binary Search Tree Lab/BalchNeilBinarySearchTreeLab.zip" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Q4/03272020/03272020.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Q4/03272020/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Labs/Binary Search Tree Lab/Account.java" beforeDir="false" afterPath="$PROJECT_DIR$/Labs/Binary Search Tree Lab/Account.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Labs/Binary Search Tree Lab/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/Labs/Binary Search Tree Lab/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Labs/Binary Search Tree Lab/treeSave.jobj" beforeDir="false" afterPath="$PROJECT_DIR$/Labs/Binary Search Tree Lab/treeSave.jobj" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -64,7 +63,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/Labs/Binary Search Tree Lab" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/Q4/03272020" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -92,7 +91,14 @@
       <recent name="C:\Users\neilb\Documents\GitHub\AdvCS\Labs\Video Poker Lab" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.Main12345678">
+  <component name="RunManager" selected="Application.Main (1)">
+    <configuration name="Main (1)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Main" />
+      <module name="03272020" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="Main (2)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Main" />
       <module name="03052020" />
@@ -122,28 +128,20 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Main2432" type="Application" factoryName="Application" temporary="true">
-      <option name="MAIN_CLASS_NAME" value="Main" />
-      <module name="MyHashMap Lab" />
-      <option name="WORKING_DIRECTORY" value="$MODULE_WORKING_DIR$" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <list>
       <item itemvalue="Application.Main" />
-      <item itemvalue="Application.Main2432" />
       <item itemvalue="Application.Main (2)" />
       <item itemvalue="Application.Main (3)" />
       <item itemvalue="Application.Main12345678" />
+      <item itemvalue="Application.Main (1)" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.Main (1)" />
         <item itemvalue="Application.Main12345678" />
         <item itemvalue="Application.Main (3)" />
         <item itemvalue="Application.Main (2)" />
         <item itemvalue="Application.Main" />
-        <item itemvalue="Application.Main2432" />
       </list>
     </recent_temporary>
   </component>
@@ -223,14 +221,8 @@
       <workItem from="1583767828107" duration="550000" />
       <workItem from="1583768925522" duration="14969000" />
       <workItem from="1584212000136" duration="2448000" />
-      <workItem from="1584915959813" duration="4290000" />
-    </task>
-    <task id="LOCAL-00053" summary="Fix classwork from November 12, 2019.">
-      <created>1573750972487</created>
-      <option name="number" value="00053" />
-      <option name="presentableId" value="LOCAL-00053" />
-      <option name="project" value="LOCAL" />
-      <updated>1573750972487</updated>
+      <workItem from="1584915959813" duration="5565000" />
+      <workItem from="1585284915715" duration="1752000" />
     </task>
     <task id="LOCAL-00054" summary="Work from classtime on Networking Lab from November 14 and 15, 2019.">
       <created>1573837477626</created>
@@ -568,7 +560,14 @@
       <option name="project" value="LOCAL" />
       <updated>1584115204190</updated>
     </task>
-    <option name="localTasksCounter" value="102" />
+    <task id="LOCAL-00102" summary="Finished Binary Tree lab (March 23, 2020).">
+      <created>1584996384895</created>
+      <option name="number" value="00102" />
+      <option name="presentableId" value="LOCAL-00102" />
+      <option name="project" value="LOCAL" />
+      <updated>1584996384895</updated>
+    </task>
+    <option name="localTasksCounter" value="103" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -590,7 +589,6 @@
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Singly Linked List Lab fina commit" />
     <MESSAGE value="Part 1 of classwork from January 21, 2020" />
     <MESSAGE value="Part 2 (WIP) of classwork from January 24, 2020" />
     <MESSAGE value="Most of classwork from January 27, 2020" />
@@ -615,7 +613,8 @@
     <MESSAGE value="Initial commit for Binary Tree lab from March 10, 2020." />
     <MESSAGE value="Work on Binary Tree lab from March 12, 2020." />
     <MESSAGE value="Work on Binary Tree lab from March 13, 2020." />
-    <option name="LAST_COMMIT_MESSAGE" value="Work on Binary Tree lab from March 13, 2020." />
+    <MESSAGE value="Finished Binary Tree lab (March 23, 2020)." />
+    <option name="LAST_COMMIT_MESSAGE" value="Finished Binary Tree lab (March 23, 2020)." />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="WindowStateProjectService">
@@ -639,30 +638,30 @@
       <screen x="0" y="0" width="1858" height="1080" />
     </state>
     <state x="659" y="287" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1858.1080@0.0.1858.1080" timestamp="1584996261899" />
-    <state x="497" y="134" key="CommitChangelistDialog2" timestamp="1584115203230">
+    <state x="497" y="134" key="CommitChangelistDialog2" timestamp="1584996383981">
       <screen x="0" y="0" width="1858" height="1080" />
     </state>
-    <state x="497" y="134" key="CommitChangelistDialog2/0.0.1858.1080@0.0.1858.1080" timestamp="1584115203230" />
-    <state x="709" y="232" key="FileChooserDialogImpl" timestamp="1584113913190">
+    <state x="497" y="134" key="CommitChangelistDialog2/0.0.1858.1080@0.0.1858.1080" timestamp="1584996383981" />
+    <state x="709" y="232" key="FileChooserDialogImpl" timestamp="1585329174848">
       <screen x="0" y="0" width="1858" height="1080" />
     </state>
-    <state x="709" y="232" key="FileChooserDialogImpl/0.0.1858.1080@0.0.1858.1080" timestamp="1584113913190" />
-    <state width="1837" height="276" key="GridCell.Tab.0.bottom" timestamp="1584996358238">
+    <state x="709" y="232" key="FileChooserDialogImpl/0.0.1858.1080@0.0.1858.1080" timestamp="1585329174848" />
+    <state width="1837" height="276" key="GridCell.Tab.0.bottom" timestamp="1585330354837">
       <screen x="0" y="0" width="1858" height="1080" />
     </state>
-    <state width="1837" height="276" key="GridCell.Tab.0.bottom/0.0.1858.1080@0.0.1858.1080" timestamp="1584996358238" />
-    <state width="1837" height="276" key="GridCell.Tab.0.center" timestamp="1584996358238">
+    <state width="1837" height="276" key="GridCell.Tab.0.bottom/0.0.1858.1080@0.0.1858.1080" timestamp="1585330354837" />
+    <state width="1837" height="276" key="GridCell.Tab.0.center" timestamp="1585330354837">
       <screen x="0" y="0" width="1858" height="1080" />
     </state>
-    <state width="1837" height="276" key="GridCell.Tab.0.center/0.0.1858.1080@0.0.1858.1080" timestamp="1584996358238" />
-    <state width="1837" height="276" key="GridCell.Tab.0.left" timestamp="1584996358238">
+    <state width="1837" height="276" key="GridCell.Tab.0.center/0.0.1858.1080@0.0.1858.1080" timestamp="1585330354837" />
+    <state width="1837" height="276" key="GridCell.Tab.0.left" timestamp="1585330354837">
       <screen x="0" y="0" width="1858" height="1080" />
     </state>
-    <state width="1837" height="276" key="GridCell.Tab.0.left/0.0.1858.1080@0.0.1858.1080" timestamp="1584996358238" />
-    <state width="1837" height="276" key="GridCell.Tab.0.right" timestamp="1584996358238">
+    <state width="1837" height="276" key="GridCell.Tab.0.left/0.0.1858.1080@0.0.1858.1080" timestamp="1585330354837" />
+    <state width="1837" height="276" key="GridCell.Tab.0.right" timestamp="1585330354837">
       <screen x="0" y="0" width="1858" height="1080" />
     </state>
-    <state width="1837" height="276" key="GridCell.Tab.0.right/0.0.1858.1080@0.0.1858.1080" timestamp="1584996358238" />
+    <state width="1837" height="276" key="GridCell.Tab.0.right/0.0.1858.1080@0.0.1858.1080" timestamp="1585330354837" />
     <state width="1837" height="255" key="GridCell.Tab.1.bottom" timestamp="1584029029382">
       <screen x="0" y="0" width="1858" height="1080" />
     </state>
@@ -679,18 +678,18 @@
       <screen x="0" y="0" width="1858" height="1080" />
     </state>
     <state width="1837" height="255" key="GridCell.Tab.1.right/0.0.1858.1080@0.0.1858.1080" timestamp="1584029029382" />
-    <state x="594" y="238" key="NewModule_or_Project.wizard" timestamp="1583855230361">
+    <state x="594" y="238" key="NewModule_or_Project.wizard" timestamp="1585329176956">
       <screen x="0" y="0" width="1858" height="1080" />
     </state>
-    <state x="594" y="238" key="NewModule_or_Project.wizard/0.0.1858.1080@0.0.1858.1080" timestamp="1583855230361" />
+    <state x="594" y="238" key="NewModule_or_Project.wizard/0.0.1858.1080@0.0.1858.1080" timestamp="1585329176956" />
     <state x="721" y="261" key="RollbackChangesDialog" timestamp="1584498302456">
       <screen x="0" y="0" width="1858" height="1080" />
     </state>
     <state x="721" y="261" key="RollbackChangesDialog/0.0.1858.1080@0.0.1858.1080" timestamp="1584498302456" />
-    <state x="521" y="272" width="683" height="533" key="Vcs.Push.Dialog.v2" timestamp="1584115222316">
+    <state x="521" y="272" width="683" height="533" key="Vcs.Push.Dialog.v2" timestamp="1584996386459">
       <screen x="0" y="0" width="1858" height="1080" />
     </state>
-    <state x="521" y="272" width="683" height="533" key="Vcs.Push.Dialog.v2/0.0.1858.1080@0.0.1858.1080" timestamp="1584115222316" />
+    <state x="521" y="272" width="683" height="533" key="Vcs.Push.Dialog.v2/0.0.1858.1080@0.0.1858.1080" timestamp="1584996386459" />
     <state x="633" y="433" key="com.intellij.jarRepository.RepositoryAttachDialog-DOWNLOAD" timestamp="1582824726464">
       <screen x="0" y="0" width="1858" height="1080" />
     </state>
