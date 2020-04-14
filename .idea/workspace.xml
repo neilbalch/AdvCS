@@ -2,10 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="36939a02-4d05-4550-9e2f-c504bf2e9922" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Q4/04042020/04042020.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Q4/04042020/BTree.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Q4/04042020/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Q4/04042020/TNode.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Q4/04142020/BTree.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Q4/04142020/Main.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Q4/04142020/TNode.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
@@ -52,7 +51,6 @@
   </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
-    <option name="showExcludedFiles" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
@@ -61,11 +59,13 @@
     <property name="Repository.Attach.Annotations" value="false" />
     <property name="Repository.Attach.JavaDocs" value="false" />
     <property name="Repository.Attach.Sources" value="false" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/Q4/04042020" />
+    <property name="ignore.virus.scanning.warn.message" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/Q4/04142020" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -79,21 +79,21 @@
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
-    <property name="settings.editor.selected.configurable" value="editor.preferences.fonts.default" />
+    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
   </component>
   <component name="RecentsManager">
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\neilb\Documents\GitHub\AdvCS\Q4\04142020" />
       <recent name="C:\Users\neilb\Documents\GitHub\AdvCS\Q4" />
       <recent name="C:\Users\neilb\Documents\GitHub\AdvCS\Q4\03312020" />
       <recent name="C:\Users\neilb\Documents\GitHub\AdvCS\Labs\Binary Search Tree Lab" />
       <recent name="C:\Users\neilb\Documents\GitHub\AdvCS\Labs\MyHashMap Lab" />
-      <recent name="C:\Users\neilb\Documents\GitHub\AdvCS\Labs\HashTable Lab" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.Main">
+  <component name="RunManager" selected="Application.Main (2)">
     <configuration name="Main (1)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Main" />
       <module name="03272020" />
@@ -101,9 +101,9 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Main (3)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+    <configuration name="Main (2)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Main" />
-      <module name="03092020" />
+      <module name="04142020" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -131,33 +131,21 @@
       </method>
     </configuration>
     <list>
-      <item itemvalue="Application.Main (3)" />
       <item itemvalue="Application.Main12345678" />
       <item itemvalue="Application.Main (1)" />
       <item itemvalue="Application.Main (4)" />
       <item itemvalue="Application.Main" />
+      <item itemvalue="Application.Main (2)" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.Main (2)" />
         <item itemvalue="Application.Main" />
         <item itemvalue="Application.Main (4)" />
         <item itemvalue="Application.Main (1)" />
         <item itemvalue="Application.Main12345678" />
-        <item itemvalue="Application.Main (3)" />
       </list>
     </recent_temporary>
-  </component>
-  <component name="ServiceViewManager">
-    <option name="viewStates">
-      <list>
-        <serviceView>
-          <treeState>
-            <expand />
-            <select />
-          </treeState>
-        </serviceView>
-      </list>
-    </option>
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -226,6 +214,9 @@
       <workItem from="1584915959813" duration="5565000" />
       <workItem from="1585284915715" duration="2465000" />
       <workItem from="1585375054893" duration="4389000" />
+      <workItem from="1586214605792" duration="615000" />
+      <workItem from="1586806393296" duration="613000" />
+      <workItem from="1586817414949" duration="2517000" />
     </task>
     <task id="LOCAL-00056" summary="Full Networking Lab, minus challenge.">
       <created>1573878478922</created>
@@ -574,20 +565,19 @@
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
-    <option name="version" value="1" />
+    <option name="version" value="2" />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
       <map>
         <entry key="MAIN">
           <value>
-            <State>
-              <option name="COLUMN_ORDER" />
-            </State>
+            <State />
           </value>
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
@@ -645,26 +635,26 @@
       <screen x="0" y="0" width="1858" height="1080" />
     </state>
     <state x="497" y="134" key="CommitChangelistDialog2/0.0.1858.1080@0.0.1858.1080" timestamp="1586042441245" />
-    <state x="709" y="232" key="FileChooserDialogImpl" timestamp="1586041858450">
+    <state x="709" y="232" key="FileChooserDialogImpl" timestamp="1586889428816">
       <screen x="0" y="0" width="1858" height="1080" />
     </state>
-    <state x="709" y="232" key="FileChooserDialogImpl/0.0.1858.1080@0.0.1858.1080" timestamp="1586041858450" />
-    <state width="1837" height="276" key="GridCell.Tab.0.bottom" timestamp="1586042424147">
+    <state x="709" y="232" key="FileChooserDialogImpl/0.0.1858.1080@0.0.1858.1080" timestamp="1586889428816" />
+    <state width="1837" height="276" key="GridCell.Tab.0.bottom" timestamp="1586890091646">
       <screen x="0" y="0" width="1858" height="1080" />
     </state>
-    <state width="1837" height="276" key="GridCell.Tab.0.bottom/0.0.1858.1080@0.0.1858.1080" timestamp="1586042424147" />
-    <state width="1837" height="276" key="GridCell.Tab.0.center" timestamp="1586042424146">
+    <state width="1837" height="276" key="GridCell.Tab.0.bottom/0.0.1858.1080@0.0.1858.1080" timestamp="1586890091646" />
+    <state width="1837" height="276" key="GridCell.Tab.0.center" timestamp="1586890091646">
       <screen x="0" y="0" width="1858" height="1080" />
     </state>
-    <state width="1837" height="276" key="GridCell.Tab.0.center/0.0.1858.1080@0.0.1858.1080" timestamp="1586042424146" />
-    <state width="1837" height="276" key="GridCell.Tab.0.left" timestamp="1586042424146">
+    <state width="1837" height="276" key="GridCell.Tab.0.center/0.0.1858.1080@0.0.1858.1080" timestamp="1586890091646" />
+    <state width="1837" height="276" key="GridCell.Tab.0.left" timestamp="1586890091646">
       <screen x="0" y="0" width="1858" height="1080" />
     </state>
-    <state width="1837" height="276" key="GridCell.Tab.0.left/0.0.1858.1080@0.0.1858.1080" timestamp="1586042424146" />
-    <state width="1837" height="276" key="GridCell.Tab.0.right" timestamp="1586042424146">
+    <state width="1837" height="276" key="GridCell.Tab.0.left/0.0.1858.1080@0.0.1858.1080" timestamp="1586890091646" />
+    <state width="1837" height="276" key="GridCell.Tab.0.right" timestamp="1586890091646">
       <screen x="0" y="0" width="1858" height="1080" />
     </state>
-    <state width="1837" height="276" key="GridCell.Tab.0.right/0.0.1858.1080@0.0.1858.1080" timestamp="1586042424146" />
+    <state width="1837" height="276" key="GridCell.Tab.0.right/0.0.1858.1080@0.0.1858.1080" timestamp="1586890091646" />
     <state width="1837" height="255" key="GridCell.Tab.1.bottom" timestamp="1585698674247">
       <screen x="0" y="0" width="1858" height="1080" />
     </state>
@@ -681,14 +671,18 @@
       <screen x="0" y="0" width="1858" height="1080" />
     </state>
     <state width="1837" height="255" key="GridCell.Tab.1.right/0.0.1858.1080@0.0.1858.1080" timestamp="1585698674247" />
-    <state x="594" y="238" key="NewModule_or_Project.wizard" timestamp="1586041866611">
+    <state x="594" y="238" key="NewModule_or_Project.wizard" timestamp="1586889432943">
       <screen x="0" y="0" width="1858" height="1080" />
     </state>
-    <state x="594" y="238" key="NewModule_or_Project.wizard/0.0.1858.1080@0.0.1858.1080" timestamp="1586041866611" />
+    <state x="594" y="238" key="NewModule_or_Project.wizard/0.0.1858.1080@0.0.1858.1080" timestamp="1586889432943" />
     <state x="721" y="261" key="RollbackChangesDialog" timestamp="1584498302456">
       <screen x="0" y="0" width="1858" height="1080" />
     </state>
     <state x="721" y="261" key="RollbackChangesDialog/0.0.1858.1080@0.0.1858.1080" timestamp="1584498302456" />
+    <state x="430" y="184" key="SettingsEditor" timestamp="1586889479444">
+      <screen x="0" y="0" width="1858" height="1080" />
+    </state>
+    <state x="430" y="184" key="SettingsEditor/0.0.1858.1080@0.0.1858.1080" timestamp="1586889479444" />
     <state x="521" y="272" width="683" height="533" key="Vcs.Push.Dialog.v2" timestamp="1586042453182">
       <screen x="0" y="0" width="1858" height="1080" />
     </state>
@@ -731,7 +725,7 @@
     </breakpoint-manager>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/AdvCS$Server.ic" NAME="Server Coverage Results" MODIFIED="1573590929592" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
     <SUITE FILE_PATH="coverage/AdvCS$WarmUp__1_.ic" NAME="WarmUp (1) Coverage Results" MODIFIED="1568906781169" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/AdvCS$Server.ic" NAME="Server Coverage Results" MODIFIED="1573590929592" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
   </component>
 </project>
