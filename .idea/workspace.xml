@@ -20,10 +20,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="36939a02-4d05-4550-9e2f-c504bf2e9922" name="Default Changelist" comment="Classwork from April 16, 2020.">
-      <change afterPath="$PROJECT_DIR$/Q4/04242020/04242020.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Q4/04242020/BTree.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Q4/04242020/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Q4/04242020/TNode.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Q4/04272020/04272020.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Q4/04272020/Demo.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
@@ -85,7 +83,7 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="ignore.virus.scanning.warn.message" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/Q4/04242020" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/Q4/04272020" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -106,14 +104,21 @@
       <recent name="" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\neilb\Documents\GitHub\AdvCS\Q4\04272020" />
       <recent name="C:\Users\neilb\Documents\GitHub\AdvCS\Q4\04242020" />
       <recent name="C:\Users\neilb\Documents\GitHub\AdvCS\Q4\04202020" />
       <recent name="C:\Users\neilb\Documents\GitHub\AdvCS\Q4\04172020" />
       <recent name="C:\Users\neilb\Documents\GitHub\AdvCS\Q4\04142020" />
-      <recent name="C:\Users\neilb\Documents\GitHub\AdvCS\Q4" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.Main (1)">
+  <component name="RunManager" selected="Application.Demo">
+    <configuration name="Demo" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Demo" />
+      <module name="04272020" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="Main (1)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Main" />
       <module name="04242020" />
@@ -142,27 +147,20 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Main" />
-      <module name="04042020" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <list>
-      <item itemvalue="Application.Main" />
       <item itemvalue="Application.Main (2)" />
       <item itemvalue="Application.Main (3)" />
       <item itemvalue="Application.Main (5)" />
       <item itemvalue="Application.Main (1)" />
+      <item itemvalue="Application.Demo" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.Demo" />
         <item itemvalue="Application.Main (1)" />
         <item itemvalue="Application.Main (5)" />
         <item itemvalue="Application.Main (3)" />
         <item itemvalue="Application.Main (2)" />
-        <item itemvalue="Application.Main" />
       </list>
     </recent_temporary>
   </component>
@@ -238,14 +236,8 @@
       <workItem from="1586817414949" duration="3800000" />
       <workItem from="1587012603659" duration="1590000" />
       <workItem from="1587407885477" duration="1629000" />
-      <workItem from="1587745455087" duration="5468000" />
-    </task>
-    <task id="LOCAL-00059" summary="Animations for Networking Lab">
-      <created>1574311354071</created>
-      <option name="number" value="00059" />
-      <option name="presentableId" value="LOCAL-00059" />
-      <option name="project" value="LOCAL" />
-      <updated>1574311354072</updated>
+      <workItem from="1587745455087" duration="5750000" />
+      <workItem from="1588009970657" duration="1526000" />
     </task>
     <task id="LOCAL-00060" summary="Initial framework work for Semester 1 Final project.">
       <created>1575357918607</created>
@@ -583,7 +575,14 @@
       <option name="project" value="LOCAL" />
       <updated>1587409186916</updated>
     </task>
-    <option name="localTasksCounter" value="108" />
+    <task id="LOCAL-00108" summary="Classwork from April 24, 2020">
+      <created>1587756766399</created>
+      <option name="number" value="00108" />
+      <option name="presentableId" value="LOCAL-00108" />
+      <option name="project" value="LOCAL" />
+      <updated>1587756766399</updated>
+    </task>
+    <option name="localTasksCounter" value="109" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -604,7 +603,6 @@
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Work on Video Poker Lab from February 4, 2020" />
     <MESSAGE value="Last work on Video Poker Lab from February 5, 2020" />
     <MESSAGE value="Classwork from February 6, 2020" />
     <MESSAGE value="Work on HashTable Lab from February 10, 2020" />
@@ -629,7 +627,8 @@
     <MESSAGE value="Classwork from April 14, 2020." />
     <MESSAGE value="Classwork from April 16, 2020." />
     <MESSAGE value="Classwork from April 20, 2020" />
-    <option name="LAST_COMMIT_MESSAGE" value="Classwork from April 20, 2020" />
+    <MESSAGE value="Classwork from April 24, 2020" />
+    <option name="LAST_COMMIT_MESSAGE" value="Classwork from April 24, 2020" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="WindowStateProjectService">
@@ -641,10 +640,10 @@
       <screen x="0" y="0" width="1858" height="1080" />
     </state>
     <state x="686" y="343" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1858.1080@0.0.1858.1080" timestamp="1583768971545" />
-    <state x="734" y="224" key="#com.intellij.ide.util.MemberChooser" timestamp="1583855506822">
+    <state x="734" y="224" key="#com.intellij.ide.util.MemberChooser" timestamp="1588010675468">
       <screen x="0" y="0" width="1858" height="1080" />
     </state>
-    <state x="734" y="224" key="#com.intellij.ide.util.MemberChooser/0.0.1858.1080@0.0.1858.1080" timestamp="1583855506822" />
+    <state x="734" y="224" key="#com.intellij.ide.util.MemberChooser/0.0.1858.1080@0.0.1858.1080" timestamp="1588010675468" />
     <state x="712" y="404" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes" timestamp="1587407965461">
       <screen x="0" y="0" width="1858" height="1080" />
     </state>
@@ -661,78 +660,78 @@
       <screen x="0" y="0" width="1858" height="1080" />
     </state>
     <state x="497" y="134" key="CommitChangelistDialog2/0.0.1858.1080@0.0.1858.1080" timestamp="1586890685173" />
-    <state x="709" y="232" key="FileChooserDialogImpl" timestamp="1587751702266">
+    <state x="709" y="232" key="FileChooserDialogImpl" timestamp="1588010064214">
       <screen x="0" y="0" width="1858" height="1080" />
     </state>
-    <state x="709" y="232" key="FileChooserDialogImpl/0.0.1858.1080@0.0.1858.1080" timestamp="1587751702266" />
-    <state width="1837" height="258" key="GridCell.Tab.0.bottom" timestamp="1587756573217">
+    <state x="709" y="232" key="FileChooserDialogImpl/0.0.1858.1080@0.0.1858.1080" timestamp="1588010064214" />
+    <state width="1837" height="258" key="GridCell.Tab.0.bottom" timestamp="1588011435637">
       <screen x="0" y="0" width="1858" height="1080" />
     </state>
-    <state width="1837" height="258" key="GridCell.Tab.0.bottom/0.0.1858.1080@0.0.1858.1080" timestamp="1587756573217" />
-    <state width="1837" height="258" key="GridCell.Tab.0.center" timestamp="1587756573217">
+    <state width="1837" height="258" key="GridCell.Tab.0.bottom/0.0.1858.1080@0.0.1858.1080" timestamp="1588011435637" />
+    <state width="1837" height="258" key="GridCell.Tab.0.center" timestamp="1588011435636">
       <screen x="0" y="0" width="1858" height="1080" />
     </state>
-    <state width="1837" height="258" key="GridCell.Tab.0.center/0.0.1858.1080@0.0.1858.1080" timestamp="1587756573217" />
-    <state width="1837" height="258" key="GridCell.Tab.0.left" timestamp="1587756573217">
+    <state width="1837" height="258" key="GridCell.Tab.0.center/0.0.1858.1080@0.0.1858.1080" timestamp="1588011435636" />
+    <state width="1837" height="258" key="GridCell.Tab.0.left" timestamp="1588011435636">
       <screen x="0" y="0" width="1858" height="1080" />
     </state>
-    <state width="1837" height="258" key="GridCell.Tab.0.left/0.0.1858.1080@0.0.1858.1080" timestamp="1587756573217" />
-    <state width="1837" height="258" key="GridCell.Tab.0.right" timestamp="1587756573217">
+    <state width="1837" height="258" key="GridCell.Tab.0.left/0.0.1858.1080@0.0.1858.1080" timestamp="1588011435636" />
+    <state width="1837" height="258" key="GridCell.Tab.0.right" timestamp="1588011435637">
       <screen x="0" y="0" width="1858" height="1080" />
     </state>
-    <state width="1837" height="258" key="GridCell.Tab.0.right/0.0.1858.1080@0.0.1858.1080" timestamp="1587756573217" />
-    <state width="1837" height="255" key="GridCell.Tab.1.bottom" timestamp="1587755694992">
+    <state width="1837" height="258" key="GridCell.Tab.0.right/0.0.1858.1080@0.0.1858.1080" timestamp="1588011435637" />
+    <state width="1837" height="255" key="GridCell.Tab.1.bottom" timestamp="1587756880363">
       <screen x="0" y="0" width="1858" height="1080" />
     </state>
-    <state width="1837" height="255" key="GridCell.Tab.1.bottom/0.0.1858.1080@0.0.1858.1080" timestamp="1587755694992" />
-    <state width="1837" height="255" key="GridCell.Tab.1.center" timestamp="1587755694991">
+    <state width="1837" height="255" key="GridCell.Tab.1.bottom/0.0.1858.1080@0.0.1858.1080" timestamp="1587756880363" />
+    <state width="1837" height="255" key="GridCell.Tab.1.center" timestamp="1587756880363">
       <screen x="0" y="0" width="1858" height="1080" />
     </state>
-    <state width="1837" height="255" key="GridCell.Tab.1.center/0.0.1858.1080@0.0.1858.1080" timestamp="1587755694991" />
-    <state width="1837" height="255" key="GridCell.Tab.1.left" timestamp="1587755694991">
+    <state width="1837" height="255" key="GridCell.Tab.1.center/0.0.1858.1080@0.0.1858.1080" timestamp="1587756880363" />
+    <state width="1837" height="255" key="GridCell.Tab.1.left" timestamp="1587756880363">
       <screen x="0" y="0" width="1858" height="1080" />
     </state>
-    <state width="1837" height="255" key="GridCell.Tab.1.left/0.0.1858.1080@0.0.1858.1080" timestamp="1587755694991" />
-    <state width="1837" height="255" key="GridCell.Tab.1.right" timestamp="1587755694992">
+    <state width="1837" height="255" key="GridCell.Tab.1.left/0.0.1858.1080@0.0.1858.1080" timestamp="1587756880363" />
+    <state width="1837" height="255" key="GridCell.Tab.1.right" timestamp="1587756880363">
       <screen x="0" y="0" width="1858" height="1080" />
     </state>
-    <state width="1837" height="255" key="GridCell.Tab.1.right/0.0.1858.1080@0.0.1858.1080" timestamp="1587755694992" />
-    <state x="594" y="238" key="NewModule_or_Project.wizard" timestamp="1587751707658">
+    <state width="1837" height="255" key="GridCell.Tab.1.right/0.0.1858.1080@0.0.1858.1080" timestamp="1587756880363" />
+    <state x="594" y="238" key="NewModule_or_Project.wizard" timestamp="1588010068061">
       <screen x="0" y="0" width="1858" height="1080" />
     </state>
-    <state x="594" y="238" key="NewModule_or_Project.wizard/0.0.1858.1080@0.0.1858.1080" timestamp="1587751707658" />
+    <state x="594" y="238" key="NewModule_or_Project.wizard/0.0.1858.1080@0.0.1858.1080" timestamp="1588010068061" />
     <state x="721" y="261" key="RollbackChangesDialog" timestamp="1584498302456">
       <screen x="0" y="0" width="1858" height="1080" />
     </state>
     <state x="721" y="261" key="RollbackChangesDialog/0.0.1858.1080@0.0.1858.1080" timestamp="1584498302456" />
-    <state x="430" y="184" key="SettingsEditor" timestamp="1586889479444">
+    <state x="430" y="184" key="SettingsEditor" timestamp="1588010005129">
       <screen x="0" y="0" width="1858" height="1080" />
     </state>
-    <state x="430" y="184" key="SettingsEditor/0.0.1858.1080@0.0.1858.1080" timestamp="1586889479444" />
-    <state x="521" y="272" width="683" height="533" key="Vcs.Push.Dialog.v2" timestamp="1587409188692">
+    <state x="430" y="184" key="SettingsEditor/0.0.1858.1080@0.0.1858.1080" timestamp="1588010005129" />
+    <state x="521" y="272" width="683" height="533" key="Vcs.Push.Dialog.v2" timestamp="1587756775969">
       <screen x="0" y="0" width="1858" height="1080" />
     </state>
-    <state x="521" y="272" width="683" height="533" key="Vcs.Push.Dialog.v2/0.0.1858.1080@0.0.1858.1080" timestamp="1587409188692" />
+    <state x="521" y="272" width="683" height="533" key="Vcs.Push.Dialog.v2/0.0.1858.1080@0.0.1858.1080" timestamp="1587756775969" />
     <state x="633" y="433" key="com.intellij.jarRepository.RepositoryAttachDialog-DOWNLOAD" timestamp="1582824726464">
       <screen x="0" y="0" width="1858" height="1080" />
     </state>
     <state x="633" y="433" key="com.intellij.jarRepository.RepositoryAttachDialog-DOWNLOAD/0.0.1858.1080@0.0.1858.1080" timestamp="1582824726464" />
-    <state x="727" y="230" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1584030268393">
+    <state x="727" y="230" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1588010242042">
       <screen x="0" y="0" width="1858" height="1080" />
     </state>
-    <state x="727" y="230" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/0.0.1858.1080@0.0.1858.1080" timestamp="1584030268393" />
+    <state x="727" y="230" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/0.0.1858.1080@0.0.1858.1080" timestamp="1588010242042" />
     <state x="311" y="161" key="new project wizard" timestamp="1580142103267">
       <screen x="0" y="0" width="1858" height="1080" />
     </state>
     <state x="311" y="161" key="new project wizard/0.0.1858.1080@0.0.1858.1080" timestamp="1580142103267" />
-    <state x="585" y="250" key="run.anything.popup" timestamp="1585698502410">
+    <state x="585" y="250" key="run.anything.popup" timestamp="1588011398407">
       <screen x="0" y="0" width="1858" height="1080" />
     </state>
-    <state x="585" y="250" key="run.anything.popup/0.0.1858.1080@0.0.1858.1080" timestamp="1585698502410" />
-    <state x="592" y="235" width="672" height="678" key="search.everywhere.popup" timestamp="1584029963465">
+    <state x="585" y="250" key="run.anything.popup/0.0.1858.1080@0.0.1858.1080" timestamp="1588011398407" />
+    <state x="592" y="235" width="672" height="678" key="search.everywhere.popup" timestamp="1588011147607">
       <screen x="0" y="0" width="1858" height="1080" />
     </state>
-    <state x="592" y="235" width="672" height="678" key="search.everywhere.popup/0.0.1858.1080@0.0.1858.1080" timestamp="1584029963465" />
+    <state x="592" y="235" width="672" height="678" key="search.everywhere.popup/0.0.1858.1080@0.0.1858.1080" timestamp="1588011147607" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
