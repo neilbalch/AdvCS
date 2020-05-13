@@ -1,5 +1,5 @@
-import java.io.DataInputStream;
-import java.io.DataOutputStream;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
 import java.io.IOException;
 import java.net.ServerSocket;
 import java.net.Socket;
@@ -7,8 +7,8 @@ import java.net.Socket;
 class ServerThread implements Runnable {
     private DLList<Player> players;
     private DLList<Socket> socks;
-    private DLList<DataInputStream> in;
-    private DLList<DataOutputStream> out;
+    private DLList<ObjectInputStream> in;
+    private DLList<ObjectOutputStream> out;
 
     public ServerThread() {
         players = new DLList<>();
@@ -35,15 +35,19 @@ class ServerThread implements Runnable {
                 return;
         }
 
+        System.out.println("Player number " + players.size() + ", id " + (players.size() - 1) + "added.");
         socks.add(sock);
         try {
-            in.add(new DataInputStream(sock.getInputStream()));
-            out.add(new DataOutputStream(sock.getOutputStream()));
+            out.add(new ObjectOutputStream(sock.getOutputStream()));
+            in.add(new ObjectInputStream(sock.getInputStream()));
+
+            Thread.sleep(50);
 
             // Send the new player their player number (0 to 3).
-            out.get(out.size() - 1).writeInt(out.size() - 1);
+            out.get(out.size() - 1).writeObject(out.size() - 1);
         } catch (IOException err) {
             System.out.println("Thread caught IOException: " + err.getMessage());
+        } catch (InterruptedException ignored) {
         }
     }
 
@@ -55,8 +59,15 @@ class ServerThread implements Runnable {
     public void run() {
 //        try {
         while (true) {
-            for (int i = 0; i < players.size(); i++) {
-                // TODO: Ask player what they're going to do.
+            for (int currentPlayer = 0; currentPlayer < players.size(); currentPlayer++) {
+                { // Generate movement card for player, send message to all players.
+                    Message msg = new Message();
+                    msg.type = Message.Type.PlayerTurn;
+                    msg.playerNum = currentPlayer;
+                    msg.players = players.asArray();
+                    msg.card = Message.Cards.selectCard();
+                }
+
                 // TODO: Get updated board from player.
                 // TODO: Update other players with board.
             }

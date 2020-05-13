@@ -22,17 +22,18 @@ public class HashMap<K extends Comparable<K>, V extends Comparable<V>> implement
     private Pair<K, DLList<V>>[] table;
     private DLList<K> keys;
     private int size;
+    private final int capacity = 10000;
 
     @SuppressWarnings("unchecked")
     public HashMap() {
-        table = new Pair[10000];
+        table = new Pair[capacity];
         keys = new DLList<K>();
         keys = new DLList<K>();
         size = 0;
     }
 
     public void put(K key, V value) {
-        int code = key.hashCode();
+        int code = key.hashCode() % capacity;
         if (table[code] == null) {
             table[code] = new Pair<K, DLList<V>>();
             table[code].key = key;

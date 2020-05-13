@@ -1,6 +1,7 @@
 import java.awt.*;
+import java.io.Serializable;
 
-public class Player {
+public class Player implements Serializable {
     public static final Color RED = new Color(220, 58, 58);
     public static final Color BLUE = new Color(51, 92, 208);
     public static final Color YELLOW = new Color(231, 204, 33);
