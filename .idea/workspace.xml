@@ -20,14 +20,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="36939a02-4d05-4550-9e2f-c504bf2e9922" name="Default Changelist" comment="Classwork from April 16, 2020.">
-      <change afterPath="$PROJECT_DIR$/Labs/Semester 2 Final/Client.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Labs/Semester 2 Final/DLList.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Labs/Semester 2 Final/HashMap.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Labs/Semester 2 Final/HashTable.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Labs/Semester 2 Final/Semester 2 Final.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Labs/Semester 2 Final/Server.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Labs/Semester 2 Final/Player.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Labs/Semester 2 Final/Client.java" beforeDir="false" afterPath="$PROJECT_DIR$/Labs/Semester 2 Final/Client.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Labs/Semester 2 Final/DLList.java" beforeDir="false" afterPath="$PROJECT_DIR$/Labs/Semester 2 Final/DLList.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Labs/Semester 2 Final/Semester 2 Final.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Labs/Semester 2 Final/Semester 2 Final.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Labs/Semester 2 Final/Server.java" beforeDir="false" afterPath="$PROJECT_DIR$/Labs/Semester 2 Final/Server.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -130,7 +128,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Semester 2 Final — Client" type="Application" factoryName="Application" singleton="false" temporary="true">
+    <configuration name="Semester 2 Final — Client" type="Application" factoryName="Application" temporary="true">
       <option name="MAIN_CLASS_NAME" value="Client" />
       <module name="Semester 2 Final" />
       <option name="WORKING_DIRECTORY" value="$ModuleFileDir$" />
@@ -254,14 +252,7 @@
       <workItem from="1588275921846" duration="1629000" />
       <workItem from="1588619630207" duration="3306000" />
       <workItem from="1588888227273" duration="2447000" />
-      <workItem from="1589247637153" duration="3583000" />
-    </task>
-    <task id="LOCAL-00064" summary="In class work from December 10, 2019 on Semester 1 Final project.">
-      <created>1576000159759</created>
-      <option name="number" value="00064" />
-      <option name="presentableId" value="LOCAL-00064" />
-      <option name="project" value="LOCAL" />
-      <updated>1576000159759</updated>
+      <workItem from="1589247637153" duration="15315000" />
     </task>
     <task id="LOCAL-00065" summary="Complete Semester 1 Final project?">
       <created>1576168939279</created>
@@ -599,7 +590,14 @@
       <option name="project" value="LOCAL" />
       <updated>1588890655649</updated>
     </task>
-    <option name="localTasksCounter" value="113" />
+    <task id="LOCAL-00113" summary="Barebones Server/Client for Semester 2 Final project.">
+      <created>1589321590116</created>
+      <option name="number" value="00113" />
+      <option name="presentableId" value="LOCAL-00113" />
+      <option name="project" value="LOCAL" />
+      <updated>1589321590117</updated>
+    </task>
+    <option name="localTasksCounter" value="114" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -620,7 +618,6 @@
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Completed HashTable Lab on February 13, 2020" />
     <MESSAGE value="Work on MyHashMap Lab from Monday and Tuesday 2/24-25/2020" />
     <MESSAGE value="Work on MyHashMap Lab from Thursday February 27, 2020" />
     <MESSAGE value="Work on MyHashMap Lab from Friday February 28, 2020" />
@@ -645,14 +642,15 @@
     <MESSAGE value="Classwork from April 30, 2020." />
     <MESSAGE value="Classwork from May 4, 2020." />
     <MESSAGE value="Classwork from May 7, 2020." />
-    <option name="LAST_COMMIT_MESSAGE" value="Classwork from May 7, 2020." />
+    <MESSAGE value="Barebones Server/Client for Semester 2 Final project." />
+    <option name="LAST_COMMIT_MESSAGE" value="Barebones Server/Client for Semester 2 Final project." />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="78" y="72" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1589320654540">
+    <state x="78" y="72" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1589333745807">
       <screen x="0" y="0" width="1858" height="1080" />
     </state>
-    <state x="78" y="72" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1858.1080@0.0.1858.1080" timestamp="1589320654540" />
+    <state x="78" y="72" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1858.1080@0.0.1858.1080" timestamp="1589333745807" />
     <state x="686" y="343" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1583768971545">
       <screen x="0" y="0" width="1858" height="1080" />
     </state>
@@ -661,10 +659,10 @@
       <screen x="0" y="0" width="1858" height="1080" />
     </state>
     <state x="404" y="122" key="#com.intellij.ide.macro.MacrosDialog/0.0.1858.1080@0.0.1858.1080" timestamp="1589320650799" />
-    <state x="734" y="224" key="#com.intellij.ide.util.MemberChooser" timestamp="1589319553860">
+    <state x="734" y="224" key="#com.intellij.ide.util.MemberChooser" timestamp="1589327697869">
       <screen x="0" y="0" width="1858" height="1080" />
     </state>
-    <state x="734" y="224" key="#com.intellij.ide.util.MemberChooser/0.0.1858.1080@0.0.1858.1080" timestamp="1589319553860" />
+    <state x="734" y="224" key="#com.intellij.ide.util.MemberChooser/0.0.1858.1080@0.0.1858.1080" timestamp="1589327697869" />
     <state x="712" y="404" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes" timestamp="1587407965461">
       <screen x="0" y="0" width="1858" height="1080" />
     </state>
@@ -689,22 +687,22 @@
       <screen x="0" y="0" width="1858" height="1080" />
     </state>
     <state x="709" y="232" key="FileChooserDialogImpl/0.0.1858.1080@0.0.1858.1080" timestamp="1589320444093" />
-    <state width="1837" height="271" key="GridCell.Tab.0.bottom" timestamp="1589320805916">
+    <state width="1837" height="271" key="GridCell.Tab.0.bottom" timestamp="1589338514960">
       <screen x="0" y="0" width="1858" height="1080" />
     </state>
-    <state width="1837" height="271" key="GridCell.Tab.0.bottom/0.0.1858.1080@0.0.1858.1080" timestamp="1589320805916" />
-    <state width="1837" height="271" key="GridCell.Tab.0.center" timestamp="1589320805916">
+    <state width="1837" height="271" key="GridCell.Tab.0.bottom/0.0.1858.1080@0.0.1858.1080" timestamp="1589338514960" />
+    <state width="1837" height="271" key="GridCell.Tab.0.center" timestamp="1589338514959">
       <screen x="0" y="0" width="1858" height="1080" />
     </state>
-    <state width="1837" height="271" key="GridCell.Tab.0.center/0.0.1858.1080@0.0.1858.1080" timestamp="1589320805916" />
-    <state width="1837" height="271" key="GridCell.Tab.0.left" timestamp="1589320805916">
+    <state width="1837" height="271" key="GridCell.Tab.0.center/0.0.1858.1080@0.0.1858.1080" timestamp="1589338514959" />
+    <state width="1837" height="271" key="GridCell.Tab.0.left" timestamp="1589338514958">
       <screen x="0" y="0" width="1858" height="1080" />
     </state>
-    <state width="1837" height="271" key="GridCell.Tab.0.left/0.0.1858.1080@0.0.1858.1080" timestamp="1589320805916" />
-    <state width="1837" height="271" key="GridCell.Tab.0.right" timestamp="1589320805916">
+    <state width="1837" height="271" key="GridCell.Tab.0.left/0.0.1858.1080@0.0.1858.1080" timestamp="1589338514958" />
+    <state width="1837" height="271" key="GridCell.Tab.0.right" timestamp="1589338514960">
       <screen x="0" y="0" width="1858" height="1080" />
     </state>
-    <state width="1837" height="271" key="GridCell.Tab.0.right/0.0.1858.1080@0.0.1858.1080" timestamp="1589320805916" />
+    <state width="1837" height="271" key="GridCell.Tab.0.right/0.0.1858.1080@0.0.1858.1080" timestamp="1589338514960" />
     <state width="1837" height="255" key="GridCell.Tab.1.bottom" timestamp="1587756880363">
       <screen x="0" y="0" width="1858" height="1080" />
     </state>
@@ -737,10 +735,10 @@
       <screen x="0" y="0" width="1858" height="1080" />
     </state>
     <state x="521" y="272" width="683" height="533" key="Vcs.Push.Dialog.v2/0.0.1858.1080@0.0.1858.1080" timestamp="1588890657624" />
-    <state x="633" y="433" key="com.intellij.jarRepository.RepositoryAttachDialog-DOWNLOAD" timestamp="1582824726464">
+    <state x="633" y="433" key="com.intellij.jarRepository.RepositoryAttachDialog-DOWNLOAD" timestamp="1589332401360">
       <screen x="0" y="0" width="1858" height="1080" />
     </state>
-    <state x="633" y="433" key="com.intellij.jarRepository.RepositoryAttachDialog-DOWNLOAD/0.0.1858.1080@0.0.1858.1080" timestamp="1582824726464" />
+    <state x="633" y="433" key="com.intellij.jarRepository.RepositoryAttachDialog-DOWNLOAD/0.0.1858.1080@0.0.1858.1080" timestamp="1589332401360" />
     <state x="727" y="230" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1588619962577">
       <screen x="0" y="0" width="1858" height="1080" />
     </state>
@@ -749,10 +747,10 @@
       <screen x="0" y="0" width="1858" height="1080" />
     </state>
     <state x="585" y="250" key="run.anything.popup/0.0.1858.1080@0.0.1858.1080" timestamp="1589321066784" />
-    <state x="592" y="235" width="672" height="678" key="search.everywhere.popup" timestamp="1588011147607">
+    <state x="592" y="235" width="672" height="678" key="search.everywhere.popup" timestamp="1589328936706">
       <screen x="0" y="0" width="1858" height="1080" />
     </state>
-    <state x="592" y="235" width="672" height="678" key="search.everywhere.popup/0.0.1858.1080@0.0.1858.1080" timestamp="1588011147607" />
+    <state x="592" y="235" width="672" height="678" key="search.everywhere.popup/0.0.1858.1080@0.0.1858.1080" timestamp="1589328936706" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
