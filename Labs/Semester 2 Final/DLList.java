@@ -191,13 +191,6 @@ public class DLList<T> implements Comparable<DLList<T>> {
         return -1;
     }
 
-    @SuppressWarnings("unchecked") // For generic array conversion from Object[].
-    public T[] asArray() {
-        T[] out = (T[]) (new Object[size]);
-        for (int i = 0; i < size; i++) out[i] = get(i);
-        return out;
-    }
-
     @Override
     public int compareTo(DLList<T> o) {
         return 0;

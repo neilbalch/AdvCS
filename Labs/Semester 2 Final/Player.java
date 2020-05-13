@@ -7,6 +7,7 @@ public class Player implements Serializable {
     public static final Color YELLOW = new Color(231, 204, 33);
     public static final Color GREEN = new Color(54, 208, 26);
     public static final int numBoxesInBoardSide = 16;
+    public static final int numPawns = 4;
 
     public Color playerColor;
     // Location map for Point() coordinates:
@@ -18,7 +19,7 @@ public class Player implements Serializable {
     public Player(Color playerColor) {
         this.playerColor = playerColor;
 
-        this.pawnLocations = new Point[4];
+        this.pawnLocations = new Point[numPawns];
         for (int i = 0; i < 4; i++) pawnLocations[i] = new Point(-1, -1);
     }
 

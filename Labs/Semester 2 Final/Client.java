@@ -4,6 +4,8 @@ import org.jetbrains.annotations.NotNull;
 import javax.imageio.ImageIO;
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.awt.image.BufferedImage;
 import java.io.*;
 import java.net.*;
@@ -28,18 +30,17 @@ public class Client extends JPanel {
     private ObjectOutputStream out;
 
     private int playerNumber;
-    private int currentTurn;
-    private Player[] currentBoard;
+    private Message lastMsgReceived;
     private boolean showInstructions; // TODO: Implement!
 
-    // TODO: Implement these!
-    private JComboBox<Integer> pawnToMove;
+    private JComboBox<String> pawnToMove;
     private JButton makeMoveBtn;
     private JButton instructionsBtn;
 
     public Client() {
         int windowSize = borderSize + Player.numBoxesInBoardSide * (borderSize + boxSideLength);
         setPreferredSize(new Dimension(windowSize, windowSize));
+        setLayout(null);
 
         cardDescriptions = new HashMap<>();
         cardDescriptions.put(Message.Cards.ONE, "Move forward 1 spots any pawn on the board or in Start");
@@ -53,6 +54,32 @@ public class Client extends JPanel {
         cardDescriptions.put(Message.Cards.ELEVEN, "Move forward 11 spots any pawn on the board");
         cardDescriptions.put(Message.Cards.TWELVE, "Move forward 12 spots any pawn on the board");
         cardDescriptions.put(Message.Cards.SORRY, "SORRY! Move a pawn from Start to replace another player's");
+
+        int btnsOffset = 200;
+
+        pawnToMove = new JComboBox<>();
+        pawnToMove.setBounds(getPreferredSize().width / 2 - 105 - 105 - 155 + btnsOffset, 2 * getPreferredSize().height / 3, 100, 30);
+        add(pawnToMove);
+
+        makeMoveBtn = new JButton("Make Move");
+        makeMoveBtn.setBounds(getPreferredSize().width / 2 - 105 - 155 + btnsOffset, 2 * getPreferredSize().height / 3, 100, 30);
+        makeMoveBtn.addActionListener(e -> {
+
+        });
+        add(makeMoveBtn);
+
+        instructionsBtn = new JButton("Show Instructions");
+        instructionsBtn.setBounds(getPreferredSize().width / 2 - 155 + btnsOffset, 2 * getPreferredSize().height / 3, 150, 30);
+        instructionsBtn.addActionListener(e -> {
+            showInstructions = !showInstructions;
+            if (showInstructions) instructionsBtn.setText("Hide Instructions");
+            else instructionsBtn.setText("Show Instructions");
+
+            repaint();
+        });
+        add(instructionsBtn);
+
+        lastMsgReceived = null;
 
         try {
             sock = new Socket(hostName, portNumber);
@@ -68,9 +95,10 @@ public class Client extends JPanel {
                 while (true) {
                     try {
                         Message msg = (Message) in.readObject();
+                        lastMsgReceived = msg;
+
                         if (msg.type == Message.Type.PlayerTurn) {
-                            currentBoard = msg.players;
-                            currentTurn = msg.playerNum;
+                            System.out.println("PlayerTurn message received");
                             // TODO: Enable dropdown field for which pawn to move and "Make Move" button.
 
                             repaint();
@@ -92,15 +120,105 @@ public class Client extends JPanel {
         } catch (ClassNotFoundException err) {
             System.out.println("Client caught ClassNotFoundException: " + err.getMessage());
         }
-
-        currentBoard = null;
     }
 
     @Override
     public void paintComponent(Graphics g) {
         drawBoard(g);
 
-        // TODO: If game hasn't started yet, aka currentBoard == null, display message on screen.
+        if (lastMsgReceived == null) {
+            g.drawString("Waiting for the game to start when at least two players join.",
+                    getPreferredSize().width / 2 - 105 - 105 - 155 + 200,
+                    2 * getPreferredSize().height / 3 - 13);
+        }
+
+        if (showInstructions) {
+            Color transWhite = new Color(255, 255, 255, 178);
+            g.setColor(transWhite);
+            g.fillRect(0, 0, getPreferredSize().width, getPreferredSize().height);
+
+            // Display text.
+            {
+                g.setColor(Color.BLACK);
+                g.setFont(new Font("Calibri", Font.PLAIN, 14));
+
+                Point startLocation = getCenterOfBox(Player.numBoxesInBoardSide - 1, Player.numBoxesInBoardSide - 5);
+                g.drawString("Pawns start here -->",
+                        startLocation.x - boxSideLength - 75 - boxSideLength,
+                        startLocation.y - boxSideLength / 2 - boxSideLength - borderSize);
+
+                Point safetyLocation = getCenterOfBox(((3 * Player.numBoxesInBoardSide) / 5) + 1, Player.numBoxesInBoardSide - 3);
+                g.drawString("Move all " + Player.numPawns + " pawns here to win -->",
+                        safetyLocation.x - boxSideLength - 150 - boxSideLength,
+                        safetyLocation.y - boxSideLength / 2 - boxSideLength - borderSize);
+
+                Point start = getCenterOfBox(Player.numBoxesInBoardSide - 1, 2);
+                g.drawString("This (below) is a slide. Land on the triangle slide of a",
+                        start.x,
+                        start.y - boxSideLength);
+                g.drawString("different color one and automatically slide to the end.",
+                        start.x,
+                        start.y - boxSideLength + 13);
+
+                g.drawString("Select a pawn to move from the dropdown on your turn.",
+                        getPreferredSize().width / 2 - 105 - 105 - 155 + 200,
+                        2 * getPreferredSize().height / 3 - 13);
+            }
+
+            int boxAndBorder = borderSize + boxSideLength;
+            // Draw red board items
+            {
+                g.setColor(RED);
+
+                // Left slide
+                {
+                    Point start = getCenterOfBox(Player.numBoxesInBoardSide - 1, 2);
+                    Point end = getCenterOfBox(Player.numBoxesInBoardSide - 1, 2 + 4);
+
+                    g.fillRect(start.x, start.y - (boxSideLength) / 5, end.x - start.x, (2 * boxSideLength) / 5);
+                    int radius = (2 * boxSideLength) / 5;
+                    g.fillOval(start.x - radius, start.y - radius, 2 * radius, 2 * radius);
+                    int[] x_pts = {end.x - boxSideLength / 2, end.x + boxSideLength / 3, end.x + boxSideLength / 3};
+                    int[] y_pts = {end.y, end.y - boxSideLength / 3, end.y + boxSideLength / 3};
+                    g.fillPolygon(x_pts, y_pts, x_pts.length);
+                }
+
+                // Right slide
+                {
+                    Point start = getCenterOfBox(Player.numBoxesInBoardSide - 1, Player.numBoxesInBoardSide - 5);
+                    Point end = getCenterOfBox(Player.numBoxesInBoardSide - 1, Player.numBoxesInBoardSide - 2);
+
+                    g.fillRect(start.x, start.y - (boxSideLength) / 5, end.x - start.x, (2 * boxSideLength) / 5);
+                    int radius = (2 * boxSideLength) / 5;
+                    g.fillOval(start.x - radius, start.y - radius, 2 * radius, 2 * radius);
+                    int[] x_pts = {end.x - boxSideLength / 2, end.x + boxSideLength / 3, end.x + boxSideLength / 3};
+                    int[] y_pts = {end.y, end.y - boxSideLength / 3, end.y + boxSideLength / 3};
+                    g.fillPolygon(x_pts, y_pts, x_pts.length);
+                }
+
+                // Start zone
+                Point startLocation = getCenterOfBox(Player.numBoxesInBoardSide - 1, Player.numBoxesInBoardSide - 5);
+                g.setColor(Color.BLACK);
+                g.fillRect(startLocation.x - boxSideLength / 2 - borderSize, startLocation.y - 3 * boxSideLength / 2, boxSideLength + 2 * borderSize, boxSideLength);
+                g.setColor(RED);
+                g.fillOval(startLocation.x - boxSideLength, startLocation.y - boxSideLength / 2 - 2 * boxSideLength - borderSize, 2 * boxSideLength, 2 * boxSideLength);
+
+                // Safety zone
+                for (int row = Player.numBoxesInBoardSide - 2; row > (3 * Player.numBoxesInBoardSide) / 5; row--) {
+                    g.setColor(Color.BLACK);
+                    g.fillRect((Player.numBoxesInBoardSide - 3) * boxAndBorder, row * boxAndBorder, borderSize, boxAndBorder);
+                    g.fillRect((Player.numBoxesInBoardSide - 2) * boxAndBorder, row * boxAndBorder, borderSize, boxAndBorder);
+                    g.fillRect((Player.numBoxesInBoardSide - 3) * boxAndBorder, row * boxAndBorder, boxAndBorder, borderSize);
+                    g.setColor(RED);
+                    g.fillRect((Player.numBoxesInBoardSide - 3) * boxAndBorder + borderSize, row * boxAndBorder + borderSize, boxSideLength, boxSideLength);
+                }
+                Point safetyLocation = getCenterOfBox(((3 * Player.numBoxesInBoardSide) / 5) + 1, Player.numBoxesInBoardSide - 3);
+                g.setColor(Color.BLACK);
+                g.fillRect(safetyLocation.x - boxSideLength / 2 - borderSize, safetyLocation.y - 3 * boxSideLength / 2, boxSideLength + 2 * borderSize, boxSideLength);
+                g.setColor(RED);
+                g.fillOval(safetyLocation.x - boxSideLength, safetyLocation.y - boxSideLength / 2 - 2 * boxSideLength - borderSize, 2 * boxSideLength, 2 * boxSideLength);
+            }
+        }
     }
 
     private void drawBoard(@NotNull Graphics g) {
@@ -353,7 +471,7 @@ public class Client extends JPanel {
         } catch (IOException ignored) {
         }
 
-        if (currentBoard != null) {
+        if (lastMsgReceived != null) {
             // TODO: Draw player pawns and stuff.
         }
     }

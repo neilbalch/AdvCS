@@ -35,7 +35,7 @@ class ServerThread implements Runnable {
                 return;
         }
 
-        System.out.println("Player number " + players.size() + ", id " + (players.size() - 1) + "added.");
+        System.out.println("Player number " + players.size() + ", id " + (players.size() - 1) + " added.");
         socks.add(sock);
         try {
             out.add(new ObjectOutputStream(sock.getOutputStream()));
@@ -57,24 +57,47 @@ class ServerThread implements Runnable {
     }
 
     public void run() {
-//        try {
-        while (true) {
-            for (int currentPlayer = 0; currentPlayer < players.size(); currentPlayer++) {
-                { // Generate movement card for player, send message to all players.
-                    Message msg = new Message();
-                    msg.type = Message.Type.PlayerTurn;
-                    msg.playerNum = currentPlayer;
-                    msg.players = players.asArray();
-                    msg.card = Message.Cards.selectCard();
-                }
+        try {
+            // Game loop.
+            while (true) {
+                // Go through every player's turn:
+                for (int currentPlayer = 0; currentPlayer < players.size(); currentPlayer++) {
+                    { // Generate movement card for player, send message to all players.
+                        Player[] playersArr = new Player[players.size()];
+                        for (int i = 0; i < playersArr.length; i++) playersArr[i] = players.get(i);
 
-                // TODO: Get updated board from player.
-                // TODO: Update other players with board.
+                        Message msg = new Message();
+                        msg.type = Message.Type.PlayerTurn;
+                        msg.playerNum = currentPlayer;
+                        msg.players = playersArr;
+                        msg.card = Message.Cards.selectCard();
+
+                        for (int i = 0; i < socks.size(); i++) {
+                            System.out.println("PlayerTurn sent to player number " + players.size() + ", id " + (players.size() - 1) + ".");
+                            out.get(i).writeObject(msg);
+                        }
+                    }
+
+                    // Get updated board from player and update other players.
+                    {
+                        Message msg = (Message) in.get(currentPlayer).readObject();
+
+                        // Echo message to other players.
+                        for (int i = 0; i < socks.size(); i++) {
+                            if (i == currentPlayer) continue;
+                            System.out.println("PlayerMadeMove echoed to player number " + players.size() + ", id " + (players.size() - 1) + ".");
+                            out.get(i).writeObject(msg);
+                        }
+                    }
+                }
             }
-        }
 //        } catch (InterruptedException err) {
 //            System.out.println("Thread caught InterruptedException: " + err.getMessage());
-//        }
+        } catch (IOException err) {
+            System.out.println("Thread caught IOException: " + err.getMessage());
+        } catch (ClassNotFoundException err) {
+            System.out.println("Thread caught ClassNotFoundException: " + err.getMessage());
+        }
     }
 }
 
