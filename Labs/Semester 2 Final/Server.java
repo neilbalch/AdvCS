@@ -61,7 +61,7 @@ class ServerThread implements Runnable {
             // Game loop.
             while (true) {
                 // Go through every player's turn:
-                for (int currentPlayer = 0; currentPlayer < players.size(); currentPlayer++) {
+                for (int currentPlayer = 0; currentPlayer < players.size(); /*currentPlayer++*/) {
                     { // Generate movement card for player, send message to all players.
                         Player[] playersArr = new Player[players.size()];
                         for (int i = 0; i < playersArr.length; i++) playersArr[i] = players.get(i);
@@ -70,7 +70,7 @@ class ServerThread implements Runnable {
                         msg.type = Message.Type.PlayerTurn;
                         msg.playerNum = currentPlayer;
                         msg.players = playersArr;
-                        msg.card = Message.Cards.selectCard();
+                        msg.card = Message.Card.selectCard();
 
                         for (int i = 0; i < socks.size(); i++) {
                             System.out.println("PlayerTurn sent to player number " + players.size() + ", id " + (players.size() - 1) + ".");
@@ -78,17 +78,17 @@ class ServerThread implements Runnable {
                         }
                     }
 
-                    // Get updated board from player and update other players.
+                    // Get updated board from player and update local board.
                     {
                         Message msg = (Message) in.get(currentPlayer).readObject();
 
-                        // Echo message to other players.
-                        for (int i = 0; i < socks.size(); i++) {
-                            if (i == currentPlayer) continue;
-                            System.out.println("PlayerMadeMove echoed to player number " + players.size() + ", id " + (players.size() - 1) + ".");
-                            out.get(i).writeObject(msg);
-                        }
+                        players = new DLList<>();
+                        for (Player p : msg.players) players.add(p);
                     }
+
+                    System.out.println("Board after last move:");
+                    for (int i = 0; i < players.size(); i++)
+                        System.out.println(players.get(i).toString());
                 }
             }
 //        } catch (InterruptedException err) {

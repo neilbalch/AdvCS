@@ -4,34 +4,35 @@ import org.jetbrains.annotations.NotNull;
 import javax.imageio.ImageIO;
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-import java.awt.image.BufferedImage;
 import java.io.*;
 import java.net.*;
-import java.nio.Buffer;
 
 public class Client extends JPanel {
     private final String hostName = "localhost";
     private final int portNumber = 1024;
+    private final boolean testingMode = false;
+    //    private final boolean testingMode = true;
     private final int borderSize = 3;
     private final int boxSideLength = 40;
+    private final int boxAndBorder = borderSize + boxSideLength;
+    private final int btnsOffset = 200;
+    private final int pawnBorderSize = 3;
+    private final int pawnRadius = boxSideLength / 3;
 
     // Non-pawn player colors
-    // TODO: Try removing these in favor of black borders on pawns.
     private final Color RED = new Color(193, 0, 0);
     private final Color BLUE = new Color(0, 51, 186);
     private final Color YELLOW = new Color(210, 179, 0);
     private final Color GREEN = new Color(30, 179, 0);
-    private HashMap<Message.Cards, String> cardDescriptions;
+    private HashMap<Message.Card, String> cardDescriptions;
 
     private Socket sock;
     private ObjectInputStream in;
     private ObjectOutputStream out;
 
     private int playerNumber;
-    private Message lastMsgReceived;
-    private boolean showInstructions; // TODO: Implement!
+    private Message lastMsg;
+    private boolean showInstructions;
 
     private JComboBox<String> pawnToMove;
     private JButton makeMoveBtn;
@@ -43,23 +44,19 @@ public class Client extends JPanel {
         setLayout(null);
 
         cardDescriptions = new HashMap<>();
-        cardDescriptions.put(Message.Cards.ONE, "Move forward 1 spots any pawn on the board or in Start");
-        cardDescriptions.put(Message.Cards.TWO, "Move forward 2 spots any pawn on the board or in Start");
-        cardDescriptions.put(Message.Cards.THREE, "Move forward 3 spots any pawn on the board");
-        cardDescriptions.put(Message.Cards.FOUR, "Move *backward* 4 spots any pawn on the board");
-        cardDescriptions.put(Message.Cards.FIVE, "Move forward 5 spots any pawn on the board");
-        cardDescriptions.put(Message.Cards.SEVEN, "Move forward 7 spots any pawn on the board");
-        cardDescriptions.put(Message.Cards.EIGHT, "Move forward 8 spots any pawn on the board");
-        cardDescriptions.put(Message.Cards.TEN, "Move forward 10 spots any pawn on the board, or back one spot");
-        cardDescriptions.put(Message.Cards.ELEVEN, "Move forward 11 spots any pawn on the board");
-        cardDescriptions.put(Message.Cards.TWELVE, "Move forward 12 spots any pawn on the board");
-        cardDescriptions.put(Message.Cards.SORRY, "SORRY! Move a pawn from Start to replace another player's");
+        cardDescriptions.put(Message.Card.ONE, "Move forward 1 spots any pawn on the board or in Start");
+        cardDescriptions.put(Message.Card.TWO, "Move forward 2 spots any pawn on the board or in Start");
+        cardDescriptions.put(Message.Card.THREE, "Move forward 3 spots any pawn on the board");
+        cardDescriptions.put(Message.Card.FOUR, "Move *backward* 4 spots any pawn on the board");
+        cardDescriptions.put(Message.Card.FIVE, "Move forward 5 spots any pawn on the board");
+        cardDescriptions.put(Message.Card.SEVEN, "Move forward 7 spots any pawn on the board");
+        cardDescriptions.put(Message.Card.EIGHT, "Move forward 8 spots any pawn on the board");
+        cardDescriptions.put(Message.Card.TEN, "Move forward 10 spots any pawn on the board, or back one spot");
+        cardDescriptions.put(Message.Card.ELEVEN, "Move forward 11 spots any pawn on the board");
+        cardDescriptions.put(Message.Card.TWELVE, "Move forward 12 spots any pawn on the board");
+        cardDescriptions.put(Message.Card.SORRY, "SORRY! Move a pawn from Start to replace another player's");
 
-        int btnsOffset = 200;
-
-        pawnToMove = new JComboBox<>();
-        pawnToMove.setBounds(getPreferredSize().width / 2 - 105 - 105 - 155 + btnsOffset, 2 * getPreferredSize().height / 3, 100, 30);
-        add(pawnToMove);
+        initPawnToChoose(null, false);
 
         makeMoveBtn = new JButton("Make Move");
         makeMoveBtn.setBounds(getPreferredSize().width / 2 - 105 - 155 + btnsOffset, 2 * getPreferredSize().height / 3, 100, 30);
@@ -79,57 +76,133 @@ public class Client extends JPanel {
         });
         add(instructionsBtn);
 
-        lastMsgReceived = null;
+        lastMsg = null;
 
-        try {
-            sock = new Socket(hostName, portNumber);
-            out = new ObjectOutputStream(sock.getOutputStream());
-            in = new ObjectInputStream(sock.getInputStream());
+        // If we're testing, setup a test game board.
+        if (testingMode) {
+            lastMsg = new Message();
+            lastMsg.type = Message.Type.PlayerTurn;
+            lastMsg.playerNum = 0;
+            lastMsg.players = new Player[]{
+                    new Player(Player.RED),
+                    new Player(Player.BLUE),
+                    new Player(Player.YELLOW),
+                    new Player(Player.GREEN)
+            };
+            lastMsg.card = Message.Card.ONE;
 
-            // Read player number from server.
-            System.out.println("Waiting for player number...");
-            playerNumber = (Integer) in.readObject();
-            System.out.println("Received player number.");
+            lastMsg.players[0].pawnLocations[0].setLocation(Player.numBoxesInBoardSide, Player.numBoxesInBoardSide);
+            lastMsg.players[0].latestPawnInSafeZone = 0;
+            lastMsg.players[0].pawnLocations[1].setLocation(0, 4);
 
-            Thread msgWatcher = new Thread(() -> {
-                while (true) {
-                    try {
-                        Message msg = (Message) in.readObject();
-                        lastMsgReceived = msg;
+            lastMsg.players[1].pawnLocations[0].setLocation(Player.numBoxesInBoardSide, Player.numBoxesInBoardSide);
+            lastMsg.players[1].latestPawnInSafeZone = 0;
+            lastMsg.players[1].pawnLocations[1].setLocation(2, 0);
 
-                        if (msg.type == Message.Type.PlayerTurn) {
-                            System.out.println("PlayerTurn message received");
-                            // TODO: Enable dropdown field for which pawn to move and "Make Move" button.
+            lastMsg.players[2].pawnLocations[0].setLocation(Player.numBoxesInBoardSide, Player.numBoxesInBoardSide);
+            lastMsg.players[2].latestPawnInSafeZone = 0;
+            lastMsg.players[2].pawnLocations[1].setLocation(0, 5);
 
-                            repaint();
-                        } else System.out.println("Watcher didn't receive PlayerTurn message");
-                    } catch (IOException err) {
-                        System.out.println("Watcher caught IOException: " + err.getMessage());
-                    } catch (ClassNotFoundException err) {
-                        System.out.println("Watcher couldn't convert received object to Message!");
+            lastMsg.players[3].pawnLocations[0].setLocation(Player.numBoxesInBoardSide, Player.numBoxesInBoardSide);
+            lastMsg.players[3].latestPawnInSafeZone = 0;
+            lastMsg.players[3].pawnLocations[1].setLocation(8, 0);
+        } else {
+            try {
+                sock = new Socket(hostName, portNumber);
+                out = new ObjectOutputStream(sock.getOutputStream());
+                in = new ObjectInputStream(sock.getInputStream());
+
+                // Read player number from server.
+                System.out.println("Waiting for player number...");
+                playerNumber = (Integer) in.readObject();
+                System.out.println("Received player number.");
+
+                Thread msgWatcher = new Thread(() -> {
+                    while (true) {
+                        try {
+                            Message msg = (Message) in.readObject();
+                            lastMsg = msg;
+
+                            if (msg.type == Message.Type.PlayerTurn) {
+                                System.out.println("PlayerTurn message received");
+
+                                if (lastMsg.playerNum == playerNumber) {
+                                    System.out.println("PlayerTurn message received for me");
+                                    // Declare list of player choices
+                                    DLList<String> choicesList = new DLList<>();
+                                    Player me = lastMsg.players[playerNumber];
+
+                                    // If there aren't any pawns on the board, only 1 or 2 can move a pawn off start.
+                                    //  If so, add first pawn in start to list
+                                    if (me.numPawnsAtStart() - me.numPawnsInSafeZone() == 0) {
+                                        if (lastMsg.card == Message.Card.ONE || lastMsg.card == Message.Card.TWO) {
+                                            choicesList.add(Integer.valueOf(Player.numPawns - me.numPawnsAtStart() + 1).toString());
+                                        }
+                                        // Else if there are pawns on the board:
+                                        //  Add them to the list
+                                    } else if (Player.numPawns - (me.numPawnsInSafeZone() + me.numPawnsAtStart()) > 0) {
+                                        for (int i = 0; i < me.pawnLocations.length; i++) {
+                                            if (!me.pawnLocations[i].equals(Player.startZone) && !me.pawnLocations[i].equals(Player.safeZone)) {
+                                                choicesList.add(Integer.valueOf(i + 1).toString());
+                                            }
+                                        }
+                                        // Else
+                                        //  Add no move possible to list
+                                    } else choicesList.add("Skip Turn");
+
+                                    // Enable dropdown menu, add items to menu
+                                    String[] choicesArr = new String[choicesList.size()];
+                                    for (int i = 0; i < choicesList.size(); i++) {
+                                        System.out.println("choicesArr[" + i + "]: " + choicesList.get(i));
+                                        choicesArr[i] = choicesList.get(i);
+                                    }
+
+                                    initPawnToChoose(choicesArr, true);
+                                }
+
+                                repaint();
+                            } else System.out.println("Watcher didn't receive PlayerTurn message");
+                        } catch (IOException err) {
+                            System.out.println("Watcher caught IOException: " + err.getMessage());
+                        } catch (ClassNotFoundException err) {
+                            System.out.println("Watcher couldn't convert received object to Message!");
+                        }
                     }
-                }
-            });
-            msgWatcher.start();
-        } catch (UnknownHostException err) {
-            System.out.println("Client caught UnknownHostException: " + err.getMessage());
-            System.exit(1);
-        } catch (IOException err) {
-            System.out.println("Client caught IOException: " + err.getMessage());
-            System.exit(1);
-        } catch (ClassNotFoundException err) {
-            System.out.println("Client caught ClassNotFoundException: " + err.getMessage());
+                });
+                msgWatcher.start();
+            } catch (UnknownHostException err) {
+                System.out.println("Client caught UnknownHostException: " + err.getMessage());
+                System.exit(1);
+            } catch (IOException err) {
+                System.out.println("Client caught IOException: " + err.getMessage());
+                System.exit(1);
+            } catch (ClassNotFoundException err) {
+                System.out.println("Client caught ClassNotFoundException: " + err.getMessage());
+            }
         }
+    }
+
+    private void initPawnToChoose(String[] choices, boolean enabled) {
+        // If it's already on the screen, remove the old one.
+        if (pawnToMove != null) remove(pawnToMove);
+
+        if (choices != null) pawnToMove = new JComboBox<>(choices);
+        else pawnToMove = new JComboBox<>();
+        pawnToMove.setBounds(getPreferredSize().width / 2 - 105 - 105 - 155 + btnsOffset, 2 * getPreferredSize().height / 3, 100, 30);
+        pawnToMove.setEnabled(enabled);
+        add(pawnToMove);
     }
 
     @Override
     public void paintComponent(Graphics g) {
+        super.paintComponent(g);
         drawBoard(g);
+        g.setFont(new Font("Calibri", Font.PLAIN, 14));
 
-        if (lastMsgReceived == null) {
+        if (lastMsg == null) {
             g.drawString("Waiting for the game to start when at least two players join.",
                     getPreferredSize().width / 2 - 105 - 105 - 155 + 200,
-                    2 * getPreferredSize().height / 3 - 13);
+                    2 * getPreferredSize().height / 3 - 13 - 15);
         }
 
         if (showInstructions) {
@@ -140,7 +213,6 @@ public class Client extends JPanel {
             // Display text.
             {
                 g.setColor(Color.BLACK);
-                g.setFont(new Font("Calibri", Font.PLAIN, 14));
 
                 Point startLocation = getCenterOfBox(Player.numBoxesInBoardSide - 1, Player.numBoxesInBoardSide - 5);
                 g.drawString("Pawns start here -->",
@@ -163,9 +235,16 @@ public class Client extends JPanel {
                 g.drawString("Select a pawn to move from the dropdown on your turn.",
                         getPreferredSize().width / 2 - 105 - 105 - 155 + 200,
                         2 * getPreferredSize().height / 3 - 13);
+
+                drawStringArr(g, new String[]{
+                        "Objective: Move pawns from the start to the safe zone. First to move all " + Player.numPawns + " to the safe zone wins!",
+                        "Each player takes turns drawing numbered cards.",
+                        "Only 1 or 2 can move out of start, 4 moves backwards.",
+                        "2 card results in a second turn.",
+                        "SORRY! card moves to the location of the next pawn owned by another player, bumping them back to start."
+                }, new Point(50, 50));
             }
 
-            int boxAndBorder = borderSize + boxSideLength;
             // Draw red board items
             {
                 g.setColor(RED);
@@ -222,7 +301,6 @@ public class Client extends JPanel {
     }
 
     private void drawBoard(@NotNull Graphics g) {
-        int boxAndBorder = borderSize + boxSideLength;
         // Draw Grid
         {
             g.setColor(Color.BLACK);
@@ -471,9 +549,155 @@ public class Client extends JPanel {
         } catch (IOException ignored) {
         }
 
-        if (lastMsgReceived != null) {
-            // TODO: Draw player pawns and stuff.
+        // What color is the player?
+        String color = "";
+        switch (playerNumber) {
+            case 0:
+                color = "Red";
+                break;
+            case 1:
+                color = "Blue";
+                break;
+            case 2:
+                color = "Yellow";
+                break;
+            case 3:
+                color = "Green";
+                break;
         }
+        g.drawString("You are the " + color + " player.", getPreferredSize().width / 2 - 105 - 105 - 155 + btnsOffset, 2 * getPreferredSize().height / 3 + 45);
+
+        if (lastMsg != null) {
+            // Draw Red player's pawns
+            {
+                int playerIndex = 0;
+                int topPawnInStart = Player.numPawns - lastMsg.players[playerIndex].numPawnsAtStart();
+                boolean anyPawnsInStart = topPawnInStart < Player.numPawns;
+                boolean anyPawnsInSafeZone = lastMsg.players[playerIndex].latestPawnInSafeZone != -1;
+
+                if (anyPawnsInStart) {
+                    Point startLocation = getCenterOfBox(Player.numBoxesInBoardSide - 1, Player.numBoxesInBoardSide - 5);
+                    Point pawnCenter = new Point(startLocation.x, startLocation.y - boxSideLength / 2 - boxSideLength - borderSize);
+                    drawPawn(g, pawnCenter, Player.RED, topPawnInStart);
+                }
+
+                if (anyPawnsInSafeZone) {
+                    Point safetyLocation = getCenterOfBox(((3 * Player.numBoxesInBoardSide) / 5) + 1, Player.numBoxesInBoardSide - 3);
+                    Point pawnCenter = new Point(safetyLocation.x, safetyLocation.y - boxSideLength / 2 - boxSideLength - borderSize);
+                    drawPawn(g, pawnCenter, Player.RED, lastMsg.players[playerIndex].latestPawnInSafeZone);
+                }
+
+                int count = 0;
+                for (Point pawn : lastMsg.players[playerIndex].pawnLocations) {
+                    if (!pawn.equals(Player.startZone) && !pawn.equals(Player.safeZone)) {
+                        drawPawn(g, getCenterOfBox(pawn.y, pawn.x), Player.RED, count);
+                    }
+                    count++;
+                }
+            }
+
+            // Draw Blue player's pawns
+            {
+                int playerIndex = 1;
+                int topPawnInStart = Player.numPawns - lastMsg.players[playerIndex].numPawnsAtStart();
+                boolean anyPawnsInStart = topPawnInStart < Player.numPawns;
+                boolean anyPawnsInSafeZone = lastMsg.players[playerIndex].latestPawnInSafeZone != -1;
+
+                if (anyPawnsInStart) {
+                    Point startLocation = getCenterOfBox(Player.numBoxesInBoardSide - 5, 0);
+                    Point pawnCenter = new Point(startLocation.x + boxSideLength / 2 + boxSideLength + borderSize, startLocation.y);
+                    drawPawn(g, pawnCenter, Player.BLUE, topPawnInStart);
+                }
+
+                if (anyPawnsInSafeZone) {
+                    Point safetyLocation = getCenterOfBox(Player.numBoxesInBoardSide - 3, 6);
+                    Point pawnCenter = new Point(safetyLocation.x + boxSideLength / 2 + borderSize, safetyLocation.y);
+                    drawPawn(g, pawnCenter, Player.BLUE, lastMsg.players[playerIndex].latestPawnInSafeZone);
+                }
+
+                int count = 0;
+                for (Point pawn : lastMsg.players[playerIndex].pawnLocations) {
+                    if (!pawn.equals(Player.startZone) && !pawn.equals(Player.safeZone)) {
+                        drawPawn(g, getCenterOfBox(pawn.y, pawn.x), Player.BLUE, count);
+                    }
+                    count++;
+                }
+            }
+
+            // Draw Yellow player's pawns
+            if (lastMsg.players.length > 2) {
+                int playerIndex = 2;
+                int topPawnInStart = Player.numPawns - lastMsg.players[playerIndex].numPawnsAtStart();
+                boolean anyPawnsInStart = topPawnInStart < Player.numPawns;
+                boolean anyPawnsInSafeZone = lastMsg.players[playerIndex].latestPawnInSafeZone != -1;
+
+                if (anyPawnsInStart) {
+                    Point startLocation = getCenterOfBox(0, 4);
+                    Point pawnCenter = new Point(startLocation.x, startLocation.y + boxSideLength / 2 + boxSideLength + borderSize);
+                    drawPawn(g, pawnCenter, Player.YELLOW, topPawnInStart);
+                }
+
+                if (anyPawnsInSafeZone) {
+                    Point safetyLocation = getCenterOfBox(5, 2);
+                    Point pawnCenter = new Point(safetyLocation.x, safetyLocation.y + boxSideLength / 2 + boxSideLength + borderSize);
+                    drawPawn(g, pawnCenter, Player.YELLOW, lastMsg.players[playerIndex].latestPawnInSafeZone);
+                }
+
+                int count = 0;
+                for (Point pawn : lastMsg.players[playerIndex].pawnLocations) {
+                    if (!pawn.equals(Player.startZone) && !pawn.equals(Player.safeZone)) {
+                        drawPawn(g, getCenterOfBox(pawn.y, pawn.x), Player.YELLOW, count);
+                    }
+                    count++;
+                }
+            }
+
+            // Draw Green player's pawns
+            if (lastMsg.players.length > 3) {
+                int playerIndex = 3;
+                int topPawnInStart = Player.numPawns - lastMsg.players[playerIndex].numPawnsAtStart();
+                boolean anyPawnsInStart = topPawnInStart < Player.numPawns;
+                boolean anyPawnsInSafeZone = lastMsg.players[playerIndex].latestPawnInSafeZone != -1;
+
+                if (anyPawnsInStart) {
+                    Point startLocation = getCenterOfBox(4, Player.numBoxesInBoardSide - 1);
+                    Point pawnCenter = new Point(startLocation.x - boxSideLength / 2 - boxSideLength - borderSize, startLocation.y);
+                    drawPawn(g, pawnCenter, Player.GREEN, topPawnInStart);
+                }
+
+                if (anyPawnsInSafeZone) {
+                    Point safetyLocation = getCenterOfBox(2, ((3 * Player.numBoxesInBoardSide) / 5) + 1);
+                    Point pawnCenter = new Point(safetyLocation.x - boxAndBorder - boxSideLength / 2 - borderSize, safetyLocation.y);
+                    drawPawn(g, pawnCenter, Player.GREEN, lastMsg.players[playerIndex].latestPawnInSafeZone);
+                }
+
+                int count = 0;
+                for (Point pawn : lastMsg.players[playerIndex].pawnLocations) {
+                    if (!pawn.equals(Player.startZone) && !pawn.equals(Player.safeZone)) {
+                        drawPawn(g, getCenterOfBox(pawn.y, pawn.x), Player.GREEN, count);
+                    }
+                    count++;
+                }
+            }
+
+        }
+    }
+
+    private void drawPawn(Graphics g, Point center, Color color, int index) {
+        g.setColor(Color.BLACK);
+        g.fillOval(
+                center.x - pawnRadius - pawnBorderSize,
+                center.y - pawnRadius - pawnBorderSize,
+                2 * pawnRadius + 2 * pawnBorderSize,
+                2 * pawnRadius + 2 * pawnBorderSize);
+        g.setColor(color);
+        g.fillOval(center.x - pawnRadius, center.y - pawnRadius, 2 * pawnRadius, 2 * pawnRadius);
+        // Print pawn number
+        g.setFont(new Font("Calibri", Font.PLAIN, 24));
+        g.setColor(Color.BLACK);
+        g.drawString((Integer.valueOf(index + 1)).toString(),
+                center.x - 6,
+                center.y + 7);
     }
 
     @Contract(value = "_, _ -> new", pure = true)
@@ -481,6 +705,15 @@ public class Client extends JPanel {
         return new Point(
                 borderSize + boxSideLength / 2 + col * (borderSize + boxSideLength),
                 borderSize + boxSideLength / 2 + row * (borderSize + boxSideLength));
+    }
+
+    private void drawStringArr(@NotNull Graphics g, String @NotNull [] text, @NotNull Point topLeft) {
+        int x = topLeft.x;
+        int y = topLeft.y + 7;
+        for (String line : text) {
+            g.drawString(line, x, y);
+            y += 15;
+        }
     }
 
     public static void main(String[] args) {

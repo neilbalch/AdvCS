@@ -22,7 +22,7 @@
     <list default="true" id="36939a02-4d05-4550-9e2f-c504bf2e9922" name="Default Changelist" comment="Classwork from April 16, 2020.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Labs/Semester 2 Final/Client.java" beforeDir="false" afterPath="$PROJECT_DIR$/Labs/Semester 2 Final/Client.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Labs/Semester 2 Final/DLList.java" beforeDir="false" afterPath="$PROJECT_DIR$/Labs/Semester 2 Final/DLList.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Labs/Semester 2 Final/Message.java" beforeDir="false" afterPath="$PROJECT_DIR$/Labs/Semester 2 Final/Message.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Labs/Semester 2 Final/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/Labs/Semester 2 Final/Player.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Labs/Semester 2 Final/Server.java" beforeDir="false" afterPath="$PROJECT_DIR$/Labs/Semester 2 Final/Server.java" afterDir="false" />
     </list>
@@ -158,6 +158,7 @@
       </method>
     </configuration>
     <list>
+      <item itemvalue="Application.Client" />
       <item itemvalue="Application.Server" />
       <item itemvalue="Application.Server (1)" />
       <item itemvalue="Application.Client (1)" />
@@ -251,14 +252,8 @@
       <workItem from="1588275921846" duration="1629000" />
       <workItem from="1588619630207" duration="3306000" />
       <workItem from="1588888227273" duration="2447000" />
-      <workItem from="1589247637153" duration="32861000" />
-    </task>
-    <task id="LOCAL-00067" summary="Code cleanup of Semester 1 Final project.">
-      <created>1576210595820</created>
-      <option name="number" value="00067" />
-      <option name="presentableId" value="LOCAL-00067" />
-      <option name="project" value="LOCAL" />
-      <updated>1576210595822</updated>
+      <workItem from="1589247637153" duration="36568000" />
+      <workItem from="1589646803018" duration="11032000" />
     </task>
     <task id="LOCAL-00068" summary="Complete Semester 1 Final project w/o better collision detection.">
       <created>1576255122414</created>
@@ -596,7 +591,14 @@
       <option name="project" value="LOCAL" />
       <updated>1589354250098</updated>
     </task>
-    <option name="localTasksCounter" value="116" />
+    <task id="LOCAL-00116" summary="Added actions bar of buttons to Semester 2 Final project.">
+      <created>1589412198072</created>
+      <option name="number" value="00116" />
+      <option name="presentableId" value="LOCAL-00116" />
+      <option name="project" value="LOCAL" />
+      <updated>1589412198072</updated>
+    </task>
+    <option name="localTasksCounter" value="117" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -617,7 +619,6 @@
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Work on MyHashMap Lab from Friday February 28, 2020" />
     <MESSAGE value="Work on MyHashMap Lab from after school Friday February 28, 2020" />
     <MESSAGE value="Final MyHashMap Lab commit" />
     <MESSAGE value="Classwork from March 3, 2020." />
@@ -642,14 +643,15 @@
     <MESSAGE value="Barebones Server/Client for Semester 2 Final project." />
     <MESSAGE value="Beginning of game board for Semester 2 Final project." />
     <MESSAGE value="Finished game board for Semester 2 Final project." />
-    <option name="LAST_COMMIT_MESSAGE" value="Finished game board for Semester 2 Final project." />
+    <MESSAGE value="Added actions bar of buttons to Semester 2 Final project." />
+    <option name="LAST_COMMIT_MESSAGE" value="Added actions bar of buttons to Semester 2 Final project." />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="78" y="72" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1589352345386">
+    <state x="78" y="72" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1590005826055">
       <screen x="0" y="0" width="1858" height="1080" />
     </state>
-    <state x="78" y="72" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1858.1080@0.0.1858.1080" timestamp="1589352345386" />
+    <state x="78" y="72" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1858.1080@0.0.1858.1080" timestamp="1590005826055" />
     <state x="686" y="343" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1583768971545">
       <screen x="0" y="0" width="1858" height="1080" />
     </state>
@@ -686,22 +688,22 @@
       <screen x="0" y="0" width="1858" height="1080" />
     </state>
     <state x="709" y="232" key="FileChooserDialogImpl/0.0.1858.1080@0.0.1858.1080" timestamp="1589320444093" />
-    <state width="1837" height="271" key="GridCell.Tab.0.bottom" timestamp="1589411523409">
+    <state width="1837" height="271" key="GridCell.Tab.0.bottom" timestamp="1590006376219">
       <screen x="0" y="0" width="1858" height="1080" />
     </state>
-    <state width="1837" height="271" key="GridCell.Tab.0.bottom/0.0.1858.1080@0.0.1858.1080" timestamp="1589411523409" />
-    <state width="1837" height="271" key="GridCell.Tab.0.center" timestamp="1589411523409">
+    <state width="1837" height="271" key="GridCell.Tab.0.bottom/0.0.1858.1080@0.0.1858.1080" timestamp="1590006376219" />
+    <state width="1837" height="271" key="GridCell.Tab.0.center" timestamp="1590006376219">
       <screen x="0" y="0" width="1858" height="1080" />
     </state>
-    <state width="1837" height="271" key="GridCell.Tab.0.center/0.0.1858.1080@0.0.1858.1080" timestamp="1589411523409" />
-    <state width="1837" height="271" key="GridCell.Tab.0.left" timestamp="1589411523409">
+    <state width="1837" height="271" key="GridCell.Tab.0.center/0.0.1858.1080@0.0.1858.1080" timestamp="1590006376219" />
+    <state width="1837" height="271" key="GridCell.Tab.0.left" timestamp="1590006376219">
       <screen x="0" y="0" width="1858" height="1080" />
     </state>
-    <state width="1837" height="271" key="GridCell.Tab.0.left/0.0.1858.1080@0.0.1858.1080" timestamp="1589411523409" />
-    <state width="1837" height="271" key="GridCell.Tab.0.right" timestamp="1589411523409">
+    <state width="1837" height="271" key="GridCell.Tab.0.left/0.0.1858.1080@0.0.1858.1080" timestamp="1590006376219" />
+    <state width="1837" height="271" key="GridCell.Tab.0.right" timestamp="1590006376219">
       <screen x="0" y="0" width="1858" height="1080" />
     </state>
-    <state width="1837" height="271" key="GridCell.Tab.0.right/0.0.1858.1080@0.0.1858.1080" timestamp="1589411523409" />
+    <state width="1837" height="271" key="GridCell.Tab.0.right/0.0.1858.1080@0.0.1858.1080" timestamp="1590006376219" />
     <state width="1837" height="255" key="GridCell.Tab.1.bottom" timestamp="1589352334084">
       <screen x="0" y="0" width="1858" height="1080" />
     </state>
@@ -730,10 +732,10 @@
       <screen x="0" y="0" width="1858" height="1080" />
     </state>
     <state x="430" y="184" key="SettingsEditor/0.0.1858.1080@0.0.1858.1080" timestamp="1588010005129" />
-    <state x="521" y="272" width="683" height="533" key="Vcs.Push.Dialog.v2" timestamp="1589354254548">
+    <state x="521" y="272" width="683" height="533" key="Vcs.Push.Dialog.v2" timestamp="1589412199744">
       <screen x="0" y="0" width="1858" height="1080" />
     </state>
-    <state x="521" y="272" width="683" height="533" key="Vcs.Push.Dialog.v2/0.0.1858.1080@0.0.1858.1080" timestamp="1589354254548" />
+    <state x="521" y="272" width="683" height="533" key="Vcs.Push.Dialog.v2/0.0.1858.1080@0.0.1858.1080" timestamp="1589412199744" />
     <state x="633" y="433" key="com.intellij.jarRepository.RepositoryAttachDialog-DOWNLOAD" timestamp="1589332401360">
       <screen x="0" y="0" width="1858" height="1080" />
     </state>
