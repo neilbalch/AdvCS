@@ -20,11 +20,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="36939a02-4d05-4550-9e2f-c504bf2e9922" name="Default Changelist" comment="Classwork from April 16, 2020.">
-      <change afterPath="$PROJECT_DIR$/Labs/Semester 2 Final/TestClient.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Labs/Semester 2 Final/TestServer.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Labs/Semester 2 Final/Client.java" beforeDir="false" afterPath="$PROJECT_DIR$/Labs/Semester 2 Final/Client.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Labs/Semester 2 Final/Server.java" beforeDir="false" afterPath="$PROJECT_DIR$/Labs/Semester 2 Final/Server.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Labs/Semester 2 Final/Message.java" beforeDir="false" afterPath="$PROJECT_DIR$/Labs/Semester 2 Final/Message.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -245,14 +242,7 @@
       <workItem from="1588619630207" duration="3306000" />
       <workItem from="1588888227273" duration="2447000" />
       <workItem from="1589247637153" duration="36568000" />
-      <workItem from="1589646803018" duration="39707000" />
-    </task>
-    <task id="LOCAL-00071" summary="Fixed testing report.">
-      <created>1576513586273</created>
-      <option name="number" value="00071" />
-      <option name="presentableId" value="LOCAL-00071" />
-      <option name="project" value="LOCAL" />
-      <updated>1576513586274</updated>
+      <workItem from="1589646803018" duration="40692000" />
     </task>
     <task id="LOCAL-00072" summary="Classwork from January 9, 2020">
       <created>1578640224079</created>
@@ -590,7 +580,14 @@
       <option name="project" value="LOCAL" />
       <updated>1590170381452</updated>
     </task>
-    <option name="localTasksCounter" value="120" />
+    <task id="LOCAL-00120" summary="Patch server bug enabling multiple clients for Semester 2 Final Project.">
+      <created>1590180024090</created>
+      <option name="number" value="00120" />
+      <option name="presentableId" value="LOCAL-00120" />
+      <option name="project" value="LOCAL" />
+      <updated>1590180024090</updated>
+    </task>
+    <option name="localTasksCounter" value="121" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -611,7 +608,6 @@
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Holy mother of god; classwork from March 5, 2020." />
     <MESSAGE value="Fix for classwork from March 5, 2020." />
     <MESSAGE value="Semi-complete and bug-free classwork from March 9, 2020." />
     <MESSAGE value="Bug-free classwork from March 9, 2020." />
@@ -636,7 +632,8 @@
     <MESSAGE value="Add pawn rendering and beginnings of move maker for Semester 2 Final Project." />
     <MESSAGE value="Completed move maker for Semester 2 Final Project." />
     <MESSAGE value="Added action history for Semester 2 Final Project." />
-    <option name="LAST_COMMIT_MESSAGE" value="Added action history for Semester 2 Final Project." />
+    <MESSAGE value="Patch server bug enabling multiple clients for Semester 2 Final Project." />
+    <option name="LAST_COMMIT_MESSAGE" value="Patch server bug enabling multiple clients for Semester 2 Final Project." />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="WindowStateProjectService">
@@ -684,22 +681,22 @@
       <screen x="0" y="0" width="1858" height="1080" />
     </state>
     <state x="709" y="232" key="FileChooserDialogImpl/0.0.1858.1080@0.0.1858.1080" timestamp="1589320444093" />
-    <state width="1837" height="271" key="GridCell.Tab.0.bottom" timestamp="1590179370361">
+    <state width="1837" height="271" key="GridCell.Tab.0.bottom" timestamp="1590179829916">
       <screen x="0" y="0" width="1858" height="1080" />
     </state>
-    <state width="1837" height="271" key="GridCell.Tab.0.bottom/0.0.1858.1080@0.0.1858.1080" timestamp="1590179370361" />
-    <state width="1837" height="271" key="GridCell.Tab.0.center" timestamp="1590179370361">
+    <state width="1837" height="271" key="GridCell.Tab.0.bottom/0.0.1858.1080@0.0.1858.1080" timestamp="1590179829916" />
+    <state width="1837" height="271" key="GridCell.Tab.0.center" timestamp="1590179829915">
       <screen x="0" y="0" width="1858" height="1080" />
     </state>
-    <state width="1837" height="271" key="GridCell.Tab.0.center/0.0.1858.1080@0.0.1858.1080" timestamp="1590179370361" />
-    <state width="1837" height="271" key="GridCell.Tab.0.left" timestamp="1590179370361">
+    <state width="1837" height="271" key="GridCell.Tab.0.center/0.0.1858.1080@0.0.1858.1080" timestamp="1590179829915" />
+    <state width="1837" height="271" key="GridCell.Tab.0.left" timestamp="1590179829915">
       <screen x="0" y="0" width="1858" height="1080" />
     </state>
-    <state width="1837" height="271" key="GridCell.Tab.0.left/0.0.1858.1080@0.0.1858.1080" timestamp="1590179370361" />
-    <state width="1837" height="271" key="GridCell.Tab.0.right" timestamp="1590179370361">
+    <state width="1837" height="271" key="GridCell.Tab.0.left/0.0.1858.1080@0.0.1858.1080" timestamp="1590179829915" />
+    <state width="1837" height="271" key="GridCell.Tab.0.right" timestamp="1590179829915">
       <screen x="0" y="0" width="1858" height="1080" />
     </state>
-    <state width="1837" height="271" key="GridCell.Tab.0.right/0.0.1858.1080@0.0.1858.1080" timestamp="1590179370361" />
+    <state width="1837" height="271" key="GridCell.Tab.0.right/0.0.1858.1080@0.0.1858.1080" timestamp="1590179829915" />
     <state width="1837" height="247" key="GridCell.Tab.1.bottom" timestamp="1590178904874">
       <screen x="0" y="0" width="1858" height="1080" />
     </state>
@@ -728,10 +725,10 @@
       <screen x="0" y="0" width="1858" height="1080" />
     </state>
     <state x="430" y="184" key="SettingsEditor/0.0.1858.1080@0.0.1858.1080" timestamp="1588010005129" />
-    <state x="521" y="272" width="683" height="533" key="Vcs.Push.Dialog.v2" timestamp="1590170382647">
+    <state x="521" y="272" width="683" height="533" key="Vcs.Push.Dialog.v2" timestamp="1590180025457">
       <screen x="0" y="0" width="1858" height="1080" />
     </state>
-    <state x="521" y="272" width="683" height="533" key="Vcs.Push.Dialog.v2/0.0.1858.1080@0.0.1858.1080" timestamp="1590170382647" />
+    <state x="521" y="272" width="683" height="533" key="Vcs.Push.Dialog.v2/0.0.1858.1080@0.0.1858.1080" timestamp="1590180025457" />
     <state x="633" y="433" key="com.intellij.jarRepository.RepositoryAttachDialog-DOWNLOAD" timestamp="1589332401360">
       <screen x="0" y="0" width="1858" height="1080" />
     </state>
@@ -761,11 +758,6 @@
           <url>file://$PROJECT_DIR$/Q4/03312020/BTree.java</url>
           <line>196</line>
           <option name="timeStamp" value="14" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/Labs/Semester 2 Final/Server.java</url>
-          <line>92</line>
-          <option name="timeStamp" value="38" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
