@@ -10,7 +10,7 @@ import java.util.*;
 public class Client extends JPanel {
     private final String hostName = "localhost";
     private final int portNumber = 1024;
-    private final boolean testingMode = true;
+    private final boolean testingMode = false;
     //private final boolean testingMode = true;
     private final int borderSize = 3;
     private final int boxSideLength = 40;
@@ -33,6 +33,7 @@ public class Client extends JPanel {
     private int myPlayerNum;
     private Message lastMsg;
     private boolean showInstructions;
+    private DLList<String> actionHistory;
 
     private JComboBox<String> pawnToMove;
     private JButton makeMoveBtn;
@@ -55,6 +56,8 @@ public class Client extends JPanel {
         cardDescriptions.put(Message.Card.ELEVEN, "Move forward 11 spots any pawn on the board");
         cardDescriptions.put(Message.Card.TWELVE, "Move forward 12 spots any pawn on the board");
         cardDescriptions.put(Message.Card.SORRY, "SORRY! Move a pawn from Start to replace another player's");
+
+        actionHistory = new DLList<>();
 
         initPawnToChoose(null, false);
 
@@ -156,6 +159,19 @@ public class Client extends JPanel {
         add(pawnToMove);
     }
 
+    private void addMsgToActionHistory(Message msg) {
+        String action = "The " + playerIdToString(msg.playerNum) + " player ";
+        if (msg.type == Message.Type.PlayerTurn) {
+            action += "drew a " + msg.card.toString() + " card.";
+        } else {
+            if (msg.pawnMoved == -1) action += " skipped their turn.";
+            else action += "moved their pawn number " + (msg.pawnMoved + 1) + ".";
+        }
+
+        actionHistory.add(action);
+        if (actionHistory.size() > 5) actionHistory.remove(0);
+    }
+
     private void handleWatcherMsg(Message msg) {
         if (msg.type == Message.Type.PlayerTurn) {
             logMsg("PlayerTurn message received");
@@ -187,7 +203,6 @@ public class Client extends JPanel {
                 if (choicesList.size() == 0) choicesList.add("Skip Turn");
 
                 // Enable dropdown menu, add items to menu
-                System.out.println(choicesList.size());
                 String[] choicesArr = new String[choicesList.size()];
                 for (int i = 0; i < choicesList.size(); i++) {
                     choicesArr[i] = choicesList.get(i);
@@ -200,6 +215,7 @@ public class Client extends JPanel {
             }
         } else logMsg("Watcher received PlayerMadeMove message");
 
+        addMsgToActionHistory(msg);
         repaint();
     }
 
@@ -212,7 +228,6 @@ public class Client extends JPanel {
             msg.type = Message.Type.PlayerMadeMove;
             msg.playerNum = myPlayerNum;
             msg.pawnMoved = -1;
-            msg.players = lastMsg.players;
         } else {
             int pawnIdToMove = Integer.parseInt(selection) - 1;
 
@@ -260,11 +275,13 @@ public class Client extends JPanel {
             msg.type = Message.Type.PlayerMadeMove;
             msg.playerNum = myPlayerNum;
             msg.pawnMoved = pawnIdToMove;
-            msg.players = lastMsg.players;
 
         }
 
+        msg.players = lastMsg.players;
+
         initPawnToChoose(null, false);
+        addMsgToActionHistory(msg);
         repaint();
         try {
             out.writeObject(msg);
@@ -394,6 +411,7 @@ public class Client extends JPanel {
                     // Check if pawn is on last box before safe zone.
                     currentPawn.setLocation(Player.safeZone);
                     lastMsg.players[playerId].latestPawnInSafeZone = pawnId;
+                    return;
                 } else currentPawn.translate(1, 0);
             } else if (coordsWithin(currentPawn,
                     new Point(Player.numBoxesPerSide - 1 - 2 * Player.numBoxesPerSide / 5 + 1, Player.numBoxesPerSide - 3),
@@ -403,6 +421,7 @@ public class Client extends JPanel {
                     // Check if pawn is on last box before safe zone.
                     currentPawn.setLocation(Player.safeZone);
                     lastMsg.players[playerId].latestPawnInSafeZone = pawnId;
+                    return;
                 } else currentPawn.translate(-1, 0);
             } else if (coordsWithin(currentPawn,
                     new Point(0, Player.numBoxesPerSide - 3),
@@ -412,6 +431,7 @@ public class Client extends JPanel {
                     // Check if pawn is on last box before safe zone.
                     currentPawn.setLocation(Player.safeZone);
                     lastMsg.players[playerId].latestPawnInSafeZone = pawnId;
+                    return;
                 } else currentPawn.translate(0, 1);
             } else if (coordsWithin(currentPawn,
                     new Point(2, Player.numBoxesPerSide - 1 - 2 * Player.numBoxesPerSide / 5 + 1),
@@ -421,6 +441,7 @@ public class Client extends JPanel {
                     // Check if pawn is on last box before safe zone.
                     currentPawn.setLocation(Player.safeZone);
                     lastMsg.players[playerId].latestPawnInSafeZone = pawnId;
+                    return;
                 } else currentPawn.translate(-1, 0);
             }
         }
@@ -439,9 +460,16 @@ public class Client extends JPanel {
             g.drawString("Waiting for the game to start when at least two players join.",
                     getPreferredSize().width / 2 - 105 - 105 - 155 + 200,
                     2 * getPreferredSize().height / 3 - 13 - 15);
+        } else {
+            String[] actionsArr = new String[actionHistory.size()];
+            for (int i = 0; i < actionsArr.length; i++) {
+                actionsArr[i] = actionHistory.get(i);
+            }
+            drawStringArr(g, actionsArr, new Point(
+                    getPreferredSize().width / 2 - 150,
+                    (int) (1.5 * getPreferredSize().height / 3)
+            ), 18);
         }
-
-        // TODO: Display card drawn and info about mode last player made.
 
         if (showInstructions) {
             Color transWhite = new Color(255, 255, 255, 178);
@@ -451,6 +479,7 @@ public class Client extends JPanel {
             // Display text.
             {
                 g.setColor(Color.BLACK);
+                g.setFont(new Font("Calibri", Font.PLAIN, 14));
 
                 Point startLocation = getCenterOfBox(Player.numBoxesPerSide - 1, Player.numBoxesPerSide - 5);
                 g.drawString("Pawns start here -->",
@@ -480,7 +509,7 @@ public class Client extends JPanel {
                         "Only 1 or 2 can move out of start, 4 moves backwards.",
                         "2 card results in a second turn.",
                         "SORRY! card moves to the location of the next pawn owned by another player, bumping them back to start."
-                }, new Point(50, 50));
+                }, new Point(50, 50), 16);
             }
 
             // Draw red board items
@@ -788,21 +817,7 @@ public class Client extends JPanel {
         }
 
         // What color is the player?
-        String color = "";
-        switch (myPlayerNum) {
-            case 0:
-                color = "Red";
-                break;
-            case 1:
-                color = "Blue";
-                break;
-            case 2:
-                color = "Yellow";
-                break;
-            case 3:
-                color = "Green";
-                break;
-        }
+        String color = playerIdToString(myPlayerNum);
         g.setColor(Color.BLACK);
         g.drawString("You are the " + color + " player.", getPreferredSize().width / 2 - 105 - 105 - 155 + btnsOffset, 2 * getPreferredSize().height / 3 + 45);
 
@@ -971,9 +986,26 @@ public class Client extends JPanel {
         else return false;
     }
 
-    private void drawStringArr(Graphics g, String[] text, Point topLeft) {
+    private String playerIdToString(int id) {
+        switch (id) {
+            case 0:
+                return "Red";
+            case 1:
+                return "Blue";
+            case 2:
+                return "Yellow";
+            case 3:
+                return "Green";
+            default:
+                return "Unknown Player";
+        }
+    }
+
+    private void drawStringArr(Graphics g, String[] text, Point topLeft, int fontSize) {
+        g.setFont(new Font("Calibri", Font.PLAIN, fontSize));
+
         int x = topLeft.x;
-        int y = topLeft.y + 7;
+        int y = topLeft.y + (3 * fontSize / 4);
         for (String line : text) {
             g.drawString(line, x, y);
             y += 15;

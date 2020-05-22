@@ -79,9 +79,7 @@ class ServerThread implements Runnable {
                         msg.type = Message.Type.PlayerTurn;
                         msg.playerNum = currentPlayer;
                         msg.players = playersArr;
-                        // TODO: Undo this when done testing.
-//                        msg.card = Message.Card.selectCard();
-                        msg.card = Message.Card.ONE;
+                        msg.card = Message.Card.selectCard();
 
                         for (int i = 0; i < socks.size(); i++) {
                             logMsg("PlayerTurn sent to player number " + players.size() + ", id " + (players.size() - 1) + ".");
