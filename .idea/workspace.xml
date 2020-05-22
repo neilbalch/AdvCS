@@ -20,6 +20,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="36939a02-4d05-4550-9e2f-c504bf2e9922" name="Default Changelist" comment="Classwork from April 16, 2020.">
+      <change afterPath="$PROJECT_DIR$/Labs/Semester 2 Final/icon.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Labs/Semester 2 Final/Client.java" beforeDir="false" afterPath="$PROJECT_DIR$/Labs/Semester 2 Final/Client.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Labs/Semester 2 Final/Message.java" beforeDir="false" afterPath="$PROJECT_DIR$/Labs/Semester 2 Final/Message.java" afterDir="false" />
@@ -253,14 +254,7 @@
       <workItem from="1588619630207" duration="3306000" />
       <workItem from="1588888227273" duration="2447000" />
       <workItem from="1589247637153" duration="36568000" />
-      <workItem from="1589646803018" duration="11032000" />
-    </task>
-    <task id="LOCAL-00068" summary="Complete Semester 1 Final project w/o better collision detection.">
-      <created>1576255122414</created>
-      <option name="number" value="00068" />
-      <option name="presentableId" value="LOCAL-00068" />
-      <option name="project" value="LOCAL" />
-      <updated>1576255122414</updated>
+      <workItem from="1589646803018" duration="30770000" />
     </task>
     <task id="LOCAL-00069" summary="Complete Semester 1 Final project with better collision detection.">
       <created>1576311961968</created>
@@ -598,7 +592,14 @@
       <option name="project" value="LOCAL" />
       <updated>1589412198072</updated>
     </task>
-    <option name="localTasksCounter" value="117" />
+    <task id="LOCAL-00117" summary="Add pawn rendering and beginnings of move maker for Semester 2 Final Project.">
+      <created>1590006616503</created>
+      <option name="number" value="00117" />
+      <option name="presentableId" value="LOCAL-00117" />
+      <option name="project" value="LOCAL" />
+      <updated>1590006616504</updated>
+    </task>
+    <option name="localTasksCounter" value="118" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -619,7 +620,6 @@
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Work on MyHashMap Lab from after school Friday February 28, 2020" />
     <MESSAGE value="Final MyHashMap Lab commit" />
     <MESSAGE value="Classwork from March 3, 2020." />
     <MESSAGE value="Holy mother of god; classwork from March 5, 2020." />
@@ -644,7 +644,8 @@
     <MESSAGE value="Beginning of game board for Semester 2 Final project." />
     <MESSAGE value="Finished game board for Semester 2 Final project." />
     <MESSAGE value="Added actions bar of buttons to Semester 2 Final project." />
-    <option name="LAST_COMMIT_MESSAGE" value="Added actions bar of buttons to Semester 2 Final project." />
+    <MESSAGE value="Add pawn rendering and beginnings of move maker for Semester 2 Final Project." />
+    <option name="LAST_COMMIT_MESSAGE" value="Add pawn rendering and beginnings of move maker for Semester 2 Final Project." />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="WindowStateProjectService">
@@ -688,38 +689,38 @@
       <screen x="0" y="0" width="1858" height="1080" />
     </state>
     <state x="709" y="232" key="FileChooserDialogImpl/0.0.1858.1080@0.0.1858.1080" timestamp="1589320444093" />
-    <state width="1837" height="271" key="GridCell.Tab.0.bottom" timestamp="1590006376219">
+    <state width="1837" height="271" key="GridCell.Tab.0.bottom" timestamp="1590168073546">
       <screen x="0" y="0" width="1858" height="1080" />
     </state>
-    <state width="1837" height="271" key="GridCell.Tab.0.bottom/0.0.1858.1080@0.0.1858.1080" timestamp="1590006376219" />
-    <state width="1837" height="271" key="GridCell.Tab.0.center" timestamp="1590006376219">
+    <state width="1837" height="271" key="GridCell.Tab.0.bottom/0.0.1858.1080@0.0.1858.1080" timestamp="1590168073546" />
+    <state width="1837" height="271" key="GridCell.Tab.0.center" timestamp="1590168073546">
       <screen x="0" y="0" width="1858" height="1080" />
     </state>
-    <state width="1837" height="271" key="GridCell.Tab.0.center/0.0.1858.1080@0.0.1858.1080" timestamp="1590006376219" />
-    <state width="1837" height="271" key="GridCell.Tab.0.left" timestamp="1590006376219">
+    <state width="1837" height="271" key="GridCell.Tab.0.center/0.0.1858.1080@0.0.1858.1080" timestamp="1590168073546" />
+    <state width="1837" height="271" key="GridCell.Tab.0.left" timestamp="1590168073546">
       <screen x="0" y="0" width="1858" height="1080" />
     </state>
-    <state width="1837" height="271" key="GridCell.Tab.0.left/0.0.1858.1080@0.0.1858.1080" timestamp="1590006376219" />
-    <state width="1837" height="271" key="GridCell.Tab.0.right" timestamp="1590006376219">
+    <state width="1837" height="271" key="GridCell.Tab.0.left/0.0.1858.1080@0.0.1858.1080" timestamp="1590168073546" />
+    <state width="1837" height="271" key="GridCell.Tab.0.right" timestamp="1590168073546">
       <screen x="0" y="0" width="1858" height="1080" />
     </state>
-    <state width="1837" height="271" key="GridCell.Tab.0.right/0.0.1858.1080@0.0.1858.1080" timestamp="1590006376219" />
-    <state width="1837" height="255" key="GridCell.Tab.1.bottom" timestamp="1589352334084">
+    <state width="1837" height="271" key="GridCell.Tab.0.right/0.0.1858.1080@0.0.1858.1080" timestamp="1590168073546" />
+    <state width="1837" height="255" key="GridCell.Tab.1.bottom" timestamp="1590167078968">
       <screen x="0" y="0" width="1858" height="1080" />
     </state>
-    <state width="1837" height="255" key="GridCell.Tab.1.bottom/0.0.1858.1080@0.0.1858.1080" timestamp="1589352334084" />
-    <state width="1837" height="255" key="GridCell.Tab.1.center" timestamp="1589352334084">
+    <state width="1837" height="255" key="GridCell.Tab.1.bottom/0.0.1858.1080@0.0.1858.1080" timestamp="1590167078968" />
+    <state width="1837" height="255" key="GridCell.Tab.1.center" timestamp="1590167078968">
       <screen x="0" y="0" width="1858" height="1080" />
     </state>
-    <state width="1837" height="255" key="GridCell.Tab.1.center/0.0.1858.1080@0.0.1858.1080" timestamp="1589352334084" />
-    <state width="1837" height="255" key="GridCell.Tab.1.left" timestamp="1589352334084">
+    <state width="1837" height="255" key="GridCell.Tab.1.center/0.0.1858.1080@0.0.1858.1080" timestamp="1590167078968" />
+    <state width="1837" height="255" key="GridCell.Tab.1.left" timestamp="1590167078968">
       <screen x="0" y="0" width="1858" height="1080" />
     </state>
-    <state width="1837" height="255" key="GridCell.Tab.1.left/0.0.1858.1080@0.0.1858.1080" timestamp="1589352334084" />
-    <state width="1837" height="255" key="GridCell.Tab.1.right" timestamp="1589352334084">
+    <state width="1837" height="255" key="GridCell.Tab.1.left/0.0.1858.1080@0.0.1858.1080" timestamp="1590167078968" />
+    <state width="1837" height="255" key="GridCell.Tab.1.right" timestamp="1590167078968">
       <screen x="0" y="0" width="1858" height="1080" />
     </state>
-    <state width="1837" height="255" key="GridCell.Tab.1.right/0.0.1858.1080@0.0.1858.1080" timestamp="1589352334084" />
+    <state width="1837" height="255" key="GridCell.Tab.1.right/0.0.1858.1080@0.0.1858.1080" timestamp="1590167078968" />
     <state x="594" y="238" key="NewModule_or_Project.wizard" timestamp="1589319338757">
       <screen x="0" y="0" width="1858" height="1080" />
     </state>
@@ -732,22 +733,22 @@
       <screen x="0" y="0" width="1858" height="1080" />
     </state>
     <state x="430" y="184" key="SettingsEditor/0.0.1858.1080@0.0.1858.1080" timestamp="1588010005129" />
-    <state x="521" y="272" width="683" height="533" key="Vcs.Push.Dialog.v2" timestamp="1589412199744">
+    <state x="521" y="272" width="683" height="533" key="Vcs.Push.Dialog.v2" timestamp="1590006618385">
       <screen x="0" y="0" width="1858" height="1080" />
     </state>
-    <state x="521" y="272" width="683" height="533" key="Vcs.Push.Dialog.v2/0.0.1858.1080@0.0.1858.1080" timestamp="1589412199744" />
+    <state x="521" y="272" width="683" height="533" key="Vcs.Push.Dialog.v2/0.0.1858.1080@0.0.1858.1080" timestamp="1590006618385" />
     <state x="633" y="433" key="com.intellij.jarRepository.RepositoryAttachDialog-DOWNLOAD" timestamp="1589332401360">
       <screen x="0" y="0" width="1858" height="1080" />
     </state>
     <state x="633" y="433" key="com.intellij.jarRepository.RepositoryAttachDialog-DOWNLOAD/0.0.1858.1080@0.0.1858.1080" timestamp="1589332401360" />
-    <state x="727" y="230" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1589410103039">
+    <state x="727" y="230" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1590042202027">
       <screen x="0" y="0" width="1858" height="1080" />
     </state>
-    <state x="727" y="230" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/0.0.1858.1080@0.0.1858.1080" timestamp="1589410103039" />
-    <state x="585" y="250" key="run.anything.popup" timestamp="1589321066784">
+    <state x="727" y="230" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/0.0.1858.1080@0.0.1858.1080" timestamp="1590042202027" />
+    <state x="585" y="250" key="run.anything.popup" timestamp="1590166557596">
       <screen x="0" y="0" width="1858" height="1080" />
     </state>
-    <state x="585" y="250" key="run.anything.popup/0.0.1858.1080@0.0.1858.1080" timestamp="1589321066784" />
+    <state x="585" y="250" key="run.anything.popup/0.0.1858.1080@0.0.1858.1080" timestamp="1590166557596" />
     <state x="592" y="235" width="672" height="678" key="search.everywhere.popup" timestamp="1589347428736">
       <screen x="0" y="0" width="1858" height="1080" />
     </state>

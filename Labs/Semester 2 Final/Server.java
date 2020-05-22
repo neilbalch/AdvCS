@@ -3,6 +3,8 @@ import java.io.ObjectOutputStream;
 import java.io.IOException;
 import java.net.ServerSocket;
 import java.net.Socket;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 class ServerThread implements Runnable {
     private DLList<Player> players;
@@ -35,7 +37,7 @@ class ServerThread implements Runnable {
                 return;
         }
 
-        System.out.println("Player number " + players.size() + ", id " + (players.size() - 1) + " added.");
+        logMsg("Player number " + players.size() + ", id " + (players.size() - 1) + " added.");
         socks.add(sock);
         try {
             out.add(new ObjectOutputStream(sock.getOutputStream()));
@@ -46,7 +48,7 @@ class ServerThread implements Runnable {
             // Send the new player their player number (0 to 3).
             out.get(out.size() - 1).writeObject(out.size() - 1);
         } catch (IOException err) {
-            System.out.println("Thread caught IOException: " + err.getMessage());
+            logMsg("Thread caught IOException: " + err.getMessage());
         } catch (InterruptedException ignored) {
         }
     }
@@ -54,6 +56,13 @@ class ServerThread implements Runnable {
     public boolean readyToStart() {
         // Only send the signal once, not every time (players.size() >= 2).
         return players.size() == 2;
+    }
+
+    private void logMsg(Object msg) {
+        SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
+        Date date = new Date();
+        System.out.print(formatter.format(date) + " — ");
+        System.out.println(msg.toString());
     }
 
     public void run() {
@@ -70,33 +79,42 @@ class ServerThread implements Runnable {
                         msg.type = Message.Type.PlayerTurn;
                         msg.playerNum = currentPlayer;
                         msg.players = playersArr;
-                        msg.card = Message.Card.selectCard();
+                        // TODO: Undo this when done testing.
+//                        msg.card = Message.Card.selectCard();
+                        msg.card = Message.Card.ONE;
 
                         for (int i = 0; i < socks.size(); i++) {
-                            System.out.println("PlayerTurn sent to player number " + players.size() + ", id " + (players.size() - 1) + ".");
+                            logMsg("PlayerTurn sent to player number " + players.size() + ", id " + (players.size() - 1) + ".");
                             out.get(i).writeObject(msg);
                         }
                     }
 
-                    // Get updated board from player and update local board.
+                    // Get updated board from player, update other players, and update local board.
                     {
                         Message msg = (Message) in.get(currentPlayer).readObject();
 
                         players = new DLList<>();
                         for (Player p : msg.players) players.add(p);
+
+                        for (int i = 0; i < socks.size(); i++) {
+                            if (i == currentPlayer) continue;
+
+                            logMsg("PlayerMadeMove echoed to player number " + players.size() + ", id " + (players.size() - 1) + ".");
+                            out.get(i).writeObject(msg);
+                        }
                     }
 
-                    System.out.println("Board after last move:");
+                    logMsg("Board after last move:");
                     for (int i = 0; i < players.size(); i++)
-                        System.out.println(players.get(i).toString());
+                        logMsg(players.get(i).toString());
                 }
             }
 //        } catch (InterruptedException err) {
-//            System.out.println("Thread caught InterruptedException: " + err.getMessage());
+//            logMsg("Thread caught InterruptedException: " + err.getMessage());
         } catch (IOException err) {
-            System.out.println("Thread caught IOException: " + err.getMessage());
+            logMsg("Thread caught IOException: " + err.getMessage());
         } catch (ClassNotFoundException err) {
-            System.out.println("Thread caught ClassNotFoundException: " + err.getMessage());
+            logMsg("Thread caught ClassNotFoundException: " + err.getMessage());
         }
     }
 }
@@ -115,7 +133,7 @@ public class Server {
 
             while (true) {
                 game.addPlayer(serverSocket.accept());
-                if (game.readyToStart()) thread.start();
+                if (!thread.isAlive()) thread.start();
             }
         } catch (IOException err) {
             System.out.println("Client caught IOException: " + err.getMessage());

@@ -6,10 +6,10 @@ public class Player implements Serializable {
     public static final Color BLUE = new Color(51, 92, 208);
     public static final Color YELLOW = new Color(231, 204, 33);
     public static final Color GREEN = new Color(54, 208, 26);
-    public static final int numBoxesInBoardSide = 16;
+    public static final int numBoxesPerSide = 16;
     public static final int numPawns = 4;
     public static final Point startZone = new Point(-1, -1);
-    public static final Point safeZone = new Point(numBoxesInBoardSide, numBoxesInBoardSide);
+    public static final Point safeZone = new Point(numBoxesPerSide, numBoxesPerSide);
 
     public Color playerColor;
     // Location map for Point() coordinates:

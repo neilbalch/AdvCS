@@ -14,5 +14,6 @@ public class Message implements Serializable {
     public Type type;
     public int playerNum;
     public Card card; // Only applicable for PlayerTurn
+    public int pawnMoved; // Only applicable for PlayerMadeMove
     public Player[] players;
 }
