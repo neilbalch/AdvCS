@@ -164,7 +164,7 @@ public class Client extends JPanel {
         if (msg.type == Message.Type.PlayerTurn) {
             action += "drew a " + msg.card.toString() + " card.";
         } else {
-            if (msg.pawnMoved == -1) action += " skipped their turn.";
+            if (msg.pawnMoved == -1) action += "skipped their turn.";
             else action += "moved their pawn number " + (msg.pawnMoved + 1) + ".";
         }
 
@@ -177,7 +177,7 @@ public class Client extends JPanel {
             logMsg("PlayerTurn message received");
 
             if (lastMsg.playerNum == myPlayerNum) {
-                logMsg("PlayerTurn message received for me");
+                logMsg("PlayerTurn message is for me");
                 // Declare list of player choices
                 DLList<String> choicesList = new DLList<>();
                 Player me = lastMsg.players[myPlayerNum];
@@ -272,6 +272,7 @@ public class Client extends JPanel {
             }
 
             // Send message back to server
+            // TODO: Add case to detect whether or not we just won the game, send that to server.
             msg.type = Message.Type.PlayerMadeMove;
             msg.playerNum = myPlayerNum;
             msg.pawnMoved = pawnIdToMove;
@@ -424,10 +425,10 @@ public class Client extends JPanel {
                     return;
                 } else currentPawn.translate(-1, 0);
             } else if (coordsWithin(currentPawn,
-                    new Point(0, Player.numBoxesPerSide - 3),
-                    new Point(2 * Player.numBoxesPerSide / 5 - 1, Player.numBoxesPerSide - 3))) {
+                    new Point(Player.numBoxesPerSide - 3, 1),
+                    new Point(Player.numBoxesPerSide - 3, 2 * Player.numBoxesPerSide / 5 - 1))) {
                 // Check left (Blue) safe zone ramp.
-                if (currentPawn.equals(new Point(2 * Player.numBoxesPerSide / 5 - 1, Player.numBoxesPerSide - 3))) {
+                if (currentPawn.equals(new Point(Player.numBoxesPerSide - 3, 2 * Player.numBoxesPerSide / 5 - 1))) {
                     // Check if pawn is on last box before safe zone.
                     currentPawn.setLocation(Player.safeZone);
                     lastMsg.players[playerId].latestPawnInSafeZone = pawnId;

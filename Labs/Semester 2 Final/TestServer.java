@@ -6,7 +6,7 @@ import java.net.Socket;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
-class ServerThread implements Runnable {
+class TestServerThread implements Runnable {
     // volatile: https://www.javatpoint.com/volatile-keyword-in-java
     private volatile DLList<Player> players;
     private volatile DLList<Socket> socks;
@@ -14,14 +14,7 @@ class ServerThread implements Runnable {
     private volatile DLList<ObjectOutputStream> out;
     private volatile Message lastMessageSent;
 
-    private static void logMsg(Object msg) {
-        SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
-        Date date = new Date();
-        System.out.print(formatter.format(date) + " — ");
-        System.out.println(msg.toString());
-    }
-
-    public ServerThread() {
+    public TestServerThread() {
         players = new DLList<>();
         socks = new DLList<>();
         in = new DLList<>();
@@ -74,15 +67,11 @@ class ServerThread implements Runnable {
         }
     }
 
-    public boolean readyToStart() {
-        // Only send the signal once, not every time (players.size() >= 2).
-        return players.size() == 2;
-    }
-
-    private Player[] playerListAsArray(DLList<Player> list) {
-        Player[] arr = new Player[list.size()];
-        for (int i = 0; i < list.size(); i++) arr[i] = list.get(i);
-        return arr;
+    private void logMsg(Object msg) {
+        SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
+        Date date = new Date();
+        System.out.print(formatter.format(date) + " — ");
+        System.out.println(msg.toString());
     }
 
     public void run() {
@@ -93,7 +82,8 @@ class ServerThread implements Runnable {
                 for (int currentPlayer = 0; currentPlayer < players.size(); currentPlayer++) {
                     System.out.println("Num players: " + players.size());
                     { // Generate movement card for player, send message to all players.
-                        Player[] playersArr = playerListAsArray(players);
+                        Player[] playersArr = new Player[players.size()];
+                        for (int i = 0; i < playersArr.length; i++) playersArr[i] = players.get(i);
 
                         Message msg = new Message();
                         msg.type = Message.Type.PlayerTurn;
@@ -113,12 +103,9 @@ class ServerThread implements Runnable {
                         Message msg = (Message) in.get(currentPlayer).readObject();
                         lastMessageSent = msg;
 
-                        // Update players on server game board with those from the message.
-                        for (int i = 0; i < msg.players.length; i++)
-                            players.set(i, msg.players[i]);
+                        players = new DLList<>();
+                        for (Player p : msg.players) players.add(p);
 
-                        // Echo changed board message to all other players.
-                        lastMessageSent.players = playerListAsArray(players);
                         for (int i = 0; i < socks.size(); i++) {
                             if (i == currentPlayer) continue;
 
@@ -138,16 +125,16 @@ class ServerThread implements Runnable {
     }
 }
 
-public class Server {
+public class TestServer {
     private static final int portNumber = 1024;
 
     public static void main(String[] args) {
         try {
             ServerSocket serverSocket = new ServerSocket(portNumber);
-            System.out.println("Server ready for up to 4 connections @ " + serverSocket.getInetAddress().getHostAddress() + ":" + portNumber);
-            System.out.println("WARNING: Only the first 4 clients to connect will be served!");
+//            System.out.println("Server ready for up to 4 connections @ " + serverSocket.getInetAddress().getHostAddress() + ":" + portNumber);
+//            System.out.println("WARNING: Only the first 4 clients to connect will be served!");
 
-            ServerThread game = new ServerThread();
+            TestServerThread game = new TestServerThread();
             Thread thread = new Thread(game);
 
             while (true) {
