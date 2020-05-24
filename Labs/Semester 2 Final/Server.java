@@ -14,6 +14,12 @@ class ServerThread implements Runnable {
     private volatile DLList<ObjectOutputStream> out;
     private volatile Message lastMessageSent;
 
+    private static Player[] playerListAsArray(DLList<Player> list) {
+        Player[] arr = new Player[list.size()];
+        for (int i = 0; i < list.size(); i++) arr[i] = list.get(i);
+        return arr;
+    }
+
     private static void logMsg(Object msg) {
         SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
         Date date = new Date();
@@ -74,24 +80,12 @@ class ServerThread implements Runnable {
         }
     }
 
-    public boolean readyToStart() {
-        // Only send the signal once, not every time (players.size() >= 2).
-        return players.size() == 2;
-    }
-
-    private Player[] playerListAsArray(DLList<Player> list) {
-        Player[] arr = new Player[list.size()];
-        for (int i = 0; i < list.size(); i++) arr[i] = list.get(i);
-        return arr;
-    }
-
     public void run() {
         try {
             // Game loop.
             while (true) {
                 // Go through every player's turn:
                 for (int currentPlayer = 0; currentPlayer < players.size(); currentPlayer++) {
-                    System.out.println("Num players: " + players.size());
                     { // Generate movement card for player, send message to all players.
                         Player[] playersArr = playerListAsArray(players);
 

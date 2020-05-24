@@ -1,7 +1,7 @@
 import java.io.Serializable;
 
 public class Message implements Serializable {
-    public enum Type {PlayerTurn, PlayerMadeMove}
+    public enum Type {PlayerTurn, PlayerMadeMove, PlayerWonGame}
 
     public enum Card {
         ONE, TWO, THREE, FOUR, FIVE, SEVEN, EIGHT, TEN, ELEVEN, TWELVE, SORRY;
@@ -22,6 +22,6 @@ public class Message implements Serializable {
     public Type type;
     public int playerNum;
     public Card card; // Only applicable for PlayerTurn
-    public int pawnMoved; // Only applicable for PlayerMadeMove
+    public int pawnMoved; // Not applicable for PlayerTurn
     public Player[] players;
 }

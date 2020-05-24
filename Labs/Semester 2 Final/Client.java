@@ -163,9 +163,11 @@ public class Client extends JPanel {
         String action = "The " + playerIdToString(msg.playerNum) + " player ";
         if (msg.type == Message.Type.PlayerTurn) {
             action += "drew a " + msg.card.toString() + " card.";
-        } else {
+        } else if (msg.type == Message.Type.PlayerMadeMove) {
             if (msg.pawnMoved == -1) action += "skipped their turn.";
             else action += "moved their pawn number " + (msg.pawnMoved + 1) + ".";
+        } else {
+            action += "won by moving their pawn number " + (msg.pawnMoved + 1) + "!!!";
         }
 
         actionHistory.add(action);
@@ -213,7 +215,15 @@ public class Client extends JPanel {
 
                 initPawnToChoose(choicesArr, true);
             }
-        } else logMsg("Watcher received PlayerMadeMove message");
+        } else if (lastMsg.type == Message.Type.PlayerMadeMove)
+            logMsg("Watcher received PlayerMadeMove message");
+        else {
+            logMsg("Watcher received PlayerWonGame message");
+
+            pawnToMove.setEnabled(false);
+            makeMoveBtn.setEnabled(false);
+            instructionsBtn.setEnabled(false);
+        }
 
         addMsgToActionHistory(msg);
         repaint();
@@ -224,15 +234,44 @@ public class Client extends JPanel {
         Message msg = new Message();
         if (selection == null) return;
 
+        // If the player has to skip a turn, let them.
         if (selection.equalsIgnoreCase("Skip Turn")) {
             msg.type = Message.Type.PlayerMadeMove;
             msg.playerNum = myPlayerNum;
             msg.pawnMoved = -1;
-        } else {
+        } else { // Else, make their move!
             int pawnIdToMove = Integer.parseInt(selection) - 1;
 
             if (lastMsg.card == Message.Card.SORRY) {
-                // TODO: Add this case.
+                // Iterate through the enemy pawns, noting the minimum distance. (measured by x and y coordinate distances summed, not hypotenuse of triangle)
+                double closestDistance = Player.numBoxesPerSide * 4; // Impossibly large number
+                Point closestPawn = null;
+                Point myPawn = lastMsg.players[myPlayerNum].pawnLocations[pawnIdToMove];
+
+                for (int player = 0; player < lastMsg.players.length; player++) {
+                    if (player == myPlayerNum) continue;
+                    for (int pawn = 0; pawn < lastMsg.players[player].pawnLocations.length; pawn++) {
+                        Point currentPawn = lastMsg.players[player].pawnLocations[pawn];
+                        double currentDistance = Math.abs(myPawn.x - currentPawn.x) + Math.abs(myPawn.y - currentPawn.y);
+                        // If pawn isn't in the start or safe zones, then check its distance.
+                        if (!currentPawn.equals(Player.startZone)
+                                && !currentPawn.equals(Player.safeZone)
+                                && !coordsWithin(currentPawn, new Point(1, 1), new Point(Player.numBoxesPerSide - 2, Player.numBoxesPerSide - 2))
+                                && currentDistance < closestDistance) {
+                            logMsg(currentDistance + " < " + closestDistance);
+                            closestDistance = currentDistance;
+                            closestPawn = currentPawn;
+                        }
+                    }
+                }
+
+                // Set my pawn to the location of the minimum distance enemy pawn.
+                if (closestPawn != null) {
+                    logMsg("Closest enemy pawn is at " + closestPawn);
+                    myPawn.setLocation(closestPawn);
+                    closestPawn.setLocation(Player.startZone);
+                }
+                logMsg("No enemy pawns are on the board!");
             } else {
                 int numMoves = -1;
                 switch (lastMsg.card) {
@@ -246,7 +285,7 @@ public class Client extends JPanel {
                         numMoves = 3;
                         break;
                     case FOUR:
-                        numMoves = 4;
+                        numMoves = -4;
                         break;
                     case FIVE:
                         numMoves = 5;
@@ -272,11 +311,20 @@ public class Client extends JPanel {
             }
 
             // Send message back to server
-            // TODO: Add case to detect whether or not we just won the game, send that to server.
-            msg.type = Message.Type.PlayerMadeMove;
-            msg.playerNum = myPlayerNum;
-            msg.pawnMoved = pawnIdToMove;
+            // Detect whether or not we just won the game and send PlayerWonGame message,
+            // else send regular PlayerMadeMove message.
+            if (lastMsg.players[myPlayerNum].numPawnsInSafeZone() == Player.numPawns) {
+                msg.type = Message.Type.PlayerWonGame;
 
+                pawnToMove.setEnabled(false);
+                makeMoveBtn.setEnabled(false);
+                instructionsBtn.setEnabled(false);
+            } else {
+                msg.type = Message.Type.PlayerMadeMove;
+            }
+
+            msg.pawnMoved = pawnIdToMove;
+            msg.playerNum = myPlayerNum;
         }
 
         msg.players = lastMsg.players;
@@ -473,7 +521,7 @@ public class Client extends JPanel {
         }
 
         if (showInstructions) {
-            Color transWhite = new Color(255, 255, 255, 178);
+            Color transWhite = new Color(255, 255, 255, 203);
             g.setColor(transWhite);
             g.fillRect(0, 0, getPreferredSize().width, getPreferredSize().height);
 
@@ -508,7 +556,6 @@ public class Client extends JPanel {
                         "Objective: Move pawns from the start to the safe zone. First to move all " + Player.numPawns + " to the safe zone wins!",
                         "Each player takes turns drawing numbered cards.",
                         "Only 1 or 2 can move out of start, 4 moves backwards.",
-                        "2 card results in a second turn.",
                         "SORRY! card moves to the location of the next pawn owned by another player, bumping them back to start."
                 }, new Point(50, 50), 16);
             }
